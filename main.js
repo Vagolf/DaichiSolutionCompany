@@ -5,6 +5,8 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // ====== CONTACT FORM (ของเดิมนาย) ======
+  // JavaScript for handling form validation and submission
+  // Validates name, email, and message fields
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
@@ -49,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ====== SMOOTH SCROLL (ของเดิมนาย) ======
+  // Smooth scrolling for internal links
+  // Applies smooth scroll behavior to anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -59,4 +63,26 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  // ====== INTERSECTION OBSERVER (ของเดิมนาย) ======
+  // IntersectionObserver for lazy loading or animations
+  // Observes elements with data-group attribute
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const group = entry.target.getAttribute("data-group");
+          if (group) {
+            const elements = document.querySelectorAll(`[data-group="${group}"]`);
+            elements.forEach((el) => el.classList.add("in-view"));
+          }
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  document.querySelectorAll("[data-group]").forEach((el) => observer.observe(el));
 });

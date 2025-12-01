@@ -44,15 +44,33 @@
             padding-top: 50px !important;
             padding-bottom: 50px !important;
         }
+
+        /* ==== Fade แบบง่ายด้วย data-attribute ==== */
+
+        /* ของทุกชิ้นที่อยากให้เฟด */
+        [data-fade] {
+            opacity: 0;
+            transform: translateY(24px);
+            /* เลื่อนลงมานิดนึง */
+            transition: opacity 0.45s ease, transform 0.45s ease;
+            will-change: opacity, transform;
+        }
+
+        /* พอ group มองเห็นในจอ → ลูกที่มี data-fade จะเฟดเข้า */
+        [data-fade-group].is-visible [data-fade] {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-3 px-3 px-lg-5 shadow-sm">
         <div class="container-fluid">
             <a href="index.html" class="navbar-brand">
-                <img class="me-3" src="daichi-logo.png" alt="Daichisolution Logo" style="max-height: 100px;">
+                <img class="me-3" src="images/LogoDaichiWeb.png" alt="Daichisolution Logo" style="max-height: 100px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,16 +104,108 @@
         </div>
     </nav>
 
-    <header class="hero-section"
-        style="background: url('/imges/PicForTest.jpg') no-repeat center center; background-size: cover;">
+    <!-- Hero section with background image and call-to-action -->
+    <header id="hero" class="hero-section">
+        <div class="containers HeaderSection">
+            <div class="swiper swiper-initialized swiper-horizontal mySwiper swiper-backface-hidden">
+                <div class="swiper-wrapper"
+                    style="transition-duration: 0ms; transform: translate3d(-892px, 0px, 0px); transition-delay: 0ms;">
+                    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3"
+                        style="width: 193px; margin-right: 30px;">
+                        <div class="ch-row">
+                            <div class="ch-col-6 col-md-12 text-left">
+                                <p class="text-head">Simplifying Procurement, Empowering Progress</p>
+                                <p class="ch-text-primary text-title my-1">Streamline. Optimize. Succeed. Our
+                                Procurement system simplifies complex processes, </p>
+                                <p class="ch-text-secondary text-title">optimizes workflows, and paves the way for
+                                your organization's success in the digital age.</p>
+                                <button class="ch-btn mt-1">View More</button>
+                            </div>
+                            <div class="ch-col-6 col-md-12 text-left bg-ch procurement"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="4" style="width: 193px; margin-right: 30px;">
+                        <div class="ch-row">
+                            <div class="ch-col-6 col-md-12 text-left">
+                                <p class="text-head">"Converting Speech into Seamless Text: Transforming Communication
+                                with Precision."</p>
+                                <p class="ch-text-primary text-title my-1">Voice to Text: Speak Your Thoughts, We'll
+                                Transform Them into Text. Our Speech-to-Text system </p>
+                                <p class="ch-text-secondary text-title">ensures your words are effortlessly converted
+                                into written form, making communication and transcription a breeze."</p>
+                                <button class="ch-btn mt-1">View More</button>
+                            </div>
+                            <div class="ch-col-6 col-md-12 text-left bg-ch speech-to-text"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="0" style="width: 193px; margin-right: 30px;">
+                        <div class="ch-row">
+                            <div class="ch-col-6 col-md-12 text-left">
+                                <p class="text-head"> Fast, Reliable,<br> Scalable<br> Document Generation </p>
+                                <p class="ch-text-primary text-title my-1"> A smart template-based approach to<br>
+                                generating custom PDF and Word documents </p>
+                                <p class="ch-text-secondary text-title"> Leverage CH Editor to create personalized
+                                letters,<br> invoices, proposals, contracts, statements, <br> reports and more. </p>
+                                <button class="ch-btn mt-1">TRY DEMO</button>
+                            </div>
+                            <div class="ch-col-6 col-md-12 text-left bg-ch editor"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1"
+                        style="width: 193px; margin-right: 30px;">
+                        <div class="ch-row">
+                            <div class="ch-col-6 col-md-12 text-left">
+                                <p class="text-head">Reimagining Tickets: Where Digital Meets Unforgeable </p>
+                                <p class="ch-text-primary text-title my-1">"Reimagining Tickets: Where Digital Meets
+                                Unforgeable"</p>
+                                <p class="ch-text-secondary text-title"> convenience of digital technology with the
+                                security. It highlights the uniqueness and trustworthiness of your ticketing </p>
+                                <button class="ch-btn mt-1">View More</button>
+                            </div>
+                            <div class="ch-col-6 col-md-12 text-left bg-ch tickets"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2"
+                        style="width: 193px; margin-right: 30px;">
+                        <div class="ch-row">
+                            <div class="ch-col-6 col-md-12 text-left">
+                                <p class="text-head">Unlocking Creativity: Endless Inspiration at Your Fingertips </p>
+                                <p class="ch-text-primary text-title my-1">Discover. Create. Inspire. With our Photo
+                                Stock system, you have a world of visual</p>
+                                <p class="ch-text-secondary text-title">Inspiration at your fingertips, empowering
+                                your creative journey like never before.</p>
+                                <button class="ch-btn mt-1">View More</button>
+                            </div>
+                            <div class="ch-col-6 col-md-12 text-left bg-ch photo-stock"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
-            <h1 class="display-3 fw-bold mb-4">Empowering Your Digital Future with Integrated Solutions</h1>
-            <p class="lead mb-5">We provide comprehensive ERP implementation, Cloud strategy, and custom software
-                development to optimize your business operations.</p>
-            <a href="contact.html" class="btn btn-primary btn-lg px-5">Start Your Digital Transformation</a>
+            <h1 class="display-3 fw-bold mb-4">
+                Empowering Your Digital Future with Integrated Solutions
+            </h1>
+            <p class="lead mb-5">
+                We provide comprehensive ERP implementation, Cloud strategy, and custom software
+                development to optimize your business operations.
+            </p>
+            <a href="contact.html" class="btn btn-primary btn-lg px-5">
+                Start Your Digital Transformation
+            </a>
         </div>
     </header>
 
+
+    <!-- Service section with three columns -->
     <div class="container pt-5">
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
@@ -375,9 +485,7 @@
         </div>
     </div>
 
-    </div>
-
-    <!-- Footer Start -->
+    <!-- Footer section with contact information and links -->
     <footer class="footer-main pt-5 pb-4">
         <div class="container">
             <div class="row g-4">
@@ -392,7 +500,7 @@
                         </li>
                         <li class="mt-2">
                             <i class="fa-solid fa-phone me-2"></i>
-                            061-028-6815
+                            ๆ061-028-6815
                         </li>
                         <li class="mt-2">
                             <i class="fa-solid fa-envelope me-2"></i>
@@ -567,6 +675,68 @@
             );
 
             groups.forEach((g) => io.observe(g));
+
+            // ====== HERO BACKGROUND SLIDER (ใหม่) ======
+            const hero = document.getElementById("hero");
+            if (hero) {
+                const heroImages = [
+                    "url('images/PicForTest.jpg')",
+                    "url('images/PicForTest2.jpg')",
+                    "url('images/PicForTest3.jpg')",
+                ];
+
+                let heroIndex = 0;
+                const intervalMs = 7000; // เปลี่ยนทุก 7 วินาที ปรับได้ตามชอบ
+
+                const overlay = "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), ";
+
+                function applyHeroBg() {
+                    hero.style.backgroundImage = overlay + heroImages[heroIndex];
+                    hero.style.backgroundSize = "cover";
+                    hero.style.backgroundPosition = "center";
+                }
+
+                // ⭐ ตั้งรูปแรกทันที
+                applyHeroBg();
+
+                // เปลี่ยนรูปวนไป
+                setInterval(() => {
+                    heroIndex = (heroIndex + 1) % heroImages.length;
+                    applyHeroBg();
+                }, intervalMs);
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hero = document.getElementById("hero");
+            if (!hero) return;
+
+            // ⭐ ระวัง path ให้ตรงกับโฟลเดอร์จริง (images ไม่ใช่ imges)
+            const heroImages = [
+                "url('images/PicForTest.jpg')",
+                "url('images/PicForTest2.jpg')",
+                "url('images/PicForTest3.jpg')",
+            ];
+
+            let heroIndex = 0;
+            const intervalMs = 7000; // เปลี่ยนทุก 7 วิ
+
+            const overlay = "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), ";
+
+            function applyHeroBg() {
+                hero.style.backgroundImage = overlay + heroImages[heroIndex];
+            }
+
+            // ตั้งรูปแรกเลยตอนโหลดหน้า
+            applyHeroBg();
+
+            // เปลี่ยนรูปวนไปเรื่อย ๆ
+            setInterval(() => {
+                heroIndex = (heroIndex + 1) % heroImages.length;
+                applyHeroBg();
+            }, intervalMs);
         });
     </script>
 
