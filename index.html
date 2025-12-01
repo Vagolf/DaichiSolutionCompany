@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise IT & Business Solutions | Daichisolution</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* Basic custom styles (Ideally moved to style.css) */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('daichi-bg.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .service-item {
+            /* Basic styling for the service box to make it look distinct */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-item .bg-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3);
+            /* Darkens the image for text readability */
+        }
+
+        .service-item .service-text {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-3 px-3 px-lg-5 shadow-sm">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+                <img class="me-3" src="daichi-logo.png" alt="Daichisolution Logo" style="max-height: 100px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto p-2 p-lg-0">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Solutions & Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="news.html" class="nav-link">News & Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="jp/home" class="nav-link text-primary fw-bold">JP</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section"
+        style="background: url('/imges/PicForTest.jpg') no-repeat center center; background-size: cover;">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Empowering Your Digital Future with Integrated Solutions</h1>
+            <p class="lead mb-5">We provide comprehensive ERP implementation, Cloud strategy, and custom software
+                development to optimize your business operations.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg px-5">Start Your Digital Transformation</a>
+        </div>
+    </header>
+
+    <div class="container pt-5">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                    <div class="fact-icon">
+                        <img src="https://www.p5-management.com/img/icons/1.png" alt="Icon">
+                    </div>
+                    <h3 class="mb-3">ผู้เชี่ยวชาญด้าน POS</h3>
+                    <p class="mb-0">เชี่ยวชาญด้านการบำรุงรักษาและการสนับสนุนอุปกรณ์ Point of Sale (POS)
+                        ภายในประเทศไทย โดยมีการให้บริการที่หลากหลาย รวมถึงโซลูชันด้านไอที การติดตั้งเครือข่าย
+                        และการซ่อมแซม บริษัทจัดจำหน่าย <strong>ระบบ POS ภายใต้แบรนด์ 'DWISE'</strong>
+                        ซึ่งสามารถใช้งานร่วมกับแพลตฟอร์ม Windows และ Android ได้
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                    <div class="fact-icon">
+                        <img src="https://www.p5-management.com/img/icons/2.png" alt="Icon">
+                    </div>
+                    <h3 class="mb-3">ความเป็นเลิศด้านไอที</h3>
+                    <p class="mb-0">ให้บริการโซลูชันด้านไอทีครบวงจรสำหรับธุรกิจ รวมถึงห้องประชุมอัจฉริยะ
+                        ระบบรักษาความปลอดภัยอัจฉริยะ และบริการด้านความปลอดภัยไซเบอร์ ทีมงานของบริษัทให้บริการทั่วประเทศ
+                        <strong>โดยมีศูนย์บริการตลอด 24 ชั่วโมง และบริการภาคสนาม</strong>
+                        เพื่อให้มั่นใจว่าลูกค้าจะดำเนินงานได้อย่างมีประสิทธิภาพสูงสุด
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+                    <div class="fact-icon">
+                        <img src="https://www.p5-management.com/img/icons/3.png" alt="Icon">
+                    </div>
+                    <h3 class="mb-3">การบำรุงรักษาเทคโนโลยี</h3>
+                    <p class="mb-0">บริษัทมีส่วนร่วมในการบำรุงรักษาและซ่อมแซมอุปกรณ์ไอที เช่น คอมพิวเตอร์ส่วนบุคคล
+                        แล็ปท็อป เครื่องพิมพ์ และอื่น ๆ โดยเน้นคุณภาพและประสิทธิภาพในการให้บริการ
+                        บริการของบริษัทได้รับการ
+                        <strong>รับรองตามมาตรฐาน ISO 9001 และ ISO 20000-1</strong>
+                        สะท้อนถึงความมุ่งมั่นในคุณภาพบริการและความพึงพอใจของลูกค้า
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h2 class="section-title">บริการของเรา</h2>
+                <h4>
+                    เรามอบโซลูชันบริการด้านไอทีที่ครบวงจร ปรับให้เหมาะสมกับความต้องการทางธุรกิจของคุณ
+                    เพื่อให้การผสานระบบเป็นไปอย่างราบรื่นและมีประสิทธิภาพสูงสุด
+                    ร่วมเป็นพันธมิตรกับเราเพื่อใช้ประโยชน์จากเทคโนโลยีล้ำสมัยและการสนับสนุนจากผู้เชี่ยวชาญ
+                    สำหรับทุกความต้องการด้านไอทีของคุณ
+                </h4>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Service Desk -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="https://www.p5-management.com/img/Service_Desk_P5.jpg"
+                            alt="Service Desk Background">
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="https://www.p5-management.com/img/icons/4.png"
+                                alt="Service Desk Icon">
+                            <h3 class="mb-3">Service Desk</h3>
+                            <p class="mb-4">
+                                บริษัทให้บริการให้คำปรึกษาด้านไอxทีและแก้ไขปัญหาผ่านทางโทรศัพท์และการเข้าถึงระยะไกล
+                                เพื่อให้แน่ใจว่าอุปกรณ์จะทำงานได้ตามปกติ ทีมงาน Service Desk
+                                สามารถประจำอยู่ที่สำนักงานของลูกค้า
+                                หรือให้บริการจากระยะไกลตามความต้องการ นอกจากนี้ยังมีรายงานประจำวันและรายงานประจำเดือน
+                                เพื่อให้ลูกค้าทราบถึงสถานะของอุปกรณ์ไอทีอย่างต่อเนื่อง
+                            </p>
+                            <a class="btn btn-readmore" href="service_desk">
+                                <i class="fa fa-plus"></i>
+                                <span>อ่านเพิ่มเติม</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preventive Maintenance (PM) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="https://www.p5-management.com/img/Preventive_Maintenance_P5.jpg"
+                            alt="Preventive Maintenance Background">
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="https://www.p5-management.com/img/icons/5.png"
+                                alt="Preventive Maintenance Icon">
+                            <h3 class="mb-3">Preventive Maintenance (PM)</h3>
+                            <p class="mb-4">
+                                บริการบำรุงรักษาเชิงป้องกัน (Preventive Maintenance) เกี่ยวข้องกับการที่ช่างเทคนิค
+                                จะทำการตรวจสอบและบำรุงรักษาอุปกรณ์ไอทีทั้งหมดเป็นประจำ
+                                เพื่อป้องกันการเสียหายที่ไม่คาดคิด
+                                กระบวนการนี้รวมถึงการเปลี่ยนชิ้นส่วนที่ชำรุดเมื่อพบเห็น และบันทึกข้อมูลอุปกรณ์
+                                การดำเนินการเชิงรุกนี้จะช่วยแก้ไขปัญหาก่อนที่จะเกิดความเสียหาย
+                            </p>
+                            <a class="btn btn-readmore" href="pm">
+                                <i class="fa fa-plus"></i>
+                                <span>อ่านเพิ่มเติม</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repair Center -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="https://www.p5-management.com/img/Repair_Center_P5.jpg"
+                            alt="Repair Center Background">
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="https://www.p5-management.com/img/icons/6.png"
+                                alt="Repair Center Icon">
+                            <h3 class="mb-3">Repair Center</h3>
+                            <p class="mb-4">
+                                ศูนย์ซ่อมคอมพิวเตอร์เชี่ยวชาญในการซ่อมอุปกรณ์ไอทีต่าง ๆ เช่น คอมพิวเตอร์ แล็ปท็อป
+                                จอภาพ เครื่องพิมพ์ และอื่น ๆ โดยมีระยะเวลาในการซ่อมไม่เกิน 7 วัน
+                                พร้อมบริการจัดส่งทั่วประเทศ
+                                ศูนย์ให้บริการวินิจฉัยและประเมินราคาก่อนการซ่อม โดยใช้อะไหล่แท้ที่มีความพร้อมใช้งาน
+                                นอกจากนี้ยังมีการรับประกันหลังการซ่อมเป็นเวลา 30 วัน
+                            </p>
+                            <a class="btn btn-readmore" href="repair-center">
+                                <i class="fa fa-plus"></i>
+                                <span>อ่านเพิ่มเติม</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="https://www.p5-management.com/img/Network_P5.jpg"
+                            alt="Network Background">
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="https://www.p5-management.com/img/icons/7.png" alt="Network Icon">
+                            <h3 class="mb-3">Network</h3>
+                            <p class="mb-4">
+                                บริษัทให้บริการติดตั้งเครือข่าย รวมถึงการเดินสาย LAN และโทรศัพท์
+                                โดยมีทีมงานมืออาชีพดูแลการตั้งค่าระบบและเปิดสาขาใหม่
+                                การบริการครอบคลุมระบบหลากหลายประเภท เช่น กล้องวงจรปิด (CCTV), เซิร์ฟเวอร์โดเมน,
+                                ระบบเครือข่ายไร้สาย (Wireless LAN), ระบบควบคุมการเข้าออก (Access control), เซิร์ฟเวอร์
+                                VPN,
+                                VLan, NAS และเซิร์ฟเวอร์ป้องกันไวรัส เพื่อส่งมอบโซลูชันเครือข่ายที่เชื่อถือได้
+                            </p>
+                            <a class="btn btn-readmore" href="network">
+                                <i class="fa fa-plus"></i>
+                                <span>อ่านเพิ่มเติม</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MA -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="https://www.p5-management.com/img/MA_P5.jpg" alt="MA Background">
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="https://www.p5-management.com/img/icons/8.png" alt="MA Icon">
+                            <h3 class="mb-3">MA</h3>
+                            <p class="mb-4">
+                                สัญญาบำรุงรักษาไอทีครอบคลุมการแก้ไขปัญหาเบื้องต้นผ่าน Help Desk
+                                หากไม่สามารถแก้ไขได้ภายในเวลาที่กำหนด จะมีการส่งช่างเทคนิคไปยังสถานที่
+                                เพื่อฟื้นฟูการทำงานให้เป็นปกติโดยเร็ว บริการนี้เป็นไปตามมาตรฐาน SLA
+                                เพื่อให้มั่นใจว่าปัญหาจะได้รับการแก้ไขภายในเวลาที่กำหนด และสร้างความมั่นใจให้กับลูกค้า
+                            </p>
+                            <a class="btn btn-readmore" href="itsm">
+                                <i class="fa fa-plus"></i>
+                                <span>อ่านเพิ่มเติม</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Installation -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="https://www.p5-management.com/img/installation_P5.jpg"
+                            alt="Installation Background">
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="https://www.p5-management.com/img/icons/9.png"
+                                alt="Installation Icon">
+                            <h3 class="mb-3">Installation</h3>
+                            <p class="mb-4">
+                                บริษัทให้บริการติดตั้งระบบ Point of Sale และอุปกรณ์ไอที เช่น จุดเชื่อมต่อสัญญาณ (Access
+                                points),
+                                กล้องวงจรปิด (CCTV), เครื่องชั่งน้ำหนัก และระบบเครือข่าย
+                                โดยมั่นใจว่าการติดตั้งเป็นไปอย่างมืออาชีพ
+                                และมีประสิทธิภาพ ด้วยการให้บริการครอบคลุมทั่วประเทศ
+                                ลูกค้าจึงสามารถเข้าถึงบริการได้อย่างสะดวก
+                                ซึ่งช่วยให้อุปกรณ์ทั้งหมดทำงานได้อย่างเต็มประสิทธิภาพ
+                            </p>
+                            <a class="btn btn-readmore" href="installation">
+                                <i class="fa fa-plus"></i>
+                                <span>อ่านเพิ่มเติม</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- ด้านซ้าย: ข้อความ -->
+                <div class="col-lg-6">
+                    <h2 class="section-title">ทำไมต้องเลือกเรา!</h2>
+                    <h2 class="display-5 mb-4">ทำไมคุณควรไว้วางใจเรา? เรียนรู้เพิ่มเติมเกี่ยวกับเรา!</h2>
+                    <p class="mb-4">
+                        P5 Management โดดเด่นในฐานะผู้ให้บริการโซลูชันไอทีที่เชื่อถือได้ในประเทศไทย
+                        โดยเฉพาะในด้านการบำรุงรักษา
+                        และสนับสนุนระบบ Point of Sale (POS) ต่อไปนี้คือเหตุผลบางประการที่คุณควรไว้วางใจ P5 Management
+                    </p>
+
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <img class="flex-shrink-0" src="https://www.p5-management.com/img/icons/10.png"
+                                    alt="Icon">
+                                <div class="ms-4">
+                                    <h3>ทีมงานผู้เชี่ยวชาญ</h3>
+                                    <p class="mb-0">
+                                        P5 Management
+                                        มีทีมงานมืออาชีพที่มีประสบการณ์ในการจัดการระบบไอทีอย่างมีประสิทธิภาพ
+                                        รวมถึงระบบ POS ภายใต้แบรนด์ "DWISE" ที่สามารถใช้งานได้ทั้งบนแพลตฟอร์ม Windows
+                                        และ Android
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <img class="flex-shrink-0" src="https://www.p5-management.com/img/icons/12.png"
+                                    alt="Icon">
+                                <div class="ms-4">
+                                    <h3>ศูนย์บริการตลอด 24/7</h3>
+                                    <p class="mb-0">
+                                        เรามีบริการ Helpdesk ตลอด 24
+                                        ชั่วโมงเพื่อให้มั่นใจว่าการดำเนินงานของลูกค้าจะเป็นไปอย่างราบรื่น
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <img class="flex-shrink-0" src="https://www.p5-management.com/img/icons/11.png"
+                                    alt="Icon">
+                                <div class="ms-4">
+                                    <h3>คุณภาพที่ได้รับการรับรอง</h3>
+                                    <p class="mb-0">
+                                        บริษัทได้รับการรับรองมาตรฐาน ISO 9001 และ ISO 20000-1
+                                        ซึ่งสะท้อนถึงความมุ่งมั่นในคุณภาพ
+                                        และความพึงพอใจของลูกค้า
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ด้านขวา: รูปภาพซ้อนกัน -->
+                <div class="col-lg-6">
+                    <div class="feature-img">
+                        <img class="img-1" src="https://www.p5-management.com/img/5.jpg" alt="">
+                        <img class="img-2" src="https://www.p5-management.com/img/8.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Footer Start -->
+    <footer class="footer-main pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Address -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Address</h5>
+                    <ul class="list-unstyled footer-contact mb-3">
+                        <li>
+                            <i class="fa-solid fa-location-dot me-2"></i>
+                            84/10 ซอยพระราม 2 ซอย 69 แขวงแสมดำ<br>
+                            เขตบางขุนเทียน กรุงเทพฯ 10150 ประเทศไทย
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-phone me-2"></i>
+                            061-028-6815
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-envelope me-2"></i>
+                            customerservice@p5-management.com
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-brands fa-line me-2"></i>
+                            Add Friend
+                        </li>
+                    </ul>
+
+                    <!-- Social -->
+                    <ul class="list-inline footer-social mb-0">
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa-brands fa-line"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Our Services -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="service_desk">Service Desk</a></li>
+                        <li><a href="pm">Preventive Maintenance (PM)</a></li>
+                        <li><a href="repair-center">Repair Center</a></li>
+                        <li><a href="network">Network</a></li>
+                        <li><a href="installation">Installation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="#">Terms &amp; Condition</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location Map -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Location Map</h5>
+                    <div class="footer-map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.999999999!2d100.000000!3d13.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AP5-management!2sP5-management!5e0!3m2!1sth!2sth!4v0000000000"
+                            width="100%" height="230" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-top border-light mt-4 mb-3">
+
+            <div class="text-center small">
+                &copy; 2025 Daichisolution Website Clone. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        console.log("Script loaded");
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // ====== CONTACT FORM (ของเดิมนาย) ======
+            const contactForm = document.getElementById("contactForm");
+
+            if (contactForm) {
+                contactForm.addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    let isValid = true;
+
+                    const nameInput = document.getElementById("name");
+                    const emailInput = document.getElementById("email");
+                    const messageInput = document.getElementById("message");
+
+                    if (nameInput.value.trim() === "") {
+                        alert("Please enter your name.");
+                        nameInput.focus();
+                        isValid = false;
+                    } else if (emailInput.value.trim() === "") {
+                        alert("Please enter your email.");
+                        emailInput.focus();
+                        isValid = false;
+                    } else if (!validateEmail(emailInput.value.trim())) {
+                        alert("Please enter a valid email address.");
+                        emailInput.focus();
+                        isValid = false;
+                    } else if (messageInput.value.trim() === "") {
+                        alert("Please enter your message.");
+                        messageInput.focus();
+                        isValid = false;
+                    }
+
+                    if (isValid) {
+                        alert("Thank you for your inquiry! We will contact you shortly.");
+                        contactForm.reset();
+                    }
+                });
+            }
+
+            function validateEmail(email) {
+                const re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            // ====== SMOOTH SCROLL (ของเดิม) ======
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    const href = this.getAttribute("href");
+                    if (!href || href === "#") return;
+
+                    const target = document.querySelector(href);
+                    if (!target) return;
+
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                    });
+                });
+            });
+
+            // ====== FADE GROUP / FADE ITEM ======
+            const groups = document.querySelectorAll("[data-group]");
+
+            if (!groups.length) return;
+
+            // ถ้า browser ไม่รองรับ IntersectionObserver → โชว์ทุกอย่าง (กันจอขาว)
+            if (!("IntersectionObserver" in window)) {
+                groups.forEach((g) => g.classList.add("is-visible"));
+                return;
+            }
+
+            const io = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        const group = entry.target;
+                        const once = group.dataset.fadeOnce === "true";
+
+                        if (entry.isIntersecting) {
+                            group.classList.add("is-visible");
+                            if (once) io.unobserve(group);
+                        } else if (!once) {
+                            group.classList.remove("is-visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -25% 0",
+                }
+            );
+
+            groups.forEach((g) => io.observe(g));
+        });
+    </script>
+
+</body>
+
+</html>

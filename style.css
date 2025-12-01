@@ -1,0 +1,278 @@
+/*
+ * Custom CSS for Daichisolution Website (P5 Management Style Clone)
+ * File: style.css
+ */
+
+/* 1. Global Variables & Typography (Updated for P5-like Green/Navy palette) */
+:root {
+    --primary-color: #3b8e4f; /* P5 Management Green */
+    --secondary-color: #0d2c40; /* Dark Navy/Primary Text Color */
+    --text-dark: #333333;
+    --background-light: #f8f9fa;
+    --font-family: 'Poppins', sans-serif; /* Common professional web font */
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Color Overrides */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 50px;
+}
+
+.btn-primary:hover {
+    background-color: #2c6b3b; /* Darker green on hover */
+    border-color: #2c6b3b;
+}
+
+/* 2. Navigation Bar (Sticking to clean white with green accent) */
+.navbar {
+    border-bottom: none; /* Removing the explicit border */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: var(--secondary-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin-right: 15px;
+    color: var(--text-dark) !important;
+    transition: color 0.3s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* 3. Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('daichi-bg.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; 
+    color: white;
+    padding: 150px 0; /* Increased padding for height */
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+/* กล่อง service เริ่มต้นพื้นหลังขาว ตัวอักษรดำ */
+.service-item {
+    position: relative;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;        /* พื้นหลังขาว */
+    color: var(--text-dark);          /* ตัวหนังสือดำ */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s;
+}
+
+/* รูปพื้นหลัง: ซ่อนไว้ก่อน (opacity: 0) */
+.service-item .bg-img {
+    position: absolute;
+    inset: 0;                         /* top:0; right:0; bottom:0; left:0; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;                       /* ซ่อนตอนปกติ */
+    filter: brightness(0.25);         /* ทำให้รูปมืดหน่อยเวลาแสดง */
+    transition: opacity 0.5s ease;
+}
+
+/* เนื้อหาข้างใน: เริ่มต้นตัวหนังสือดำ */
+.service-item .service-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px !important;
+    min-height: 450px;
+}
+
+/* สีปกติ: ตัวหนังสือในกล่อง service เป็นสีดำ */
+.service-item .service-text h3,
+.service-item .service-text p {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+/* hover การ์ด → โชว์รูป + เปลี่ยนตัวอักษรในกล่องเป็นขาว */
+.service-item:hover .bg-img {
+    opacity: 1;   /* แสดงรูป */
+}
+
+.service-item:hover .service-text,
+.service-item:hover .service-text h3,
+.service-item:hover .service-text p {
+    color: #ffffff;
+}
+
+/* ================= ปุ่ม 3 STEP ================= */
+
+/* STEP 1: ปกติ ยังไม่ hover อะไรเลย */
+/* ปุ่มเป็นกล่องขาวเล็ก ๆ มี + อย่างเดียว */
+.btn-readmore {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background-color: #ffffff;   /* พื้นหลังปกติ = ขาว */
+    border-radius: 4px;
+    padding: 10px;
+    min-width: 40px;
+    min-height: 40px;
+
+    border: none;                /* ยังไม่ต้องมีขอบ */
+    color: #000;                 /* สีตัวอักษร (เวลาโผล่) */
+    font-weight: 500;
+    text-decoration: none;
+
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* ไอคอน + สีน้ำเงิน */
+.btn-readmore i.fa-plus {
+    color: #0d6efd;
+    font-size: 1.1rem;
+}
+
+/* ซ่อนคำว่า "อ่านเพิ่มเติม" ตอนยังไม่ hover */
+.btn-readmore span {
+    opacity: 0;
+    max-width: 0;
+    transform: translateX(-4px);
+    transition: all 0.3s ease;
+}
+
+/* STEP 2: hover การ์ด (service-item) */
+/* hover กล่อง service → ปุ่มยืด และโชว์ตัวหนังสือ แต่ยังใช้พื้นขาวปกติ */
+.service-item:hover .btn-readmore {
+    padding-inline: 14px 18px;      /* ยืดปุ่มให้ยาวขึ้น */
+    background-color: #ffffff;      /* พื้นหลังยังเป็นขาว */
+    border: none;                   /* ยังไม่มีขอบ */
+    color: #000000;                 /* ตัวอักษรดำ */
+}
+
+.service-item:hover .btn-readmore span {
+    opacity: 1;
+    max-width: 200px;
+    transform: translateX(0);
+}
+
+.service-item:hover .btn-readmore i.fa-plus {
+    color: #0d6efd;
+}
+
+/* STEP 3: hover ปุ่มเอง */
+/* เมื่อเมาส์อยู่บนปุ่มโดยตรง → พื้นหลังโปร่งใส + มีขอบ + ตัวอักษรขาว */
+.btn-readmore:hover,
+.service-item:hover .btn-readmore:hover {
+    padding-inline: 14px 18px;        /* คงความยาวเท่าตอน step 2 */
+    background-color: transparent;    /* พื้นหลังโปร่งใส */
+    border: 1px solid currentColor;   /* มีขอบ สีตามตัวอักษร */
+    color: #ffffff;                   /* ตัวอักษร/ขอบ เป็นสีขาว */
+}
+
+/* ให้ span โชว์เสมอเวลาฮอฟที่ปุ่ม (กันกระตุก) */
+.btn-readmore:hover span,
+.service-item:hover .btn-readmore:hover span {
+    opacity: 1;
+    max-width: 200px;
+    transform: translateX(0);
+}
+
+/* ไอคอน + ตามสีตัวอักษร */
+.btn-readmore:hover i.fa-plus,
+.service-item:hover .btn-readmore:hover i.fa-plus {
+    color: inherit;
+}
+
+/* 5. Footer */
+footer {
+    background-color: var(--secondary-color) !important; /* Dark Navy/Black background */
+    color: #f8f9fa;
+}
+
+footer a {
+    color: #ccc;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* กล่องครอบรูปด้านขวา */
+.feature-img {
+    position: relative;
+    min-height: 340px;
+}
+
+/* รูปใบหน้า (ใบหลัง) */
+.feature-img .img-1 {
+    width: 80%;
+    height: 80%;
+    border-radius: 8px;
+    display: block;
+}
+
+/* รูปใบหน้าที่สอง (ด้านหน้า) */
+.feature-img .img-2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 65%;
+    width: 65%;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* เส้นกรอบน้ำเงินด้านหลัง (เหมือน P5) */
+.feature-img::before {
+    content: "";
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 70%;
+    height: 70%;
+    border: 3px solid var(--primary-color); /* ใช้สีเขียว/น้ำเงินตาม theme ของคุณ */
+    z-index: -1;  /* อยู่หลังรูป */
+}
+
+/* ถ้ากรอบหายเพราะ parent ไม่มีพื้นหลัง ลองใส่พื้นหลังเบา ๆ ก็ได้ */
+.col-lg-6 .feature-img {
+    background-color: transparent;
+}

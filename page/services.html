@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions & Services | Daichisolution</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* Add specific styles for this page's elements if needed, or put in style.css */
+        .service-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .service-item .bg-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3); /* Darkens the image for text readability */
+            transition: filter 0.3s ease;
+        }
+        .service-item:hover .bg-img {
+            filter: brightness(0.2);
+        }
+        .service-item .service-text {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 50px !important;
+            min-height: 450px; /* Ensure consistent height for boxes */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Push 'Read More' to bottom */
+            align-items: center;
+        }
+        .service-item .service-text p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .service-item .service-text .btn {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .service-item .service-text .btn:hover {
+            background-color: var(--primary-color); /* Use your primary color */
+            border-color: var(--primary-color);
+            color: white;
+        }
+        .section-title {
+            color: var(--primary-color); /* Or a strong brand color */
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-3 px-3 px-lg-5 shadow-sm">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+                <img class="me-3" src="daichi-logo.png" alt="Daichisolution Logo" style="max-height: 100px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto p-2 p-lg-0">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link active" aria-current="page">Solutions & Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="news.html" class="nav-link">News & Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="jp/home" class="nav-link text-primary fw-bold">JP</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Our Solutions & Services</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+                <h2 class="section-title">Comprehensive Enterprise IT Solutions for Your Business Growth</h2>
+                <h4>Daichisolution provides tailored IT solutions that drive innovation, optimize operations, and ensure robust security across your enterprise. Partner with us for expert guidance and cutting-edge technology.</h4>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="img/service-erp.jpg" alt="ERP Implementation and Consulting"> 
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="img/icons/erp_icon.png" alt="ERP Icon"> 
+                            <h3 class="mb-3">ERP Implementation & Consulting</h3>
+                            <p>Expert consultation and full-cycle implementation of leading ERP systems (SAP, Oracle, Microsoft Dynamics) to integrate core business functions, standardize processes, and improve data visibility for better decision-making.</p>
+                            <a class="btn" href="service-erp"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="img/service-cloud.jpg" alt="Cloud Infrastructure and Strategy">
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="img/icons/cloud_icon.png" alt="Cloud Icon"> 
+                            <h3 class="mb-3">Cloud Infrastructure & Strategy</h3>
+                            <p>Seamless migration, setup, and optimized management of scalable cloud environments (AWS, Azure, GCP). We ensure secure, cost-effective, and high-performance cloud solutions that support your business agility and innovation.</p>
+                            <a class="btn" href="service-cloud"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="img/service-dev.jpg" alt="Custom Software Development">
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="img/icons/dev_icon.png" alt="Development Icon"> 
+                            <h3 class="mb-3">Custom Software Development</h3>
+                            <p>Building bespoke applications, portals, and tools tailored precisely to your unique business workflows and challenges. Our agile development process delivers robust, scalable, and intuitive software solutions.</p>
+                            <a class="btn" href="service-development"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="img/service-security.jpg" alt="Cybersecurity and Data Protection"> 
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="img/icons/security_icon.png" alt="Security Icon">
+                            <h3 class="mb-3">Cybersecurity & Data Protection</h3>
+                            <p>Protecting your critical assets with advanced security solutions, including threat detection, firewall management, data encryption, compliance audits, and incident response planning to safeguard against evolving cyber threats.</p>
+                            <a class="btn" href="service-security"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="img/service-managed.jpg" alt="Managed IT Services"> 
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="img/icons/support_icon.png" alt="Support Icon">
+                            <h3 class="mb-3">Managed IT Services (MA)</h3>
+                            <p>Proactive IT support and maintenance contracts covering remote Help Desk resolution, onsite technical assistance, and continuous monitoring. Our services adhere to strict SLAs to ensure maximum uptime and business continuity.</p>
+                            <a class="btn" href="service-managed"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item d-flex position-relative text-center h-100">
+                        <img class="bg-img" src="img/service-data.jpg" alt="Data Analytics and Business Intelligence"> 
+                        <div class="service-text p-5">
+                            <img class="mb-4" src="img/icons/data_icon.png" alt="Data Icon">
+                            <h3 class="mb-3">Data Analytics & Business Intelligence</h3>
+                            <p>Transforming raw data into actionable insights with custom dashboards and BI tools. We help you leverage your data for strategic decision-making, performance monitoring, and identifying new business opportunities.</p>
+                            <a class="btn" href="service-data"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Daichisolution</h5>
+                    <p>Driving innovation and efficiency through advanced enterprise technology solutions.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Solutions</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Global Offices</p>
+                    <p><i class="fas fa-envelope me-2"></i> sales@daichisolution.com</p>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2025 Daichisolution Website Clone. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
