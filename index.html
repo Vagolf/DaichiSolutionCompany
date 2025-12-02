@@ -61,6 +61,49 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ให้กล่อง indicators อยู่ต่ำลงมานิดนึงและกึ่งกลางสวย ๆ */
+        .carousel-indicators.hero-indicators {
+            position: absolute;
+            bottom: 30px;
+            /* ขยับขึ้น/ลงได้ */
+            left: 50%;
+            transform: translateX(-50%);
+            gap: 10px;
+            /* ระยะห่างระหว่างแท่ง */
+            margin: 0;
+        }
+
+        /* แท่งปกติ */
+        .carousel-indicators.hero-indicators button {
+            width: 36px;
+            /* ความยาวแท่ง */
+            height: 4px;
+            /* ความหนา */
+            border-radius: 999px;
+            /* มนมาก */
+            border: 0;
+            background-color: rgb(255, 255, 255);
+            /* เทาอ่อน ๆ */
+            opacity: 1;
+            /* ไม่ให้ Bootstrap ไปจาง */
+            transition: background-color .3s ease, transform .3s ease, width .3s ease;
+        }
+
+        /* แท่งที่ active */
+        .carousel-indicators.hero-indicators .active {
+            width: 56px;
+            /* แท่ง active ยาวกว่า */
+            background-color: #ff0000;
+            /* สีเข้ม คล้ายดำ/กรมท่า */
+            transform: translateY(-1px);
+            /* ดันขึ้นนิด ๆ ให้ดูเด่น */
+        }
+
+        /* ถ้าอยากให้ hover เปลี่ยนเบา ๆ (เลือกใช้ได้) */
+        .carousel-indicators.hero-indicators button:hover {
+            background-color: #ff7575;
+        }
     </style>
 </head>
 
@@ -82,115 +125,51 @@
                         <a href="index.html" class="nav-link active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="about.html" class="nav-link">About Us</a>
+                        <a href="#about" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a href="services.html" class="nav-link">Solutions & Services</a>
                     </li>
                     <li class="nav-item">
-                        <a href="products.html" class="nav-link">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="news.html" class="nav-link">News & Insights</a>
+                        <a href="page/products.html" class="nav-link">Products</a>
                     </li>
                     <li class="nav-item">
                         <a href="contact.html" class="nav-link">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="jp/home" class="nav-link text-primary fw-bold">JP</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero section with background image and call-to-action -->
+    <!-- Hero section with background carousel -->
     <header id="hero" class="hero-section">
-        <div class="containers HeaderSection">
-            <div class="swiper swiper-initialized swiper-horizontal mySwiper swiper-backface-hidden">
-                <div class="swiper-wrapper"
-                    style="transition-duration: 0ms; transform: translate3d(-892px, 0px, 0px); transition-delay: 0ms;">
-                    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3"
-                        style="width: 193px; margin-right: 30px;">
-                        <div class="ch-row">
-                            <div class="ch-col-6 col-md-12 text-left">
-                                <p class="text-head">Simplifying Procurement, Empowering Progress</p>
-                                <p class="ch-text-primary text-title my-1">Streamline. Optimize. Succeed. Our
-                                Procurement system simplifies complex processes, </p>
-                                <p class="ch-text-secondary text-title">optimizes workflows, and paves the way for
-                                your organization's success in the digital age.</p>
-                                <button class="ch-btn mt-1">View More</button>
-                            </div>
-                            <div class="ch-col-6 col-md-12 text-left bg-ch procurement"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-swiper-slide-index="4" style="width: 193px; margin-right: 30px;">
-                        <div class="ch-row">
-                            <div class="ch-col-6 col-md-12 text-left">
-                                <p class="text-head">"Converting Speech into Seamless Text: Transforming Communication
-                                with Precision."</p>
-                                <p class="ch-text-primary text-title my-1">Voice to Text: Speak Your Thoughts, We'll
-                                Transform Them into Text. Our Speech-to-Text system </p>
-                                <p class="ch-text-secondary text-title">ensures your words are effortlessly converted
-                                into written form, making communication and transcription a breeze."</p>
-                                <button class="ch-btn mt-1">View More</button>
-                            </div>
-                            <div class="ch-col-6 col-md-12 text-left bg-ch speech-to-text"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-swiper-slide-index="0" style="width: 193px; margin-right: 30px;">
-                        <div class="ch-row">
-                            <div class="ch-col-6 col-md-12 text-left">
-                                <p class="text-head"> Fast, Reliable,<br> Scalable<br> Document Generation </p>
-                                <p class="ch-text-primary text-title my-1"> A smart template-based approach to<br>
-                                generating custom PDF and Word documents </p>
-                                <p class="ch-text-secondary text-title"> Leverage CH Editor to create personalized
-                                letters,<br> invoices, proposals, contracts, statements, <br> reports and more. </p>
-                                <button class="ch-btn mt-1">TRY DEMO</button>
-                            </div>
-                            <div class="ch-col-6 col-md-12 text-left bg-ch editor"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1"
-                        style="width: 193px; margin-right: 30px;">
-                        <div class="ch-row">
-                            <div class="ch-col-6 col-md-12 text-left">
-                                <p class="text-head">Reimagining Tickets: Where Digital Meets Unforgeable </p>
-                                <p class="ch-text-primary text-title my-1">"Reimagining Tickets: Where Digital Meets
-                                Unforgeable"</p>
-                                <p class="ch-text-secondary text-title"> convenience of digital technology with the
-                                security. It highlights the uniqueness and trustworthiness of your ticketing </p>
-                                <button class="ch-btn mt-1">View More</button>
-                            </div>
-                            <div class="ch-col-6 col-md-12 text-left bg-ch tickets"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2"
-                        style="width: 193px; margin-right: 30px;">
-                        <div class="ch-row">
-                            <div class="ch-col-6 col-md-12 text-left">
-                                <p class="text-head">Unlocking Creativity: Endless Inspiration at Your Fingertips </p>
-                                <p class="ch-text-primary text-title my-1">Discover. Create. Inspire. With our Photo
-                                Stock system, you have a world of visual</p>
-                                <p class="ch-text-secondary text-title">Inspiration at your fingertips, empowering
-                                your creative journey like never before.</p>
-                                <button class="ch-btn mt-1">View More</button>
-                            </div>
-                            <div class="ch-col-6 col-md-12 text-left bg-ch photo-stock"></div>
-                        </div>
-                    </div>
+
+        <!-- 🔹 Carousel ทำหน้าที่เป็น background -->
+        <div id="heroCarousel" class="carousel slide hero-bg-carousel" data-bs-ride="carousel" data-bs-interval="7000">
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/PicForTest.jpg" class="d-block w-100" alt="POS Solution">
                 </div>
-                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
-                    <span class="swiper-pagination-bullet"></span>
-                    <span class="swiper-pagination-bullet"></span>
-                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-                    <span class="swiper-pagination-bullet"></span>
-                    <span class="swiper-pagination-bullet"></span>
+                <div class="carousel-item">
+                    <img src="images/PicForTest2.jpg" class="d-block w-100" alt="IT Service">
                 </div>
+                <div class="carousel-item">
+                    <img src="images/PicForTest3.jpg" class="d-block w-100" alt="Network & Cloud">
+                </div>
+            </div>
+
+            <!-- 🔹 ตัว indicator แท่งยาวด้านล่าง -->
+            <div class="carousel-indicators hero-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
         </div>
 
-        <div class="container">
+        <!-- 🔹 เนื้อหา hero จริง ๆ (ข้อความ + ปุ่ม) -->
+        <div class="hero-content container">
             <h1 class="display-3 fw-bold mb-4">
                 Empowering Your Digital Future with Integrated Solutions
             </h1>
@@ -204,9 +183,19 @@
         </div>
     </header>
 
+    </div>
 
     <!-- Service section with three columns -->
     <div class="container pt-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h2 id="about" class="section-title scroll-section">บริการของเรา</h2>
+            <h4>
+                เรามอบโซลูชันบริการด้านไอทีที่ครบวงจร ปรับให้เหมาะสมกับความต้องการทางธุรกิจของคุณ
+                เพื่อให้การผสานระบบเป็นไปอย่างราบรื่นและมีประสิทธิภาพสูงสุด
+                ร่วมเป็นพันธมิตรกับเราเพื่อใช้ประโยชน์จากเทคโนโลยีล้ำสมัยและการสนับสนุนจากผู้เชี่ยวชาญ
+                สำหรับทุกความต้องการด้านไอทีของคุณ
+            </h4>
+        </div>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
                 <div class="fact-item text-center bg-light h-100 p-5 pt-0">
@@ -250,19 +239,35 @@
             </div>
         </div>
     </div>
+    </div>
 
+
+    <!-- Logo Client Trusted -->
+     <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="container rounded">
+                <h1 class="text-center" style="margin-top: 1em; margin-bottom: 1em;">Trusted Us</h1>
+                <div class="slider">
+                    <div class="logos">
+                        <i class="fab"><img class="img-size" src="images/logo/central-logo.png" alt=""></i>
+                        <i class="fab"><img class="img-size" src="images//logo/KFC_logo.svg" alt=""></i>
+                        <i class="fab"><img class="img-size" src="images/logo/logo_themall.png" alt=""></i>
+                        <i class="fab"><img class="img-size" src="images/logo/tops-logo.png" alt=""></i>
+                    </div>
+                    <div class="logos">
+                      <i class="fab"><img class="img-size" src="images/logo/central-logo.png" alt=""></i>
+                        <i class="fab"><img class="img-size" src="images//logo/KFC_logo.svg" alt=""></i>
+                        <i class="fab"><img class="img-size" src="images/logo/logo_themall.png" alt=""></i>
+                        <i class="fab"><img class="img-size" src="images/logo/tops-logo.png" alt=""></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Services Section -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-                <h2 class="section-title">บริการของเรา</h2>
-                <h4>
-                    เรามอบโซลูชันบริการด้านไอทีที่ครบวงจร ปรับให้เหมาะสมกับความต้องการทางธุรกิจของคุณ
-                    เพื่อให้การผสานระบบเป็นไปอย่างราบรื่นและมีประสิทธิภาพสูงสุด
-                    ร่วมเป็นพันธมิตรกับเราเพื่อใช้ประโยชน์จากเทคโนโลยีล้ำสมัยและการสนับสนุนจากผู้เชี่ยวชาญ
-                    สำหรับทุกความต้องการด้านไอทีของคุณ
-                </h4>
-            </div>
-
             <div class="row g-4">
 
                 <!-- Service Desk -->
@@ -485,18 +490,23 @@
         </div>
     </div>
 
+
+    
+
     <!-- Footer section with contact information and links -->
-    <footer class="footer-main pt-5 pb-4">
+    <footer class="footer-main pt-2 pb-2">
         <div class="container">
             <div class="row g-4">
+
+                <div class="col-lg-2 col-md-4"></div>
                 <!-- Address -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-3">Address</h5>
                     <ul class="list-unstyled footer-contact mb-3">
                         <li>
                             <i class="fa-solid fa-location-dot me-2"></i>
-                            84/10 ซอยพระราม 2 ซอย 69 แขวงแสมดำ<br>
-                            เขตบางขุนเทียน กรุงเทพฯ 10150 ประเทศไทย
+                            135/2-3 ซ. ลาดพร้าว 94 แขวงพลับพลา    <br>
+                            เขตวังทองหลาง กรุงเทพฯ 10310 ประเทศไทย        
                         </li>
                         <li class="mt-2">
                             <i class="fa-solid fa-phone me-2"></i>
@@ -532,37 +542,13 @@
                     </ul>
                 </div>
 
-                <!-- Our Services -->
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Our Services</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="service_desk">Service Desk</a></li>
-                        <li><a href="pm">Preventive Maintenance (PM)</a></li>
-                        <li><a href="repair-center">Repair Center</a></li>
-                        <li><a href="network">Network</a></li>
-                        <li><a href="installation">Installation</a></li>
-                    </ul>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="services.html">Our Services</a></li>
-                        <li><a href="#">Terms &amp; Condition</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-                </div>
-
                 <!-- Location Map -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-3">Location Map</h5>
                     <div class="footer-map-wrapper">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.999999999!2d100.000000!3d13.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AP5-management!2sP5-management!5e0!3m2!1sth!2sth!4v0000000000"
-                            width="100%" height="230" style="border:0;" allowfullscreen="" loading="lazy"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d768.9039418198836!2d100.60951409488433!3d13.776893573757079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f0300996c01%3A0x5d8f225c643b9ee5!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5hOC4lOC4iOC4tOC5guC4i-C4peC4ueC4iuC4seC5iOC4mSDguIjguLPguIHguLHguJQ!5e0!3m2!1sth!2sth!4v1764660716086!5m2!1sth!2sth"
+                            width="600" height="230" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
@@ -721,7 +707,7 @@
             ];
 
             let heroIndex = 0;
-            const intervalMs = 7000; // เปลี่ยนทุก 7 วิ
+            const intervalMs = 5000; // เปลี่ยนทุก 5 วิ
 
             const overlay = "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), ";
 
