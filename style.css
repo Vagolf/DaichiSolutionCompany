@@ -1,27 +1,26 @@
-/*
- * Custom CSS for Daichisolution Website (P5 Management Style Clone)
- * File: style.css
- */
-
-/* 1. Global Variables & Typography (Updated for P5-like Green/Navy palette) */
+/* =========================
+ * 1. Global Design Tokens
+ *    - Colors, typography, base styles
+ * ========================= */
 :root {
     --primary-color: #3b8e4f;
-    /* P5 Management Green */
     --secondary-color: #0d2c40;
-    /* Dark Navy/Primary Text Color */
     --text-dark: #333333;
     --background-light: #f8f9fa;
-    --font-family: 'Poppins', sans-serif;
-    /* Common professional web font */
+
+    /* Main site font */
+    --font-family: "Bai Jamjuree", sans-serif;
 }
 
+/* Base body text styling */
 body {
     font-family: var(--font-family);
     line-height: 1.7;
     color: var(--text-dark);
-    background-color: white;
+    background-color: #ffffff;
 }
 
+/* Heading styles: make all headings bold by default */
 h1,
 h2,
 h3,
@@ -31,181 +30,222 @@ h6 {
     font-weight: 700;
 }
 
+/* Generic section title style used across pages */
 .section-title {
     color: var(--primary-color);
     font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
-/* Color Overrides */
+/* Force primary text color on elements using .text-primary */
 .text-primary {
     color: var(--primary-color) !important;
 }
 
-/* --- Buttons --- */
+/* =========================
+ * 2. Buttons
+ * ========================= */
+
+/* Primary button style */
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     font-weight: 500;
     padding: 10px 30px;
     border-radius: 50px;
+    /* Fully rounded pill-style button */
 }
 
+/* Hover state for primary button */
 .btn-primary:hover {
     background-color: #2c6b3b;
-    /* Darker green on hover */
+    /* Slightly darker green on hover */
     border-color: #2c6b3b;
 }
 
-/* 2. Navigation Bar (Sticking to clean white with green accent) */
+/* =========================
+ * 3. Navigation Bar
+ * ========================= */
+
+/* Remove default bottom border from navbar */
 .navbar {
     border-bottom: none;
-    /* Removing the explicit border */
 }
 
+/* Brand logo / text style */
 .navbar-brand {
     font-size: 1.8rem;
     color: var(--secondary-color) !important;
 }
 
+/* Nav links: default state */
 .nav-link {
     font-weight: 500;
     margin-right: 15px;
-    color: var(--text-dark) !important;
+    color: #bebebe !important;
+    /* Light grey for inactive links */
     transition: color 0.3s;
 }
 
+/* Nav links: active / hover state */
 .nav-link.active,
 .nav-link:hover {
-    color: var(--primary-color) !important;
+    color: #ffffff !important;
+    /* Turn white when active or hovered */
 }
 
-/* 3. Hero Section */
-/* HERO ใช้ carousel เป็นพื้นหลัง */
+/* =========================
+ * 4. Hero Section
+ *    - Full-width hero with background carousel
+ * ========================= */
+
+/* Main hero container */
 .hero-section {
     position: relative;
     height: 80vh;
-    /* ปรับความสูงได้ตามชอบ */
+    /* Hero takes 80% of viewport height */
     min-height: 480px;
-    color: #fff;
+    /* Ensure a minimum height on smaller screens */
+    color: #ffffff;
     overflow: hidden;
     display: flex;
     align-items: center;
+    /* Vertically center hero content */
 }
 
-/* ========== HERO BACKGROUND CAROUSEL ========== */
+/* Carousel wrapper used as hero background layer */
 .hero-bg-carousel {
     position: absolute;
     inset: 0;
-    /* top:0; right:0; bottom:0; left:0 */
+    /* Shorthand for top/right/bottom/left: 0 */
     z-index: 1;
+    /* Placed behind the hero content */
 }
 
-/* ให้ภาพเต็มสูงเท่ากับ hero */
+/* Make the carousel images fill the full hero height */
 .hero-bg-carousel .carousel-inner,
 .hero-bg-carousel .carousel-item,
 .hero-bg-carousel .carousel-item img {
     height: 100%;
 }
 
+/* Background image styling for each hero slide */
 .hero-bg-carousel .carousel-item img {
     width: 100%;
     object-fit: cover;
+    /* Cover the entire area without distortion */
     filter: brightness(0.35);
-    /* ทำให้มืดหน่อยเพื่อให้อ่านตัวหนังสือง่าย */
+    /* Darken image slightly for better text contrast */
 }
 
-/* เนื้อหา hero (ข้อความ/ปุ่ม) ให้อยู่ด้านบนรูป */
+/* Hero content (headline, text, button) layered on top of the background */
 .hero-content {
     position: relative;
     z-index: 2;
+    /* Above the carousel background */
     text-align: center;
 }
 
-/* ========== INDICATOR สไตล์แท่งยาว ========== */
+/* =========================
+ * Hero Carousel Indicators
+ * ========================= */
+
+/* Container for the long bar-style indicators */
 .hero-indicators {
     bottom: 40px;
-    /* ระยะจากขอบล่าง hero */
+    /* Distance from the bottom of the hero section */
 }
 
+/* Default style for each indicator "bar" */
 .hero-indicators [data-bs-target] {
     width: 80px;
     height: 6px;
     border-radius: 999px;
+    /* Fully rounded pill shape */
     margin: 0 6px;
     background-color: #d1d5db;
-    /* เทาอ่อน */
+    /* Light gray by default */
 }
 
+/* Active indicator state (current slide) */
 .hero-indicators .active {
     background-color: #c00000;
-    /* แดงสำหรับอันที่ active */
+    /* Red for the active slide */
 }
 
-/* Service item styles */
+/* =========================
+ * Service Card Styles
+ * ========================= */
+
+/* Service card container */
 .service-item {
     position: relative;
     border: 1px solid #e9ecef;
     border-radius: 8px;
     overflow: hidden;
     background-color: #ffffff;
-    /* พื้นหลังขาว */
+    /* White background by default */
     color: var(--text-dark);
-    /* ตัวหนังสือดำ */
+    /* Dark text color */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Soft shadow for depth */
     transition: all 0.5s;
 }
 
-/* รูปพื้นหลัง: ซ่อนไว้ก่อน (opacity: 0) */
+/* Background image inside service card (hidden initially) */
 .service-item .bg-img {
     position: absolute;
     inset: 0;
-    /* top:0; right:0; bottom:0; left:0; */
+    /* Top, right, bottom, left = 0 */
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    /* ซ่อนตอนปกติ */
+    /* Hidden in default state */
     filter: brightness(0.25);
-    /* ทำให้รูปมืดหน่อยเวลาแสดง */
+    /* Darker image when shown for better readability */
     transition: opacity 0.5s ease;
 }
 
-/* เนื้อหาข้างใน: เริ่มต้นตัวหนังสือดำ */
+/* Text content inside the service card */
 .service-item .service-text {
     position: relative;
     z-index: 1;
+    /* Above the background image */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 40px !important;
     min-height: 450px;
+    /* Keep cards roughly equal height */
 }
 
-/* สีปกติ: ตัวหนังสือในกล่อง service เป็นสีดำ */
+/* Default text color inside the card */
 .service-item .service-text h3,
 .service-item .service-text p {
     color: #000000;
     transition: color 0.3s ease;
 }
 
-/* hover การ์ด → โชว์รูป + เปลี่ยนตัวอักษรในกล่องเป็นขาว */
+/* On hover: reveal background image */
 .service-item:hover .bg-img {
     opacity: 1;
-    /* แสดงรูป */
+    /* Show the background image */
 }
 
+/* On hover: switch text color to white for contrast */
 .service-item:hover .service-text,
 .service-item:hover .service-text h3,
 .service-item:hover .service-text p {
     color: #ffffff;
 }
 
-/* ================= ปุ่ม 3 STEP ================= */
+/* ================= 3-STEP "Read More" Button ================= */
 
-/* STEP 1: ปกติ ยังไม่ hover อะไรเลย */
-/* ปุ่มเป็นกล่องขาวเล็ก ๆ มี + อย่างเดียว */
+/* STEP 1: Default state (no hover)
+ * Small white square button showing only the "+" icon
+ */
 .btn-readmore {
     display: inline-flex;
     align-items: center;
@@ -213,16 +253,16 @@ h6 {
     gap: 8px;
 
     background-color: #ffffff;
-    /* พื้นหลังปกติ = ขาว */
+    /* Default background = white */
     border-radius: 4px;
     padding: 10px;
     min-width: 40px;
     min-height: 40px;
 
     border: none;
-    /* ยังไม่ต้องมีขอบ */
+    /* No border in default state */
     color: #000;
-    /* สีตัวอักษร (เวลาโผล่) */
+    /* Text color (when visible) */
     font-weight: 500;
     text-decoration: none;
 
@@ -231,13 +271,13 @@ h6 {
     transition: all 0.3s ease;
 }
 
-/* ไอคอน + สีน้ำเงิน */
+/* "+" icon styling (blue color) */
 .btn-readmore i.fa-plus {
     color: #0d6efd;
     font-size: 1.1rem;
 }
 
-/* ซ่อนคำว่า "อ่านเพิ่มเติม" ตอนยังไม่ hover */
+/* Hide the "อ่านเพิ่มเติม" text in default state */
 .btn-readmore span {
     opacity: 0;
     max-width: 0;
@@ -245,44 +285,54 @@ h6 {
     transition: all 0.3s ease;
 }
 
-/* STEP 2: hover การ์ด (service-item) */
-/* hover กล่อง service → ปุ่มยืด และโชว์ตัวหนังสือ แต่ยังใช้พื้นขาวปกติ */
+/* STEP 2: Hover on the service card (parent .service-item)
+ * When the card is hovered:
+ * → expand the button and reveal the text
+ * → keep white background and no border
+ */
 .service-item:hover .btn-readmore {
     padding-inline: 14px 18px;
-    /* ยืดปุ่มให้ยาวขึ้น */
+    /* Make the button wider */
     background-color: #ffffff;
-    /* พื้นหลังยังเป็นขาว */
+    /* Still white background */
     border: none;
-    /* ยังไม่มีขอบ */
+    /* Still no border */
     color: #000000;
-    /* ตัวอักษรดำ */
+    /* Black text */
 }
 
+/* Show the label text when hovering the card */
 .service-item:hover .btn-readmore span {
     opacity: 1;
     max-width: 200px;
     transform: translateX(0);
 }
 
+/* Keep "+" icon in blue while hovering the card */
 .service-item:hover .btn-readmore i.fa-plus {
     color: #0d6efd;
 }
 
-/* STEP 3: hover ปุ่มเอง */
-/* เมื่อเมาส์อยู่บนปุ่มโดยตรง → พื้นหลังโปร่งใส + มีขอบ + ตัวอักษรขาว */
+/* STEP 3: Hover directly on the button
+ * When the mouse is directly over the button:
+ * → transparent background
+ * → visible border
+ * → white text (for dark background behind)
+ */
 .btn-readmore:hover,
 .service-item:hover .btn-readmore:hover {
     padding-inline: 14px 18px;
-    /* คงความยาวเท่าตอน step 2 */
+    /* Keep the expanded width from step 2 */
     background-color: transparent;
-    /* พื้นหลังโปร่งใส */
     border: 1px solid currentColor;
-    /* มีขอบ สีตามตัวอักษร */
+    /* Border matches current text color */
     color: #ffffff;
-    /* ตัวอักษร/ขอบ เป็นสีขาว */
+    /* Text and border in white */
 }
 
-/* ให้ span โชว์เสมอเวลาฮอฟที่ปุ่ม (กันกระตุก) */
+/* Ensure the label text remains visible while hovering the button
+ * (prevents flicker when transitioning between states)
+ */
 .btn-readmore:hover span,
 .service-item:hover .btn-readmore:hover span {
     opacity: 1;
@@ -290,34 +340,41 @@ h6 {
     transform: translateX(0);
 }
 
-/* ไอคอน + ตามสีตัวอักษร */
+
+/* Match "+" icon color with current text color on hover */
 .btn-readmore:hover i.fa-plus,
 .service-item:hover .btn-readmore:hover i.fa-plus {
     color: inherit;
 }
 
-/* 5. Footer */
+/* ================= Footer ================= */
+
+/* Main footer container */
 footer {
-    background-color: var(--secondary-color) !important;
-    /* Dark Navy/Black background */
+    background-color: #0F172A !important;
+    /* Dark navy / almost black */
     color: #f8f9fa;
 }
 
+/* Footer links (default) */
 footer a {
     color: #ccc;
 }
 
+/* Footer links on hover */
 footer a:hover {
     color: var(--primary-color);
 }
 
-/* กล่องครอบรูปด้านขวา */
+/* ================= Feature Image (Right Side) ================= */
+
+/* Wrapper for the stacked images on the right */
 .feature-img {
     position: relative;
     min-height: 340px;
 }
 
-/* รูปใบหน้า (ใบหลัง) */
+/* Back image (larger, behind) */
 .feature-img .img-1 {
     width: 80%;
     height: 80%;
@@ -325,7 +382,7 @@ footer a:hover {
     display: block;
 }
 
-/* รูปใบหน้าที่สอง (ด้านหน้า) */
+/* Front image (smaller, overlapping in the corner) */
 .feature-img .img-2 {
     position: absolute;
     right: 0;
@@ -336,7 +393,7 @@ footer a:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* เส้นกรอบน้ำเงินด้านหลัง (เหมือน P5) */
+/* Colored outline frame behind the images (similar to P5 style) */
 .feature-img::before {
     content: "";
     position: absolute;
@@ -345,17 +402,21 @@ footer a:hover {
     width: 70%;
     height: 70%;
     border: 3px solid var(--primary-color);
-    /* ใช้สีเขียว/น้ำเงินตาม theme ของคุณ */
+    /* Use theme primary color */
     z-index: -1;
-    /* อยู่หลังรูป */
+    /* Place behind images */
 }
 
-/* ถ้ากรอบหายเพราะ parent ไม่มีพื้นหลัง ลองใส่พื้นหลังเบา ๆ ก็ได้ */
+/* Optional: if the frame is not visible due to parent background,
+ * you can set a subtle background here
+ */
 .col-lg-6 .feature-img {
     background-color: transparent;
 }
 
-/* Swiper styles */
+/* ================= Swiper Styles ================= */
+
+/* Position pagination bullets for horizontal swiper */
 .swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
@@ -366,14 +427,16 @@ footer a:hover {
     width: 100%;
 }
 
+/* Pagination container */
 .swiper-pagination {
     position: absolute;
     text-align: center;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     transform: translateZ(0);
     z-index: 10;
 }
 
+/* Main Swiper container */
 .swiper {
     margin-left: auto;
     margin-right: auto;
@@ -386,10 +449,13 @@ footer a:hover {
     display: block;
 }
 
+/* ================= Swiper Slide (overlay layout) ================= */
+
 .swiper-slide {
     position: relative;
 }
 
+/* Foreground content row on top of slide background */
 .swiper-slide .ch-row {
     position: absolute;
     top: 0;
@@ -400,6 +466,7 @@ footer a:hover {
     padding: 20px;
 }
 
+/* Background layer for each slide (full-cover image) */
 .swiper-slide .bg-ch {
     position: absolute;
     top: 0;
@@ -411,39 +478,41 @@ footer a:hover {
     background-position: center;
 }
 
-/* ========== โลโก้ลูกค้า (Clients Section) ========== */
 
-/* โซนหัวข้อ + โลโก้ทั้งหมด */
+/* ================= Clients Section (Static Logos) ================= */
+
+/* Wrapper for the entire clients section (title + logos) */
 .clients {
     padding: 60px 0;
-    /* เว้นบนล่าง */
+    /* Vertical spacing top & bottom */
     background: #ffffff;
     text-align: center;
 }
 
-/* หัวข้อ */
+/* Section title */
 .clients-title {
     font-size: 32px;
     font-weight: 700;
     margin: 0 0 32px;
 }
 
-/* แถวของโลโก้ */
+/* Row that holds all client logos in one line */
 .clients-row {
     display: flex;
     justify-content: center;
-    /* ให้อยู่กลาง */
+    /* Center horizontally */
     align-items: center;
+    /* Center vertically */
     gap: 72px;
-    /* ระยะห่างระหว่างโลโก้ */
+    /* Space between logos */
     max-width: 1200px;
     margin: 0 auto;
-    /* ให้อยู่กลาง container */
+    /* Center within page/container */
     padding: 0 24px;
-    /* กันโลโก้ติดขอบจอเล็ก ๆ */
+    /* Prevent logos from touching edges on small screens */
 }
 
-/* โลโก้แต่ละตัว */
+/* Individual logo styling */
 .clients-row img {
     height: 72px;
     width: auto;
@@ -453,56 +522,77 @@ footer a:hover {
     transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* hover แล้วให้เป็นสี + เด้งนิด ๆ */
+/* On hover: remove grayscale, increase opacity, and move slightly up */
 .clients-row img:hover {
     filter: none;
     opacity: 1;
     transform: translateY(-3px);
 }
 
-/* มือถือ / จอเล็ก */
+
+/* ================= Responsive (Mobile / Small Screens) ================= */
+
 @media (max-width: 768px) {
+
+    /* Slightly smaller title on mobile */
     .clients-title {
         font-size: 24px;
         margin-bottom: 24px;
     }
 
+    /* Allow logos to wrap onto multiple lines */
     .clients-row {
         flex-wrap: wrap;
-        /* ให้โลโก้ขึ้นบรรทัดใหม่ได้ */
         gap: 32px;
     }
 
+    /* Slightly smaller logos on mobile */
     .clients-row img {
         height: 56px;
     }
 }
 
+/* ================= Logo Slider (Trusted Us) ================= */
 
-
-
-.container {
-    margin-bottom: 1em;
+/* Outer container around the slider block */
+.trusted-container {
     margin-top: 1em;
+    margin-bottom: 1em;
     overflow: hidden;
-
-    .slider {
-        animation: slidein 30s linear infinite;
-        white-space: nowrap;
-
-        .logos {
-            width: 100%;
-            display: inline-block;
-            margin: 0px 0;
-
-            .fab {
-                width: calc(100% / 5);
-                animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
-            }
-        }
-    }
+    /* Hide overflowing logos while they slide */
 }
 
+/* Slider wrapper that moves horizontally */
+.trusted-container .slider {
+    /* Infinite marquee-like motion */
+    white-space: nowrap;
+    /* Keep children on one line */
+}
+
+/* Group of logos in one loop set */
+.trusted-container .slider .logos {
+    width: 100%;
+    display: inline-block;
+    margin-right: -60px;
+}
+
+/* Individual logo wrapper (.fab used as a box around each logo) */
+.trusted-container .slider .logos .fab {
+    width: calc(100% / 6);
+    /* 6 logos per row width-wise */
+    animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+    padding-right: -80px;
+}
+
+/* Actual logo image size */
+.img-size {
+    width: 70px;
+    height: auto;
+    margin: 0 auto;
+    /* Center inside its wrapper */
+}
+
+/* Horizontal sliding animation (marquee effect) */
 @keyframes slidein {
     from {
         transform: translate3d(0, 0, 0);
@@ -510,35 +600,271 @@ footer a:hover {
 
     to {
         transform: translate3d(-100%, 0, 0);
+        /* Move full width to the left */
     }
 }
 
+/* ปรับปรุง fade-in animation */
 @keyframes fade-in {
     0% {
         opacity: 0;
+        transform: translateY(10px);
     }
-
     100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.img-size {
-    width: 70px;
-    height: auto;
-    margin: 0 auto;
+.element {
+    animation: fade-in 0s ease-in-out forwards;
+    will-change: opacity, transform;
 }
 
-/* scroll section */
+
+/* ================= Smooth Scroll for Anchor Links ================= */
+
+/* Global smooth scrolling for in-page links */
 html {
     scroll-behavior: smooth;
-    /* เลื่อนนุ่มๆ */
+    /* Smooth scroll when jumping to #id */
 }
 
-/* เวลาถูกเลื่อนมาจาก #id ให้มีช่องว่างด้านบน */
+/* Add top spacing when scrolled to this section via #link */
 .scroll-section {
     scroll-margin-top: 150px;
-    /* ปรับเลขได้ตามความสูง navbar */
+    /* Adjust based on navbar height */
 }
 
-/* End of style.css */
+
+/* ================= Legacy Hero & Service Styles (Not used now?) ================= */
+
+/* Old hero style with fixed background image overlay
+   (You can remove or keep if still used on other pages) */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('daichi-bg.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+}
+
+/* Basic card style for service boxes (simple version) */
+.service-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Background image inside service card (dimmed for text readability) */
+.service-item .bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+    /* Darken to make text easier to read */
+}
+
+/* Foreground text layer inside service card */
+.service-item .service-text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
+/* ===== Simple fade-in animation using data attributes ===== */
+
+/* Any element that should fade in */
+[data-fade] {
+    opacity: 0;
+    transform: translateY(24px);
+    /* Start slightly lower */
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    will-change: opacity, transform;
+}
+
+/* When the group is visible in the viewport, fade its children in */
+[data-fade-group].is-visible [data-fade] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ===== Hero carousel indicators (long pill style) ===== */
+
+/* Position the indicators slightly above the bottom and center them */
+.carousel-indicators.hero-indicators {
+    position: absolute;
+    bottom: 30px;
+    /* Adjust distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10px;
+    /* Spacing between indicators */
+    margin: 0;
+}
+
+/* Default indicator style */
+.carousel-indicators.hero-indicators button {
+    width: 36px;
+    /* Indicator length */
+    height: 4px;
+    /* Indicator thickness */
+    border-radius: 999px;
+    /* Fully rounded pill shape */
+    border: 0;
+    background-color: rgb(255, 255, 255);
+    /* Base color */
+    opacity: 1;
+    /* Prevent Bootstrap from dimming */
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        width 0.3s ease;
+}
+
+/* Active indicator style */
+.carousel-indicators.hero-indicators .active {
+    width: 56px;
+    /* Make the active pill longer */
+    background-color: #ff0000;
+    /* Highlight color for active state */
+    transform: translateY(-1px);
+    /* Lift slightly for emphasis */
+}
+
+/* Optional: subtle color change on hover */
+.carousel-indicators.hero-indicators button:hover {
+    background-color: #ff7575;
+}
+
+
+/* ===== Page header container (title + breadcrumb) ===== */
+
+/* Wrapper for page heading and breadcrumb on inner pages */
+.page-header-box {
+    min-height: 50px;
+    /* Minimum height of the header box */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content at the top vertically */
+    align-items: flex-start;
+    /* Align content to the left horizontally */
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 50px;
+}
+
+
+/* ================= Partner Slider ================= */
+.scroller {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* เอฟเฟกต์ fade ซ้าย-ขวา (ถ้า browser รองรับ mask) */
+    @supports (mask-image: linear-gradient(90deg, #000, #000)) or
+      (-webkit-mask-image: linear-gradient(90deg, #000, #000)) {
+      .scroller::before,
+      .scroller::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 80px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .scroller::before {
+        left: 0;
+        background: linear-gradient(to right, #020617, transparent);
+      }
+
+      .scroller::after {
+        right: 0;
+        background: linear-gradient(to left, #020617, transparent);
+      }
+    }
+
+    .scroller__inner {
+      display: flex;
+      gap: 0; /* ไม่เว้นระยะ */
+      width: max-content;
+      animation: scroll 20s linear infinite;
+    }
+
+    /* หยุดเลื่อนเมื่อ hover */
+    .scroller:hover .scroller__inner {
+      animation-play-state: paused;
+    }
+
+    .scroller__inner li {
+      list-style: none;
+      flex: 0 0 auto;
+      padding: 16px 32px; /* ปรับระยะห่างแต่ละโลโก้ */
+    }
+
+    .logo-item {
+      /* display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      backdrop-filter: blur(6px);
+      min-width: 150px; */
+    }
+
+    .logo-item img {
+      width: auto;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #020617;
+    }
+
+    .logo-item span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    /* ===== Keyframes: เลื่อนแบบต่อเนื่อง ===== */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ปรับเล็กน้อยบนจอเล็ก */
+    @media (max-width: 600px) {
+      .partner-wrapper {
+        padding: 20px 10px;
+      }
+
+      .scroller__inner li {
+        padding: 12px 20px;
+      }
+
+      .logo-item {
+        min-width: 130px;
+      }
+    }
+
+
+
+

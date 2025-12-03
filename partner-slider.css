@@ -1,0 +1,69 @@
+/* section รวม */
+.partner-wrapper {
+  margin: 40px auto;
+  padding: 24px 0;
+  background: #f9fafb;
+}
+
+.partner-title {
+  text-align: center;
+  margin: 0 0 16px;
+  color: #0f172a;
+}
+
+/* viewport */
+.scroller {
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* แถวโลโก้ */
+.scroller__inner {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: max-content;
+  animation: logo-scroll 30s linear infinite;
+}
+
+/* หยุดเลื่อนเมื่อ hover ทั้งแถบ */
+.scroller:hover .scroller__inner {
+  animation-play-state: paused;
+}
+
+/* กล่องของแต่ละโลโก้ – ไม่เว้นระยะเลย */
+.scroller__inner li {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* รูปโลโก้ติดกันแนบ ๆ */
+.scroller__inner img {
+  display: block;
+  height: 60px;      /* ปรับความสูงโลโก้ตรงนี้ได้ */
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+/* hover โลโก้ให้เป็นสี */
+.scroller__inner img:hover {
+  filter: none;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* เลื่อนจาก 0 ไป -50% เพราะมี 2 ชุดติดกัน */
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
