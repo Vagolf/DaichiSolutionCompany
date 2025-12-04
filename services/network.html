@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Network Solutions | Daichisolution</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- main style -->
+  <link href="../style.css" rel="stylesheet" />
+
+  <style>
+    /* ===== Network page specific styles (ย้ายไป style.css ได้ทีหลัง) ===== */
+
+    /* HERO: โทนน้ำเงิน-เขียว มีพื้นหลังเป็นรูป Network */
+    .network-hero {
+      position: relative;
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), #020617),
+                  url("https://www.p5-management.com/img/Network_P5.jpg") no-repeat center/cover;
+      color: #ffffff;
+    }
+
+    .network-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(59, 142, 79, 0.35));
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
+
+    .network-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .network-badge {
+      font-size: 0.85rem;
+      letter-spacing: .1em;
+    }
+
+    .network-hero-list li {
+      margin-bottom: .35rem;
+      font-size: 0.95rem;
+    }
+
+    /* กล่องสรุป 3 บล็อก (LAN/WiFi, CCTV, Security & VPN) */
+    .network-feature-card {
+      border-radius: 16px;
+      border: 0;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+      height: 100%;
+    }
+
+    .network-feature-card .icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(59, 142, 79, 0.08);
+      margin-bottom: 0.75rem;
+    }
+
+    .network-feature-card p {
+      font-size: 0.94rem;
+    }
+
+    /* กล่อง “มาตรฐานการออกแบบเครือข่าย” */
+    .network-standards-box {
+      border-radius: 18px;
+      padding: 24px 24px 20px;
+      background: #0f172a;
+      color: #e5e7eb;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .network-standards-box::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 142, 79, 0.55), transparent 70%);
+      opacity: .4;
+    }
+
+    .network-standards-box h3 {
+      font-size: 1.15rem;
+    }
+
+    .network-standards-box li {
+      font-size: 0.92rem;
+      margin-bottom: .35rem;
+    }
+
+    /* รูปฝั่งขวา section ล่าง */
+    .network-img-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 12px;
+    }
+
+    .network-img-main,
+    .network-img-side {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .network-img-main img,
+    .network-img-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .network-img-main {
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+    }
+
+    .network-img-side {
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.3);
+    }
+
+    @media (max-width: 991.98px) {
+      .network-img-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar (inserted by navbar.js) -->
+  <div id="navbar" class="sticky-top"></div>
+
+  <main>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="network-hero py-5">
+      <div class="container py-4">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <span class="badge bg-success-subtle text-success network-badge mb-2">
+              NETWORK • LAN • WI-FI • SECURITY
+            </span>
+
+            <h1 class="display-5 fw-bold mb-3">
+              Network Design &amp; Implementation
+            </h1>
+
+            <p class="lead mb-3">
+              ออกแบบและติดตั้งระบบเครือข่าย LAN / Wi-Fi และกล้องวงจรปิด
+              รวมถึง VPN และอุปกรณ์เครือข่ายอื่น ๆ เพื่อให้ระบบภายในองค์กร
+              เชื่อมต่อกันได้อย่างเสถียร ปลอดภัย และรองรับการขยายตัวในอนาคต
+            </p>
+
+            <ul class="list-unstyled network-hero-list mb-4">
+              <li>
+                <i class="fa-solid fa-circle-check me-2 text-success"></i>
+                ทีมงานมืออาชีพดูแลตั้งแต่การสำรวจหน้างานไปจนถึงการส่งมอบระบบ
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check me-2 text-success"></i>
+                รองรับทั้งสาขาเดี่ยวและหลายสาขาทั่วประเทศ
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check me-2 text-success"></i>
+                เชื่อมต่อร่วมกับระบบ POS, CCTV และระบบหลังบ้านได้อย่างลงตัว
+              </li>
+            </ul>
+
+            <a href="#network-solutions" class="btn btn-primary px-4">
+              ดูโซลูชันด้านเครือข่าย
+            </a>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- ใช้รูป Network หลัก 1 รูป -->
+            <div class="network-img-main">
+              <img
+                src="https://www.p5-management.com/img/Network_P5.jpg"
+                alt="Network Setup and Cabling"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== NETWORK SOLUTIONS CARDS ========== -->
+    <section id="network-solutions" class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title mb-2">โซลูชันด้านเครือข่ายของเรา</h2>
+          <p class="text-muted mb-0">
+            ครอบคลุมตั้งแต่การเดินสาย การติดตั้งอุปกรณ์ ไปจนถึงการออกแบบระบบรักษาความปลอดภัยเครือข่าย
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- LAN / Wi-Fi -->
+          <div class="col-md-4">
+            <div class="network-feature-card card text-center p-4">
+              <div class="icon-circle mx-auto">
+                <i class="fa-solid fa-network-wired text-success"></i>
+              </div>
+              <h3 class="h5 mb-2">LAN &amp; Wi-Fi Infrastructure</h3>
+              <p class="mb-0">
+                ออกแบบและเดินสาย LAN ทั้งในออฟฟิศและพื้นที่สาขา
+                พร้อมวางตำแหน่ง Access Point เพื่อให้สัญญาณ Wi-Fi ครอบคลุมทั่วพื้นที่
+                รองรับจำนวนผู้ใช้งานพร้อมกันได้ตามจริง
+              </p>
+            </div>
+          </div>
+
+          <!-- CCTV & Monitoring -->
+          <div class="col-md-4">
+            <div class="network-feature-card card text-center p-4">
+              <div class="icon-circle mx-auto">
+                <i class="fa-solid fa-video text-success"></i>
+              </div>
+              <h3 class="h5 mb-2">CCTV &amp; Monitoring</h3>
+              <p class="mb-0">
+                ติดตั้งและเชื่อมต่อกล้องวงจรปิด (CCTV) เข้ากับระบบเครือข่าย
+                จัดการ NVR/Storage และออกแบบการดูภาพย้อนหลัง
+                เพื่อให้ผู้จัดการสาขาตรวจสอบเหตุการณ์ได้อย่างสะดวกและปลอดภัย
+              </p>
+            </div>
+          </div>
+
+          <!-- VPN & Security -->
+          <div class="col-md-4">
+            <div class="network-feature-card card text-center p-4">
+              <div class="icon-circle mx-auto">
+                <i class="fa-solid fa-shield-halved text-success"></i>
+              </div>
+              <h3 class="h5 mb-2">VPN &amp; Network Security</h3>
+              <p class="mb-0">
+                ออกแบบระบบ VPN, VLan, Firewall และ Anti-Virus Server
+                เพื่อให้สาขาต่าง ๆ เชื่อมต่อกลับมาหาศูนย์กลางได้อย่างปลอดภัย
+                ลดความเสี่ยงด้านความปลอดภัยไซเบอร์
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== NETWORK STANDARDS & IMAGES ========== -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <!-- Standards & bullet list -->
+          <div class="col-lg-5">
+            <div class="network-standards-box mb-4 mb-lg-0">
+              <h3 class="mb-3">
+                มาตรฐานการออกแบบเครือข่ายของเรา
+              </h3>
+              <ul class="list-unstyled mb-3">
+                <li>
+                  <i class="fa-solid fa-circle-check text-success me-2"></i>
+                  วางแผน Topology ให้เหมาะสมกับขนาดองค์กรและสาขา
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check text-success me-2"></i>
+                  แยก Segment เครือข่ายสำหรับ POS, Guest Wi-Fi และระบบภายใน
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check text-success me-2"></i>
+                  ใช้อุปกรณ์ที่รองรับมาตรฐานอุตสาหกรรมและปรับขยายได้ในอนาคต
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check text-success me-2"></i>
+                  จัดทำ Diagram และเอกสารอ้างอิงให้ฝ่าย IT ของลูกค้า
+                </li>
+              </ul>
+              <p class="mb-0 small text-gray-300">
+                ผลลัพธ์ที่ได้คือระบบเครือข่ายที่เสถียร ลดปัญหาเน็ตล่ม สัญญาณไม่ครอบคลุม
+                และลดเวลา Downtime ที่กระทบการทำงานหน้าร้าน
+              </p>
+            </div>
+          </div>
+
+          <!-- Image grid -->
+          <div class="col-lg-7">
+            <div class="network-img-grid">
+              <div class="network-img-main">
+                <!-- รูปหน้างาน/ตู้ Rack/สาย LAN (เปลี่ยนเป็นรูปในระบบของคุณเองได้) -->
+                <img
+                  src="https://www.p5-management.com/img/Network_P5.jpg"
+                  alt="Network Rack and Cabling"
+                />
+              </div>
+              <div class="network-img-side">
+                <!-- รูปทีมงาน onsite หรือภาพเครือข่ายเชิง Abstract -->
+                <img
+                  src="https://www.p5-management.com/img/icons/7.png"
+                  alt="Network Icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (inserted by footer.js) -->
+  <div id="footer"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- footer + navbar -->
+  <script src="../js/footer.js"></script>
+  <script src="../js/navbar.js"></script>
+</body>
+</html>

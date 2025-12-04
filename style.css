@@ -3,7 +3,7 @@
  *    - Colors, typography, base styles
  * ========================= */
 :root {
-    --primary-color: #3b8e4f;
+    --primary-color: #E5E7EB;
     --secondary-color: #0d2c40;
     --text-dark: #333333;
     --background-light: #f8f9fa;
@@ -48,19 +48,30 @@ h6 {
 
 /* Primary button style */
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    font-weight: 500;
-    padding: 10px 30px;
-    border-radius: 50px;
+    background-color: #396eff;
+    border-color: #396eff;
+    font-weight: 300;
+
+    /* padding: 10px 30px; */
+    border-radius: 10px;
     /* Fully rounded pill-style button */
+    width: auto;
+    height: 35px;
+
+    display: inline-flex;
+    align-items: center;
+    /* จัดเนื้อหาให้กลางแนวตั้ง */
+    justify-content: center;
+    /* จัดให้กลางแนวนอน */
+    line-height: 1;
+    /* กันตัวอักษรลอยขึ้นหรือลงเกินไป */
 }
 
 /* Hover state for primary button */
 .btn-primary:hover {
-    background-color: #2c6b3b;
+    background-color: #0044ff00;
     /* Slightly darker green on hover */
-    border-color: #2c6b3b;
+    border-color: #396eff;
 }
 
 /* =========================
@@ -144,6 +155,7 @@ h6 {
     z-index: 2;
     /* Above the carousel background */
     text-align: center;
+    /* gap: 100px; */
 }
 
 /* =========================
@@ -187,9 +199,10 @@ h6 {
     /* White background by default */
     color: var(--text-dark);
     /* Dark text color */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
     /* Soft shadow for depth */
     transition: all 0.5s;
+    height: 100%;
 }
 
 /* Background image inside service card (hidden initially) */
@@ -216,9 +229,10 @@ h6 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 40px !important;
-    min-height: 450px;
+    padding: 4px !important;
+    min-height: 40px;
     /* Keep cards roughly equal height */
+    font-size: small;
 }
 
 /* Default text color inside the card */
@@ -239,6 +253,16 @@ h6 {
 .service-item:hover .service-text h3,
 .service-item:hover .service-text p {
     color: #ffffff;
+}
+
+/* จำกัดความกว้าง และจัดให้อยู่กลางหน้า */
+.services-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-p{
+    font-size: 15px;
 }
 
 /* ================= 3-STEP "Read More" Button ================= */
@@ -584,14 +608,6 @@ footer a:hover {
     padding-right: -80px;
 }
 
-/* Actual logo image size */
-.img-size {
-    width: 70px;
-    height: auto;
-    margin: 0 auto;
-    /* Center inside its wrapper */
-}
-
 /* Horizontal sliding animation (marquee effect) */
 @keyframes slidein {
     from {
@@ -610,6 +626,7 @@ footer a:hover {
         opacity: 0;
         transform: translateY(10px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -634,48 +651,6 @@ html {
 .scroll-section {
     scroll-margin-top: 150px;
     /* Adjust based on navbar height */
-}
-
-
-/* ================= Legacy Hero & Service Styles (Not used now?) ================= */
-
-/* Old hero style with fixed background image overlay
-   (You can remove or keep if still used on other pages) */
-.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('daichi-bg.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-    color: white;
-    padding: 120px 0;
-    text-align: center;
-}
-
-/* Basic card style for service boxes (simple version) */
-.service-item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Background image inside service card (dimmed for text readability) */
-.service-item .bg-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.3);
-    /* Darken to make text easier to read */
-}
-
-/* Foreground text layer inside service card */
-.service-item .service-text {
-    position: relative;
-    z-index: 1;
-    color: white;
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
 }
 
 /* ===== Simple fade-in animation using data attributes ===== */
@@ -712,14 +687,14 @@ html {
 
 /* Default indicator style */
 .carousel-indicators.hero-indicators button {
-    width: 36px;
+    width: 10em;
     /* Indicator length */
-    height: 4px;
+    height: 5px;
     /* Indicator thickness */
     border-radius: 999px;
     /* Fully rounded pill shape */
     border: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.701);
     /* Base color */
     opacity: 1;
     /* Prevent Bootstrap from dimming */
@@ -731,9 +706,11 @@ html {
 
 /* Active indicator style */
 .carousel-indicators.hero-indicators .active {
-    width: 56px;
+    width: 15em;
     /* Make the active pill longer */
-    background-color: #ff0000;
+    height: 8px;
+    /* Slightly thicker */
+    background-color: #0d2c40;
     /* Highlight color for active state */
     transform: translateY(-1px);
     /* Lift slightly for emphasis */
@@ -741,130 +718,57 @@ html {
 
 /* Optional: subtle color change on hover */
 .carousel-indicators.hero-indicators button:hover {
-    background-color: #ff7575;
+    background-color: #1e445e;
 }
 
 
-/* ===== Page header container (title + breadcrumb) ===== */
+/* ========== Simple Logo Block (no animation) ========== */
 
-/* Wrapper for page heading and breadcrumb on inner pages */
-.page-header-box {
-    min-height: 50px;
-    /* Minimum height of the header box */
+/* Section wrapper */
+.logo-block {
+    background-color: #f8f9fa;
+    /* White background */
+    text-align: center;
+}
+
+/* Row that holds all logos */
+.logo-block-row {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* Align content at the top vertically */
-    align-items: flex-start;
-    /* Align content to the left horizontally */
-    text-align: left;
-    padding-top: 10px;
-    padding-left: 50px;
+    justify-content: center;
+    /* Center logos horizontally */
+    align-items: center;
+    gap: 72px;
+    /* Space between logos */
+    flex-wrap: wrap;
+    /* Allow wrap on smaller screens */
 }
 
+/* Each logo image */
+.logo-block-row img {
+    height: 70px;
+    /* Uniform logo height */
+    width: auto;
+    display: block;
+    filter: grayscale(1);
+    /* Slightly muted look */
+    opacity: 0.9;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
 
-/* ================= Partner Slider ================= */
-.scroller {
-      position: relative;
-      overflow: hidden;
+/* Hover effect: bring logo to life */
+.logo-block-row img:hover {
+    filter: none;
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 768px) {
+    .logo-block-row {
+        gap: 32px;
     }
 
-    /* เอฟเฟกต์ fade ซ้าย-ขวา (ถ้า browser รองรับ mask) */
-    @supports (mask-image: linear-gradient(90deg, #000, #000)) or
-      (-webkit-mask-image: linear-gradient(90deg, #000, #000)) {
-      .scroller::before,
-      .scroller::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        width: 80px;
-        height: 100%;
-        z-index: 2;
-        pointer-events: none;
-      }
-
-      .scroller::before {
-        left: 0;
-        background: linear-gradient(to right, #020617, transparent);
-      }
-
-      .scroller::after {
-        right: 0;
-        background: linear-gradient(to left, #020617, transparent);
-      }
+    .logo-block-row img {
+        height: 56px;
     }
-
-    .scroller__inner {
-      display: flex;
-      gap: 0; /* ไม่เว้นระยะ */
-      width: max-content;
-      animation: scroll 20s linear infinite;
-    }
-
-    /* หยุดเลื่อนเมื่อ hover */
-    .scroller:hover .scroller__inner {
-      animation-play-state: paused;
-    }
-
-    .scroller__inner li {
-      list-style: none;
-      flex: 0 0 auto;
-      padding: 16px 32px; /* ปรับระยะห่างแต่ละโลโก้ */
-    }
-
-    .logo-item {
-      /* display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 8px 18px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      backdrop-filter: blur(6px);
-      min-width: 150px; */
-    }
-
-    .logo-item img {
-      width: auto;
-      height: 100px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: #020617;
-    }
-
-    .logo-item span {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #e5e7eb;
-      white-space: nowrap;
-    }
-
-    /* ===== Keyframes: เลื่อนแบบต่อเนื่อง ===== */
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* ปรับเล็กน้อยบนจอเล็ก */
-    @media (max-width: 600px) {
-      .partner-wrapper {
-        padding: 20px 10px;
-      }
-
-      .scroller__inner li {
-        padding: 12px 20px;
-      }
-
-      .logo-item {
-        min-width: 130px;
-      }
-    }
-
-
-
-
+}

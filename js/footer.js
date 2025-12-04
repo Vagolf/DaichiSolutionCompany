@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <!-- Address -->
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Address</h5>
+                    <h5 class="mb-3">ที่อยู่</h5>
                     <ul class="list-unstyled footer-contact mb-3">
                         <li>
                             <i class="fa-solid fa-location-dot me-2"></i>
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </li>
                         <li class="mt-2">
                             <i class="fa-solid fa-phone me-2"></i>
-                            ๆ061-028-6815
+                            02 004 1722
                         </li>
                         <li class="mt-2">
                             <i class="fa-solid fa-envelope me-2"></i>
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <!-- Location Map -->
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Location Map</h5>
+                    <h5 class="mb-3">แผนที่ตั้ง</h5>
                     <div class="footer-map-wrapper">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d768.9039418198836!2d100.60951409488433!3d13.776893573757079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f0300996c01%3A0x5d8f225c643b9ee5!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5hOC4lOC4iOC4tOC5guC4i-C4peC4ueC4iuC4seC5iOC4mSDguIjguLPguIHguLHguJQ!5e0!3m2!1sth!2sth!4v1764660716086!5m2!1sth!2sth"
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <hr class="border-top border-light mt-4 mb-3">
 
             <div class="text-center small">
-                &copy; 2025 Daichisolution Website Clone. All Rights Reserved.
+                &copy; 2025 Daichisolution Website. All Rights Reserved.
             </div>
         </div>
     </footer>

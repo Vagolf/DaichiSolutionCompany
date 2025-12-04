@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preventive Maintenance (PM) | Daichisolution</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- main style -->
+  <link href="../style.css" rel="stylesheet" />
+
+  <style>
+    /* ==== PM PAGE SPECIFIC STYLES (ย้ายไป style.css ได้ภายหลัง) ==== */
+
+    /* Hero section โทนเข้ม ต่างจากหน้า Installation */
+    .pm-hero {
+      background: radial-gradient(circle at top left, #1f2937 0, #020617 55%);
+      color: #ffffff;
+    }
+
+    .pm-hero-badge {
+      font-size: 0.9rem;
+      letter-spacing: .08em;
+    }
+
+    .pm-hero-list li {
+      margin-bottom: .35rem;
+      font-size: 0.95rem;
+    }
+
+    .pm-hero-img-wrapper {
+      position: relative;
+    }
+
+    .pm-hero-img-wrapper img {
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .pm-hero-img-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border-radius: 20px;
+      border: 2px solid rgba(59, 142, 79, 0.75);
+      z-index: -1;
+    }
+
+    /* การ์ดจุดเด่นของ PM */
+    .pm-feature-card {
+      border: 0;
+      border-radius: 18px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      height: 100%;
+    }
+
+    .pm-feature-card .icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(59, 142, 79, 0.08);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Timeline ขั้นตอนทำ PM */
+    .pm-timeline {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .pm-timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #3b8e4f, #0f172a);
+      opacity: 0.4;
+    }
+
+    .pm-step {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .pm-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .pm-step-badge {
+      position: absolute;
+      left: -2px;
+      top: 3px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #3b8e4f;
+      color: #ffffff;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 4px rgba(59, 142, 79, 0.25);
+    }
+
+    .pm-step-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: .1rem;
+    }
+
+    .pm-step-text {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 767.98px) {
+      .pm-hero h1 {
+        font-size: 1.8rem;
+      }
+      .pm-hero-img-wrapper {
+        margin-top: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar (inserted by navbar.js) -->
+  <div id="navbar" class="sticky-top"></div>
+
+  <main>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="pm-hero py-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- Text side -->
+          <div class="col-lg-6">
+            <span class="badge bg-success-subtle text-success pm-hero-badge mb-2">
+              PREVENTIVE MAINTENANCE • IT EQUIPMENT CARE
+            </span>
+
+            <h1 class="display-5 fw-bold mb-3">
+              Preventive Maintenance (PM)
+            </h1>
+
+            <p class="lead mb-3">
+              ตรวจเช็กและบำรุงรักษาอุปกรณ์ตามรอบที่กำหนด
+              ทำความสะอาด ทดสอบ และเปลี่ยนชิ้นส่วนที่เสื่อมสภาพ
+              เพื่อลดโอกาสที่ระบบจะหยุดทำงานแบบไม่คาดคิด และยืดอายุการใช้งานอุปกรณ์สำคัญของธุรกิจคุณ
+            </p>
+
+            <ul class="list-unstyled pm-hero-list mb-4">
+              <li>
+                <i class="fa-solid fa-circle-check me-2 text-success"></i>
+                วางแผนรอบการตรวจเช็กตามประเภทอุปกรณ์และรูปแบบการใช้งานจริง
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check me-2 text-success"></i>
+                ทำความสะอาดภายใน–ภายนอก ลดปัญหาความร้อน ฝุ่นสะสม และการทำงานผิดปกติ
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check me-2 text-success"></i>
+                ทดสอบฮาร์ดแวร์และระบบปฏิบัติการ พร้อมแนะนำการเปลี่ยนอะไหล่ล่วงหน้า
+              </li>
+            </ul>
+
+            <a href="#pm-benefits" class="btn btn-primary px-4">
+              ดูประโยชน์ของ PM เพิ่มเติม
+            </a>
+          </div>
+
+          <!-- Image side -->
+          <div class="col-lg-6">
+            <div class="pm-hero-img-wrapper">
+              <img
+                src="https://www.p5-management.com/img/Preventive_Maintenance_P5.jpg"
+                alt="Preventive Maintenance Service"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BENEFITS CARDS ========== -->
+    <section id="pm-benefits" class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title mb-2">จุดเด่นของการทำ Preventive Maintenance</h2>
+          <p class="text-muted mb-0">
+            เปลี่ยนจาก “รอให้เครื่องเสีย” มาเป็น “ดูแลล่วงหน้า”
+            เพื่อลดความเสี่ยงระบบล่มในช่วงเวลาสำคัญของธุรกิจ
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="pm-feature-card card text-center p-4">
+              <div class="icon-circle mx-auto">
+                <i class="fa-solid fa-screwdriver-wrench text-success"></i>
+              </div>
+              <h3 class="h5 mb-2">ลดการเสียแบบฉุกเฉิน</h3>
+              <p class="small mb-0">
+                ตรวจพบอาการผิดปกติล่วงหน้า ทำให้มีเวลาเตรียมอะไหล่และวางแผนซ่อม
+                ลดโอกาสที่ระบบจะหยุดทำงานกลางวันหยุดหรือช่วงพีคของร้าน
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="pm-feature-card card text-center p-4">
+              <div class="icon-circle mx-auto">
+                <i class="fa-solid fa-computer text-success"></i>
+              </div>
+              <h3 class="h5 mb-2">ยืดอายุอุปกรณ์สำคัญ</h3>
+              <p class="small mb-0">
+                การทำความสะอาด เป่าฝุ่น เช็กพัดลม ระบบระบายความร้อน
+                และอัปเดตซอฟต์แวร์อย่างสม่ำเสมอ ช่วยให้อุปกรณ์ทำงานเต็มประสิทธิภาพได้นานขึ้น
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="pm-feature-card card text-center p-4">
+              <div class="icon-circle mx-auto">
+                <i class="fa-solid fa-chart-line text-success"></i>
+              </div>
+              <h3 class="h5 mb-2">วางแผนงบประมาณได้ง่าย</h3>
+              <p class="small mb-0">
+                เมื่อมีข้อมูลการตรวจเช็กและสภาพอุปกรณ์อย่างต่อเนื่อง
+                องค์กรสามารถวางแผนเปลี่ยนเครื่องหรืออัปเกรดระบบล่วงหน้า
+                แทนการจ่ายค่าซ่อมแบบกะทันหัน
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PM WORKFLOW / TIMELINE ========== -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-5">
+            <h2 class="section-title mb-2">ขั้นตอนการทำ PM ของเรา</h2>
+            <p class="text-muted">
+              ทุกขั้นตอนถูกออกแบบให้กระทบการใช้งานจริงของสาขาให้น้อยที่สุด
+              โดยสามารถนัดทำ PM นอกเวลาเปิดร้าน หรือช่วงที่มีลูกค้าน้อยได้
+            </p>
+
+            <div class="pm-timeline">
+              <div class="pm-step">
+                <span class="pm-step-badge">1</span>
+                <div class="pm-step-title">วางแผนร่วมกับลูกค้า</div>
+                <div class="pm-step-text">
+                  กำหนดรอบ PM, รายการอุปกรณ์, ช่วงเวลาเข้าหน้างาน และเงื่อนไขพิเศษของแต่ละสาขา
+                </div>
+              </div>
+
+              <div class="pm-step">
+                <span class="pm-step-badge">2</span>
+                <div class="pm-step-title">ตรวจเช็ก & ทำความสะอาด</div>
+                <div class="pm-step-text">
+                  ถอดฝาเครื่อง เป่าฝุ่น ตรวจสภาพสายไฟ พอร์ตเชื่อมต่อ พัดลม และทดสอบอุปกรณ์ต่อพ่วง เช่น เครื่องพิมพ์ ใบเสร็จ สแกนเนอร์
+                </div>
+              </div>
+
+              <div class="pm-step">
+                <span class="pm-step-badge">3</span>
+                <div class="pm-step-title">ทดสอบการทำงาน</div>
+                <div class="pm-step-text">
+                  ตรวจเช็กการบูตระบบ ความเร็วการทำงาน การเชื่อมต่อเครือข่าย และทดสอบโปรแกรมสำคัญที่ใช้ในร้าน
+                </div>
+              </div>
+
+              <div class="pm-step">
+                <span class="pm-step-badge">4</span>
+                <div class="pm-step-title">สรุปรายงาน & ข้อเสนอแนะ</div>
+                <div class="pm-step-text">
+                  จัดทำรายงานสถานะอุปกรณ์ พร้อมข้อเสนอแนะการเปลี่ยนอะไหล่/อัปเกรดเครื่อง
+                  เพื่อให้ลูกค้าตัดสินใจได้จากข้อมูลจริง
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ภาพประกอบอีกแบบ (เปลี่ยนจาก hero) -->
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <img
+                    src="https://www.p5-management.com/img/icons/5.png"
+                    class="card-img-top p-3"
+                    alt="PM Icon"
+                  />
+                  <div class="card-body">
+                    <h3 class="h6 mb-2">เหมาะสำหรับสาขาจำนวนมาก</h3>
+                    <p class="small mb-0 text-muted">
+                      ร้านอาหาร ร้านค้าปลีก หรือแบรนด์ที่มีหลายสาขา
+                      สามารถกำหนดรอบ PM กลาง แล้ววางตารางเข้าเช็กทีละสาขาอย่างเป็นระบบ
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <img
+                    src="https://www.p5-management.com/img/Preventive_Maintenance_P5.jpg"
+                    class="card-img-top"
+                    alt="PM On Site"
+                  />
+                  <div class="card-body">
+                    <h3 class="h6 mb-2">ลด Downtime ในช่วงธุรกิจพีค</h3>
+                    <p class="small mb-0 text-muted">
+                      เมื่อระบบ POS และอุปกรณ์ไอทีถูกดูแลล่วงหน้า
+                      ความเสี่ยงที่เครื่องจะเสียในช่วงเทศกาลหรือโปรโมชันใหญ่จะลดลงอย่างชัดเจน
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (inserted by footer.js) -->
+  <div id="footer"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- footer + navbar -->
+  <script src="../js/footer.js"></script>
+  <script src="../js/navbar.js"></script>
+</body>
+</html>
