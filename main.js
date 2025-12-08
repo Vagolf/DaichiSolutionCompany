@@ -86,3 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll("[data-group]").forEach((el) => observer.observe(el));
 });
+
+
+
+
+
+

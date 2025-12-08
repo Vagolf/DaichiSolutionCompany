@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!footer) return;
 
   footer.innerHTML = `
-    <footer class="footer-main pt-2 pb-2" style="background-color: #0F172A;">
+    <footer class="footer-main pt-2 pb-2 site-footer">
         <div class="container">
             <div class="row g-4">
 
-                <div class="col-lg-2 col-md-4"></div>
+                <div class="col-lg-2 d-none d-lg-block"></div>
 
                 <!-- Address -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">ที่อยู่</h5>
                     <ul class="list-unstyled footer-contact mb-3">
                         <li>
@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
                 <!-- Location Map -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">แผนที่ตั้ง</h5>
                     <div class="footer-map-wrapper">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d768.9039418198836!2d100.60951409488433!3d13.776893573757079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f0300996c01%3A0x5d8f225c643b9ee5!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5hOC4lOC4iOC4tOC5guC4i-C4peC4ueC4iuC4seC5iOC4mSDguIjguLPguIHguLHguJQ!5e0!3m2!1sth!2sth!4v1764660716086!5m2!1sth!2sth"
-                            width="600" height="230" style="border:0;" allowfullscreen="" loading="lazy"
+                            width="100%" height="230" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>

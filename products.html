@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 </style>
+
 <body>
     <!-- ✅ navbar will be injected here -->
     <div id="navbar" class="sticky-top"></div>
@@ -35,166 +36,216 @@
         </div>
 
         <section class="grid" id="products">
-            <!-- Example product cards. Add or remove cards as needed -->
-            <article class="card" tabindex="0" data-title="Compact Electric Golf Trolley"
-                data-desc="Lightweight, foldable electric trolley with 3-speed control and long-lasting battery."
-                data-price="$499" data-img="https://picsum.photos/seed/golf1/900/600">
-                <img loading="lazy" src="https://picsum.photos/seed/golf1/900/600" alt="Compact Electric Golf Trolley">
+            <!-- 🔹 Product 1: POS หน้าร้าน (ครบชุด) -->
+            <article class="card" tabindex="0" data-title="ชุด POS หน้าร้านสำหรับร้านอาหาร / คาเฟ่"
+                data-desc="ชุด POS พร้อมเครื่องคอมพิวเตอร์หน้าร้าน ลิ้นชักเก็บเงิน เครื่องพิมพ์ใบเสร็จ และโปรแกรมจัดการเมนู-ออร์เดอร์ เหมาะสำหรับร้านอาหาร คาเฟ่ และร้านค้าปลีกขนาดเล็ก-กลาง"
+                data-price="เริ่มต้น 3x,xxx บาท/สาขา" data-img="https://picsum.photos/seed/pos1/900/600">
+                <img loading="lazy" src="https://picsum.photos/seed/pos1/900/600"
+                    alt="ชุด POS หน้าร้านสำหรับร้านอาหาร / คาเฟ่">
                 <div class="card-body">
                     <div style="display:flex;align-items:center;gap:.5rem">
-                        <h3 class="card-title">Compact Electric Golf Trolley</h3>
-                        <div class="price">$499</div>
+                        <h3 class="card-title">ชุด POS หน้าร้าน (ครบชุด)</h3>
+                        <div class="price">เริ่มต้น 3x,xxx บาท/สาขา</div>
                     </div>
-                    <div class="card-sub">Foldable, lightweight, 3-speed</div>
+                    <div class="card-sub">
+                        เครื่อง POS + ลิ้นชัก + เครื่องพิมพ์ใบเสร็จ + ซอฟต์แวร์จัดการขาย
+                    </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn" aria-hidden="true">Compare</button>
-                    <button class="btn primary" aria-hidden="true">Quick view</button>
+                    <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
+                        ติดต่อทีมขาย
+                    </a>
                 </div>
             </article>
 
-            <article class="card" tabindex="0" data-title="Premium Golf Bag"
-                data-desc="Durable waterproof golf bag with multiple pockets and comfortable straps." data-price="$129"
-                data-img="https://picsum.photos/seed/golf2/900/600">
-                <img loading="lazy" src="https://picsum.photos/seed/golf2/900/600" alt="Premium Golf Bag">
+            <!-- 🔹 Product 2: Cloud Backoffice & รายงานส่วนกลาง -->
+            <article class="card" tabindex="0" data-title="ระบบ Backoffice & Dashboard ส่วนกลาง"
+                data-desc="ระบบหลังบ้านสำหรับดูยอดขายเรียลไทม์ แยกตามสาขา เมนู ช่วงเวลา พร้อมรายงานสต๊อก และสิทธิ์การใช้งานตามระดับผู้ใช้ เหมาะสำหรับธุรกิจที่มีหลายสาขา"
+                data-price="คิดค่าบริการรายเดือน" data-img="https://picsum.photos/seed/pos2/900/600">
+                <img loading="lazy" src="https://picsum.photos/seed/pos2/900/600"
+                    alt="ระบบ Backoffice & Dashboard ส่วนกลาง">
                 <div class="card-body">
                     <div style="display:flex;align-items:center;gap:.5rem">
-                        <h3 class="card-title">Premium Golf Bag</h3>
-                        <div class="price">$129</div>
+                        <h3 class="card-title">Backoffice & รายงานส่วนกลาง</h3>
+                        <div class="price">รายเดือน / รายปี</div>
                     </div>
-                    <div class="card-sub">Waterproof | Multi-pocket</div>
+                    <div class="card-sub">
+                        Dashboard ยอดขายเรียลไทม์, ดูข้อมูลสาขา, Export รายงานได้
+                    </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn">Compare</button>
-                    <button class="btn primary">Quick view</button>
+                    <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
+                        ขอใบเสนอราคา
+                    </a>
                 </div>
             </article>
 
-            <article class="card" tabindex="0" data-title="GPS Rangefinder"
-                data-desc="High-precision laser rangefinder with slope compensation and vibration feedback."
-                data-price="$219" data-img="https://picsum.photos/seed/golf3/900/600">
-                <img loading="lazy" src="https://picsum.photos/seed/golf3/900/600" alt="GPS Rangefinder">
+            <!-- 🔹 Product 3: ชุด Network & กล้องวงจรปิด -->
+            <article class="card" tabindex="0" data-title="ชุด Network & กล้องวงจรปิดสำหรับสาขา"
+                data-desc="บริการออกแบบและติดตั้งระบบเครือข่าย LAN / Wi-Fi พร้อมกล้องวงจรปิด ดูออนไลน์ได้จากส่วนกลาง รองรับการเชื่อมต่อกับระบบ POS และอุปกรณ์อื่น ๆ"
+                data-price="ราคาเฉพาะตามหน้างาน" data-img="https://picsum.photos/seed/network1/900/600">
+                <img loading="lazy" src="https://picsum.photos/seed/network1/900/600"
+                    alt="ชุด Network & กล้องวงจรปิดสำหรับสาขา">
                 <div class="card-body">
                     <div style="display:flex;align-items:center;gap:.5rem">
-                        <h3 class="card-title">GPS Rangefinder</h3>
-                        <div class="price">$219</div>
+                        <h3 class="card-title">Network & CCTV Package</h3>
+                        <div class="price">ประเมินตามหน้างาน</div>
                     </div>
-                    <div class="card-sub">Laser precision | Slope mode</div>
+                    <div class="card-sub">
+                        ออกแบบเครือข่าย, ติดตั้ง Access Point, กล้องวงจรปิด พร้อมดูออนไลน์
+                    </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn">Compare</button>
-                    <button class="btn primary">Quick view</button>
+                    <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
+                        นัดทีมเข้าดูหน้างาน
+                    </a>
                 </div>
             </article>
 
-            <article class="card" tabindex="0" data-title="Deluxe Golf Push Cart"
-                data-desc="Sturdy push cart with adjustable handle and integrated storage tray." data-price="$199"
-                data-img="https://picsum.photos/seed/golf4/900/600">
-                <img loading="lazy" src="https://picsum.photos/seed/golf4/900/600" alt="Deluxe Golf Push Cart">
+            <!-- 🔹 Product 4: สัญญาดูแลระบบ MA/Support -->
+            <article class="card" tabindex="0" data-title="สัญญาบริการดูแลระบบ (MA & Helpdesk)"
+                data-desc="บริการดูแลระบบ POS และอุปกรณ์ IT แบบรายเดือน/รายปี มี Helpdesk, Remote support และทีมภาคสนาม พร้อม SLA ตามระดับบริการที่ต้องการ"
+                data-price="รายเดือน / รายปี" data-img="https://picsum.photos/seed/support1/900/600">
+                <img loading="lazy" src="https://picsum.photos/seed/support1/900/600"
+                    alt="สัญญาบริการดูแลระบบ (MA & Helpdesk)">
                 <div class="card-body">
                     <div style="display:flex;align-items:center;gap:.5rem">
-                        <h3 class="card-title">Deluxe Golf Push Cart</h3>
-                        <div class="price">$199</div>
+                        <h3 class="card-title">MA & Support Package</h3>
+                        <div class="price">รายเดือน / รายปี</div>
                     </div>
-                    <div class="card-sub">Adjustable handle | Storage</div>
+                    <div class="card-sub">
+                        Helpdesk, Remote, On-site, SLA ตามระดับบริการที่กำหนด
+                    </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn">Compare</button>
-                    <button class="btn primary">Quick view</button>
+                    <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
+                        พูดคุยกับทีมซัพพอร์ต
+                    </a>
                 </div>
             </article>
 
-            <!-- Add more cards as needed -->
-        </section>
-    </main>
+            <!-- Modal -->
+            <div class="product-modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+                <div class="overlay" id="overlay"></div>
+                <div class="dialog" role="document" aria-labelledby="dlg-title">
+                    <button class="close-btn" id="close" title="Close">✕</button>
+                    <div style="min-height:220px;">
+                        <img id="dlg-img" src="" alt="">
+                    </div>
+                    <div class="details">
+                        <h2 id="dlg-title">Product Title</h2>
+                        <p id="dlg-desc">Product description goes here.</p>
+                        <div class="price" id="dlg-price">$0</div>
+                        <div class="dlg-actions">
+                            <button class="btn" id="contact">Contact sales</button>
+                        </div>
 
-    <!-- Modal -->
-    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="overlay" id="overlay"></div>
-        <div class="dialog" role="document" aria-labelledby="dlg-title">
-            <button class="close-btn" id="close" title="Close">✕</button>
-            <div style="min-height:220px;">
-                <img id="dlg-img" src="" alt="">
+                    </div>
+                </div>
             </div>
-            <div class="details">
-                <h2 id="dlg-title">Product Title</h2>
-                <p id="dlg-desc">Product description goes here.</p>
-                <div class="price" id="dlg-price">$0</div>
-                <div class="dlg-actions">
-                    <button class="btn primary" id="buy">Buy now</button>
-                    <button class="btn" id="contact">Contact sales</button>
-                </div>
+
+            <!-- 🔹 Product Template ไว้เผื่อเพิ่มทีหลัง -->
+            <!-- ก็อปอันนี้แล้วแก้ข้อมูลได้เลย -->
+            <!--
+    <article class="card" tabindex="0"
+        data-title="ชื่อสินค้า"
+        data-desc="รายละเอียดสินค้าแบบย่อที่ลูกค้าควรรู้ เช่น เหมาะกับธุรกิจประเภทไหน ฟีเจอร์หลักมีอะไรบ้าง"
+        data-price="ระบุราคา หรือ 'ตามการประเมิน'"
+        data-img="https://picsum.photos/seed/yourseed/900/600">
+        <img loading="lazy" src="https://picsum.photos/seed/yourseed/900/600" alt="ชื่อสินค้า">
+        <div class="card-body">
+            <div style="display:flex;align-items:center;gap:.5rem">
+                <h3 class="card-title">ชื่อสินค้า</h3>
+                <div class="price">ข้อความราคา</div>
+            </div>
+            <div class="card-sub">
+                สรุปจุดเด่นสั้น ๆ ไม่เกิน 1–2 บรรทัด
             </div>
         </div>
-    </div>
+        <div class="card-footer">
+            <button class="btn">ดูรายละเอียด</button>
+            <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
+                ติดต่อทีมขาย
+            </a>
+        </div>
+    </article>
+    -->
+        </section>
 
-    <!-- ✅ footer will be injected here -->
-    <div id="footer"></div>
+        <!-- ✅ footer will be injected here -->
+        <div id="footer"></div>
 
-    <!-- Load scripts -->
-    <script src="js/navbar.js"></script>
-    <script src="js/footer.js"></script>
+        <!-- Load scripts -->
+        <script src="js/navbar.js"></script>
+        <script src="js/footer.js"></script>
+        <script src="js/products.js"></script>
 
-    <script>
-        // Delegated click/keyboard handling to open modal from any card
-        (function () {
-            const modal = document.getElementById('modal');
-            const overlay = document.getElementById('overlay');
-            const closeBtn = document.getElementById('close');
-            const img = document.getElementById('dlg-img');
-            const title = document.getElementById('dlg-title');
-            const desc = document.getElementById('dlg-desc');
-            const price = document.getElementById('dlg-price');
+        <script>
+            // Delegated click/keyboard handling to open modal from any card
+            (function () {
+                const modal = document.getElementById('modal');
+                const overlay = document.getElementById('overlay');
+                const closeBtn = document.getElementById('close');
+                const img = document.getElementById('dlg-img');
+                const title = document.getElementById('dlg-title');
+                const desc = document.getElementById('dlg-desc');
+                const price = document.getElementById('dlg-price');
 
-            function openCard(card) {
-                const src = card.dataset.img || card.querySelector('img')?.src || '';
-                const t = card.dataset.title || card.querySelector('.card-title')?.innerText || 'Product';
-                const d = card.dataset.desc || card.querySelector('.card-sub')?.innerText || '';
-                const p = card.dataset.price || card.querySelector('.price')?.innerText || '';
-                img.src = src;
-                img.alt = t;
-                title.textContent = t;
-                desc.textContent = d;
-                price.textContent = p;
-                modal.classList.add('open');
-                modal.setAttribute('aria-hidden', 'false');
-                // trap focus simply by focusing close button
-                closeBtn.focus();
-            }
-
-            function close() {
-                modal.classList.remove('open');
-                modal.setAttribute('aria-hidden', 'true');
-            }
-
-            document.getElementById('products').addEventListener('click', function (e) {
-                const card = e.target.closest('.card');
-                if (card) openCard(card);
-            });
-
-            // allow Enter/Space on focused card to open
-            document.getElementById('products').addEventListener('keydown', function (e) {
-                if ((e.key === 'Enter' || e.key === ' ') && e.target.closest('.card')) {
-                    e.preventDefault();
-                    openCard(e.target.closest('.card'));
+                function openCard(card) {
+                    const src = card.dataset.img || card.querySelector('img')?.src || '';
+                    const t = card.dataset.title || card.querySelector('.card-title')?.innerText || 'Product';
+                    const d = card.dataset.desc || card.querySelector('.card-sub')?.innerText || '';
+                    const p = card.dataset.price || card.querySelector('.price')?.innerText || '';
+                    img.src = src;
+                    img.alt = t;
+                    title.textContent = t;
+                    desc.textContent = d;
+                    price.textContent = p;
+                    modal.classList.add('open');
+                    modal.setAttribute('aria-hidden', 'false');
+                    // trap focus simply by focusing close button
+                    closeBtn.focus();
                 }
-            });
 
-            overlay.addEventListener('click', close);
-            closeBtn.addEventListener('click', close);
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') close();
-            });
+                function close() {
+                    modal.classList.remove('open');
+                    modal.setAttribute('aria-hidden', 'true');
+                }
 
-            // Example action handlers
-            document.getElementById('buy').addEventListener('click', function () {
-                alert('Proceed to checkout for: ' + title.textContent);
-            });
-            document.getElementById('contact').addEventListener('click', function () {
-                alert('Contact sales about: ' + title.textContent);
-            });
-        })();
-    </script>
+                document.getElementById('products').addEventListener('click', function (e) {
+                    const card = e.target.closest('.card');
+                    if (!card) return;
+
+                    // ถ้าคลิกปุ่มที่ใช้เลื่อนไป footer (มี data-skip-modal) ให้ไม่เปิด modal
+                    if (e.target.closest('[data-skip-modal="true"]')) {
+                        // ปล่อยให้ <a href="#footer"> ทำงานเอง (เลื่อนไป footer)
+                        return;
+                    }
+
+                    openCard(card);
+                });
+
+
+                // allow Enter/Space on focused card to open
+                document.getElementById('products').addEventListener('keydown', function (e) {
+                    if ((e.key === 'Enter' || e.key === ' ') && e.target.closest('.card')) {
+                        e.preventDefault();
+                        openCard(e.target.closest('.card'));
+                    }
+                });
+
+                overlay.addEventListener('click', close);
+                closeBtn.addEventListener('click', close);
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') close();
+                });
+
+                // Example action handlers
+                document.getElementById('contact').addEventListener('click', function () {
+                    alert('Contact sales about: ' + title.textContent);
+                });
+            })();
+        </script>
 </body>
 
 </html>
