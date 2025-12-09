@@ -240,6 +240,10 @@
                     if (e.key === 'Escape') close();
                 });
 
+                // Example action handlers
+                document.getElementById('contact').addEventListener('click', function () {
+                    alert('Contact sales about: ' + title.textContent);
+                });
             })();
         </script>
 </body>

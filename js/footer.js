@@ -1,9 +1,9 @@
 // footer.js
 document.addEventListener("DOMContentLoaded", function () {
-  const footer = document.getElementById("footer");
-  if (!footer) return;
+    const footer = document.getElementById("footer");
+    if (!footer) return;
 
-  footer.innerHTML = `
+    footer.innerHTML = `
     <footer class="footer-main pt-2 pb-2 site-footer">
         <div class="container">
             <div class="row g-4">
@@ -12,47 +12,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <!-- Address -->
                 <div class="col-lg-4 col-md-6">
-                    <h5 class="mb-3">ที่อยู่</h5>
-                    <ul class="list-unstyled footer-contact mb-3">
-                        <li>
-                            <i class="fa-solid fa-location-dot me-2"></i>
-                            135/2-3 ซ. ลาดพร้าว 94 แขวงพลับพลา <br>
-                            เขตวังทองหลาง กรุงเทพฯ 10310 ประเทศไทย
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-phone me-2"></i>
-                            02 004 1722
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-solid fa-envelope me-2"></i>
-                            customerservice@p5-management.com
-                        </li>
-                        <li class="mt-2">
-                            <i class="fa-brands fa-line me-2"></i>
-                            Add Friend
-                        </li>
-                    </ul>
 
-                    <!-- Social -->
-                    <ul class="list-inline footer-social mb-0">
-                        <li class="list-inline-item">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#"><i class="fa-brands fa-line"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
+            <h5 class="mb-3">ที่อยู่</h5>
+                <ul class="list-unstyled footer-contact mb-3">
+                    <li>
+                        <i class="fa-solid fa-location-dot me-2"></i>
+                        135/2-3 ซ. ลาดพร้าว 94 แขวงพลับพลา <br>
+                        เขตวังทองหลาง กรุงเทพฯ 10310 ประเทศไทย
+                    </li>
+                    <li class="mt-2">
+                        <i class="fa-solid fa-phone me-2"></i>
+                        02 004 1722
+                    </li>
+                    <li class="mt-2">
+                        <i class="fa-solid fa-envelope me-2"></i>
+                        customerservice@p5-management.com
+                    </li>
+                    <li class="mt-2">
+                        <i class="fa-brands fa-line me-2"></i>
+                        Add Friend
+                    </li>
+                    <li class="mt-2">
+                        <a href="https://www.facebook.com/p/Daichi-Solution-CoLtd-100063740402307/?locale=th_TH" target="_blank">
+                        <i class="fa-brands fa-facebook me-2"></i>
+                        Daichi Solution Co., Ltd.
+                    </a>
+                     
+                    </li>
+                </ul>
+            </div>
                 <!-- Location Map -->
                 <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">แผนที่ตั้ง</h5>

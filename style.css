@@ -20,19 +20,22 @@ body {
     background-color: #ffffff;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
 
 body {
-    min-height: 100vh;      /* สูงอย่างน้อยเท่าจอ */
+    min-height: 100vh;
+    /* สูงอย่างน้อยเท่าจอ */
     display: flex;
     flex-direction: column;
 }
 
 main {
-    flex: 1 0 auto;         /* ให้ main กินพื้นที่ดัน footer ลงล่าง */
+    flex: 1 0 auto;
+    /* ให้ main กินพื้นที่ดัน footer ลงล่าง */
 }
 
 /* กันไม่ให้ footer หด */
@@ -53,7 +56,7 @@ h6 {
 
 /* Generic section title style used across pages */
 .section-title {
-    color: var(--primary-color);
+    color: black;
     font-size: 2.2rem;
     margin-bottom: 1rem;
 }
@@ -238,6 +241,7 @@ h6 {
 .hero-bg-carousel .carousel-item img {
     height: 100%;
 }
+
 .hero-bg-carousel .carousel-item img {
     width: 100%;
     object-fit: cover;
@@ -264,7 +268,8 @@ h6 {
     z-index: 2;
     display: flex;
     align-items: flex-start;
-    pointer-events: none;      /* สำคัญ: ปล่อยให้คลิกทะลุ */
+    pointer-events: none;
+    /* สำคัญ: ปล่อยให้คลิกทะลุ */
 }
 
 /* ตัว hero-content ที่กำลังแสดงเท่านั้นถึงจะคลิกได้ */
@@ -272,7 +277,8 @@ h6 {
     max-width: 720px;
     padding-bottom: 80px;
     display: none;
-    pointer-events: auto;      /* ให้ลิงก์/ปุ่มใน hero คลิกได้ */
+    pointer-events: auto;
+    /* ให้ลิงก์/ปุ่มใน hero คลิกได้ */
 }
 
 .hero-copy-wrapper .hero-content.is-active {
@@ -281,14 +287,16 @@ h6 {
 
 /* ให้ปุ่มลูกศรลอยขึ้นมาอยู่ชั้นบนสุด */
 .hero-control {
-    z-index: 5;                /* สูงกว่า hero-copy-wrapper (2) กับ indicators (4) */
+    z-index: 5;
+    /* สูงกว่า hero-copy-wrapper (2) กับ indicators (4) */
 }
 
 /* ===== HERO SECTION (continued) ===== */
 
 /* Hero text ของแต่ละสไลด์ */
 .hero-copy-wrapper .hero-content {
-    display: none;              /* ซ่อนเป็นค่าเริ่มต้น */
+    display: none;
+    /* ซ่อนเป็นค่าเริ่มต้น */
     max-width: 720px;
     opacity: 0;
 }
@@ -303,9 +311,11 @@ h6 {
 .hero-section p {
     color: #ffffff;
 }
+
 .hero-content h1 {
     line-height: 1.2;
 }
+
 .hero-lead {
     max-width: 560px;
     font-size: 0.98rem;
@@ -317,19 +327,29 @@ h6 {
     opacity: 0;
     transform: translateY(22px);
 }
+
 .hero-animate.hero-animate-play {
     animation: heroFadeUp 0.8s ease-out forwards;
     animation-delay: 0.25s;
 }
+
 @keyframes heroFadeUp {
     0% {
         opacity: 0;
         transform: translateY(22px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.hero-intro-text {
+    line-height: 1.4;
+    /* ลอง 1.3–1.5 ปรับได้ตามชอบ */
+    margin-bottom: 0;
+    /* กันไม่ให้ h3 ทิ้งช่องว่างด้านล่างเพิ่ม */
 }
 
 /* ===== ตัวชี้บอกสไลด์ (แท่งยาว) ===== */
@@ -340,7 +360,8 @@ h6 {
     transform: translateX(-50%);
     gap: 10px;
     margin: 0;
-    z-index: 3;                 /* เหนือ overlay/รูป แต่ใต้ navbar */
+    z-index: 3;
+    /* เหนือ overlay/รูป แต่ใต้ navbar */
 }
 
 .carousel-indicators.hero-indicators button {
@@ -373,6 +394,17 @@ h6 {
  * ========================= */
 
 /* Service card container */
+
+/* กำหนดเงาเริ่มต้นเป็น shadow-sm */
+.card {
+    transition: box-shadow 0.3s ease-in-out; /* เพิ่ม transition เพื่อให้เงาเปลี่ยนแบบนุ่มนวล */
+}
+
+/* เมื่อเมาส์ชี้ (hover) ให้ใช้เงาขนาดใหญ่ขึ้น (shadow-lg) */
+.card:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; 
+}
+
 .service-item {
     position: relative;
     border: 1px solid #e9ecef;
@@ -574,7 +606,7 @@ footer.footer-main,
     max-width: 1200px;
     margin: 0 auto;
 }
-    
+
 
 /* Footer links (default) */
 footer a {
@@ -981,19 +1013,24 @@ html {
     inset: 0;
     z-index: 2;
     display: flex;
-    align-items: flex-start;   /* ไม่ต้องจัดกลางแนวตั้งแล้ว */
+    align-items: flex-start;
+    /* ไม่ต้องจัดกลางแนวตั้งแล้ว */
 }
 
 /* ขยับทั้ง block ลงมาจากขอบบนประมาณ 80px */
 .hero-copy-wrapper .container {
-    margin-top: 80px;          /* ปรับเลขได้ตามชอบ 60–120px */
+    margin-top: 80px;
+    /* ปรับเลขได้ตามชอบ 60–120px */
 }
 
 /* กล่องข้อความแต่ละสไลด์ */
 .hero-copy-wrapper .hero-content {
-    display: none;             /* ซ่อนก่อน */
-    max-width: 720px;          /* กว้างเท่าเดิม */
-    padding-bottom: 80px;      /* เผื่อพื้นที่ด้านล่างเหมือนเดิม */
+    display: none;
+    /* ซ่อนก่อน */
+    max-width: 720px;
+    /* กว้างเท่าเดิม */
+    padding-bottom: 80px;
+    /* เผื่อพื้นที่ด้านล่างเหมือนเดิม */
 }
 
 /* ตัวที่กำลังแสดงอยู่เท่านั้น */
@@ -1024,6 +1061,7 @@ html {
         opacity: 0;
         transform: translateY(22px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -1043,10 +1081,26 @@ html {
 
 /*================== */
 /* เริ่มต้นแต่ละทิศ */
-.scroll-slide-left   { transform: translateX(-30px); } /* มาจากซ้าย */
-.scroll-slide-right  { transform: translateX(30px); }  /* มาจากขวา */
-.scroll-slide-up     { transform: translateY(30px); }  /* มาจากล่างขึ้นบน */
-.scroll-slide-down   { transform: translateY(-30px); } /* มาจากบนลงล่าง */
+.scroll-slide-left {
+    transform: translateX(-30px);
+}
+
+/* มาจากซ้าย */
+.scroll-slide-right {
+    transform: translateX(30px);
+}
+
+/* มาจากขวา */
+.scroll-slide-up {
+    transform: translateY(30px);
+}
+
+/* มาจากล่างขึ้นบน */
+.scroll-slide-down {
+    transform: translateY(-30px);
+}
+
+/* มาจากบนลงล่าง */
 
 /* พอได้คลาส is-visible แล้วค่อยเล่นอนิเมชันตามทิศ */
 .scroll-slide-left.is-visible {
@@ -1072,6 +1126,7 @@ html {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1083,6 +1138,7 @@ html {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1094,6 +1150,7 @@ html {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1105,6 +1162,7 @@ html {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1116,7 +1174,8 @@ html {
  * Products Grid
  * ========================= */
 #main {
-    max-width: 1200px;      /* บังคับไม่ให้กว้างเกิน */
+    max-width: 1200px;
+    /* บังคับไม่ให้กว้างเกิน */
     margin: 0 auto;
 }
 
@@ -1124,7 +1183,8 @@ html {
 #products.grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;              /* ระยะห่างระหว่างการ์ด */
+    gap: 24px;
+    /* ระยะห่างระหว่างการ์ด */
 }
 
 /* ปรับให้ responsive */
@@ -1133,6 +1193,7 @@ html {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
 @media (max-width: 576px) {
     #products.grid {
         grid-template-columns: 1fr;
@@ -1175,16 +1236,20 @@ html {
 
 .product-modal {
     position: fixed;
-    inset: 0; /* top:0; right:0; bottom:0; left:0 */
-    display: none;           /* ซ่อนค่าเริ่มต้น */
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0 */
+    display: none;
+    /* ซ่อนค่าเริ่มต้น */
     align-items: center;
     justify-content: center;
-    z-index: 2000;           /* ให้ลอยอยู่บน navbar / hero */
+    z-index: 2000;
+    /* ให้ลอยอยู่บน navbar / hero */
     font-family: var(--font-family);
 }
 
 .product-modal.open {
-    display: flex;           /* แสดงตอนมีคลาส .open */
+    display: flex;
+    /* แสดงตอนมีคลาส .open */
 }
 
 /* พื้นดำข้างหลัง */
@@ -1270,4 +1335,161 @@ html {
     .product-modal img#dlg-img {
         max-height: 240px;
     }
+}
+
+
+/* =========================
+ * Service Page Styles
+ * ========================= */
+
+/* desk service css */
+
+/* 1. สไตล์เริ่มต้น (เพิ่มเงาเริ่มต้น shadow-sm ให้ชัดเจนขึ้น) */
+.process-step {
+    border-radius: 0.25rem;
+    /* กำหนดเงาเริ่มต้น (Bootstrap shadow-sm) */
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.075); 
+    transition: 
+        background-color 0.3s ease-in-out, 
+        box-shadow 0.3s ease-in-out;
+}
+
+/* 2. เมื่อเมาส์ชี้ (Hover Effect) - แก้ไขสีพื้นหลังให้เป็นสีน้ำเงินเข้มและใช้เงา LG */
+.process-step:hover {
+    /* เปลี่ยนสีพื้นหลังเป็นสีน้ำเงินเข้ม (Primary Color) เพื่อให้ข้อความสีขาวเด่นขึ้น */
+    background-color: #000000 !important; 
+    
+    /* ใช้ค่า shadow-lg (กำหนดค่าเองและใช้ !important เพื่อให้แน่ใจว่าถูกเรียกใช้) */
+    box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 3. จัดการสีข้อความเมื่อ Hover */
+.process-step:hover h4,
+.process-step:hover p {
+    color: #ffffff !important; /* เปลี่ยนข้อความเป็นสีขาว */
+}
+
+/* 4. จัดการสีข้อความรองเมื่อ Hover */
+.process-step:hover .text-muted {
+    color: #f8f9fa !important; /* เปลี่ยนข้อความรองเป็นสีขาวอมเทาอ่อน */
+}
+
+.service-card-hover {
+    box-shadow: 0 .3rem 0.5rem rgba(0, 0, 0, 0.01); /* ใช้ค่า shadow กลางเป็นค่าเริ่มต้น */
+    transition: 
+        background-color 0.3s ease-in-out, 
+        color 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+}
+
+.service-card-hover:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important; 
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.75) !important;
+}
+
+/* 3. จัดการสีของไอคอน (Font Awesome Icon) และข้อความรอง */
+.service-card-hover:hover .fa-solid,
+.service-card-hover:hover .text-muted {
+    /* เปลี่ยนสีไอคอนและข้อความรอง (text-muted) เป็นสีขาว */
+    color: #ffffff !important; 
+}
+
+/* กล่องรูป placeholder */
+.service-detail-image-card .service-detail-placeholder {
+    background: #e5e7eb;
+    border-radius: 0.75rem 0.75rem 0 0;
+    min-height: 220px;
+}
+
+@supports (aspect-ratio: 16 / 9) {
+    .service-detail-image-card .service-detail-placeholder {
+        min-height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* การ์ดไอคอน / benefit */
+.service-detail-icon-card {
+    border-radius: 2.5rem;
+}
+
+/* ขั้นตอนการทำงาน */
+.process-step {
+    display: flex;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: #0ea5e9;
+    color: #0f172a;
+}
+
+/* กล่อง use case */
+.usecase-box {
+    border-left: 4px solid #22c55e;
+}
+
+/* Product Management Page Styles pm */
+/* HERO PM */
+.pm-hero-card {
+    border-radius: 1rem;
+}
+
+.pm-hero-placeholder {
+    background: #e5e7eb;
+    border-radius: 1rem 1rem 0 0;
+    min-height: 220px;
+}
+
+@supports (aspect-ratio: 16 / 9) {
+    .pm-hero-placeholder {
+        min-height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* การ์ด benefit ของ PM */
+.pm-benefit-card {
+    border-radius: 1rem;
+}
+
+/* ถ้ายังไม่มีจากหน้า Service Desk ให้เพิ่มด้วย */
+.process-step {
+    display: flex;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: #0ea5e9;
+    color: #0f172a;
+}
+
+/* กล่อง use case */
+.usecase-box {
+    border-left: 4px solid #22c55e;
 }

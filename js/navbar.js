@@ -13,20 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
           <nav class="main-nav">
             <!-- Logo -->
             <a href="${ROOT}/index.html" class="logo">
-              <img src="${ROOT}/images/logo/Daichi-logo-navbar.png"
-                   alt="Daichisolution Logo">
+              <img src="${ROOT}/images/logo/Daichi-logo.png"
+                   alt="Daichisolution Logo" style="height: 60px; width: auto;" />
             </a>
 
             <!-- Menu -->
-            <ul class="nav">
-              <li class="scroll-to-section">
-                <a href="${ROOT}/index.html" class="nav-link active">Home</a>
+            <ul class="nav" style="font-size: 25px;">
+              <li class="scroll-to-section" style="margin: -10px;">
+                <a href="${ROOT}/index.html" class="nav-link active">หน้าหลัก</a>
               </li>
-              <li class="scroll-to-section">
-                <a href="${ROOT}/products.html" class="nav-link">Products</a>
+              <li class="scroll-to-section" style="margin: -10px;">
+                <a href="${ROOT}/products.html" class="nav-link">สินค้า</a>
               </li>
-              <li class="scroll-to-section">
-                <a href="#footer" class="nav-link">Contact Us</a>
+              <li class="scroll-to-section" style="margin: -10px;">
+                <a href="#footer" class="nav-link">ติดต่อเรา</a>
               </li>
             </ul>
 

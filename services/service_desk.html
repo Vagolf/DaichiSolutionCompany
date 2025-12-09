@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Installation</title>
+  <title>Service Desk | Daichi Solution</title>
 
-  <!-- Bootstrap CSS (เหมือนหน้า index) -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome -->
@@ -13,124 +14,207 @@
 
   <!-- main style -->
   <link href="../style.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+  </style>
+
 </head>
+
 <body>
   <div id="navbar" class="sticky-top"></div>
 
-    <header>
-        <h1>Service Desk</h1>
-    </header>
-    <main>
-    <!-- HERO -->
-    <section class="service-detail-hero py-5 bg-light">
+  <main>
+    <!-- ===================== SECTION 1: Benefits ===================== -->
+    <section id="sd-benefits" class="py-5 bg-white">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <!-- text -->
-          <div class="col-lg-6">
-            <h1 class="section-title mb-3">Service Desk</h1>
-            <h2 class="h3 mb-3">ด่านหน้าด้านไอทีขององค์กรคุณ</h2>
+        <h2 class="text-left mb-5">Service Desk ของเราช่วยอะไรคุณบ้าง?</h2>
 
-            <p class="lead mb-3">
-              Service Desk คือจุดศูนย์กลางในการรับแจ้งปัญหา ช่วยเหลือ และให้คำปรึกษาด้านไอที
-              ทั้งผ่านโทรศัพท์และการรีโมตเข้าระบบ เพื่อให้ผู้ใช้งานสามารถทำงานต่อได้อย่างราบรื่น
-            </p>
-
-            <ul class="list-unstyled mb-4 service-detail-list">
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-primary"></i>
-                รับแจ้งปัญหาไอทีทุกประเภทจากผู้ใช้งานในองค์กรในช่องทางเดียว
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-primary"></i>
-                ซัพพอร์ตผ่านโทรศัพท์และรีโมต เพื่อลดเวลารอคอยและแก้ไขปัญหาได้ทันที
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-primary"></i>
-                จัดลำดับความสำคัญของปัญหา และประสานงานกับทีมเทคนิคภาคสนามเมื่อจำเป็น
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-primary"></i>
-                บันทึกประวัติเหตุขัดข้อง เพื่อนำไปวิเคราะห์และปรับปรุงระบบในระยะยาว
-              </li>
-            </ul>
-
-            <a href="#sd-benefits" class="btn btn-primary px-4">
-              ดูรูปแบบการซัพพอร์ต
-            </a>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-1 shadow-sm text-start p-4 service-detail-icon-card service-card-hover">
+              <div class="mb-3">
+                <i class="fa-solid fa-list-check fa-2x text-primary"></i>
+              </div>
+              <h3 class="h5 mb-2">ทำงานเป็นระบบ แก้ปัญหาได้เร็วขึ้น</h3>
+              <p class="small mb-0 text-muted">
+                ทุกเคสที่แจ้งเข้ามาจะถูกบันทึกเป็น Ticket มีเลขอ้างอิง ชนิดปัญหา
+                และระดับความสำคัญ ช่วยให้การติดตามและจัดลำดับคิวเป็นระบบ
+                ลดโอกาสตกหล่น และลด Downtime ของธุรกิจคุณ
+              </p>
+            </div>
           </div>
 
-          <!-- image -->
-          <div class="col-lg-6">
-            <div class="card border-0 shadow-sm service-detail-image-card">
-              <img
-                src="https://www.p5-management.com/img/Service_Desk_P5.jpg"
-                class="card-img-top"
-                alt="Service Desk Support"
-              />
-              <div class="card-body">
-                <p class="mb-0 small text-muted">
-                  ทีม Service Desk ทำหน้าที่เป็นด่านหน้าในการรับแจ้งปัญหา
-                  ช่วยแก้ไขเบื้องต้น และประสานงานทีมเทคนิคให้เข้าดูแลได้อย่างทันท่วงที
-                </p>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-1 shadow-sm text-start p-4 service-detail-icon-card service-card-hover">
+              <div class="mb-3">
+                <i class="fa-solid fa-diagram-project fa-2x text-primary"></i>
               </div>
+              <h3 class="h5 mb-2">เชื่อม “ธุรกิจ” เข้ากับ “ไอที” ได้ดีขึ้น</h3>
+              <p class="small mb-0 text-muted">
+                Service Desk เห็นภาพรวมว่าผู้ใช้งานเจอปัญหาอะไรบ่อย ระบบไหนมีผลกระทบมาก
+                ข้อมูลเหล่านี้ช่วยให้ทีมของเราวางแผนพัฒนาระบบไอทีให้รองรับการทำงานของธุรกิจคุณได้ดีขึ้น
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-1 shadow-sm text-start p-4 service-detail-icon-card service-card-hover">
+              <div class="mb-3">
+                <i class="fa-solid fa-users-gear fa-2x text-primary"></i>
+              </div>
+              <h3 class="h5 mb-2">เพิ่มประสิทธิภาพการทำงานของพนักงาน</h3>
+              <p class="small mb-0 text-muted">
+                เมื่อมีช่องทางแจ้งปัญหาที่ชัดเจน และมีคู่มือ/วิธีแก้ปัญหาซ้ำ ๆ
+                พนักงานของคุณไม่ต้องเสียเวลาลองผิดลองถูก สามารถกลับไปทำงานต่อได้เร็วขึ้น
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <div class="card h-100 border-1 shadow-sm text-start p-4 service-detail-icon-card service-card-hover">
+              <div class="mb-3">
+                <i class="fa-solid fa-computer fa-2x text-primary"></i>
+              </div>
+              <h3 class="h5 mb-2">จัดการทรัพย์สินด้านไอทีได้ง่ายขึ้น</h3>
+              <p class="small mb-0 text-muted">
+                Service Desk เป็นจุดกลางที่เชื่อมเครื่อง POS, คอมพิวเตอร์, ซอฟต์แวร์,
+                ใบอนุญาตใช้งาน และสัญญาต่าง ๆ เข้าไว้ด้วยกัน ทำให้การเช็กประวัติการใช้งาน
+                การซ่อม และการบำรุงรักษาเป็นเรื่องง่ายขึ้น
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <div class="card h-100 border-1 shadow-sm text-start p-4 service-detail-icon-card service-card-hover">
+              <div class="mb-3">
+                <i class="fa-solid fa-chart-line fa-2x text-primary"></i>
+              </div>
+              <h3 class="h5 mb-2">ลดปัญหาซ้ำ ๆ และเพิ่มความเสถียรของระบบ</h3>
+              <p class="small mb-0 text-muted">
+                จากข้อมูล Ticket และเหตุขัดข้อง ทีมของเราสามารถวิเคราะห์หาต้นตอของปัญหาที่เกิดซ้ำ ๆ
+                แล้ววางมาตรการป้องกันล่วงหน้า ช่วยให้ระบบของคุณเสถียรขึ้น ใช้งานได้ต่อเนื่องมากขึ้น
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BENEFITS -->
-    <section id="sd-benefits" class="py-5 bg-white">
+    <!-- ===================== SECTION 2: Capabilities ===================== -->
+    <section class="py-5 bg-light" id="sd-capabilities">
       <div class="container">
-        <h2 class="text-center mb-4">จุดเด่นของ Service Desk</h2>
-        <p class="text-center text-muted mb-5">
-          ลดความสับสนในการแจ้งปัญหา รวมทุกเคสไอทีมาอยู่ในศูนย์กลางเดียว
-          พร้อมติดตามสถานะได้อย่างชัดเจน
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm text-center p-4 service-detail-icon-card">
-              <div class="mb-3">
-                <i class="fa-solid fa-headset fa-2x text-primary"></i>
-              </div>
-              <h3 class="h5 mb-2">ช่องทางเดียวจบ</h3>
-              <p class="small mb-0">
-                ผู้ใช้งานไม่ต้องจำหลายเบอร์ติดต่อ ใช้ Service Desk เป็นจุดศูนย์กลางในการแจ้งปัญหาและติดตามผล
-              </p>
-            </div>
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-6">
+            <h2 class="h2 fw-bold mb-3 ">ขอบเขตการให้บริการ</h2>
+            <p class="mb-3">
+              Service Desk ของเราครอบคลุมงานหลัก ๆ ด้านไอทีที่จำเป็นต่อธุรกิจของคุณ ดังนี้:
+            </p>
+            <ul class="mb-0">
+              <li class="mb-2">
+                <strong>Incident Management</strong><br>
+                รับแจ้งและจัดการเหตุขัดข้อง เช่น ระบบล่ม เครื่อง POS ใช้งานไม่ได้ ปริ้นใบเสร็จไม่ออก ฯลฯ
+                เป้าหมายคือให้ระบบกลับมาใช้งานได้เร็วที่สุด
+              </li>
+              <li class="mb-2">
+                <strong>Service Request Management</strong><br>
+                รองรับคำขอบริการ เช่น ขอ account ใหม่ ขอปรับสิทธิ์ผู้ใช้งาน
+                ขอเชื่อมต่อระบบใหม่ หรือขออัปเกรดอุปกรณ์
+              </li>
+              <li class="mb-2">
+                <strong>Change &amp; Update Coordination</strong><br>
+                ประสานงานเมื่อต้องมีการเปลี่ยนแปลงระบบ เช่น อัปเดตเวอร์ชันซอฟต์แวร์
+                ย้ายระบบ หรือขยายสาขา เพื่อให้กระทบกับการทำงานน้อยที่สุด
+              </li>
+              <li class="mb-2">
+                <strong>Knowledge &amp; Self-service</strong><br>
+                จัดทำคู่มือ วิธีแก้ปัญหาเบื้องต้น และคำถามที่พบบ่อย
+                เพื่อให้ผู้ใช้งานสามารถแก้ไขปัญหาง่าย ๆ ได้เอง ลดเวลารอทีมซัพพอร์ต
+              </li>
+              <li class="mb-0">
+                <strong>Monitoring &amp; Reporting</strong><br>
+                ติดตามจำนวน Ticket ประเภทปัญหา ระยะเวลาในการแก้ไข และความสำเร็จตาม SLA
+                เพื่อนำมาพัฒนาการบริการอย่างต่อเนื่อง
+              </li>
+            </ul>
           </div>
 
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm text-center p-4 service-detail-icon-card">
-              <div class="mb-3">
-                <i class="fa-solid fa-clock fa-2x text-primary"></i>
-              </div>
-              <h3 class="h5 mb-2">ลด Downtime</h3>
-              <p class="small mb-0">
-                แก้ปัญหาเบื้องต้นผ่านรีโมตและคู่มือ ทำให้ผู้ใช้งานกลับมาทำงานได้เร็วขึ้น
-                โดยไม่ต้องรอช่างภาคสนามทุกกรณี
-              </p>
-            </div>
-          </div>
+          <div class="col-lg-6">
+            <div class="p-4 bg-white rounded-4 shadow-sm">
+              <h3 class="h5 mb-3">ภาพรวมขั้นตอนการทำงาน</h3>
 
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm text-center p-4 service-detail-icon-card">
-              <div class="mb-3">
-                <i class="fa-solid fa-list-check fa-2x text-primary"></i>
+              <div class="process-step mb-4 shadow-sm">
+                <div class="ps-3">
+                  <h4 class="h6 mb-1">รับเรื่องจากผู้ใช้งาน</h4>
+                  <p class="small mb-0 text-muted">
+                    ผู้ใช้งานแจ้งปัญหา ผ่านโทรศัพท์ อีเมล หรือระบบ Ticket ตามช่องทางที่ตกลงร่วมกัน
+                  </p>
+                </div>
               </div>
-              <h3 class="h5 mb-2">ติดตามเคสได้ชัดเจน</h3>
-              <p class="small mb-0">
-                ทุกปัญหาจะถูกบันทึก พร้อมสถานะการดำเนินงาน
-                ช่วยให้ผู้บริหารสามารถมองเห็นภาพรวมของปัญหาไอทีในองค์กรได้ง่ายขึ้น
-              </p>
+
+              <div class="process-step mb-4">
+                <div class="ps-3">
+                  <h4 class="h6 mb-1">วิเคราะห์และแก้ไขเบื้องต้น</h4>
+                  <p class="small mb-0 text-muted">
+                    Service Desk ตรวจสอบอาการ วิเคราะห์สาเหตุที่เป็นไปได้
+                    และพยายามแก้ไขปัญหาทันที รวมถึง Remote เข้าไปช่วยถ้าจำเป็น
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-step mb-4">
+                <div class="ps-3">
+                  <h4 class="h6 mb-1">ประสานทีมเทคนิคเฉพาะด้าน</h4>
+                  <p class="small mb-0 text-muted">
+                    หากเกินขอบเขตการแก้ไขเบื้องต้น Ticket จะถูกส่งต่อให้ทีม POS, Network,
+                    Server หรือทีมภาคสนามตามประเภทปัญหา
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-step mb-4">
+                <div class="ps-3">
+                  <h4 class="h6 mb-1">ปิดเคสและสรุปรายงาน</h4>
+                  <p class="small mb-0 text-muted">
+                    เมื่องานเสร็จ Service Desk จะยืนยันกับผู้ใช้งานก่อนปิดเคส
+                    และบันทึกเป็นองค์ความรู้เพิ่มเติม เพื่อป้องกันปัญหาซ้ำในอนาคต
+                  </p>
+                </div>
+              </div>
             </div>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 3: Picture ===================== -->
+
+
+    <!-- ===================== SECTION 4: CTA ===================== -->
+    <section class="py-5 bg-dark text-light" id="sd-cta">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7 mx-auto text-center" style="width: 100%;">
+            <h2 class="h2 mb-3">ให้ทีม Service Desk ของเราเป็นด่านหน้าด้านไอทีให้กับองค์กรของคุณ</h2>
+            <p class="mb-1">
+              หากธุรกิจของคุณต้องการทีมที่ช่วยดูแลทุกปัญหาไอทีในจุดเดียว
+              ปรับการรับแจ้งปัญหาให้เป็นระบบ <br>และลดเวลาที่ระบบล่ม
+              เราพร้อมช่วยออกแบบรูปแบบการให้บริการที่เหมาะสมกับคุณ
+            </p>
+            <p class="mb-0">
+              เล่าให้เราฟังเกี่ยวกับโครงสร้างองค์กร จำนวนสาขา
+              และระบบหลักที่ใช้งาน <br>แล้วเราจะช่วยออกแบบโซลูชัน Service Desk
+              ที่ตอบโจทย์ธุรกิจของคุณโดยเฉพาะ
+            </p>
           </div>
         </div>
       </div>
     </section>
   </main>
-<div id="footer"></div>
+
+  <div id="footer"></div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -139,4 +223,5 @@
   <script src="../js/footer.js"></script>
   <script src="../js/navbar.js"></script>
 </body>
+
 </html>

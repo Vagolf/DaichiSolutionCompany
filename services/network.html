@@ -1,322 +1,308 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Network Solutions | Daichisolution</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Infrastructure & Maintenance | Daichi Solution</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- main style -->
-  <link href="../style.css" rel="stylesheet" />
-
+  <link href="../style.css" rel="stylesheet">
   <style>
-    /* ===== Network page specific styles (ย้ายไป style.css ได้ทีหลัง) ===== */
-
-    /* HERO: โทนน้ำเงิน-เขียว มีพื้นหลังเป็นรูป Network */
-    .network-hero {
-      position: relative;
-      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), #020617),
-                  url("https://www.p5-management.com/img/Network_P5.jpg") no-repeat center/cover;
-      color: #ffffff;
-    }
-
-    .network-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(59, 142, 79, 0.35));
-      mix-blend-mode: multiply;
-      z-index: 0;
-    }
-
-    .network-hero .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .network-badge {
-      font-size: 0.85rem;
-      letter-spacing: .1em;
-    }
-
-    .network-hero-list li {
-      margin-bottom: .35rem;
-      font-size: 0.95rem;
-    }
-
-    /* กล่องสรุป 3 บล็อก (LAN/WiFi, CCTV, Security & VPN) */
-    .network-feature-card {
-      border-radius: 16px;
-      border: 0;
-      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
-      height: 100%;
-    }
-
-    .network-feature-card .icon-circle {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(59, 142, 79, 0.08);
-      margin-bottom: 0.75rem;
-    }
-
-    .network-feature-card p {
-      font-size: 0.94rem;
-    }
-
-    /* กล่อง “มาตรฐานการออกแบบเครือข่าย” */
-    .network-standards-box {
-      border-radius: 18px;
-      padding: 24px 24px 20px;
-      background: #0f172a;
-      color: #e5e7eb;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .network-standards-box::after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      top: -40px;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(59, 142, 79, 0.55), transparent 70%);
-      opacity: .4;
-    }
-
-    .network-standards-box h3 {
-      font-size: 1.15rem;
-    }
-
-    .network-standards-box li {
-      font-size: 0.92rem;
-      margin-bottom: .35rem;
-    }
-
-    /* รูปฝั่งขวา section ล่าง */
-    .network-img-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.9fr;
-      gap: 12px;
-    }
-
-    .network-img-main,
-    .network-img-side {
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .network-img-main img,
-    .network-img-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .network-img-main {
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
-    }
-
-    .network-img-side {
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.3);
-    }
-
-    @media (max-width: 991.98px) {
-      .network-img-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-  </style>
+    @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+</style>
 </head>
-
 <body>
-  <!-- Navbar (inserted by navbar.js) -->
   <div id="navbar" class="sticky-top"></div>
 
   <main>
-    <!-- ========== HERO SECTION ========== -->
-    <section class="network-hero py-5">
-      <div class="container py-4">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6">
-            <span class="badge bg-success-subtle text-success network-badge mb-2">
-              NETWORK • LAN • WI-FI • SECURITY
-            </span>
 
-            <h1 class="display-5 fw-bold mb-3">
-              Network Design &amp; Implementation
-            </h1>
-
-            <p class="lead mb-3">
-              ออกแบบและติดตั้งระบบเครือข่าย LAN / Wi-Fi และกล้องวงจรปิด
-              รวมถึง VPN และอุปกรณ์เครือข่ายอื่น ๆ เพื่อให้ระบบภายในองค์กร
-              เชื่อมต่อกันได้อย่างเสถียร ปลอดภัย และรองรับการขยายตัวในอนาคต
-            </p>
-
-            <ul class="list-unstyled network-hero-list mb-4">
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-success"></i>
-                ทีมงานมืออาชีพดูแลตั้งแต่การสำรวจหน้างานไปจนถึงการส่งมอบระบบ
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-success"></i>
-                รองรับทั้งสาขาเดี่ยวและหลายสาขาทั่วประเทศ
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-success"></i>
-                เชื่อมต่อร่วมกับระบบ POS, CCTV และระบบหลังบ้านได้อย่างลงตัว
-              </li>
-            </ul>
-
-            <a href="#network-solutions" class="btn btn-primary px-4">
-              ดูโซลูชันด้านเครือข่าย
-            </a>
-          </div>
-
-          <div class="col-lg-6">
-            <!-- ใช้รูป Network หลัก 1 รูป -->
-            <div class="network-img-main">
-              <img
-                src="https://www.p5-management.com/img/Network_P5.jpg"
-                alt="Network Setup and Cabling"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== NETWORK SOLUTIONS CARDS ========== -->
-    <section id="network-solutions" class="py-5 bg-white">
+    <!-- =============== SECTION 1: Workflow / How we work =============== -->
+    <section class="py-5 bg-light" id="net-workflow">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="section-title mb-2">โซลูชันด้านเครือข่ายของเรา</h2>
+        <div class="text-center mb-4">
+          <h2 class="h2 mb-2">เราวางระบบ Network Infrastructure ให้ธุรกิจคุณยังไง?</h2>
           <p class="text-muted mb-0">
-            ครอบคลุมตั้งแต่การเดินสาย การติดตั้งอุปกรณ์ ไปจนถึงการออกแบบระบบรักษาความปลอดภัยเครือข่าย
+            ตั้งแต่สำรวจหน้างาน ออกแบบโครงสร้าง วางสาย ติดตั้งอุปกรณ์
+            ไปจนถึงทดสอบและส่งมอบแบบมีเอกสารครบ
           </p>
         </div>
 
-        <div class="row g-4">
-          <!-- LAN / Wi-Fi -->
-          <div class="col-md-4">
-            <div class="network-feature-card card text-center p-4">
-              <div class="icon-circle mx-auto">
-                <i class="fa-solid fa-network-wired text-success"></i>
-              </div>
-              <h3 class="h5 mb-2">LAN &amp; Wi-Fi Infrastructure</h3>
-              <p class="mb-0">
-                ออกแบบและเดินสาย LAN ทั้งในออฟฟิศและพื้นที่สาขา
-                พร้อมวางตำแหน่ง Access Point เพื่อให้สัญญาณ Wi-Fi ครอบคลุมทั่วพื้นที่
-                รองรับจำนวนผู้ใช้งานพร้อมกันได้ตามจริง
-              </p>
-            </div>
-          </div>
-
-          <!-- CCTV & Monitoring -->
-          <div class="col-md-4">
-            <div class="network-feature-card card text-center p-4">
-              <div class="icon-circle mx-auto">
-                <i class="fa-solid fa-video text-success"></i>
-              </div>
-              <h3 class="h5 mb-2">CCTV &amp; Monitoring</h3>
-              <p class="mb-0">
-                ติดตั้งและเชื่อมต่อกล้องวงจรปิด (CCTV) เข้ากับระบบเครือข่าย
-                จัดการ NVR/Storage และออกแบบการดูภาพย้อนหลัง
-                เพื่อให้ผู้จัดการสาขาตรวจสอบเหตุการณ์ได้อย่างสะดวกและปลอดภัย
-              </p>
-            </div>
-          </div>
-
-          <!-- VPN & Security -->
-          <div class="col-md-4">
-            <div class="network-feature-card card text-center p-4">
-              <div class="icon-circle mx-auto">
-                <i class="fa-solid fa-shield-halved text-success"></i>
-              </div>
-              <h3 class="h5 mb-2">VPN &amp; Network Security</h3>
-              <p class="mb-0">
-                ออกแบบระบบ VPN, VLan, Firewall และ Anti-Virus Server
-                เพื่อให้สาขาต่าง ๆ เชื่อมต่อกลับมาหาศูนย์กลางได้อย่างปลอดภัย
-                ลดความเสี่ยงด้านความปลอดภัยไซเบอร์
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== NETWORK STANDARDS & IMAGES ========== -->
-    <section class="py-5 bg-light">
-      <div class="container">
         <div class="row g-4 align-items-start">
-          <!-- Standards & bullet list -->
           <div class="col-lg-5">
-            <div class="network-standards-box mb-4 mb-lg-0">
-              <h3 class="mb-3">
-                มาตรฐานการออกแบบเครือข่ายของเรา
-              </h3>
-              <ul class="list-unstyled mb-3">
-                <li>
-                  <i class="fa-solid fa-circle-check text-success me-2"></i>
-                  วางแผน Topology ให้เหมาะสมกับขนาดองค์กรและสาขา
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check text-success me-2"></i>
-                  แยก Segment เครือข่ายสำหรับ POS, Guest Wi-Fi และระบบภายใน
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check text-success me-2"></i>
-                  ใช้อุปกรณ์ที่รองรับมาตรฐานอุตสาหกรรมและปรับขยายได้ในอนาคต
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check text-success me-2"></i>
-                  จัดทำ Diagram และเอกสารอ้างอิงให้ฝ่าย IT ของลูกค้า
-                </li>
-              </ul>
-              <p class="mb-0 small text-gray-300">
-                ผลลัพธ์ที่ได้คือระบบเครือข่ายที่เสถียร ลดปัญหาเน็ตล่ม สัญญาณไม่ครอบคลุม
-                และลดเวลา Downtime ที่กระทบการทำงานหน้าร้าน
+            <h3 class="h5 mb-3">จาก “สายแลนรกตู้” สู่โครงสร้างเน็ตเวิร์กที่เป็นระบบ</h3>
+            <p class="mb-2">
+              เราโฟกัสทั้งเรื่อง <strong>โครงสร้างสายสัญญาณ</strong>
+              (Structured Cabling, Fiber Backbone) และ <strong>การออกแบบ Network</strong>
+              เช่น VLAN, Wi-Fi, Routing, Security ให้รองรับการเติบโตของธุรกิจในระยะยาว
+            </p>
+            <p class="mb-2">
+              แนวคิดคล้ายกับบริการ Digital Infrastructure &amp; Cabling ของผู้ให้บริการรายใหญ่:
+              สำรวจหน้างาน ออกแบบระบบ ติดตั้งอย่างเป็นระเบียบ ทดสอบและรับรองมาตรฐาน
+              แล้วค่อยส่งมอบพร้อมเอกสารและแผนผังเครือข่ายให้ทีมคุณใช้ต่อได้สบาย ๆ
+            </p>
+            <p class="mb-0 small text-muted">
+              เป้าหมายคือให้คุณได้ “โครงสร้างเน็ตเวิร์กที่มั่นคง ปลอดภัย และขยายต่อได้”
+              ไม่ใช่แค่ “ต่อให้ใช้ได้ไปวัน ๆ”
+            </p>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="d-flex flex-column gap-3">
+              <!-- Step 1 -->
+              <div class="process-step">
+                <span class="step-number">1</span>
+                <div>
+                  <h4 class="h6 mb-1">สำรวจหน้างาน &amp; เก็บ requirement (Site Survey)</h4>
+                  <p class="small mb-1 text-muted">
+                    ลงพื้นที่สำรวจผังอาคาร จุดวางตู้แร็ก เส้นทางเดินสาย
+                    จุดใช้งาน Wi-Fi / POS / กล้อง / อุปกรณ์สำคัญ และเก็บ requirement ของธุรกิจคุณ
+                    เช่น จำนวนผู้ใช้งาน ระดับความปลอดภัยที่ต้องการ แผนขยายสาขาในอนาคต
+                  </p>
+                  <p class="small mb-0 text-muted">
+                    จากนั้นจัดทำ asset list คร่าว ๆ ว่าต้องมีอุปกรณ์ประเภทไหนบ้าง
+                    เช่น Switch, Router, Access Point, Patch Panel, Rack ฯลฯ
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="process-step">
+                <span class="step-number">2</span>
+                <div>
+                  <h4 class="h6 mb-1">ออกแบบโครงสร้างเน็ตเวิร์ก (Network &amp; Cabling Design)</h4>
+                  <p class="small mb-1 text-muted">
+                    ออกแบบโครงสร้างสายสัญญาณ (LAN / Fiber) และ topology ของเครือข่าย
+                    เช่น การแบ่ง VLAN ระหว่าง POS, Office, Guest Wi-Fi, CCTV
+                    เพื่อความปลอดภัยและบริหารจัดการง่าย
+                  </p>
+                  <p class="small mb-0 text-muted">
+                    กำหนดจุดวางตู้แร็ก เส้นทางเดินสาย, Wi-Fi heatmap (ถ้าจำเป็น)
+                    และกำลังของอุปกรณ์ให้ครอบคลุมการใช้งานจริง
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="process-step">
+                <span class="step-number">3</span>
+                <div>
+                  <h4 class="h6 mb-1">ติดตั้ง &amp; เดินสายอย่างเป็นระเบียบ (Installation)</h4>
+                  <p class="small mb-1 text-muted">
+                    ทีมงานทำการเดินสาย UTP / Fiber, ติดตั้งตู้แร็ก, Patch Panel,
+                    Switch, Router, Access Point และอุปกรณ์ประกอบอื่น ๆ
+                    ด้วยการจัดการสายที่สะอาด มีป้าย label ชัดเจน
+                  </p>
+                  <p class="small mb-0 text-muted">
+                    ใช้วิธีทำงานแบบ “รบกวนหน้างานน้อยที่สุด” เลือกช่วงเวลาติดตั้งที่กระทบการขายต่ำ
+                    และแยกตัดต่อทีละส่วนเพื่อให้บริการยังเดินต่อได้
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="process-step">
+                <span class="step-number">4</span>
+                <div>
+                  <h4 class="h6 mb-1">ตั้งค่า, ทดสอบ &amp; เสริมความปลอดภัย (Configuration &amp; Testing)</h4>
+                  <p class="small mb-1 text-muted">
+                    ตั้งค่า Network ตามแบบที่ออกแบบไว้ เช่น VLAN, Routing, QoS,
+                    Firewall Rules, Access Control และเชื่อมต่อกับระบบเดิมเท่าที่จำเป็น
+                  </p>
+                  <p class="small mb-0 text-muted">
+                    ทดสอบความเร็ว, ความเสถียร, การ roam ของ Wi-Fi,
+                    การเข้าถึงระบบภายใน/ภายนอก และตรวจสอบว่าบริการสำคัญทั้งหมดทำงานได้ครบ
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="process-step">
+                <span class="step-number">5</span>
+                <div>
+                  <h4 class="h6 mb-1">ส่งมอบเอกสาร &amp; วางแผนดูแลระยะยาว</h4>
+                  <p class="small mb-1 text-muted">
+                    ส่งมอบ network diagram, รายละเอียดการตั้งค่า, รายการอุปกรณ์
+                    และข้อมูลพื้นฐานที่ทีมไอทีของคุณต้องใช้ เพื่อให้บริหารจัดการต่อได้อย่างมั่นใจ
+                  </p>
+                  <p class="small mb-0 text-muted">
+                    สามารถต่อยอดไปสู่สัญญา PM หรือ Managed Service ได้
+                    เพื่อให้มีทีมงานช่วยมอนิเตอร์ ดูแล และอัปเดตระบบอย่างต่อเนื่อง
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== SECTION 2: Benefits =============== -->
+    <section class="py-5 bg-white" id="net-benefits">
+      <div class="container">
+        <h2 class="text-center mb-3">โครงสร้าง Network ที่ดี ช่วยอะไรธุรกิจของคุณบ้าง?</h2>
+        <p class="text-center text-muted mb-5">
+          โครงสร้างเน็ตเวิร์กที่วางดีตั้งแต่ต้น ช่วยลดปัญหาในอนาคตทั้งเรื่องเสถียรภาพ ความปลอดภัย และต้นทุนการดูแลระบบ
+        </p>
+
+        <div class="row g-4">
+          <!-- 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm p-4 pm-benefit-card">
+              <div class="mb-3">
+                <i class="fa-solid fa-network-wired fa-2x text-primary"></i>
+              </div>
+              <h3 class="h5 mb-2">เครือข่ายเสถียร ลดอาการเน็ตล่ม/ช้า</h3>
+              <p class="small mb-0 text-muted">
+                โครงสร้างสายและอุปกรณ์ที่ออกแบบถูกต้อง
+                ช่วยลดปัญหาเน็ตหลุด สัญญาณไม่ถึง หรือวิ่งช้าแบบไม่มีเหตุผล
+                โดยเฉพาะในช่วงเวลาที่มีการใช้งานพร้อมกันจำนวนมาก
               </p>
             </div>
           </div>
 
-          <!-- Image grid -->
-          <div class="col-lg-7">
-            <div class="network-img-grid">
-              <div class="network-img-main">
-                <!-- รูปหน้างาน/ตู้ Rack/สาย LAN (เปลี่ยนเป็นรูปในระบบของคุณเองได้) -->
-                <img
-                  src="https://www.p5-management.com/img/Network_P5.jpg"
-                  alt="Network Rack and Cabling"
-                />
+          <!-- 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm p-4 pm-benefit-card">
+              <div class="mb-3">
+                <i class="fa-solid fa-shield-halved fa-2x text-primary"></i>
               </div>
-              <div class="network-img-side">
-                <!-- รูปทีมงาน onsite หรือภาพเครือข่ายเชิง Abstract -->
-                <img
-                  src="https://www.p5-management.com/img/icons/7.png"
-                  alt="Network Icon"
-                />
+              <h3 class="h5 mb-2">ความปลอดภัยของข้อมูลที่ดีขึ้น</h3>
+              <p class="small mb-0 text-muted">
+                การแบ่ง VLAN, การตั้งค่าการเข้าถึง, Firewall และการแยกเครือข่าย Guest/ภายใน
+                ช่วยลดความเสี่ยงจากการโจมตีและการเข้าถึงข้อมูลโดยไม่ตั้งใจ
+              </p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm p-4 pm-benefit-card">
+              <div class="mb-3">
+                <i class="fa-solid fa-gauge-high fa-2x text-primary"></i>
+              </div>
+              <h3 class="h5 mb-2">ประสิทธิภาพการทำงานของระบบดีขึ้น</h3>
+              <p class="small mb-0 text-muted">
+                การออกแบบแยกทราฟฟิกระบบสำคัญ เช่น POS, กล้อง, ระบบภายใน
+                ทำให้แต่ละส่วนทำงานได้เต็มประสิทธิภาพ ไม่แย่ง bandwidth กันโดยไม่จำเป็น
+              </p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="col-md-6 col-lg-6">
+            <div class="card h-100 border-0 shadow-sm p-4 pm-benefit-card">
+              <div class="mb-3">
+                <i class="fa-solid fa-up-right-and-down-left-from-center fa-2x text-primary"></i>
+              </div>
+              <h3 class="h5 mb-2">รองรับการขยายสาขาและเติบโตในอนาคต</h3>
+              <p class="small mb-0 text-muted">
+                เมื่อโครงสร้างพื้นฐานถูกออกแบบแบบ “เผื่อโต”
+                การเพิ่มสาขา/เพิ่มอุปกรณ์ในอนาคตจะง่ายกว่า ไม่ต้องรื้อทั้งระบบใหม่
+                ช่วยเซฟทั้งเวลาและงบประมาณ
+              </p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="col-md-6 col-lg-6">
+            <div class="card h-100 border-0 shadow-sm p-4 pm-benefit-card">
+              <div class="mb-3">
+                <i class="fa-solid fa-magnifying-glass-chart fa-2x text-primary"></i>
+              </div>
+              <h3 class="h5 mb-2">ดูแล ตรวจสอบ และแก้ปัญหาได้ง่ายขึ้น</h3>
+              <p class="small mb-0 text-muted">
+                เมื่อสายและอุปกรณ์ถูก label อย่างเป็นระบบ มีแผนผังที่ชัดเจน
+                การแก้ปัญหา/เปลี่ยนอุปกรณ์ในภายหลังจะรวดเร็วและแม่นยำขึ้น
+                ลดเวลาหาสาเหตุแบบเดาไปเรื่อย ๆ
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== SECTION 3: Use Case =============== -->
+    <section class="py-5 bg-light" id="net-usecase">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="usecase-box p-4 p-md-5 rounded-4 bg-white shadow-sm">
+              <h2 class="h4 mb-3">ตัวอย่างสถานการณ์จริง: ออฟฟิศ + คลังสินค้าที่เน็ตช้าและ Wi-Fi ดับบ่อย</h2>
+
+              <h3 class="h6 mb-2">ก่อนปรับปรุงโครงสร้าง Network</h3>
+              <ul class="small mb-3">
+                <li>ใช้ Switch และ Access Point หลายยี่ห้อ ต่อพ่วง ๆ กันไปตามที่เคยซื้อมา</li>
+                <li>สายแลนไม่มี label ตู้แร็กยุ่งเหยิง แก้ปัญหาแต่ละครั้งต้องไล่สายทีละเส้น</li>
+                <li>Wi-Fi ในคลังสินค้าสัญญาณไม่ทั่ว พนักงานใช้ handheld / scanner แล้วหลุดบ่อย</li>
+                <li>บางช่วงเวลางานโหลดข้อมูลช้ามาก ทั้งที่ใช้อินเทอร์เน็ตความเร็วสูง</li>
+              </ul>
+
+              <h3 class="h6 mb-2">หลังวางระบบใหม่กับ Daichi</h3>
+              <ul class="small mb-3">
+                <li>ลง Site Survey และออกแบบโครงสร้างสาย + จุด Access Point ใหม่</li>
+                <li>จัดตู้แร็กใหม่ เดินสายให้เป็นระเบียบ พร้อม label ทุกเส้น</li>
+                <li>แบ่ง VLAN แยกระบบ Office, POS, Warehouse Device, Guest Wi-Fi ออกจากกัน</li>
+                <li>วางจุด Wi-Fi ให้ครอบคลุมพื้นที่คลัง ลดจุดอับสัญญาณ และทดสอบ roaming จริงก่อนส่งมอบ</li>
+              </ul>
+
+              <h3 class="h6 mb-2">ผลลัพธ์ที่ลูกค้าเห็นได้</h3>
+              <ul class="small mb-0">
+                <li>อัตรา “หลุดจากระบบ” ของ handheld / scanner ลดลงอย่างชัดเจน</li>
+                <li>พนักงานอัปเดตสต็อกและยิงบาร์โค้ดได้ต่อเนื่อง ไม่ต้องรอระบบหมุน</li>
+                <li>ทีมไอทีภายในแก้ไขปัญหาเองได้ง่ายขึ้น เพราะมีแผนผังและ label ชัดเจน</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== SECTION 4: CTA =============== -->
+    <section class="py-5 bg-dark text-light" id="net-cta">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <h2 class="h2 mb-3">อยากให้ Network ของธุรกิจคุณนิ่งและพร้อมโตไปกับคุณไหม?</h2>
+            <p class="mb-3">
+              ไม่ว่าจะเป็นออฟฟิศเดียว คลังสินค้า หรือหลายสาขาทั่วประเทศ
+              เราช่วยออกแบบและวางโครงสร้าง Network Infrastructure ให้เหมาะกับรูปแบบธุรกิจของคุณได้
+            </p>
+            <p class="mb-0">
+              เริ่มต้นง่าย ๆ แค่เล่าให้เราฟังว่าตอนนี้มีปัญหาอะไรบ่อย
+              ใช้อุปกรณ์ประมาณกี่จุด และมีแผนจะขยายระบบยังไง
+              จากนั้นทีมของเราจะช่วยต่อยอดเป็นโซลูชันที่ชัดเจนให้คุณ
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="p-4 bg-secondary rounded-4">
+              <div class="d-grid gap-2">
+                <button type="button" class="btn btn-success">
+                  ปรึกษาเรื่อง Network Infrastructure
+                </button>
+                <button type="button" class="btn btn-outline-light">
+                  ขอรายละเอียดแพ็กเกจออกแบบ/ติดตั้ง
+                </button>
+                <p class="small mb-0 mt-2 text-light-50">
+                  *ปุ่มนี้ยังไม่ได้เชื่อมระบบ คุณสามารถเปลี่ยนเป็นลิงก์ <code>mailto:</code>
+                  หรือฟอร์มติดต่อได้ภายหลัง
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer (inserted by footer.js) -->
   <div id="footer"></div>
 
   <!-- Bootstrap JS -->

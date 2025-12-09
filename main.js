@@ -87,6 +87,24 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("[data-group]").forEach((el) => observer.observe(el));
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll(
+    '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');   // ตรงนี้สำคัญ
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  els.forEach(el => observer.observe(el));
+});
 
 
 
