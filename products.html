@@ -21,156 +21,512 @@
     <div class="page-header-box">
         <h1 class="display-3 text-black mb-3 animated slideInDown">Our Products</h1>
         <nav aria-label="breadcrumb animated slideInDown">
-            <ol class="breadcrumb text-uppercase mb-0">
-                <li class="breadcrumb-item"><a class="text-black" href="../index.html">Home</a></li>
-                <li class="breadcrumb-item text-primary active" aria-current="page">Products</li>
-            </ol>
         </nav>
     </div>
 
     <!-- Main content of the page -->
     <main class="container py-5" id="main">
-        <div class="intro">
-            <h1>Products</h1>
-            <div style="color:var(--muted)">Click a product card to view details</div>
+      <head>
+  <meta charset="UTF-8" />
+  <title>Shop | Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ฟอนต์ไทยสวย ๆ -->
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #3b8e4f;
+      --dark: #0f172a;
+      --muted: #6b7280;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --radius: 12px;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Bai Jamjuree", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+    }
+
+    main {
+      padding: 32px 16px 40px;
+    }
+
+    .shop-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 960px) {
+      .shop-layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        order: 2;
+      }
+    }
+
+    /* ========== SIDEBAR ========== */
+
+    .sidebar {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 20px 18px 22px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+    }
+
+    .sidebar-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin: 0 0 6px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .category-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.95rem;
+    }
+
+    .category-list a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--dark);
+      transition: 0.15s;
+      background: transparent;
+    }
+
+    .category-list a:hover {
+      background: rgba(59, 142, 79, 0.08);
+      color: var(--primary);
+    }
+
+    .category-pill-count {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .price-filter {
+      margin-top: 28px;
+      font-size: 0.9rem;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .price-input {
+      flex: 1;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .price-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(59, 142, 79, 0.15);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: none;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      filter: brightness(0.95);
+    }
+
+    /* ========== PRODUCTS AREA ========== */
+
+    .products-area {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .products-header-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .products-count {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 2px 0 0;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    /* ========== PRODUCT CARD ========== */
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #f97316;
+      color: #ffffff;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    .product-image-wrapper {
+      position: relative;
+      padding: 16px;
+      padding-bottom: 0;
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .product-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 4px;
+    }
+
+    .product-name {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .product-name a {
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .product-name a:hover {
+      color: var(--primary);
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .price-old {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      text-decoration: line-through;
+    }
+
+    .price-new {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .product-actions {
+      margin-top: auto;
+      display: flex;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .btn-outline {
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-outline:hover {
+      background: rgba(59, 142, 79, 0.06);
+    }
+
+    /* ========== PAGINATION ========== */
+
+    .pagination {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 24px;
+      font-size: 0.9rem;
+    }
+
+    .page-number {
+      min-width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .page-number.current {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .page-number:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <div class="shop-layout">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+      <h2 class="sidebar-title">เรียกดู</h2>
+      <div class="divider"></div>
+
+      <ul class="category-list">
+        <li><a href="#"><span>Accessories</span> <span class="category-pill-count">12</span></a></li>
+        <li><a href="#"><span>Clearance Sale</span> <span class="category-pill-count">5</span></a></li>
+        <li><a href="#"><span>Desktop POS</span> <span class="category-pill-count">8</span></a></li>
+        <li><a href="#"><span>Mobile POS</span> <span class="category-pill-count">4</span></a></li>
+        <li><a href="#"><span>Tablet POS</span> <span class="category-pill-count">3</span></a></li>
+        <li><a href="#"><span>Printer</span> <span class="category-pill-count">6</span></a></li>
+        <li><a href="#"><span>Uncategorized</span> <span class="category-pill-count">2</span></a></li>
+      </ul>
+
+      <div class="price-filter">
+        <h3 class="sidebar-title" style="font-size: 1rem; margin-bottom: 4px;">กรองตามราคา</h3>
+        <div class="divider" style="margin-bottom: 10px;"></div>
+
+        <div class="price-row">
+          <input class="price-input" type="number" placeholder="ต่ำสุด ฿0" />
+          <span>-</span>
+          <input class="price-input" type="number" placeholder="สูงสุด ฿47000" />
         </div>
 
-        <section class="grid" id="products">
-            <!-- 🔹 Product 1: POS หน้าร้าน (ครบชุด) -->
-            <article class="card" tabindex="0" data-title="ชุด POS หน้าร้านสำหรับร้านอาหาร / คาเฟ่"
-                data-desc="ชุด POS พร้อมเครื่องคอมพิวเตอร์หน้าร้าน ลิ้นชักเก็บเงิน เครื่องพิมพ์ใบเสร็จ และโปรแกรมจัดการเมนู-ออร์เดอร์ เหมาะสำหรับร้านอาหาร คาเฟ่ และร้านค้าปลีกขนาดเล็ก-กลาง"
-                data-price="เริ่มต้น 3x,xxx บาท/สาขา" data-img="https://picsum.photos/seed/pos1/900/600">
-                <img loading="lazy" src="https://picsum.photos/seed/pos1/900/600"
-                    alt="ชุด POS หน้าร้านสำหรับร้านอาหาร / คาเฟ่">
-                <div class="card-body">
-                    <div style="display:flex;align-items:center;gap:.5rem">
-                        <h3 class="card-title">ชุด POS หน้าร้าน (ครบชุด)</h3>
-                        <div class="price">เริ่มต้น 3x,xxx บาท/สาขา</div>
-                    </div>
-                    <div class="card-sub">
-                        เครื่อง POS + ลิ้นชัก + เครื่องพิมพ์ใบเสร็จ + ซอฟต์แวร์จัดการขาย
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
-                        ติดต่อทีมขาย
-                    </a>
-                </div>
-            </article>
+        <button class="btn" type="button">คัดกรอง</button>
+      </div>
+    </aside>
 
-            <!-- 🔹 Product 2: Cloud Backoffice & รายงานส่วนกลาง -->
-            <article class="card" tabindex="0" data-title="ระบบ Backoffice & Dashboard ส่วนกลาง"
-                data-desc="ระบบหลังบ้านสำหรับดูยอดขายเรียลไทม์ แยกตามสาขา เมนู ช่วงเวลา พร้อมรายงานสต๊อก และสิทธิ์การใช้งานตามระดับผู้ใช้ เหมาะสำหรับธุรกิจที่มีหลายสาขา"
-                data-price="คิดค่าบริการรายเดือน" data-img="https://picsum.photos/seed/pos2/900/600">
-                <img loading="lazy" src="https://picsum.photos/seed/pos2/900/600"
-                    alt="ระบบ Backoffice & Dashboard ส่วนกลาง">
-                <div class="card-body">
-                    <div style="display:flex;align-items:center;gap:.5rem">
-                        <h3 class="card-title">Backoffice & รายงานส่วนกลาง</h3>
-                        <div class="price">รายเดือน / รายปี</div>
-                    </div>
-                    <div class="card-sub">
-                        Dashboard ยอดขายเรียลไทม์, ดูข้อมูลสาขา, Export รายงานได้
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
-                        ขอใบเสนอราคา
-                    </a>
-                </div>
-            </article>
-
-            <!-- 🔹 Product 3: ชุด Network & กล้องวงจรปิด -->
-            <article class="card" tabindex="0" data-title="ชุด Network & กล้องวงจรปิดสำหรับสาขา"
-                data-desc="บริการออกแบบและติดตั้งระบบเครือข่าย LAN / Wi-Fi พร้อมกล้องวงจรปิด ดูออนไลน์ได้จากส่วนกลาง รองรับการเชื่อมต่อกับระบบ POS และอุปกรณ์อื่น ๆ"
-                data-price="ราคาเฉพาะตามหน้างาน" data-img="https://picsum.photos/seed/network1/900/600">
-                <img loading="lazy" src="https://picsum.photos/seed/network1/900/600"
-                    alt="ชุด Network & กล้องวงจรปิดสำหรับสาขา">
-                <div class="card-body">
-                    <div style="display:flex;align-items:center;gap:.5rem">
-                        <h3 class="card-title">Network & CCTV Package</h3>
-                        <div class="price">ประเมินตามหน้างาน</div>
-                    </div>
-                    <div class="card-sub">
-                        ออกแบบเครือข่าย, ติดตั้ง Access Point, กล้องวงจรปิด พร้อมดูออนไลน์
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
-                        นัดทีมเข้าดูหน้างาน
-                    </a>
-                </div>
-            </article>
-
-            <!-- 🔹 Product 4: สัญญาดูแลระบบ MA/Support -->
-            <article class="card" tabindex="0" data-title="สัญญาบริการดูแลระบบ (MA & Helpdesk)"
-                data-desc="บริการดูแลระบบ POS และอุปกรณ์ IT แบบรายเดือน/รายปี มี Helpdesk, Remote support และทีมภาคสนาม พร้อม SLA ตามระดับบริการที่ต้องการ"
-                data-price="รายเดือน / รายปี" data-img="https://picsum.photos/seed/support1/900/600">
-                <img loading="lazy" src="https://picsum.photos/seed/support1/900/600"
-                    alt="สัญญาบริการดูแลระบบ (MA & Helpdesk)">
-                <div class="card-body">
-                    <div style="display:flex;align-items:center;gap:.5rem">
-                        <h3 class="card-title">MA & Support Package</h3>
-                        <div class="price">รายเดือน / รายปี</div>
-                    </div>
-                    <div class="card-sub">
-                        Helpdesk, Remote, On-site, SLA ตามระดับบริการที่กำหนด
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
-                        พูดคุยกับทีมซัพพอร์ต
-                    </a>
-                </div>
-            </article>
-
-            <!-- Modal -->
-            <div class="product-modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
-                <div class="overlay" id="overlay"></div>
-                <div class="dialog" role="document" aria-labelledby="dlg-title">
-                    <button class="close-btn" id="close" title="Close">✕</button>
-                    <div style="min-height:220px;">
-                        <img id="dlg-img" src="" alt="">
-                    </div>
-                    <div class="details">
-                        <h2 id="dlg-title">Product Title</h2>
-                        <p id="dlg-desc">Product description goes here.</p>
-                        <div class="price" id="dlg-price">$0</div>
-                        <div class="dlg-actions">
-                            <button class="btn" id="contact">Contact sales</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- 🔹 Product Template ไว้เผื่อเพิ่มทีหลัง -->
-            <!-- ก็อปอันนี้แล้วแก้ข้อมูลได้เลย -->
-            <!--
-    <article class="card" tabindex="0"
-        data-title="ชื่อสินค้า"
-        data-desc="รายละเอียดสินค้าแบบย่อที่ลูกค้าควรรู้ เช่น เหมาะกับธุรกิจประเภทไหน ฟีเจอร์หลักมีอะไรบ้าง"
-        data-price="ระบุราคา หรือ 'ตามการประเมิน'"
-        data-img="https://picsum.photos/seed/yourseed/900/600">
-        <img loading="lazy" src="https://picsum.photos/seed/yourseed/900/600" alt="ชื่อสินค้า">
-        <div class="card-body">
-            <div style="display:flex;align-items:center;gap:.5rem">
-                <h3 class="card-title">ชื่อสินค้า</h3>
-                <div class="price">ข้อความราคา</div>
-            </div>
-            <div class="card-sub">
-                สรุปจุดเด่นสั้น ๆ ไม่เกิน 1–2 บรรทัด
-            </div>
+    <!-- ========== PRODUCTS ========== -->
+    <section class="products-area">
+      <div class="products-header">
+        <div>
+          <h1 class="products-header-title">Accessories</h1>
+          <p class="products-count">พบสินค้า 9 รายการ</p>
         </div>
-        <div class="card-footer">
-            <button class="btn">ดูรายละเอียด</button>
-            <a href="#footer" class="btn primary js-contact" data-skip-modal="true">
-                ติดต่อทีมขาย
-            </a>
-        </div>
-    </article>
-    -->
-        </section>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- สินค้าตัวอย่าง 1 -->
+        <article class="product-card">
+          <span class="product-badge">ลดราคา!</span>
+
+          <div class="product-image-wrapper">
+            <img
+              class="product-image"
+              src="https://www.ada-soft.com/assets/2025/09/01_T20X-II_T20IV-L_T82X-II_T83IV_Front-300x300.jpg"
+              alt="Epson TM-T82X-II"
+            />
+          </div>
+
+          <div class="product-body">
+            <p class="product-category">Thermal Receipt Printer</p>
+            <h3 class="product-name">
+              <a href="https://www.ada-soft.com/product/epson-tm-t82x-ii/" target="_blank">
+                Epson TM-T82X-II
+              </a>
+            </h3>
+
+            <div class="product-price-row">
+              <span class="price-old">฿7,000.00</span>
+              <span class="price-new">฿6,900.00</span>
+            </div>
+
+            <div class="product-actions">
+              <a class="btn-outline" href="#" target="_blank">หยิบใส่ตะกร้า</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- สินค้าตัวอย่าง 2 -->
+        <article class="product-card">
+          <div class="product-image-wrapper">
+            <img
+              class="product-image"
+              src="https://www.ada-soft.com/assets/2025/09/UPS-1000-VA600W-2-300x300.png"
+              alt="Paper Slip TMU220"
+            />
+          </div>
+
+          <div class="product-body">
+            <p class="product-category">Accessories</p>
+            <h3 class="product-name">
+              <a href="https://www.ada-soft.com/product/paper-slip-tmu220-2-copy-75-x-75-mm/" target="_blank">
+                Paper Slip TMU220 (2 Copy, 75 × 75 mm)
+              </a>
+            </h3>
+
+            <div class="product-price-row">
+              <!-- ไม่มีราคา แสดงเป็นขีด -->
+              <span class="price-new" style="color: var(--muted); font-weight: 500;">ติดต่อสอบถามราคา</span>
+            </div>
+
+            <div class="product-actions">
+              <a class="btn-outline" href="https://www.ada-soft.com/product/paper-slip-tmu220-2-copy-75-x-75-mm/" target="_blank">
+                อ่านเพิ่ม
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- สินค้าตัวอย่าง 3 -->
+        <article class="product-card">
+          <div class="product-image-wrapper">
+            <img
+              class="product-image"
+              src="https://www.ada-soft.com/assets/2025/09/Paper-Thermal-80-x-80-mm-300x300.png"
+              alt="Thermal Paper 80 × 80 mm"
+            />
+          </div>
+
+          <div class="product-body">
+            <p class="product-category">Accessories</p>
+            <h3 class="product-name">
+              <a href="https://www.ada-soft.com/product/thermal-paper-80-x-80-mm/" target="_blank">
+                Thermal Paper 80 × 80 mm
+              </a>
+            </h3>
+
+            <div class="product-price-row">
+              <span class="price-new" style="color: var(--muted); font-weight: 500;">ติดต่อสอบถามราคา</span>
+            </div>
+
+            <div class="product-actions">
+              <a class="btn-outline" href="https://www.ada-soft.com/product/thermal-paper-80-x-80-mm/" target="_blank">
+                อ่านเพิ่ม
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- คุณก็อป article.product-card ไปวางเพิ่มได้เรื่อย ๆ เพื่อเพิ่มสินค้า -->
+
+      </div>
+
+      <!-- Pagination -->
+      <nav class="pagination" aria-label="Product Pagination">
+        <a href="#" class="page-number current">1</a>
+        <a href="#" class="page-number">2</a>
+        <a href="#" class="page-number">3</a>
+        <a href="#" class="page-number">›</a>
+      </nav>
+    </section>
+
+  </div>
+</main>
+
+</body>
 </main>
         <!-- ✅ footer will be injected here -->
         <div id="footer"></div>

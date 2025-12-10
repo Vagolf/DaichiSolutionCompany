@@ -2,6 +2,8 @@
  * 1. Global Design Tokens
  *    - Colors, typography, base styles
  * ========================= */
+
+ @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap');
 :root {
     --primary-color: #E5E7EB;
     --secondary-color: #0d2c40;
@@ -9,12 +11,12 @@
     --background-light: #f8f9fa;
 
     /* Main site font */
-    --font-family: "Bai Jamjuree", sans-serif;
+  --font-family: "Kanit", sans-serif;
 }
 
 /* Base body text styling */
 body {
-    font-family: var(--font-family);
+    font-family: 'Kanit', sans-serif;
     line-height: 1.7;
     color: var(--text-dark);
     background-color: #ffffff;
@@ -22,11 +24,13 @@ body {
 
 html,
 body {
+    font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 body {
+    font-family: 'Kanit', sans-serif;
     min-height: 100vh;
     /* สูงอย่างน้อยเท่าจอ */
     display: flex;
@@ -395,16 +399,6 @@ h6 {
 
 /* Service card container */
 
-/* กำหนดเงาเริ่มต้นเป็น shadow-sm */
-.card {
-    transition: box-shadow 0.3s ease-in-out; /* เพิ่ม transition เพื่อให้เงาเปลี่ยนแบบนุ่มนวล */
-}
-
-/* เมื่อเมาส์ชี้ (hover) ให้ใช้เงาขนาดใหญ่ขึ้น (shadow-lg) */
-.card:hover {
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; 
-}
-
 .service-item {
     position: relative;
     border: 1px solid #e9ecef;
@@ -596,7 +590,6 @@ footer.footer-main,
     background-color: #0F172A;
     color: #f8f9fa;
     margin: 0;
-    margin-bottom: 8px;
     padding-top: 16px;
     padding-bottom: 16px;
 }
@@ -1345,55 +1338,12 @@ html {
 /* desk service css */
 
 /* 1. สไตล์เริ่มต้น (เพิ่มเงาเริ่มต้น shadow-sm ให้ชัดเจนขึ้น) */
-.process-step {
-    border-radius: 0.25rem;
-    /* กำหนดเงาเริ่มต้น (Bootstrap shadow-sm) */
-    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.075); 
-    transition: 
-        background-color 0.3s ease-in-out, 
-        box-shadow 0.3s ease-in-out;
-}
 
-/* 2. เมื่อเมาส์ชี้ (Hover Effect) - แก้ไขสีพื้นหลังให้เป็นสีน้ำเงินเข้มและใช้เงา LG */
-.process-step:hover {
-    /* เปลี่ยนสีพื้นหลังเป็นสีน้ำเงินเข้ม (Primary Color) เพื่อให้ข้อความสีขาวเด่นขึ้น */
-    background-color: #000000 !important; 
-    
-    /* ใช้ค่า shadow-lg (กำหนดค่าเองและใช้ !important เพื่อให้แน่ใจว่าถูกเรียกใช้) */
-    box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.5) !important;
-}
 
 /* 3. จัดการสีข้อความเมื่อ Hover */
-.process-step:hover h4,
-.process-step:hover p {
-    color: #ffffff !important; /* เปลี่ยนข้อความเป็นสีขาว */
-}
 
-/* 4. จัดการสีข้อความรองเมื่อ Hover */
-.process-step:hover .text-muted {
-    color: #f8f9fa !important; /* เปลี่ยนข้อความรองเป็นสีขาวอมเทาอ่อน */
-}
 
-.service-card-hover {
-    box-shadow: 0 .3rem 0.5rem rgba(0, 0, 0, 0.01); /* ใช้ค่า shadow กลางเป็นค่าเริ่มต้น */
-    transition: 
-        background-color 0.3s ease-in-out, 
-        color 0.3s ease-in-out,
-        box-shadow 0.3s ease-in-out;
-}
 
-.service-card-hover:hover {
-    background-color: #000000 !important;
-    color: #ffffff !important; 
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.75) !important;
-}
-
-/* 3. จัดการสีของไอคอน (Font Awesome Icon) และข้อความรอง */
-.service-card-hover:hover .fa-solid,
-.service-card-hover:hover .text-muted {
-    /* เปลี่ยนสีไอคอนและข้อความรอง (text-muted) เป็นสีขาว */
-    color: #ffffff !important; 
-}
 
 /* กล่องรูป placeholder */
 .service-detail-image-card .service-detail-placeholder {
@@ -1466,30 +1416,124 @@ html {
     border-radius: 1rem;
 }
 
-/* ถ้ายังไม่มีจากหน้า Service Desk ให้เพิ่มด้วย */
-.process-step {
-    display: flex;
-    gap: 12px;
-    padding: 10px 14px;
-    border-radius: 999px;
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-}
+  /* <!-- ตัวอย่างสไตล์พื้นฐาน --> */
 
-.step-number {
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-    background: #0ea5e9;
-    color: #0f172a;
-}
+    .product-slider {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      margin: 1em;
+    }
 
-/* กล่อง use case */
-.usecase-box {
-    border-left: 4px solid #22c55e;
-}
+    .carousel {
+      width: 100%;
+    }
+
+    .carousel-cell {
+      width: 260px;          /* กว้างต่อชิ้น */
+      margin-right: 16px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    /* badge มุมซ้ายบน */
+    .badge-container {
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      z-index: 2;
+    }
+
+    .badge {
+      background: #ef4444;
+      color: #fff;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* รูปสินค้า */
+    .box-image {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #f9fafb;
+    }
+
+    .box-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .box-image img {
+      transform: scale(1.05);
+    }
+
+    /* ปุ่ม/ไอคอนลอยมุมขวาบน เวลา hover */
+    .image-tools {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      display: flex;
+      gap: 6px;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .product-card:hover .image-tools {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .image-tools button {
+      border: none;
+      padding: 4px 8px;
+      font-size: 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.95);
+      cursor: pointer;
+    }
+
+    /* ข้อความด้านล่าง */
+    .box-text {
+      padding: 12px 12px 14px;
+    }
+
+    .product-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: #111827;
+    }
+
+    .product-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .product-title a:hover {
+      text-decoration: underline;
+    }
+
+    .price {
+      font-size: 13px;
+      color: #16a34a;
+      font-weight: 600;
+    }

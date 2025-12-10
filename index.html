@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-</style>
+
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 
@@ -191,159 +190,368 @@
             </div>
         </div>
 
+        <head>
 
-        <!--Show pictures of services with descriptions and read more links -->
-        <!-- Logo Block (Simple) -->
-        <section class="logo-block py-4 mt-5" style="background-color: #0080ff00;"> <!-- trusted by section -->
-            <div class="container">
-                <h2 class="text-center mb-5 scroll-slide-left" style="font-size: 60px;">Trusted by</h2>
-                <div class="logo-block-row">
-                    <img class="img-size scroll-slide-up" style="animation-delay: 1s;" src="images/logo/tops-logo.png" alt="Tops">
-                    <img class="img-size scroll-slide-down" style="animation-delay: 1.2s;" src="images/logo/Burger-King-logo.png" alt="Burger King">
-                    <img class="img-size scroll-slide-up" style="animation-delay: 1.4s;" src="images/logo/Pizza-logo.png" alt="Pizza Company">
-                    <img class="img-size scroll-slide-down" style="animation-delay: 1.6s;" src="images/logo/KFC-logo.svg" alt="KFC">
-                    <img class="img-size scroll-slide-up" style="animation-delay: 1.8s;" src="images/logo/Sizzler-logo.svg" alt="Sizzler">
-                    <img class="img-size scroll-slide-down" style="animation-delay: 2s;" src="images/logo/Swensens-Logo.png" alt="Swensens">
+
+            
+
+            <div class="product-slider" >
+                <h2>สินค้ายอดนิยม</h2>
+                <div class="carousel" data-flickity='{
+                    "imagesLoaded": true,
+                    "groupCells": "100%",
+                    "cellAlign": "left",
+                    "contain": true,
+                    "wrapAround": true,
+                    "pageDots": false,
+                "prevNextButtons": true
+                }'>
+
+                    <!-- สินค้า 1 -->
+                    <div class="carousel-cell">
+                        <div class="product-card">
+                            <div class="badge-container">
+                                <span class="badge">ขายดี</span>
+                            </div>
+
+                            <div class="box-image">
+                                <a href="#">
+                                    <img src="https://picsum.photos/400?random=1" alt="Product 1">
+                                </a>
+
+                                <div class="image-tools">
+                                    <button>ดูรายละเอียด</button>
+                                    <button>หยิบใส่ตะกร้า</button>
+                                </div>
+                            </div>
+
+                            <div class="box-text">
+                                <h3 class="product-title">
+                                    <a href="#">Transfer Ribbon Size 110mm x 300m</a>
+                                </h3>
+                                <div class="price">฿450.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- สินค้า 2 -->
+                    <div class="carousel-cell">
+                        <div class="product-card">
+                            <div class="badge-container">
+                                <span class="badge" style="background:#22c55e;">ใหม่</span>
+                            </div>
+
+                            <div class="box-image">
+                                <a href="#">
+                                    <img src="https://picsum.photos/400?random=2" alt="Product 2">
+                                </a>
+                                <div class="image-tools">
+                                    <button>ดูรายละเอียด</button>
+                                    <button>หยิบใส่ตะกร้า</button>
+                                </div>
+                            </div>
+
+                            <div class="box-text">
+                                <h3 class="product-title">
+                                    <a href="#">Barcode Label 50 x 30 mm</a>
+                                </h3>
+                                <div class="price">฿250.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- สินค้า 3 -->
+                    <div class="carousel-cell">
+                        <div class="product-card">
+                            <div class="badge-container">
+                                <span class="badge" style="background:#6366f1;">แนะนำ</span>
+                            </div>
+
+                            <div class="box-image">
+                                <a href="#">
+                                    <img src="https://picsum.photos/400?random=3" alt="Product 3">
+                                </a>
+                                <div class="image-tools">
+                                    <button>ดูรายละเอียด</button>
+                                    <button>หยิบใส่ตะกร้า</button>
+                                </div>
+                            </div>
+
+                            <div class="box-text">
+                                <h3 class="product-title">
+                                    <a href="#">Receipt Paper 80 x 80 mm</a>
+                                </h3>
+                                <div class="price">฿120.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- สินค้า 4 -->
+                    <div class="carousel-cell">
+                        <div class="product-card">
+                            <div class="badge-container">
+                                <span class="badge">Hot</span>
+                            </div>
+
+                            <div class="box-image">
+                                <a href="#">
+                                    <img src="https://picsum.photos/400?random=4" alt="Product 4">
+                                </a>
+                                <div class="image-tools">
+                                    <button>ดูรายละเอียด</button>
+                                    <button>หยิบใส่ตะกร้า</button>
+                                </div>
+                            </div>
+
+                            <div class="box-text">
+                                <h3 class="product-title">
+                                    <a href="#">POS Thermal Printer</a>
+                                </h3>
+                                <div class="price">฿3,900.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-cell">
+                        <div class="product-card">
+                            <div class="badge-container">
+                                <span class="badge">Hot</span>
+                            </div>
+
+                            <div class="box-image">
+                                <a href="#">
+                                    <img src="https://picsum.photos/400?random=4" alt="Product 4">
+                                </a>
+                                <div class="image-tools">
+                                    <button>ดูรายละเอียด</button>
+                                    <button>หยิบใส่ตะกร้า</button>
+                                </div>
+                            </div>
+
+                            <div class="box-text">
+                                <h3 class="product-title">
+                                    <a href="#">POS Thermal Printer</a>
+                                </h3>
+                                <div class="price">฿3,900.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-cell">
+                        <div class="product-card">
+                            <div class="badge-container">
+                                <span class="badge">Hot</span>
+                            </div>
+
+                            <div class="box-image">
+                                <a href="#">
+                                    <img src="https://picsum.photos/400?random=4" alt="Product 4">
+                                </a>
+                                <div class="image-tools">
+                                    <button>ดูรายละเอียด</button>
+                                    <button>หยิบใส่ตะกร้า</button>
+                                </div>
+                            </div>
+
+                            <div class="box-text">
+                                <h3 class="product-title">
+                                    <a href="#">POS Thermal Printer</a>
+                                </h3>
+                                <div class="price">฿3,900.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-cell">
+                        <div class="product-card">
+                            <div class="badge-container">
+                                <span class="badge">Hot</span>
+                            </div>
+
+                            <div class="box-image">
+                                <a href="#">
+                                    <img src="https://picsum.photos/400?random=4" alt="Product 4">
+                                </a>
+                                <div class="image-tools">
+                                    <button>ดูรายละเอียด</button>
+                                    <button>หยิบใส่ตะกร้า</button>
+                                </div>
+                            </div>
+
+                            <div class="box-text">
+                                <h3 class="product-title">
+                                    <a href="#">POS Thermal Printer</a>
+                                </h3>
+                                <div class="price">฿3,900.00</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Detailed Services Section -->
-        <div class="py-5">
-            <div class="container services-wrapper px-4 px-lg-5">
-                <div class="row gx-4 gy-4">
 
-                    <!-- Service Desk -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="https://www.p5-management.com/img/Service_Desk_P5.jpg"
-                                alt="Service Desk Background">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="https://www.p5-management.com/img/icons/4.png"
-                                    alt="Service Desk Icon">
-                                <h1 class="mb-1 scroll-slide-right" style="animation-delay: 0.5s;">Service Desk</h1>
-                                <p class="mb-4 text-p">
-                                    ศูนย์รับแจ้งปัญหาและคำขอบริการด้านไอทีในจุดเดียว ทั้งเครื่อง POS ระบบเครือข่าย
-                                    และซอฟต์แวร์สำคัญ ดูแลตั้งแต่รับเรื่อง ติดตาม ไปจนถึงปิดงานอย่างเป็นระบบ
-                                </p>
-                                <a class="btn btn-readmore" href="services/service_desk.html">
-                                    <i class="fa fa-plus"></i>
-                                    <span>อ่านเพิ่มเติม</span>
-                                </a>
+
+            <!--Show pictures of services with descriptions and read more links -->
+            <!-- Logo Block (Simple) -->
+            <section class="logo-block py-4 mt-5" style="background-color: #0080ff00;"> <!-- trusted by section -->
+                <div class="container">
+                    <h2 class="text-center mb-5 scroll-slide-left" style="font-size: 60px;">Trusted by</h2>
+                    <div class="logo-block-row">
+                        <img class="img-size scroll-slide-up" style="animation-delay: 1s;"
+                            src="images/logo/tops-logo.png" alt="Tops">
+                        <img class="img-size scroll-slide-down" style="animation-delay: 1.2s;"
+                            src="images/logo/Burger-King-logo.png" alt="Burger King">
+                        <img class="img-size scroll-slide-up" style="animation-delay: 1.4s;"
+                            src="images/logo/Pizza-logo.png" alt="Pizza Company">
+                        <img class="img-size scroll-slide-down" style="animation-delay: 1.6s;"
+                            src="images/logo/KFC-logo.svg" alt="KFC">
+                        <img class="img-size scroll-slide-up" style="animation-delay: 1.8s;"
+                            src="images/logo/Sizzler-logo.svg" alt="Sizzler">
+                        <img class="img-size scroll-slide-down" style="animation-delay: 2s;"
+                            src="images/logo/Swensens-Logo.png" alt="Swensens">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Services Section -->
+            <div class="py-5">
+                <div class="container services-wrapper px-4 px-lg-5">
+                    <div class="row gx-4 gy-4">
+
+                        <!-- Service Desk -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item d-flex position-relative text-center h-100">
+                                <img class="bg-img" src="https://www.p5-management.com/img/Service_Desk_P5.jpg"
+                                    alt="Service Desk Background">
+                                <div class="service-text p-5">
+                                    <img class="mb-4" src="https://www.p5-management.com/img/icons/4.png"
+                                        alt="Service Desk Icon">
+                                    <h1 class="mb-1 scroll-slide-right" style="animation-delay: 0.5s;">Service Desk</h1>
+                                    <p class="mb-4 text-p">
+                                        ศูนย์รับแจ้งปัญหาและคำขอบริการด้านไอทีในจุดเดียว ทั้งเครื่อง POS ระบบเครือข่าย
+                                        และซอฟต์แวร์สำคัญ ดูแลตั้งแต่รับเรื่อง ติดตาม ไปจนถึงปิดงานอย่างเป็นระบบ
+                                    </p>
+                                    <a class="btn btn-readmore" href="services/service_desk.html">
+                                        <i class="fa fa-plus"></i>
+                                        <span>อ่านเพิ่มเติม</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Preventive Maintenance (PM) -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="https://www.p5-management.com/img/Preventive_Maintenance_P5.jpg"
-                                alt="Preventive Maintenance Background">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="https://www.p5-management.com/img/icons/5.png"
-                                    alt="Preventive Maintenance Icon">
-                                <h3 class="mb-3">Preventive Maintenance (PM)</h3>
-                                <p class="mb-4 text-p">
-                                    บริการบำรุงรักษาเชิงป้องกันสำหรับระบบไอทีและอุปกรณ์ POS วางแผนตรวจเช็ก เปลี่ยนอะไหล่
-                                    และดูแลตามรอบที่กำหนด เพื่อลดโอกาสเสียกะทันหัน และยืดอายุการใช้งานอุปกรณ์ของคุณ
-                                </p>
-                                <a class="btn btn-readmore" href="services/pm.html">
-                                    <i class="fa fa-plus"></i>
-                                    <span>อ่านเพิ่มเติม</span>
-                                </a>
+                        <!-- Preventive Maintenance (PM) -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item d-flex position-relative text-center h-100">
+                                <img class="bg-img"
+                                    src="https://www.p5-management.com/img/Preventive_Maintenance_P5.jpg"
+                                    alt="Preventive Maintenance Background">
+                                <div class="service-text p-5">
+                                    <img class="mb-4" src="https://www.p5-management.com/img/icons/5.png"
+                                        alt="Preventive Maintenance Icon">
+                                    <h3 class="mb-3">Preventive Maintenance (PM)</h3>
+                                    <p class="mb-4 text-p">
+                                        บริการบำรุงรักษาเชิงป้องกันสำหรับระบบไอทีและอุปกรณ์ POS วางแผนตรวจเช็ก
+                                        เปลี่ยนอะไหล่
+                                        และดูแลตามรอบที่กำหนด เพื่อลดโอกาสเสียกะทันหัน และยืดอายุการใช้งานอุปกรณ์ของคุณ
+                                    </p>
+                                    <a class="btn btn-readmore" href="services/pm.html">
+                                        <i class="fa fa-plus"></i>
+                                        <span>อ่านเพิ่มเติม</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Repair Center -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="https://www.p5-management.com/img/Repair_Center_P5.jpg"
-                                alt="Repair Center Background">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="https://www.p5-management.com/img/icons/6.png"
-                                    alt="Repair Center Icon">
-                                <h3 class="mb-3">Repair Center</h3>
-                                <p class="mb-4 text-p">
-                                    ศูนย์ซ่อมอุปกรณ์ไอทีที่เสียหรือมีปัญหา
-                                    ตรวจเช็ก ซ่อม เปลี่ยนอะไหล่ และทดสอบก่อนส่งคืน
-                                    พร้อมรับประกันงานซ่อมตามเงื่อนไขที่กำหนด
-                                </p>
-                                <a class="btn btn-readmore" href="services/repair_center.html">
-                                    <i class="fa fa-plus"></i>
-                                    <span>อ่านเพิ่มเติม</span>
-                                </a>
+                        <!-- Repair Center -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item d-flex position-relative text-center h-100">
+                                <img class="bg-img" src="https://www.p5-management.com/img/Repair_Center_P5.jpg"
+                                    alt="Repair Center Background">
+                                <div class="service-text p-5">
+                                    <img class="mb-4" src="https://www.p5-management.com/img/icons/6.png"
+                                        alt="Repair Center Icon">
+                                    <h3 class="mb-3">Repair Center</h3>
+                                    <p class="mb-4 text-p">
+                                        ศูนย์ซ่อมอุปกรณ์ไอทีที่เสียหรือมีปัญหา
+                                        ตรวจเช็ก ซ่อม เปลี่ยนอะไหล่ และทดสอบก่อนส่งคืน
+                                        พร้อมรับประกันงานซ่อมตามเงื่อนไขที่กำหนด
+                                    </p>
+                                    <a class="btn btn-readmore" href="services/repair_center.html">
+                                        <i class="fa fa-plus"></i>
+                                        <span>อ่านเพิ่มเติม</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Network -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="https://www.p5-management.com/img/Network_P5.jpg"
-                                alt="Network Background">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="https://www.p5-management.com/img/icons/7.png"
-                                    alt="Network Icon">
-                                <h3 class="mb-3">Network</h3>
-                                <p class="mb-4 text-p">
-                                    ออกแบบและติดตั้งระบบเครือข่าย LAN / Wi-Fi และกล้องวงจรปิด
-                                    รวมถึง VPN และอุปกรณ์เครือข่ายอื่น ๆ
-                                    เพื่อให้ระบบภายในองค์กรเชื่อมต่อกันได้อย่างเสถียรและปลอดภัย
-                                </p>
-                                <a class="btn btn-readmore" href="services/network.html">
-                                    <i class="fa fa-plus"></i>
-                                    <span>อ่านเพิ่มเติม</span>
-                                </a>
+                        <!-- Network -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item d-flex position-relative text-center h-100">
+                                <img class="bg-img" src="https://www.p5-management.com/img/Network_P5.jpg"
+                                    alt="Network Background">
+                                <div class="service-text p-5">
+                                    <img class="mb-4" src="https://www.p5-management.com/img/icons/7.png"
+                                        alt="Network Icon">
+                                    <h3 class="mb-3">Network</h3>
+                                    <p class="mb-4 text-p">
+                                        ออกแบบและติดตั้งระบบเครือข่าย LAN / Wi-Fi และกล้องวงจรปิด
+                                        รวมถึง VPN และอุปกรณ์เครือข่ายอื่น ๆ
+                                        เพื่อให้ระบบภายในองค์กรเชื่อมต่อกันได้อย่างเสถียรและปลอดภัย
+                                    </p>
+                                    <a class="btn btn-readmore" href="services/network.html">
+                                        <i class="fa fa-plus"></i>
+                                        <span>อ่านเพิ่มเติม</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- MA -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="https://www.p5-management.com/img/MA_P5.jpg" alt="MA Background">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="https://www.p5-management.com/img/icons/8.png" alt="MA Icon">
-                                <h3 class="mb-3">MA</h3>
-                                <p class="mb-4 text-p">
-                                    สัญญาบริการดูแลและบำรุงรักษาระบบไอทีแบบรายเดือน/รายปี
-                                    มีทีมงานคอยช่วยแก้ปัญหา ตรวจเช็ก และดูแลตาม SLA
-                                    เหมาะสำหรับองค์กรที่ต้องการให้ระบบพร้อมใช้งานอยู่เสมอ
-                                </p>
-                                <a class="btn btn-readmore" href="services/ma.html">
-                                    <i class="fa fa-plus"></i>
-                                    <span>อ่านเพิ่มเติม</span>
-                                </a>
+                        <!-- MA -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item d-flex position-relative text-center h-100">
+                                <img class="bg-img" src="https://www.p5-management.com/img/MA_P5.jpg"
+                                    alt="MA Background">
+                                <div class="service-text p-5">
+                                    <img class="mb-4" src="https://www.p5-management.com/img/icons/8.png" alt="MA Icon">
+                                    <h3 class="mb-3">MA</h3>
+                                    <p class="mb-4 text-p">
+                                        สัญญาบริการดูแลและบำรุงรักษาระบบไอทีแบบรายเดือน/รายปี
+                                        มีทีมงานคอยช่วยแก้ปัญหา ตรวจเช็ก และดูแลตาม SLA
+                                        เหมาะสำหรับองค์กรที่ต้องการให้ระบบพร้อมใช้งานอยู่เสมอ
+                                    </p>
+                                    <a class="btn btn-readmore" href="services/ma.html">
+                                        <i class="fa fa-plus"></i>
+                                        <span>อ่านเพิ่มเติม</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Installation -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item d-flex position-relative text-center h-100">
-                            <img class="bg-img" src="https://www.p5-management.com/img/installation_P5.jpg"
-                                alt="Installation Background">
-                            <div class="service-text p-5">
-                                <img class="mb-4" src="https://www.p5-management.com/img/icons/9.png"
-                                    alt="Installation Icon">
-                                <h3 class="mb-3">Installation</h3>
-                                <p class="mb-4 text-p">
-                                    ติดตั้งระบบ Point of Sale และอุปกรณ์ไอทีที่หน้าร้านและสาขา
-                                    ตั้งค่าระบบให้พร้อมใช้งานจริง และสอนการใช้งานให้กับพนักงาน
-                                    เพื่อให้เริ่มทำงานได้เต็มประสิทธิภาพตั้งแต่วันแรก
-                                </p>
-                                <a class="btn btn-readmore" href="services/installation.html">
-                                    <i class="fa fa-plus"></i>
-                                    <span>อ่านเพิ่มเติม</span>
-                                </a>
+                        <!-- Installation -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item d-flex position-relative text-center h-100">
+                                <img class="bg-img" src="https://www.p5-management.com/img/installation_P5.jpg"
+                                    alt="Installation Background">
+                                <div class="service-text p-5">
+                                    <img class="mb-4" src="https://www.p5-management.com/img/icons/9.png"
+                                        alt="Installation Icon">
+                                    <h3 class="mb-3">Installation</h3>
+                                    <p class="mb-4 text-p">
+                                        ติดตั้งระบบ Point of Sale และอุปกรณ์ไอทีที่หน้าร้านและสาขา
+                                        ตั้งค่าระบบให้พร้อมใช้งานจริง และสอนการใช้งานให้กับพนักงาน
+                                        เพื่อให้เริ่มทำงานได้เต็มประสิทธิภาพตั้งแต่วันแรก
+                                    </p>
+                                    <a class="btn btn-readmore" href="services/installation.html">
+                                        <i class="fa fa-plus"></i>
+                                        <span>อ่านเพิ่มเติม</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
 
     </main>
 
@@ -357,6 +565,8 @@
     <script src="js/footer.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Flickity JS -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     <!-- JS รีสตาร์ทอนิเมชัน hero-content ตอน Carousel เลื่อนสไลด์ -->
     <script>

@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${ROOT}/index.html" class="nav-link active">หน้าหลัก</a>
               </li>
               <li class="scroll-to-section" style="margin: -10px;">
+                <a href="${ROOT}/station.html" class="nav-link">ศูนย์บริการ</a>
+              </li>
+              <li class="scroll-to-section" style="margin: -10px;">
                 <a href="${ROOT}/products.html" class="nav-link">สินค้า</a>
               </li>
               <li class="scroll-to-section" style="margin: -10px;">

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!footer) return;
 
     footer.innerHTML = `
-    <footer class="footer-main pt-2 pb-2 site-footer">
+    <footer class="footer-main pt-0 pb-10 site-footer">
         <div class="container">
             <div class="row g-4">
 
@@ -26,7 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     </li>
                     <li class="mt-2">
                         <i class="fa-solid fa-envelope me-2"></i>
-                        customerservice@p5-management.com
+                        sale@daichisolution.com
+                    </li>
+                    <li class="mt-2">
+                        <i class="fa-solid fa-envelope me-2"></i>
+                        helpdesk@daichisolution.com
                     </li>
                     <li class="mt-2">
                         <i class="fa-brands fa-line me-2"></i>
