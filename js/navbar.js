@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!navbar) return;
 
   navbar.innerHTML = `
-  <header class="header-area header-sticky">
+  <header class="header-area header-sticky" style="box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <!-- Logo -->
             <a href="${ROOT}/index.html" class="logo">
               <img src="${ROOT}/images/logo/Daichi-logo.png"
-                   alt="Daichisolution Logo" style="height: 60px; width: auto;" />
+                   alt="Daichisolution Logo" style="height: 45px; width: auto;" />
             </a>
 
             <!-- Menu -->
-            <ul class="nav" style="font-size: 25px;">
+            <ul class="nav" style="font-size: 15px;">
               <li class="scroll-to-section" style="margin: -10px;">
                 <a href="${ROOT}/index.html" class="nav-link active">หน้าหลัก</a>
               </li>
