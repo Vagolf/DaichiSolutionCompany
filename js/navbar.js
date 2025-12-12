@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${ROOT}/products.html" class="nav-link">สินค้า</a>
               </li>
               <li class="scroll-to-section" style="margin: -10px;">
-                <a href="#footer" class="nav-link">ติดต่อเรา</a>
+                <a href="${ROOT}/index.html/#footer" class="nav-link">ติดต่อเรา</a>
               </li>
             </ul>
 

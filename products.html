@@ -16,16 +16,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- ฟอนต์ไทย (ถ้าไป import ใน style.css แล้ว ตรงนี้เอาออกได้) -->
-  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body class="products-page">
   <!-- navbar will be injected here -->
   <div id="navbar" class="sticky-top"></div>
+  <!-- Hero banner บนหน้า products -->
+
+  <!-- HERO TOP (รูปยาวด้านบน) -->
+<section class="product-hero-banner">
+  <div class="product-hero-inner">
+    <h1 class="product-hero-title">Desktop Printer</h1>
+    <p class="product-hero-sub">
+      โซลูชันเครื่องพิมพ์บาร์โค้ดสำหรับงานหน้าร้านและหลังบ้าน รองรับการใช้งานต่อเนื่อง
+      เชื่อมต่อกับระบบ POS และสต๊อกได้อย่างมีประสิทธิภาพ
+    </p>
+  </div>
+</section>
+
 
   <!-- Main content of the page -->
-  <main>
-    <div class="container">
+  <main >
+    <div class="container py-5">
+
       <div class="shop-layout">
 
         <!-- ========== SIDEBAR ========== -->
@@ -98,11 +113,9 @@
           <div id="products">
 
             <!-- Accessories 1 -->
-            <article class="product-card card"
-              data-category="accessories"
+            <article class="product-card card" data-category="accessories"
               data-img="https://www.ada-soft.com/assets/2025/09/01_T20X-II_T20IV-L_T82X-II_T83IV_Front-300x300.jpg"
-              data-title="Epson TM-T82X-II"
-              data-desc="เครื่องพิมพ์ใบเสร็จความร้อน สำหรับร้านอาหารและค้าปลีก">
+              data-title="Epson TM-T82X-II" data-desc="เครื่องพิมพ์ใบเสร็จความร้อน สำหรับร้านอาหารและค้าปลีก">
               <span class="product-badge">ลดราคา!</span>
 
               <div class="product-image-wrapper">
@@ -126,14 +139,12 @@
             </article>
 
             <!-- Accessories 2 -->
-            <article class="product-card card"
-              data-category="accessories"
+            <article class="product-card card" data-category="accessories"
               data-img="https://www.ada-soft.com/assets/2025/09/UPS-1000-VA600W-2-300x300.png"
               data-title="Paper Slip TMU220 (2 Copy, 75 × 75 mm)"
               data-desc="กระดาษสลิปสำหรับเครื่องพิมพ์ TMU220 ขนาด 2 ชั้น 75 × 75 มม.">
               <div class="product-image-wrapper">
-                <img class="product-image"
-                  src="https://www.ada-soft.com/assets/2025/09/UPS-1000-VA600W-2-300x300.png"
+                <img class="product-image" src="https://www.ada-soft.com/assets/2025/09/UPS-1000-VA600W-2-300x300.png"
                   alt="Paper Slip TMU220" />
               </div>
 
@@ -146,8 +157,7 @@
                 </h3>
 
                 <div class="product-actions">
-                  <a class="btn-outline"
-                    href="https://www.ada-soft.com/product/paper-slip-tmu220-2-copy-75-x-75-mm/"
+                  <a class="btn-outline" href="https://www.ada-soft.com/product/paper-slip-tmu220-2-copy-75-x-75-mm/"
                     target="_blank" data-skip-modal="true">
                     อ่านเพิ่ม
                   </a>
@@ -156,11 +166,9 @@
             </article>
 
             <!-- Accessories 3 -->
-            <article class="product-card card"
-              data-category="accessories"
+            <article class="product-card card" data-category="accessories"
               data-img="https://www.ada-soft.com/assets/2025/09/Paper-Thermal-80-x-80-mm-300x300.png"
-              data-title="Thermal Paper 80 × 80 mm"
-              data-desc="กระดาษความร้อน 80 × 80 มม. สำหรับเครื่องพิมพ์ใบเสร็จ">
+              data-title="Thermal Paper 80 × 80 mm" data-desc="กระดาษความร้อน 80 × 80 มม. สำหรับเครื่องพิมพ์ใบเสร็จ">
               <div class="product-image-wrapper">
                 <img class="product-image"
                   src="https://www.ada-soft.com/assets/2025/09/Paper-Thermal-80-x-80-mm-300x300.png"
@@ -176,8 +184,7 @@
                 </h3>
 
                 <div class="product-actions">
-                  <a class="btn-outline"
-                    href="https://www.ada-soft.com/product/thermal-paper-80-x-80-mm/"
+                  <a class="btn-outline" href="https://www.ada-soft.com/product/thermal-paper-80-x-80-mm/"
                     target="_blank" data-skip-modal="true">
                     อ่านเพิ่ม
                   </a>
@@ -186,14 +193,12 @@
             </article>
 
             <!-- Desktop POS 1 -->
-            <article class="product-card card"
-              data-category="desktop-pos"
+            <article class="product-card card" data-category="desktop-pos"
               data-img="https://via.placeholder.com/300x300?text=Desktop+POS+15+inch"
               data-title="DCS Desktop POS 15&quot;"
               data-desc="ชุด POS แบบตั้งโต๊ะ พร้อมหน้าจอทัชสกรีน 15 นิ้ว เหมาะสำหรับร้านอาหารและค้าปลีก">
               <div class="product-image-wrapper">
-                <img class="product-image"
-                  src="https://via.placeholder.com/300x300?text=Desktop+POS+15+inch"
+                <img class="product-image" src="https://via.placeholder.com/300x300?text=Desktop+POS+15+inch"
                   alt="DCS Desktop POS 15 inch" />
               </div>
 
@@ -210,15 +215,13 @@
             </article>
 
             <!-- Desktop POS 2 (Clearance) -->
-            <article class="product-card card"
-              data-category="clearance"
+            <article class="product-card card" data-category="clearance"
               data-img="https://via.placeholder.com/300x300?text=Desktop+POS+Clearance"
               data-title="Desktop POS Gen 1 (Clearance)"
               data-desc="เครื่อง POS รุ่นก่อนหน้า สำหรับโปรโมชันเคลียร์สต็อก ยังรองรับการใช้งานทั่วไปได้ดี">
               <span class="product-badge">Clearance</span>
               <div class="product-image-wrapper">
-                <img class="product-image"
-                  src="https://via.placeholder.com/300x300?text=Desktop+POS+Clearance"
+                <img class="product-image" src="https://via.placeholder.com/300x300?text=Desktop+POS+Clearance"
                   alt="Desktop POS Clearance" />
               </div>
 
@@ -235,14 +238,11 @@
             </article>
 
             <!-- Mobile POS -->
-            <article class="product-card card"
-              data-category="mobile-pos"
-              data-img="https://via.placeholder.com/300x300?text=Mobile+POS"
-              data-title="DCS Mobile POS Android"
+            <article class="product-card card" data-category="mobile-pos"
+              data-img="https://via.placeholder.com/300x300?text=Mobile+POS" data-title="DCS Mobile POS Android"
               data-desc="เครื่อง Mobile POS บน Android สำหรับจุดขายเคลื่อนที่ หรือร้านค้าที่ต้องเคลื่อนย้ายบ่อย">
               <div class="product-image-wrapper">
-                <img class="product-image"
-                  src="https://via.placeholder.com/300x300?text=Mobile+POS"
+                <img class="product-image" src="https://via.placeholder.com/300x300?text=Mobile+POS"
                   alt="DCS Mobile POS Android" />
               </div>
 
@@ -259,14 +259,11 @@
             </article>
 
             <!-- Tablet POS -->
-            <article class="product-card card"
-              data-category="tablet-pos"
-              data-img="https://via.placeholder.com/300x300?text=Tablet+POS"
-              data-title="DCS Tablet POS 10&quot;"
+            <article class="product-card card" data-category="tablet-pos"
+              data-img="https://via.placeholder.com/300x300?text=Tablet+POS" data-title="DCS Tablet POS 10&quot;"
               data-desc="โซลูชัน Tablet POS สำหรับคาเฟ่และร้านขนาดเล็ก เน้นความยืดหยุ่นและประหยัดพื้นที่">
               <div class="product-image-wrapper">
-                <img class="product-image"
-                  src="https://via.placeholder.com/300x300?text=Tablet+POS"
+                <img class="product-image" src="https://via.placeholder.com/300x300?text=Tablet+POS"
                   alt="DCS Tablet POS 10" />
               </div>
 
@@ -283,14 +280,11 @@
             </article>
 
             <!-- Printer -->
-            <article class="product-card card"
-              data-category="printer"
-              data-img="https://via.placeholder.com/300x300?text=Label+Printer"
-              data-title="DCS Label Printer"
+            <article class="product-card card" data-category="printer"
+              data-img="https://via.placeholder.com/300x300?text=Label+Printer" data-title="DCS Label Printer"
               data-desc="เครื่องพิมพ์สติ๊กเกอร์บาร์โค้ด สำหรับคลังสินค้าและหลังร้าน">
               <div class="product-image-wrapper">
-                <img class="product-image"
-                  src="https://via.placeholder.com/300x300?text=Label+Printer"
+                <img class="product-image" src="https://via.placeholder.com/300x300?text=Label+Printer"
                   alt="DCS Label Printer" />
               </div>
 
@@ -307,14 +301,11 @@
             </article>
 
             <!-- Uncategorized -->
-            <article class="product-card card"
-              data-category="uncategorized"
-              data-img="https://via.placeholder.com/300x300?text=Accessory+Kit"
-              data-title="POS Accessory Starter Kit"
+            <article class="product-card card" data-category="uncategorized"
+              data-img="https://via.placeholder.com/300x300?text=Accessory+Kit" data-title="POS Accessory Starter Kit"
               data-desc="ชุดอุปกรณ์เสริมเบื้องต้นสำหรับเริ่มต้นใช้งาน POS เช่น ลิ้นชักเก็บเงิน สแกนเนอร์ ฯลฯ">
               <div class="product-image-wrapper">
-                <img class="product-image"
-                  src="https://via.placeholder.com/300x300?text=Accessory+Kit"
+                <img class="product-image" src="https://via.placeholder.com/300x300?text=Accessory+Kit"
                   alt="POS Accessory Starter Kit" />
               </div>
 

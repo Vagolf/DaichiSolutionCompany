@@ -10,7 +10,7 @@
     --secondary-color: #0d2c40;
     --text-dark: #333333;
     --background-light: #f8f9fa;
-
+    
     /* Main site font */
     --font-family: "Kanit", sans-serif;
 }
@@ -319,6 +319,87 @@ h6 {
   border-radius: 999px;
   margin: 8px auto 0;
 }
+/* ========================= Background Products ========================= */
+/* แบนเนอร์ด้านบน */
+.product-hero-banner {
+  position: relative;
+  margin-top: var(--nav-height);   /* กันไม่ให้ชน navbar sticky */
+  width: 100%;
+  height: 760px;                  /* สูงของแบนเนอร์ ปรับได้ตามชอบ */
+  
+  /* รูปพื้นหลัง */
+  background-image: url("images/page-product/bg-product-3.jpeg"); /* เปลี่ยนเป็น path รูปของคุณ */
+  background-size: cover;
+  background-position: center center;
+
+  /* ทำให้ “เหมือนรูปไม่ขยับ” เวลาเลื่อน */
+  background-attachment: fixed;   /* ถ้าไม่อยากให้ fixed เอาบรรทัดนี้ออก */
+
+  display: flex;
+  align-items: center;
+}
+
+/* กล่องข้อความทึบ ๆ บนรูป */
+.product-hero-inner {
+  max-width: 680px;
+  margin-left: 8vw;
+  padding: 24px 32px;
+  color: #fff;
+  background: rgba(0,0,0,0.55);
+  border-radius: 8px;
+}
+
+/* ตัวอักษร */
+.product-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.product-hero-sub {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ให้ responsive บนจอเล็ก */
+@media (max-width: 768px) {
+  .product-hero-banner {
+    height: 260px;
+    background-attachment: scroll; /* มือถือบางรุ่นไม่รองรับ fixed */
+  }
+
+  .product-hero-inner {
+    margin: 0 16px;
+    padding: 16px 18px;
+  }
+
+  .product-hero-title {
+    font-size: 1.6rem;
+  }
+
+  .product-hero-sub {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ====== ปุ่มหมวดหมู่สินค้า ====== */
+/* สำหรับสินค้า POS */
+.pos-product {
+    background-image: url('images/Page_1/POS.png');
+}
+.pos-product:hover {
+    background-image: url('images/Page_1/POS_Hover.png');
+}
+
+/* สำหรับสินค้า Printer */
+.printer-product {
+    background-image: url('images/Page_2/Printer.png');
+}
+.printer-product:hover {
+    background-image: url('images/Page_2/Printer_Hover.png');
+}
 
 /* ====== Flickity layout: 4 สินค้าต่อหน้าจอ Desktop ====== */
 .home-products-carousel {
@@ -333,7 +414,7 @@ h6 {
 
 .home-products-carousel .carousel-cell {
   width: 25%;          /* 4 ชิ้นต่อแถว */
-  padding: 0 12px;
+  padding: 0 8px;
   box-sizing: border-box;
 }
 
@@ -832,7 +913,7 @@ footer.footer-main,
     flex-shrink: 0;
     position: relative;
     z-index: 10;
-    margin-top: 32px;
+    margin-top: 20px;
 }
 
 /* เนื้อหาข้างในให้อยู่กลางแบบ container */
@@ -1198,14 +1279,13 @@ html {
 
 /* Row that holds all logos */
 .logo-block-row {
-    display: flex;
-    justify-content: center;
-    /* Center logos horizontally */
-    align-items: center;
-    gap: 72px;
-    /* Space between logos */
-    flex-wrap: wrap;
-    /* Allow wrap on smaller screens */
+  display: flex;
+  justify-content: center;   /* จัดโลโก้ให้อยู่กลางแนวนอน */
+  align-items: center;
+  flex-wrap: wrap;           /* ให้โลโก้ตัดบรรทัดได้ถ้าจอแคบ */
+  gap: 24px;                 /* ระยะห่างระหว่างโลโก้ */
+  max-width: 1200px;
+  margin: 0 auto;            /* จัดทั้งบล็อกให้อยู่กลาง container */
 }
 
 /* Each logo image */
@@ -2129,7 +2209,12 @@ html {
 
 
 /* ================= Station ================= */
-
+.display-area
+{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 16px;
+}
 p.page-desc {
     text-align: center;
     margin: 0 0 24px;
@@ -2213,3 +2298,58 @@ p.page-desc {
     background: #1d4ed8;
     transform: translateY(-1px);
 }
+
+/* ================= Service All ================= */
+/* desk service */
+/* Layout ส่วน benefits แบบรูปซ้ายข้อความขวา */
+.sd-benefits-layout {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* กล่องรูปให้ลอยด้านซ้าย */
+.sd-benefits-figure {
+  float: left;
+  max-width: 420px;       /* ปรับความกว้างรูปได้ตามต้องการ */
+  margin: 0 24px 16px 0;  /* เว้นขวา + ล่างนิดหน่อย */
+}
+
+.sd-benefits-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ข้อความหลัก */
+.sd-benefits-text {
+  /* ไม่ต้องทำอะไรเป็นพิเศษ ปล่อยให้ไหลรอบ float */
+}
+
+/* บนจอเล็ก: ยกเลิก float ให้รูปอยู่เต็มบรรทัดบนสุด */
+@media (max-width: 768px) {
+  .sd-benefits-figure {
+    float: none;
+    max-width: 100%;
+    margin: 0 0 16px 0;
+  }
+}
+
+.sd-paragraph {
+  text-indent: 2em;      /* ย่อหัวบรรทัด 2 ตัวอักษร */
+  margin-bottom: 0.75rem; /* เว้นระยะระหว่างย่อหน้า */
+}
+
+.sd-cap-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.sd-cap-img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
