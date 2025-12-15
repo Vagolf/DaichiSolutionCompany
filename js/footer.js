@@ -25,13 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
                         02 004 1722
                     </li>
                     <li class="mt-2">
+                        <i class="fa-solid fa-phone me-2"></i>
+                        02 052 2426
+                    </li>
+                    <li class="mt-2">
                         <i class="fa-solid fa-envelope me-2"></i>
                         sale@daichisolution.com
                     </li>
                     <li class="mt-2">
                         <i class="fa-solid fa-envelope me-2"></i>
                         helpdesk@daichisolution.com
-                    </li>
+                    </li> 
                     <li class="mt-2">
                         <i class="fa-brands fa-line me-2"></i>
                         Add Friend

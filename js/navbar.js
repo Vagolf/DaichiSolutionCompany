@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
   <header class="header-area header-sticky" style="box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);">
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12"  style="border-color: #ffffff;">
           <nav class="main-nav">
             <!-- Logo -->
             <a href="${ROOT}/index.html" class="logo">
               <img src="${ROOT}/images/logo/Daichi-logo.png"
-                   alt="Daichisolution Logo" style="height: 45px; width: auto;" />
+                   alt="Daichisolution Logo" style="height: 60px; width: auto;" />
             </a>
 
             <!-- Menu -->
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${ROOT}/products.html" class="nav-link">สินค้า</a>
               </li>
               <li class="scroll-to-section" style="margin: -10px;">
-                <a href="${ROOT}/index.html/#footer" class="nav-link">ติดต่อเรา</a>
+                <a href="${ROOT}/contact.html" class="nav-link">ติดต่อเรา</a>
               </li>
             </ul>
 
