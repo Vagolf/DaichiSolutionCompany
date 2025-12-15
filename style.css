@@ -315,9 +315,24 @@ h6 {
 .home-products-underline {
   width: 40px;
   height: 3px;
-  background: #3b8e4f;
+  background: #0F172A;
   border-radius: 999px;
   margin: 8px auto 0;
+}
+
+.home-products-underline-2 {
+  width: 200px;
+  height: 3px;
+  background: #0F172A;
+  border-radius: 999px;
+  margin: 0px auto 10px;
+}
+.home-products-underline-3 {
+  width: 150px;
+  height: 3px;
+  background: #0F172A;
+  border-radius: 999px;
+  margin: 0px auto 10px;
 }
 /* ========================= Background Products ========================= */
 /* แบนเนอร์ด้านบน */
@@ -832,7 +847,7 @@ h6 {
 .btn-readmore span {
     opacity: 0;
     max-width: 0;
-    transform: translateX(-4px);
+    transform: translateX(-0);
     transition: all 0.3s ease;
 }
 
@@ -856,7 +871,7 @@ h6 {
 .service-item:hover .btn-readmore span {
     opacity: 1;
     max-width: 200px;
-    transform: translateX(0);
+    transform: translateX(-0);
 }
 
 /* Keep "+" icon in blue while hovering the card */
@@ -872,7 +887,7 @@ h6 {
  */
 .btn-readmore:hover,
 .service-item:hover .btn-readmore:hover {
-    padding-inline: 14px 18px;
+    padding-inline: 10px 10px;
     /* Keep the expanded width from step 2 */
     background-color: transparent;
     border: 1px solid currentColor;
@@ -2343,7 +2358,6 @@ p.page-desc {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
 }
 
 .sd-cap-img {
@@ -2352,4 +2366,5 @@ p.page-desc {
   height: auto;
   display: block;
 }
+
 
