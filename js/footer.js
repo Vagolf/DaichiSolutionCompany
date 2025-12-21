@@ -1,9 +1,13 @@
 // footer.js
 document.addEventListener("DOMContentLoaded", function () {
-  const footer = document.getElementById("footer");
-  if (!footer) return;
+    const footer = document.getElementById("footer");
+    if (!footer) return;
 
+<<<<<<< HEAD
   footer.innerHTML = `
+=======
+    footer.innerHTML = `
+>>>>>>> origin/main
     <footer class="footer-main pt-0 pb-10 site-footer">
         <div class="container">
             <div class="row g-4">
@@ -12,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <!-- Address -->
                 <div class="col-lg-4 col-md-6">
+<<<<<<< HEAD
 
             <h5 class="mb-3">ที่อยู่</h5>
                 <ul class="list-unstyled footer-contact mb-3">
@@ -49,6 +54,41 @@ document.addEventListener("DOMContentLoaded", function () {
                         </a>
                     </li>
 
+=======
+
+            <h5 class="mb-3">ที่อยู่</h5>
+                <ul class="list-unstyled footer-contact mb-3">
+                    <li>
+                        <i class="fa-solid fa-location-dot me-2"></i>
+                        135/2-3 ซ. ลาดพร้าว 94 แขวงพลับพลา <br>
+                        เขตวังทองหลาง กรุงเทพฯ 10310 ประเทศไทย
+                    </li>
+                    <li class="mt-2">
+                        <i class="fa-solid fa-phone me-2"></i>
+                        02 004 1722
+                    </li>
+                    <li class="mt-2">
+                        <i class="fa-solid fa-phone me-2"></i>
+                        02 052 2426
+                    </li>
+                    <li class="mt-2">
+                        <i class="fa-solid fa-envelope me-2"></i>
+                        sale@daichisolution.com
+                    </li>
+                    <li class="mt-2">
+                        <i class="fa-solid fa-envelope me-2"></i>
+                        helpdesk@daichisolution.com
+                    </li> 
+                    <li class="mt-2">
+                        <i class="fa-brands fa-line me-2"></i>
+                        Add Friend
+                    </li>
+                    <li class="mt-2">
+                        <a href="https://www.facebook.com/p/Daichi-Solution-CoLtd-100063740402307/?locale=th_TH" target="_blank">
+                        <i class="fa-brands fa-facebook me-2"></i>
+                        Daichi Solution Co., Ltd.
+                    </a>
+>>>>>>> origin/main
                      
                     </li>
                 </ul>

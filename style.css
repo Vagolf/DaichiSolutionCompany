@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+/* =========================
+ * 1. Global Design Tokens
+ *    - Colors, typography, base styles
+ * ========================= */
+
+>>>>>>> origin/main
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap');
 
 :root {
@@ -5,7 +13,7 @@
     --secondary-color: #0d2c40;
     --text-dark: #333333;
     --background-light: #f8f9fa;
-
+    
     /* Main site font */
     --font-family: "Kanit", sans-serif;
 }
@@ -279,6 +287,91 @@ h6 {
 
 
 /* =========================
+ * 3.1 Dropdown Menu in Navbar
+ * ========08/12/68======== */
+/* ========== Header แบบ Mexant ========== */
+.header-area {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #0F172A;
+}
+
+.header-area .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.header-area .logo img {
+    height: 40px;
+}
+
+/* เมนูหลัก */
+.header-area .main-nav .nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header-area .main-nav .nav li {
+    margin-left: 35px;
+}
+
+/* ใช้ร่วมกับ .nav-link เดิมของคุณ */
+.header-area .main-nav .nav a.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ปุ่ม "Menu" (mobile) */
+.menu-trigger {
+    display: none;
+    cursor: pointer;
+    color: #e5e7eb;
+    font-weight: 500;
+}
+
+/* ========== Responsive (จอเล็ก) ========== */
+@media (max-width: 991px) {
+    .header-area .main-nav {
+        position: relative;
+    }
+
+    .header-area .main-nav .nav {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #0F172A;
+        padding: 12px 0;
+        display: none;
+        z-index: 988;
+    }
+
+    .header-area .main-nav .nav.active {
+        display: block;
+    }
+
+    .header-area .main-nav .nav li {
+        margin: 0;
+        padding: 6px 0;
+        text-align: center;
+    }
+
+    .menu-trigger {
+        display: block;
+        font-size: 1.5rem;
+        /* ขนาด icon */
+    }
+}
+
+
+/* =========================
  * 4. Hero Section
  *    - Full-width hero with background carousel
  * ========================= */
@@ -356,11 +449,19 @@ h6 {
 }
 
 .why-item-img {
+<<<<<<< HEAD
     border-radius: 10px;
     /* มุมโค้งนิด ๆ ดูนุ่ม */
     overflow: hidden;
     /* ครอปรูปให้อยู่ในกรอบ */
     max-height: 200px;
+=======
+    border-radius: 1rem;
+    /* มุมโค้งนิด ๆ ดูนุ่ม */
+    overflow: hidden;
+    /* ครอปรูปให้อยู่ในกรอบ */
+    max-height: 260px;
+>>>>>>> origin/main
     /* กันรูปสูงเกิน */
 
 }
@@ -373,6 +474,7 @@ h6 {
 
 /* ====== Section หัวข้อ ====== */
 .home-products-title {
+<<<<<<< HEAD
     font-weight: 700;
     color: #374151;
 }
@@ -799,6 +901,421 @@ h6 {
     transform: translateY(-1px);
 }
 
+=======
+  font-weight: 700;
+  color: #374151;
+}
+
+.home-products-underline {
+  width: 40px;
+  height: 3px;
+  background: #0F172A;
+  border-radius: 999px;
+  margin: 8px auto 0;
+}
+
+.home-products-underline-2 {
+  width: 200px;
+  height: 3px;
+  background: #0F172A;
+  border-radius: 999px;
+  margin: 0px auto 10px;
+}
+.home-products-underline-3 {
+  width: 150px;
+  height: 3px;
+  background: #0F172A;
+  border-radius: 999px;
+  margin: 0px auto 10px;
+}
+/* ========================= Background Products ========================= */
+/* แบนเนอร์ด้านบน */
+.product-hero-banner {
+  position: relative;
+  margin-top: var(--nav-height);   /* กันไม่ให้ชน navbar sticky */
+  width: 100%;
+  height: 760px;                  /* สูงของแบนเนอร์ ปรับได้ตามชอบ */
+  
+  /* รูปพื้นหลัง */
+  background-image: url("images/page-product/bg-product-3.jpeg"); /* เปลี่ยนเป็น path รูปของคุณ */
+  background-size: cover;
+  background-position: center center;
+
+  /* ทำให้ “เหมือนรูปไม่ขยับ” เวลาเลื่อน */
+  background-attachment: fixed;   /* ถ้าไม่อยากให้ fixed เอาบรรทัดนี้ออก */
+
+  display: flex;
+  align-items: center;
+}
+
+/* กล่องข้อความทึบ ๆ บนรูป */
+.product-hero-inner {
+  max-width: 680px;
+  margin-left: 8vw;
+  padding: 24px 32px;
+  color: #fff;
+  background: rgba(0,0,0,0.55);
+  border-radius: 8px;
+}
+
+/* ตัวอักษร */
+.product-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.product-hero-sub {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ให้ responsive บนจอเล็ก */
+@media (max-width: 768px) {
+  .product-hero-banner {
+    height: 260px;
+    background-attachment: scroll; /* มือถือบางรุ่นไม่รองรับ fixed */
+  }
+
+  .product-hero-inner {
+    margin: 0 16px;
+    padding: 16px 18px;
+  }
+
+  .product-hero-title {
+    font-size: 1.6rem;
+  }
+
+  .product-hero-sub {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ====== ปุ่มหมวดหมู่สินค้า ====== */
+/* สำหรับสินค้า POS */
+.pos-product {
+    background-image: url('images/Page_1/POS.png');
+}
+.pos-product:hover {
+    background-image: url('images/Page_1/POS_Hover.png');
+}
+
+/* สำหรับสินค้า Printer */
+.printer-product {
+    background-image: url('images/Page_2/Printer.png');
+}
+.printer-product:hover {
+    background-image: url('images/Page_2/Printer_Hover.png');
+}
+
+/* ====== Flickity layout: 4 สินค้าต่อหน้าจอ Desktop ====== */
+.home-products-carousel {
+  width: 100%;
+}
+
+.home-products-carousel .carousel {
+  /* กันการ์ดชิดขอบเกินไป */
+  padding: 0 10px;
+}
+
+
+.home-products-carousel .carousel-cell {
+  width: 25%;          /* 4 ชิ้นต่อแถว */
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+  .home-products-carousel .carousel-cell {
+    width: 50%;        /* tablet: 2 ชิ้น */
+  }
+}
+
+@media (max-width: 576px) {
+  .home-products-carousel .carousel-cell {
+    width: 100%;       /* mobile: 1 ชิ้น */
+  }
+}
+
+/* ====== การ์ดสินค้า ====== */
+.home-product-card {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home-product-image-wrap {
+  position: relative;
+  background: #f9fafb;
+  width: 100%;
+  aspect-ratio: 4 / 3;      /* หรือ 16 / 9 ก็ได้ */
+  overflow: hidden;
+}
+
+.home-product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* รูปจะถูกครอบให้เต็ม ไม่ยืดเบี้ยว */
+  display: block;
+}
+
+/* Badge มุมบน/ล่าง */
+.badge-sale {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f97316;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 0;
+}
+
+.badge-clearance {
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+  background: #ef4444;
+  color: #fff;
+  padding: 6px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 0 999px 999px 0;
+}
+
+/* แถบ "สินค้าหมดแล้ว" */
+.home-product-overlay {
+  position: absolute;
+  inset: 50% 0 auto 0;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* เนื้อหาด้านล่าง */
+.home-product-body {
+  padding: 14px 16px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;               /* ดันเนื้อหาให้เต็มความสูง */
+}
+
+.home-product-category {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.home-product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.home-product-name a {
+  text-decoration: none;
+  color: #111827;
+}
+
+.home-product-name a:hover {
+  color: #3b8e4f;
+}
+
+/* ราคา */
+.home-product-price-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  min-height: 24px;         /* ต่อให้ว่าง การ์ดก็ยังสูงเท่ากัน */
+}
+
+.home-price-old {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.home-price-new {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* ปุ่มการ์ด */
+.home-product-btn {
+  border: 2px solid #3b8e4f;
+  background: transparent;
+  color: #3b8e4f;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.home-product-btn:hover {
+  background: #3b8e4f;
+  color: #ffffff;
+}
+
+/* ปุ่ม "ดูสินค้าทั้งหมด" ใต้ slider */
+.product-btn-details {
+  border-radius: 999px;
+  border: 2px solid #3b8e4f;
+  background: transparent;
+  padding: 8px 24px;
+  font-weight: 600;
+  color: #3b8e4f;
+}
+
+.product-btn-details:hover {
+  background: #3b8e4f;
+  color: #fff;
+}
+
+/* ====== ปุ่มลูกศร Flickity ====== */
+.home-products-carousel .flickity-button {
+  background: #ffffff;
+  color: #111827;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+  opacity: 1;
+}
+
+.home-products-carousel .flickity-button:hover {
+  background: #f3f4f6;
+}
+
+.home-products-carousel .flickity-button:disabled {
+  opacity: 0.3;
+}
+
+/* ตำแหน่งปุ่มให้ลอยข้าง ๆ เหมือน ADA-soft */
+.home-products-carousel .flickity-prev-next-button.previous {
+  left: -50px;
+}
+
+.home-products-carousel .flickity-prev-next-button.next {
+  right: -50px;
+}
+
+.home-products-carousel .flickity-button-icon .arrow {
+  fill: #111827;
+}
+
+
+
+/* ===== HERO SECTION (continued) ===== */
+
+/* Hero text ของแต่ละสไลด์ */
+.hero-copy-wrapper .hero-content {
+    display: none;
+    /* ซ่อนเป็นค่าเริ่มต้น */
+    max-width: 720px;
+    opacity: 0;
+}
+
+/* ชุดที่กำลังแสดง */
+.hero-copy-wrapper .hero-content.is-active {
+    display: block;
+}
+
+/* ข้อความ hero */
+.hero-section h1,
+.hero-section p {
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    line-height: 1.2;
+}
+
+.hero-lead {
+    max-width: 560px;
+    font-size: 0.98rem;
+    color: #e5e7eb;
+}
+
+/* ===== อนิเมชันเด้งขึ้นแบบ Mexant ===== */
+.hero-animate {
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+.hero-animate.hero-animate-play {
+    animation: heroFadeUp 0.8s ease-out forwards;
+    animation-delay: 0.25s;
+}
+
+@keyframes heroFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-intro-text {
+    line-height: 1.4;
+    /* ลอง 1.3–1.5 ปรับได้ตามชอบ */
+    margin-bottom: 0;
+    /* กันไม่ให้ h3 ทิ้งช่องว่างด้านล่างเพิ่ม */
+}
+
+/* ===== ตัวชี้บอกสไลด์ (แท่งยาว) ===== */
+.carousel-indicators.hero-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10px;
+    margin: 0;
+    z-index: 3;
+    /* เหนือ overlay/รูป แต่ใต้ navbar */
+}
+
+.carousel-indicators.hero-indicators button {
+    width: 10em;
+    height: 5px;
+    border-radius: 999px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        width 0.3s ease;
+}
+
+.carousel-indicators.hero-indicators .active {
+    width: 15em;
+    height: 8px;
+    background-color: #ffffff;
+    transform: translateY(-1px);
+}
+
+>>>>>>> origin/main
 .carousel-indicators.hero-indicators button:hover {
     background-color: #949494;
 }
@@ -810,7 +1327,10 @@ h6 {
 
 /* Service card container */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 .service-item {
     position: relative;
     border: 1px solid #e9ecef;
@@ -1409,6 +1929,7 @@ html {
 
 /* Row that holds all logos */
 .logo-block-row {
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
     /* จัดโลโก้ให้อยู่กลางแนวนอน */
@@ -1420,6 +1941,15 @@ html {
     max-width: 1200px;
     margin: 0 auto;
     /* จัดทั้งบล็อกให้อยู่กลาง container */
+=======
+  display: flex;
+  justify-content: center;   /* จัดโลโก้ให้อยู่กลางแนวนอน */
+  align-items: center;
+  flex-wrap: wrap;           /* ให้โลโก้ตัดบรรทัดได้ถ้าจอแคบ */
+  gap: 24px;                 /* ระยะห่างระหว่างโลโก้ */
+  max-width: 1200px;
+  margin: 0 auto;            /* จัดทั้งบล็อกให้อยู่กลาง container */
+>>>>>>> origin/main
 }
 
 /* Each logo image */
@@ -1940,9 +2470,14 @@ html {
 }
 
 .products-pagination .page-number.disabled {
+<<<<<<< HEAD
     opacity: 0.4;
     pointer-events: none;
     /* คลิกไม่ได้ */
+=======
+  opacity: 0.4;
+  pointer-events: none;  /* คลิกไม่ได้ */
+>>>>>>> origin/main
 }
 
 /* Modal */
@@ -2059,7 +2594,11 @@ html {
 }
 
 .product-btn-details:hover {
+<<<<<<< HEAD
     background-color: #005380;;
+=======
+    background-color: #0f766e;
+>>>>>>> origin/main
     color: #ffffff;
 }
 
@@ -2222,6 +2761,22 @@ html {
     margin-right: 16px;
 }
 
+<<<<<<< HEAD
+=======
+.product-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+>>>>>>> origin/main
 
 /* badge มุมซ้ายบน */
 .badge-container {
@@ -2319,10 +2874,15 @@ html {
 .service-icon {
     width: 64px;
     height: auto;
+<<<<<<< HEAD
     filter: invert(0);
     /* ไอคอนเป็นสีเดิม (ดำ) */
     transition: filter 0.3s ease;
     /* ลื่น ๆ หน่อยตอนเปลี่ยนสี */
+=======
+    filter: invert(0);           /* ไอคอนเป็นสีเดิม (ดำ) */
+    transition: filter 0.3s ease; /* ลื่น ๆ หน่อยตอนเปลี่ยนสี */
+>>>>>>> origin/main
 }
 
 /* เวลา hover ทั้งกล่อง service-item → เปลี่ยน icon เป็นสีขาว */
@@ -2333,12 +2893,20 @@ html {
 
 
 /* ================= Station ================= */
+<<<<<<< HEAD
 .display-area {
+=======
+.display-area
+{
+>>>>>>> origin/main
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 16px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 p.page-desc {
     text-align: center;
     margin: 0 0 24px;
@@ -2427,12 +2995,18 @@ p.page-desc {
 /* desk service */
 /* Layout ส่วน benefits แบบรูปซ้ายข้อความขวา */
 .sd-benefits-layout {
+<<<<<<< HEAD
     font-size: 0.95rem;
     line-height: 1.8;
+=======
+  font-size: 0.95rem;
+  line-height: 1.8;
+>>>>>>> origin/main
 }
 
 /* กล่องรูปให้ลอยด้านซ้าย */
 .sd-benefits-figure {
+<<<<<<< HEAD
     float: left;
     max-width: 420px;
     /* ปรับความกว้างรูปได้ตามต้องการ */
@@ -2444,15 +3018,31 @@ p.page-desc {
     width: 100%;
     height: auto;
     display: block;
+=======
+  float: left;
+  max-width: 420px;       /* ปรับความกว้างรูปได้ตามต้องการ */
+  margin: 0 24px 16px 0;  /* เว้นขวา + ล่างนิดหน่อย */
+}
+
+.sd-benefits-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+>>>>>>> origin/main
 }
 
 /* ข้อความหลัก */
 .sd-benefits-text {
+<<<<<<< HEAD
     /* ไม่ต้องทำอะไรเป็นพิเศษ ปล่อยให้ไหลรอบ float */
+=======
+  /* ไม่ต้องทำอะไรเป็นพิเศษ ปล่อยให้ไหลรอบ float */
+>>>>>>> origin/main
 }
 
 /* บนจอเล็ก: ยกเลิก float ให้รูปอยู่เต็มบรรทัดบนสุด */
 @media (max-width: 768px) {
+<<<<<<< HEAD
     .sd-benefits-figure {
         float: none;
         max-width: 100%;
@@ -2690,3 +3280,31 @@ p.page-desc {
     }
 }
 
+=======
+  .sd-benefits-figure {
+    float: none;
+    max-width: 100%;
+    margin: 0 0 16px 0;
+  }
+}
+
+.sd-paragraph {
+  text-indent: 2em;      /* ย่อหัวบรรทัด 2 ตัวอักษร */
+  margin-bottom: 0.75rem; /* เว้นระยะระหว่างย่อหน้า */
+}
+
+.sd-cap-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sd-cap-img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+>>>>>>> origin/main

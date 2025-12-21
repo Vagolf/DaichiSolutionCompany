@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!navbar) return;
 
   navbar.innerHTML = `
+<<<<<<< HEAD
   <header header id="siteHeader" class="site-header" style="box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);">
+=======
+  <header class="header-area header-sticky" style="box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);">
+>>>>>>> origin/main
     <div class="container">
       <div class="row">
         <div class="col-12"  style="border-color: #ffffff;">
@@ -19,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <!-- Menu -->
             <ul class="nav" style="font-size: 15px;">
+<<<<<<< HEAD
               <li class="scroll-to-section">
                 <a href="${ROOT}/index.html" class="nav-link active">หน้าหลัก</a>
               </li>
@@ -29,6 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${ROOT}/products.html" class="nav-link">สินค้า</a>
               </li>
               <li class="scroll-to-section">
+=======
+              <li class="scroll-to-section" style="margin: -10px;">
+                <a href="${ROOT}/index.html" class="nav-link active">หน้าหลัก</a>
+              </li>
+              <li class="scroll-to-section" style="margin: -10px;">
+                <a href="${ROOT}/station.html" class="nav-link">ศูนย์บริการ</a>
+              </li>
+              <li class="scroll-to-section" style="margin: -10px;">
+                <a href="${ROOT}/products.html" class="nav-link">สินค้า</a>
+              </li>
+              <li class="scroll-to-section" style="margin: -10px;">
+>>>>>>> origin/main
                 <a href="${ROOT}/contact.html" class="nav-link">ติดต่อเรา</a>
               </li>
             </ul>
@@ -45,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
 
   // ========== toggle เมนูตอนจอเล็ก ==========
+<<<<<<< HEAD
   const menuTrigger = navbar.querySelector(".menu-trigger");
   const nav = navbar.querySelector(".main-nav .nav");
 
@@ -53,10 +71,21 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       menuTrigger.classList.toggle("active");
       nav.classList.toggle("active");
+=======
+  const menuTrigger = navbar.querySelector('.menu-trigger');
+  const nav = navbar.querySelector('.main-nav .nav');
+
+  if (menuTrigger && nav) {
+    menuTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      menuTrigger.classList.toggle('active');
+      nav.classList.toggle('active');
+>>>>>>> origin/main
     });
   }
 
   // ========== ใส่ active ให้ลิงก์ของหน้าปัจจุบัน ==========
+<<<<<<< HEAD
   const links = navbar.querySelectorAll(".nav a.nav-link[href]");
   const currentPath = window.location.pathname.replace(/\\/g, "/");
 
@@ -170,4 +199,23 @@ document.addEventListener("DOMContentLoaded", function () {
       update();
     });
   }
+=======
+  const links = navbar.querySelectorAll('.nav a.nav-link[href]');
+  const currentPath = window.location.pathname.replace(/\\/g, '/');
+
+  links.forEach(link => {
+    let href = link.getAttribute('href');
+    if (!href || href.startsWith('http')) return;
+
+    // ตัด #anchor ทิ้ง
+    href = href.split('#')[0];
+
+    const absolute = new URL(href, window.location.origin + currentPath).pathname;
+
+    if (absolute === currentPath) {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+>>>>>>> origin/main
 });
