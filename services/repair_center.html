@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hardware Repair Center | Daichi Solution</title>
+  <title>Service Desk | Daichi Solution</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,6 +14,10 @@
 
   <!-- main style -->
   <link href="../style.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
   </style>
@@ -23,60 +27,67 @@
   <div id="navbar" class="sticky-top"></div>
 
   <main>
-
-    <!-- ===================== SECTION 1: Repair Center ช่วยอะไรคุณบ้าง (รูปซ้าย + ยาว) ===================== -->
-    <section id="repair-intro" class="py-5 bg-white">
+    <!-- ===================== SECTION 1: Benefits (แบบยาว + รูปซ้าย) ===================== -->
+    <section id="sd-benefits" class="py-5 bg-white">
       <div class="container">
 
         <!-- หัวข้อใหญ่ -->
         <div class="row scroll-slide-right">
           <div class="col-12">
-            <h2 class="mb-2">ศูนย์ซ่อม Hardware &amp; IT ของ Daichi ช่วยอะไรคุณบ้าง?</h2>
+            <h2 class="mb-2">Service Desk ของเราช่วยอะไรคุณบ้าง?</h2>
             <p class="text-muted mb-4">
-              เราออกแบบกระบวนการซ่อมให้ตอบโจทย์ธุรกิจที่ต้องพึ่งพาเครื่อง POS, เครื่องพิมพ์บาร์โค้ด, Scanner,
-              PC หน้าร้าน และอุปกรณ์ Network โดยเน้นขั้นตอนชัดเจน และลด Downtime ให้มากที่สุด
+              เปลี่ยนการซัพพอร์ตไอทีจาก “การดับไฟเฉพาะหน้า” ให้กลายเป็นระบบที่มองเห็นภาพรวมของปัญหา
+              จัดลำดับความสำคัญได้ชัดเจน และช่วยให้สาขาและพนักงานหน้าร้านทำงานได้ต่อเนื่องมากที่สุด
             </p>
           </div>
         </div>
 
-        <!-- รูป + เนื้อหายาว -->
+        <!-- รูป + เนื้อหารวมทั้งหมด -->
         <div class="row">
           <div class="col-12">
 
-            <!-- ✅ รูปลอยซ้ายบนจอใหญ่ -->
-            <!-- เปลี่ยน path รูปตามไฟล์จริงของคุณ -->
-            <img src="../images/page-service/repair/repair-1.png" alt="ศูนย์ซ่อมอุปกรณ์ไอทีของ Daichi"
-              class="scroll-slide-down img-fluid rounded-4 shadow-sm mb-3 mb-lg-2 float-lg-start me-lg-4"
-              style="max-width: 300px; width: 100%; animation-delay: 0.2s;">
+            <!-- รูปลอยซ้ายบนจอใหญ่ -->
+            <img class="scroll-slide-down img-fluid rounded-4 shadow-sm mb-3 mb-lg-2 float-lg-start me-lg-4"
+              src="../images/page-service/desk/desk-1.jpg" alt="ทีม Service Desk"
+              class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-2 float-lg-start me-lg-4"
+              style="max-width: 4600px; animation-delay: 0.2s;">
 
-            <!-- ✅ เนื้อหายาวรวม (อิงจากของเดิม) -->
             <div class="scroll-slide-up" style="animation-delay: 0.2s;">
+              <!-- ย่อหน้ารวมทั้งหมด (ไม่มีหัวข้อย่อยแล้ว) -->
               <p class="sd-paragraph">
-                เราดูแลอุปกรณ์สำคัญของธุรกิจคุณผ่านศูนย์ซ่อมกลาง ไม่ว่าจะเป็น POS, เครื่องพิมพ์บาร์โค้ด,
-                Scanner, PC หน้าร้าน หรืออุปกรณ์ Network โดยไม่ต้องแยกติดต่อช่างหลายเจ้าให้วุ่นวาย
-                เพียงเปิดเคสผ่าน Daichi เราช่วยดูแลตั้งแต่รับเรื่องจนเครื่องกลับไปทำงานได้อีกครั้ง
+                ทุกเคสที่ผู้ใช้งานแจ้งเข้ามา จะถูกบันทึกเป็น Ticket พร้อมเลขอ้างอิง ชนิดปัญหา
+                ความเร่งด่วน และช่องทางที่แจ้ง ทำให้ทีมของเราสามารถจัดลำดับคิวได้เป็นระบบ
+                ลดโอกาสที่เคสจะตกหล่น และช่วยให้คุณมั่นใจได้ว่าปัญหาที่เกิดขึ้น “ถูกจับตาดู” อยู่ตลอดเวลา
               </p>
 
               <p class="sd-paragraph">
-                ทีมเทคนิคของเรามีประสบการณ์กับอุปกรณ์หลากหลายแบรนด์ ทั้งคอมพิวเตอร์ทั่วไป
-                ไปจนถึงอุปกรณ์อ่านบาร์โค้ดและเครื่องพิมพ์เฉพาะทาง พร้อมอะไหล่ที่เตรียมรองรับรุ่นยอดนิยม
-                ทำให้ประเมินและซ่อมได้รวดเร็ว ลดเวลาที่สาขาต้องหยุดขายเพราะปัญหาเครื่องเสีย
+                เมื่อขั้นตอนการรับเรื่องและติดตามงานชัดเจน พนักงานหน้าร้านไม่ต้องเสียเวลาไล่หาว่า
+                “จะติดต่อใครดี” หรือ “เคสอยู่ถึงไหนแล้ว” เพียงโทรหา Service Desk
+                หรือแจ้งผ่านช่องทางที่ตกลงร่วมกัน ทีมของเราจะเป็นผู้ประสานงานต่อให้ครบวงจร
+                ระหว่างสาขา ทีม POS ทีม Network หรือทีมภาคสนาม ทำให้พนักงานกลับไปโฟกัสกับงานขาย
+                และงานบริการลูกค้าได้เต็มที่
               </p>
 
               <p class="sd-paragraph">
-                ทุกเคสซ่อมถูกเปิดผ่านช่องทางเดียว มีเลขอ้างอิงชัดเจน สามารถติดตามสถานะได้
-                ตั้งแต่ขั้นตอนรับเครื่อง ตรวจเช็ก วางใบประเมิน ดำเนินการซ่อม ทดสอบ ไปจนถึงส่งคืน
-                ข้อมูลที่ได้จากงานซ่อมจะถูกเก็บเป็นประวัติอุปกรณ์ เพื่อใช้เชื่อมกับข้อมูลจาก Service Desk
-                และ Preventive Maintenance ให้เห็นภาพรวมของอุปกรณ์ทั้งระบบ
+                ข้อมูลจาก Ticket จะถูกนำมาวิเคราะห์อย่างต่อเนื่อง ว่ามีปัญหาใดที่เกิดขึ้นบ่อยในแต่ละสาขา
+                หรือในช่วงเวลาหนึ่ง ๆ เพื่อหาต้นตอที่แท้จริง จากนั้นจึงวางมาตรการป้องกันล่วงหน้า
+                ช่วยลดปัญหาซ้ำ ๆ ลด Downtime ของสาขา และลดโอกาสที่ร้านต้องหยุดขายเพราะปัญหาไอที
+              </p>
+
+              <p class="sd-paragraph">
+                ในภาพรวม Service Desk ทำหน้าที่เป็นจุดกลางระหว่างผู้ใช้งานหน้าร้าน ผู้จัดการสาขา
+                และทีมไอที ทำให้เห็นภาพรวมในมุมธุรกิจว่า ปัญหาไอทีส่งผลกับยอดขายและประสบการณ์ของลูกค้าอย่างไร
+                ข้อมูลที่ได้จึงไม่ใช่แค่ “แก้ปัญหาเฉพาะหน้า” แต่ช่วยให้คุณวางแผนและตัดสินใจเรื่องการลงทุนด้านไอที
+                ได้อย่างมีเหตุผลมากขึ้น
               </p>
 
               <p class="mb-0">
-                ผลลัพธ์คือธุรกิจของคุณมีทั้งศูนย์ซ่อมกลาง ทีมช่างเฉพาะทาง
-                และข้อมูลประวัติอุปกรณ์ที่ใช้ประกอบการวางแผนซ่อม เปลี่ยน หรืออัปเกรดในอนาคตได้อย่างเป็นระบบ
-                ไม่ต้องรอให้เครื่องเสียตอนเวลาสำคัญของธุรกิจแล้วค่อยแก้ไข
+                นอกจากการรับแจ้งปัญหาแล้ว Service Desk ยังเป็นฐานข้อมูลกลางของเครื่อง POS,
+                คอมพิวเตอร์, อุปกรณ์เครือข่าย, ซอฟต์แวร์ และใบอนุญาตต่าง ๆ
+                ทำให้คุณตรวจสอบประวัติการใช้งาน การซ่อม และการบำรุงรักษาได้ง่ายขึ้น
+                ช่วยให้การวางแผนงบประมาณและการเปลี่ยนอุปกรณ์ในอนาคตทำได้อย่างเป็นระบบและชัดเจน
               </p>
             </div>
-
             <!-- เคลียร์ float -->
             <div class="clearfix"></div>
           </div>
@@ -85,179 +96,152 @@
       </div>
     </section>
 
-    <!-- ===================== SECTION 2: ขั้นตอนซ่อม + ประโยชน์ (สลับรูป/ข้อความ แบบ Service Desk) ===================== -->
-    <section class="py-5 bg-light" id="repair-capabilities">
+    <section class="py-5 bg-light" id="sd-capabilities">
       <div class="container">
 
         <!-- หัวข้อใหญ่ตรงกลาง -->
         <div class="text-center mb-4 scroll-slide-up">
           <h2 class="h2 fw-bold mb-2">
-            ขั้นตอนการซ่อม และประโยชน์จากการใช้ศูนย์ซ่อมของเรา
+            ขอบเขตการให้บริการ และขั้นตอนการทำงานของ Service Desk
           </h2>
           <p class="text-muted mb-0">
-            ตั้งแต่เปิดเคส รับเครื่อง ซ่อม ทดสอบ จนถึงส่งคืนพร้อมรายงาน
-            ทุกขั้นตอนถูกออกแบบให้โปร่งใส และลด Downtime ของสาขาให้มากที่สุด
+            Service Desk ของเราครอบคลุมงานหลัก ๆ ด้านไอทีที่จำเป็นต่อธุรกิจของคุณ
+            และมีกระบวนการทำงานที่เป็นระบบตั้งแต่รับเรื่องจนปิดเคส
           </p>
         </div>
 
-        <!-- ========= แถวที่ 1 : รูปซ้าย | ขั้นตอนขวา ========= -->
+        <!-- ========= แถวที่ 1 : รูป | ข้อความ ========= -->
         <div class="row g-4 align-items-start mb-5">
           <!-- รูป -->
           <div class="col-lg-5">
-<<<<<<< HEAD
-            <div class="sd-cap-images text-center scroll-slide-up" style="animation-delay: 0.8s; margin-top: 160px;">
-              <!-- เปลี่ยน path รูป -->
-              <img src="../images/page-service/repair/repair-2.jpg" alt="ขั้นตอนการซ่อมอุปกรณ์ในศูนย์ซ่อม"
-=======
-            <div class="sd-cap-images text-center scroll-slide-up" style="animation-delay: 0.8s; margin-top: 100px;">
-              <!-- เปลี่ยน path รูป -->
-              <img src="../images/page-service/repair/repair-2.png" alt="ขั้นตอนการซ่อมอุปกรณ์ในศูนย์ซ่อม"
->>>>>>> origin/main
-                class="sd-cap-img">
+            <div class="sd-cap-images text-center scroll-slide-up" style="animation-delay: 0.8s;margin-top: 140px;">
+              <img src="../images/page-service/desk/desk-2.png" alt="Service Desk Icon" class="sd-cap-img">
             </div>
           </div>
 
-          <!-- ขั้นตอนการทำงาน -->
+          <!-- ขอบเขตการให้บริการ -->
           <div class="col-lg-7">
-            <h3 class="h5 fw-bold mb-3 text-start">ภาพรวมขั้นตอนการซ่อมใน Repair Center</h3>
+            <h3 class="h5 fw-bold mb-3 text-start">ขอบเขตการให้บริการ</h3>
 
             <ul class="list-unstyled mb-0 text-start scroll-slide-right" style="animation-delay: 0.2s;">
               <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">1) เปิดเคสซ่อม &amp; ตรวจสอบเบื้องต้น</div>
+                <div class="fw-bold">1) Incident Management</div>
                 <div class="small text-muted">
-                  ลูกค้าแจ้งปัญหาผ่าน Service Desk หรือช่องทางที่กำหนด ระบุอาการ อุปกรณ์ รุ่น และสาขาที่ใช้งาน
-                  ทีมซัพพอร์ตช่วยวิเคราะห์เบื้องต้น และแยกเคสที่แก้ได้ด้วย Remote
-                  ออกจากเคสที่ต้องส่งเข้า Repair Center
+                  รับแจ้งและจัดการเหตุขัดข้อง เช่น ระบบล่ม เครื่อง POS ใช้งานไม่ได้ ปริ้นใบเสร็จไม่ออก ฯลฯ
+                  เป้าหมายคือให้ระบบกลับมาใช้งานได้เร็วที่สุด
                 </div>
               </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">2) นัดรับ / ส่งอุปกรณ์เข้าศูนย์ซ่อม</div>
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm scroll-slide-right" style="animation-delay: 0.3s;">
+                <div class="fw-bold">2) Service Request Management</div>
                 <div class="small text-muted">
-                  เมื่อตรวจสอบแล้วว่าเป็นเคสฮาร์ดแวร์ เราจะนัดรับเครื่อง
-                  หรือให้สาขาส่งอุปกรณ์มายังศูนย์ซ่อมตามช่องทางที่ตกลงกัน
-                  พร้อมออกเลขอ้างอิงเคสสำหรับติดตามงาน
+                  รองรับคำขอบริการ เช่น ขอ account ใหม่ ขอปรับสิทธิ์ผู้ใช้งาน
+                  ขอเชื่อมต่อระบบใหม่ หรือขออัปเกรดอุปกรณ์
                 </div>
               </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">3) ตรวจวิเคราะห์ &amp; ประเมินค่าใช้จ่าย</div>
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm scroll-slide-right" style="animation-delay: 0.4s;">
+                <div class="fw-bold">3) Change &amp; Update Coordination</div>
                 <div class="small text-muted">
-                  ช่างเทคนิคทดสอบอุปกรณ์จริง ตรวจเช็กอาการทั้งด้านฮาร์ดแวร์และการตั้งค่าพื้นฐาน
-                  หากมีค่าใช้จ่ายหรืออะไหล่ที่ต้องเปลี่ยน จะจัดทำใบประเมินส่งให้อนุมัติก่อนซ่อม
+                  ประสานงานเมื่อต้องมีการเปลี่ยนแปลงระบบ เช่น อัปเดตเวอร์ชันซอฟต์แวร์ ย้ายระบบ หรือขยายสาขา
+                  เพื่อให้กระทบกับการทำงานน้อยที่สุด
                 </div>
               </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">4) ดำเนินการซ่อม &amp; ทดสอบการทำงาน</div>
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm scroll-slide-right" style="animation-delay: 0.5s;">
+                <div class="fw-bold">4) Knowledge &amp; Self-service</div>
                 <div class="small text-muted">
-                  ทีมช่างดำเนินการซ่อม เปลี่ยนอะไหล่ที่เสีย
-                  อัปเดตเฟิร์มแวร์หรือตั้งค่าระบบใหม่ตามความเหมาะสม
-                  จากนั้นทดสอบการใช้งานจริง เช่น ยิงบาร์โค้ด พิมพ์ใบเสร็จ
-                  และเช็กการเชื่อมต่อฐานข้อมูล
+                  จัดทำคู่มือ วิธีแก้ปัญหาเบื้องต้น และคำถามที่พบบ่อย
+                  เพื่อให้ผู้ใช้งานแก้ไขปัญหาง่าย ๆ ได้เอง ลดเวลารอทีมซัพพอร์ต
                 </div>
               </li>
 
-              <li class="mb-0 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">5) ส่งคืนอุปกรณ์ &amp; สรุปรายงาน</div>
+              <li class="mb-0 p-3 bg-white rounded-4 shadow-sm scroll-slide-right" style="animation-delay: 0.6s;">
+                <div class="fw-bold">5) Monitoring &amp; Reporting</div>
                 <div class="small text-muted">
-                  เมื่อซ่อมเสร็จ เราส่งอุปกรณ์กลับไปยังสาขา พร้อมรายงานผลงานซ่อม
-                  และรายละเอียดอะไหล่ที่เปลี่ยน ข้อมูลทั้งหมดจะถูกเก็บเป็นประวัติอุปกรณ์
-                  เพื่อใช้ประกอบการวางแผน PM และการเปลี่ยนเครื่องในอนาคต
+                  ติดตามจำนวน Ticket ประเภทปัญหา ระยะเวลาในการแก้ไข และความสำเร็จตาม SLA
+                  เพื่อนำมาพัฒนาการบริการอย่างต่อเนื่อง
                 </div>
               </li>
             </ul>
           </div>
         </div>
 
-        <!-- ========= แถวที่ 2 : ประโยชน์ซ้าย | รูปขวา ========= -->
+        <!-- ========= แถวที่ 2 : ข้อความ | รูป ========= -->
         <div class="row g-4 align-items-start">
-          <!-- ประโยชน์ -->
+          <!-- ขั้นตอนการทำงาน -->
           <div class="col-lg-7">
-            <h3 class="h5 fw-bold mb-3 text-start">ทำไมควรใช้ศูนย์ซ่อมอุปกรณ์ไอทีของเรา?</h3>
+            <h3 class="h5 fw-bold mb-3 text-start">ภาพรวมขั้นตอนการทำงาน</h3>
 
-            <ul class="list-unstyled mb-0 text-start scroll-slide-up" style="animation-delay: 0.2s;">
+            <ol class="list-unstyled mb-0 text-start scroll-slide-up" style="animation-delay: 0.2s;">
               <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ทีมช่างเฉพาะทางด้าน POS &amp; IT</div>
+                <div class="fw-bold">1) รับเรื่องจากผู้ใช้งาน</div>
                 <div class="small text-muted">
-                  ทีมเทคนิคที่คุ้นเคยกับอุปกรณ์หน้าร้าน เช่น POS, เครื่องพิมพ์บาร์โค้ด,
-                  Scanner, PC และอุปกรณ์ Network ทำให้วิเคราะห์และซ่อมได้ตรงจุดมากกว่า
+                  ผู้ใช้งานแจ้งปัญหา ผ่านโทรศัพท์ อีเมล หรือระบบ Ticket ตามช่องทางที่ตกลงร่วมกัน
                 </div>
               </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ลดเวลา Downtime ของสาขา</div>
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm scroll-slide-up" style="animation-delay: 0.3s;">
+                <div class="fw-bold">2) คัดกรอง และแก้ไขเบื้องต้น</div>
                 <div class="small text-muted">
-                  มีขั้นตอนรับเรื่อง–ซ่อม–ส่งคืนที่ชัดเจน สามารถวางแผนเวลาได้
-                  และในบางกรณีสามารถเตรียมเครื่องสำรองหรือตัวเลือกชั่วคราวให้ได้
+                  Service Desk ตรวจสอบอาการ วิเคราะห์สาเหตุที่เป็นไปได้ ตั้งระดับความสำคัญ
+                  และพยายามแก้ไขทันที รวมถึง Remote เข้าไปช่วยถ้าจำเป็น
                 </div>
               </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">รองรับอุปกรณ์หลายประเภทในศูนย์เดียว</div>
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm scroll-slide-up" style="animation-delay: 0.4s;">
+                <div class="fw-bold">3) ประสานทีมเทคนิคเฉพาะด้าน</div>
                 <div class="small text-muted">
-                  ไม่ต้องแยกส่งหลายที่ เรารับดูแลทั้งคอมพิวเตอร์, POS, Barcode Printer,
-                  Scanner และอุปกรณ์เสริมที่เกี่ยวข้องในศูนย์เดียว
+                  หากเกินขอบเขตการแก้ไขเบื้องต้น Ticket จะถูกส่งต่อให้ทีม POS, Network,
+                  Server หรือทีมภาคสนามตามประเภทปัญหา
                 </div>
               </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ค่าใช้จ่ายโปร่งใส วางแผนงบได้ง่าย</div>
+              <li class="mb-0 p-3 bg-white rounded-4 shadow-sm scroll-slide-up" style="animation-delay: 0.5s;">
+                <div class="fw-bold">4) ยืนยันผล ปิดเคส และเก็บความรู้</div>
                 <div class="small text-muted">
-                  ทุกงานซ่อมมีการประเมินค่าใช้จ่ายก่อนดำเนินการ
-                  และสามารถออกแบบให้รวมอยู่ในสัญญา PM หรือแพ็กเกจดูแลรายปี
-                  เพื่อควบคุมต้นทุนซ่อมแบบภาพรวมได้
+                  เมื่องานเสร็จ Service Desk จะยืนยันกับผู้ใช้งานก่อนปิดเคส
+                  และบันทึกเป็นองค์ความรู้เพิ่มเติม เพื่อป้องกันปัญหาซ้ำในอนาคต
                 </div>
               </li>
-
-              <li class="mb-0 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ทำงานร่วมกับ Service Desk &amp; PM</div>
-                <div class="small text-muted">
-                  ข้อมูลการแจ้งปัญหาจาก Service Desk และประวัติการบำรุงรักษาจาก PM
-                  ถูกเชื่อมกับศูนย์ซ่อม ทำให้เห็นประวัติอุปกรณ์ครบถ้วน
-                  และลดปัญหาเดิมซ้ำ ๆ ได้ดีขึ้น
-                </div>
-              </li>
-            </ul>
+            </ol>
           </div>
 
           <!-- รูป -->
-          <div class="col-lg-5 d-flex align-items-center justify-content-center">
-            <div class="sd-cap-images scroll-slide-up"
-              style="animation-delay: 0.8s; max-width: 600px; width: 100%; margin-top: 130px;">
-              <!-- เปลี่ยน path รูป -->
-              <img src="../images/page-service/repair/repair-3.png" alt="ขั้นตอนการซ่อมอุปกรณ์ในศูนย์ซ่อม"
-                class="sd-cap-img img-fluid d-block mx-auto">
+          <div class="col-lg-5 scroll-slide-up" style="animation-delay: 0.8s;">
+            <div class="text-center" style="max-width: 480px;width: 100%; height: auto; display: block;">
+              <img src="../images/page-service/desk/desk-3.png" alt="ทีม Service Desk ดูแลระบบ POS และไอที"
+                class="sd-cap-img">
             </div>
           </div>
-
-
         </div>
+
       </div>
     </section>
 
+
     <!-- ===================== SECTION 3: CTA ===================== -->
-    <section class="py-5 bg-dark text-light" id="repair-cta">
+    <section class="py-5 bg-dark text-light" id="sd-cta">
       <div class="container">
         <div class="row g-4 align-items-center">
           <div class="col-lg-8 mx-auto text-center" style="width: 100%;">
-            <h2 class="h2 mb-3 scroll-slide-up" style="animation-delay: 0.2s;">
-              อย่าปล่อยให้เครื่องเสียตอนเวลาสำคัญของธุรกิจ
-            </h2>
-            <p class="mb-1 scroll-slide-up" style="animation-delay: 0.4s;">
-              ถ้าคุณมีหลายสาขา หลายอุปกรณ์ และต้องการศูนย์ซ่อมกลางที่เชื่อถือได้<br>
-              ให้ทีม Hardware Repair Center ของ Daichi ช่วยดูแลแทนคุณ
+            <h2 class="h2 mb-3 scroll-slide-up" style="animation-delay: 0.2s;">ให้ทีม Service Desk ของเราเป็นด่านหน้าด้านไอทีให้กับองค์กรของคุณ</h2>
+            <p class="mb-0 scroll-slide-up" style="animation-delay: 0.4s;">
+              หากธุรกิจของคุณต้องการทีมที่ช่วยดูแลทุกปัญหาไอทีในจุดเดียว <br>ปรับการรับแจ้งปัญหาให้เป็นระบบ
+              และลดเวลาที่ระบบล่ม เราพร้อมช่วยออกแบบรูปแบบการให้บริการที่เหมาะสมกับคุณ
             </p>
             <p class="mb-4 scroll-slide-up" style="animation-delay: 0.6s;">
-              บอกเราเกี่ยวกับจำนวนสาขา ประเภทอุปกรณ์ และปริมาณเคสที่เจอบ่อย<br>
-              เราสามารถออกแบบวิธีรับซ่อมและแพ็กเกจที่เหมาะกับโมเดลธุรกิจของคุณโดยเฉพาะ
+              เล่าให้เราฟังเกี่ยวกับโครงสร้างองค์กร จำนวนสาขา และระบบหลักที่ใช้งาน
+              แล้วเราจะช่วยออกแบบโซลูชัน Service Desk <br>ที่ตอบโจทย์ธุรกิจของคุณโดยเฉพาะ
             </p>
 
             <div class="d-flex flex-wrap justify-content-center gap-3 scroll-slide-up" style="animation-delay: 0.8s;">
+              <!-- ✅ แก้ลิงก์ให้ตรงกับหน้าติดต่อจริงของคุณ -->
               <a href="../contact.html" class="btn btn-primary btn-lg px-4">
-                พูดคุยกับทีมศูนย์ซ่อม
+                ขอคำปรึกษา
               </a>
             </div>
+
           </div>
         </div>
       </div>
@@ -265,11 +249,11 @@
 
   </main>
 
-
   <div id="footer"></div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
   <!-- footer + navbar -->
   <script src="../js/footer.js"></script>
