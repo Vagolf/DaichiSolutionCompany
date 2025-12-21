@@ -1,326 +1,265 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Repair Center | Daichisolution</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware Repair Center | Daichi Solution</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- main style -->
-  <link href="../style.css" rel="stylesheet" />
-
+  <link href="../style.css" rel="stylesheet">
   <style>
-    /* ====== Repair Center page specific styles (ย้ายไป style.css ได้ทีหลัง) ====== */
-
-    .repair-hero {
-      position: relative;
-      background:
-        radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), #020617),
-        url("https://www.p5-management.com/img/Repair_Center_P5.jpg") no-repeat center/cover;
-      color: #ffffff;
-    }
-
-    .repair-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(15, 23, 42, 0.85), rgba(59, 142, 79, 0.35));
-      mix-blend-mode: multiply;
-      z-index: 0;
-    }
-
-    .repair-hero .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .repair-badge {
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-    }
-
-    .repair-hero-list li {
-      font-size: 0.95rem;
-      margin-bottom: 0.3rem;
-    }
-
-    /* การ์ดประเภทอุปกรณ์ */
-    .repair-type-card {
-      border-radius: 16px;
-      border: 0;
-      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
-      height: 100%;
-    }
-
-    .repair-type-card .icon-circle {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(59, 142, 79, 0.08);
-      margin-bottom: 0.75rem;
-    }
-
-    .repair-type-card p {
-      font-size: 0.94rem;
-    }
-
-    /* กล่อง process ซ้าย – ขวา */
-    .repair-process-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 1rem;
-    }
-
-    .repair-step-number {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: var(--primary-color, #3b8e4f);
-      color: #ffffff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-
-    .repair-step-title {
-      font-weight: 600;
-      margin-bottom: 0.1rem;
-    }
-
-    .repair-highlight-box {
-      border-radius: 18px;
-      border: 1px dashed rgba(15, 23, 42, 0.2);
-      background: #f9fafb;
-      padding: 18px 20px;
-      font-size: 0.94rem;
-    }
-
-    /* รูปด้านขวา section ล่าง */
-    .repair-img-wrapper {
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.4);
-    }
-
-    .repair-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
+    @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
   </style>
 </head>
 
 <body>
-  <!-- Navbar (inserted by navbar.js) -->
   <div id="navbar" class="sticky-top"></div>
 
   <main>
-    <!-- ========== HERO SECTION ========== -->
-    <section class="repair-hero py-5">
-      <div class="container py-4">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6">
-            <span class="badge bg-success-subtle text-success repair-badge mb-2">
-              REPAIR CENTER • IT DEVICES • POS EQUIPMENT
-            </span>
 
-            <h1 class="display-5 fw-bold mb-3">
-              Repair Center<br />
-              ศูนย์ซ่อมอุปกรณ์ไอทีและ POS
-            </h1>
+    <!-- ===================== SECTION 1: Repair Center ช่วยอะไรคุณบ้าง (รูปซ้าย + ยาว) ===================== -->
+    <section id="repair-intro" class="py-5 bg-white">
+      <div class="container">
 
-            <p class="lead mb-3">
-              ศูนย์ซ่อมกลางสำหรับอุปกรณ์ไอทีและอุปกรณ์ Point of Sale (POS)
-              ที่มีขั้นตอนการตรวจเช็ก ซ่อม เปลี่ยนอะไหล่ และทดสอบการทำงาน
-              ก่อนส่งคืนหน้างาน พร้อมการรับประกันตามมาตรฐานที่กำหนด
+        <!-- หัวข้อใหญ่ -->
+        <div class="row scroll-slide-right">
+          <div class="col-12">
+            <h2 class="mb-2">ศูนย์ซ่อม Hardware &amp; IT ของ Daichi ช่วยอะไรคุณบ้าง?</h2>
+            <p class="text-muted mb-4">
+              เราออกแบบกระบวนการซ่อมให้ตอบโจทย์ธุรกิจที่ต้องพึ่งพาเครื่อง POS, เครื่องพิมพ์บาร์โค้ด, Scanner,
+              PC หน้าร้าน และอุปกรณ์ Network โดยเน้นขั้นตอนชัดเจน และลด Downtime ให้มากที่สุด
             </p>
-
-            <ul class="list-unstyled repair-hero-list mb-4">
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-success"></i>
-                รองรับงานซ่อมจากหลายสาขาทั่วประเทศ
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-success"></i>
-                มีอะไหล่สำรองพร้อมใช้งาน ลด Downtime หน้าร้าน
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check me-2 text-success"></i>
-                มีรายงานสรุปสถานะงานซ่อมและอุปกรณ์แต่ละตัวอย่างชัดเจน
-              </li>
-            </ul>
-
-            <a href="#repair-services" class="btn btn-primary px-4">
-              ดูรายละเอียดบริการศูนย์ซ่อม
-            </a>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="repair-img-wrapper">
-              <img
-                src="https://www.p5-management.com/img/Repair_Center_P5.jpg"
-                alt="Repair Center Lab and Technicians"
-              />
-            </div>
           </div>
         </div>
+
+        <!-- รูป + เนื้อหายาว -->
+        <div class="row">
+          <div class="col-12">
+
+            <!-- ✅ รูปลอยซ้ายบนจอใหญ่ -->
+            <!-- เปลี่ยน path รูปตามไฟล์จริงของคุณ -->
+            <img src="../images/page-service/repair/repair-1.png" alt="ศูนย์ซ่อมอุปกรณ์ไอทีของ Daichi"
+              class="scroll-slide-down img-fluid rounded-4 shadow-sm mb-3 mb-lg-2 float-lg-start me-lg-4"
+              style="max-width: 300px; width: 100%; animation-delay: 0.2s;">
+
+            <!-- ✅ เนื้อหายาวรวม (อิงจากของเดิม) -->
+            <div class="scroll-slide-up" style="animation-delay: 0.2s;">
+              <p class="sd-paragraph">
+                เราดูแลอุปกรณ์สำคัญของธุรกิจคุณผ่านศูนย์ซ่อมกลาง ไม่ว่าจะเป็น POS, เครื่องพิมพ์บาร์โค้ด,
+                Scanner, PC หน้าร้าน หรืออุปกรณ์ Network โดยไม่ต้องแยกติดต่อช่างหลายเจ้าให้วุ่นวาย
+                เพียงเปิดเคสผ่าน Daichi เราช่วยดูแลตั้งแต่รับเรื่องจนเครื่องกลับไปทำงานได้อีกครั้ง
+              </p>
+
+              <p class="sd-paragraph">
+                ทีมเทคนิคของเรามีประสบการณ์กับอุปกรณ์หลากหลายแบรนด์ ทั้งคอมพิวเตอร์ทั่วไป
+                ไปจนถึงอุปกรณ์อ่านบาร์โค้ดและเครื่องพิมพ์เฉพาะทาง พร้อมอะไหล่ที่เตรียมรองรับรุ่นยอดนิยม
+                ทำให้ประเมินและซ่อมได้รวดเร็ว ลดเวลาที่สาขาต้องหยุดขายเพราะปัญหาเครื่องเสีย
+              </p>
+
+              <p class="sd-paragraph">
+                ทุกเคสซ่อมถูกเปิดผ่านช่องทางเดียว มีเลขอ้างอิงชัดเจน สามารถติดตามสถานะได้
+                ตั้งแต่ขั้นตอนรับเครื่อง ตรวจเช็ก วางใบประเมิน ดำเนินการซ่อม ทดสอบ ไปจนถึงส่งคืน
+                ข้อมูลที่ได้จากงานซ่อมจะถูกเก็บเป็นประวัติอุปกรณ์ เพื่อใช้เชื่อมกับข้อมูลจาก Service Desk
+                และ Preventive Maintenance ให้เห็นภาพรวมของอุปกรณ์ทั้งระบบ
+              </p>
+
+              <p class="mb-0">
+                ผลลัพธ์คือธุรกิจของคุณมีทั้งศูนย์ซ่อมกลาง ทีมช่างเฉพาะทาง
+                และข้อมูลประวัติอุปกรณ์ที่ใช้ประกอบการวางแผนซ่อม เปลี่ยน หรืออัปเกรดในอนาคตได้อย่างเป็นระบบ
+                ไม่ต้องรอให้เครื่องเสียตอนเวลาสำคัญของธุรกิจแล้วค่อยแก้ไข
+              </p>
+            </div>
+
+            <!-- เคลียร์ float -->
+            <div class="clearfix"></div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ========== REPAIR SERVICES – TYPES ========== -->
-    <section id="repair-services" class="py-5 bg-white">
+    <!-- ===================== SECTION 2: ขั้นตอนซ่อม + ประโยชน์ (สลับรูป/ข้อความ แบบ Service Desk) ===================== -->
+    <section class="py-5 bg-light" id="repair-capabilities">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="section-title mb-2">ประเภทอุปกรณ์ที่รับซ่อม</h2>
+
+        <!-- หัวข้อใหญ่ตรงกลาง -->
+        <div class="text-center mb-4 scroll-slide-up">
+          <h2 class="h2 fw-bold mb-2">
+            ขั้นตอนการซ่อม และประโยชน์จากการใช้ศูนย์ซ่อมของเรา
+          </h2>
           <p class="text-muted mb-0">
-            ครอบคลุมอุปกรณ์หลักในระบบหน้าร้านและสำนักงาน เพื่อให้การทำงานของธุรกิจไม่สะดุด
+            ตั้งแต่เปิดเคส รับเครื่อง ซ่อม ทดสอบ จนถึงส่งคืนพร้อมรายงาน
+            ทุกขั้นตอนถูกออกแบบให้โปร่งใส และลด Downtime ของสาขาให้มากที่สุด
           </p>
         </div>
 
-        <div class="row g-4">
-          <!-- กลุ่ม POS & อุปกรณ์หน้าร้าน -->
-          <div class="col-md-4">
-            <div class="repair-type-card card text-center p-4">
-              <div class="icon-circle mx-auto">
-                <i class="fa-solid fa-cash-register text-success"></i>
-              </div>
-              <h3 class="h5 mb-2">POS &amp; อุปกรณ์หน้าร้าน</h3>
-              <p class="mb-0">
-                เครื่อง POS, จอสัมผัส, ลิ้นชักเก็บเงิน, เครื่องพิมพ์ใบเสร็จ,
-                สแกนเนอร์บาร์โค้ด และอุปกรณ์ประกอบอื่น ๆ ที่เกี่ยวข้องกับการขายหน้าร้าน
-              </p>
+        <!-- ========= แถวที่ 1 : รูปซ้าย | ขั้นตอนขวา ========= -->
+        <div class="row g-4 align-items-start mb-5">
+          <!-- รูป -->
+          <div class="col-lg-5">
+            <div class="sd-cap-images text-center scroll-slide-up" style="animation-delay: 0.8s; margin-top: 160px;">
+              <!-- เปลี่ยน path รูป -->
+              <img src="../images/page-service/repair/repair-2.jpg" alt="ขั้นตอนการซ่อมอุปกรณ์ในศูนย์ซ่อม"
+                class="sd-cap-img">
             </div>
           </div>
 
-          <!-- กลุ่ม Computer & Peripheral -->
-          <div class="col-md-4">
-            <div class="repair-type-card card text-center p-4">
-              <div class="icon-circle mx-auto">
-                <i class="fa-solid fa-desktop text-success"></i>
-              </div>
-              <h3 class="h5 mb-2">คอมพิวเตอร์ &amp; อุปกรณ์ต่อพ่วง</h3>
-              <p class="mb-0">
-                คอมพิวเตอร์ตั้งโต๊ะ แล็ปท็อป จอภาพ เครื่องพิมพ์ และอุปกรณ์ต่อพ่วงต่าง ๆ
-                ตรวจเช็ก ฮาร์ดแวร์ ซอฟต์แวร์ และทำความสะอาดภายในเครื่อง
-              </p>
+          <!-- ขั้นตอนการทำงาน -->
+          <div class="col-lg-7">
+            <h3 class="h5 fw-bold mb-3 text-start">ภาพรวมขั้นตอนการซ่อมใน Repair Center</h3>
+
+            <ul class="list-unstyled mb-0 text-start scroll-slide-right" style="animation-delay: 0.2s;">
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">1) เปิดเคสซ่อม &amp; ตรวจสอบเบื้องต้น</div>
+                <div class="small text-muted">
+                  ลูกค้าแจ้งปัญหาผ่าน Service Desk หรือช่องทางที่กำหนด ระบุอาการ อุปกรณ์ รุ่น และสาขาที่ใช้งาน
+                  ทีมซัพพอร์ตช่วยวิเคราะห์เบื้องต้น และแยกเคสที่แก้ได้ด้วย Remote
+                  ออกจากเคสที่ต้องส่งเข้า Repair Center
+                </div>
+              </li>
+
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">2) นัดรับ / ส่งอุปกรณ์เข้าศูนย์ซ่อม</div>
+                <div class="small text-muted">
+                  เมื่อตรวจสอบแล้วว่าเป็นเคสฮาร์ดแวร์ เราจะนัดรับเครื่อง
+                  หรือให้สาขาส่งอุปกรณ์มายังศูนย์ซ่อมตามช่องทางที่ตกลงกัน
+                  พร้อมออกเลขอ้างอิงเคสสำหรับติดตามงาน
+                </div>
+              </li>
+
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">3) ตรวจวิเคราะห์ &amp; ประเมินค่าใช้จ่าย</div>
+                <div class="small text-muted">
+                  ช่างเทคนิคทดสอบอุปกรณ์จริง ตรวจเช็กอาการทั้งด้านฮาร์ดแวร์และการตั้งค่าพื้นฐาน
+                  หากมีค่าใช้จ่ายหรืออะไหล่ที่ต้องเปลี่ยน จะจัดทำใบประเมินส่งให้อนุมัติก่อนซ่อม
+                </div>
+              </li>
+
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">4) ดำเนินการซ่อม &amp; ทดสอบการทำงาน</div>
+                <div class="small text-muted">
+                  ทีมช่างดำเนินการซ่อม เปลี่ยนอะไหล่ที่เสีย
+                  อัปเดตเฟิร์มแวร์หรือตั้งค่าระบบใหม่ตามความเหมาะสม
+                  จากนั้นทดสอบการใช้งานจริง เช่น ยิงบาร์โค้ด พิมพ์ใบเสร็จ
+                  และเช็กการเชื่อมต่อฐานข้อมูล
+                </div>
+              </li>
+
+              <li class="mb-0 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">5) ส่งคืนอุปกรณ์ &amp; สรุปรายงาน</div>
+                <div class="small text-muted">
+                  เมื่อซ่อมเสร็จ เราส่งอุปกรณ์กลับไปยังสาขา พร้อมรายงานผลงานซ่อม
+                  และรายละเอียดอะไหล่ที่เปลี่ยน ข้อมูลทั้งหมดจะถูกเก็บเป็นประวัติอุปกรณ์
+                  เพื่อใช้ประกอบการวางแผน PM และการเปลี่ยนเครื่องในอนาคต
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ========= แถวที่ 2 : ประโยชน์ซ้าย | รูปขวา ========= -->
+        <div class="row g-4 align-items-start">
+          <!-- ประโยชน์ -->
+          <div class="col-lg-7">
+            <h3 class="h5 fw-bold mb-3 text-start">ทำไมควรใช้ศูนย์ซ่อมอุปกรณ์ไอทีของเรา?</h3>
+
+            <ul class="list-unstyled mb-0 text-start scroll-slide-up" style="animation-delay: 0.2s;">
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">ทีมช่างเฉพาะทางด้าน POS &amp; IT</div>
+                <div class="small text-muted">
+                  ทีมเทคนิคที่คุ้นเคยกับอุปกรณ์หน้าร้าน เช่น POS, เครื่องพิมพ์บาร์โค้ด,
+                  Scanner, PC และอุปกรณ์ Network ทำให้วิเคราะห์และซ่อมได้ตรงจุดมากกว่า
+                </div>
+              </li>
+
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">ลดเวลา Downtime ของสาขา</div>
+                <div class="small text-muted">
+                  มีขั้นตอนรับเรื่อง–ซ่อม–ส่งคืนที่ชัดเจน สามารถวางแผนเวลาได้
+                  และในบางกรณีสามารถเตรียมเครื่องสำรองหรือตัวเลือกชั่วคราวให้ได้
+                </div>
+              </li>
+
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">รองรับอุปกรณ์หลายประเภทในศูนย์เดียว</div>
+                <div class="small text-muted">
+                  ไม่ต้องแยกส่งหลายที่ เรารับดูแลทั้งคอมพิวเตอร์, POS, Barcode Printer,
+                  Scanner และอุปกรณ์เสริมที่เกี่ยวข้องในศูนย์เดียว
+                </div>
+              </li>
+
+              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">ค่าใช้จ่ายโปร่งใส วางแผนงบได้ง่าย</div>
+                <div class="small text-muted">
+                  ทุกงานซ่อมมีการประเมินค่าใช้จ่ายก่อนดำเนินการ
+                  และสามารถออกแบบให้รวมอยู่ในสัญญา PM หรือแพ็กเกจดูแลรายปี
+                  เพื่อควบคุมต้นทุนซ่อมแบบภาพรวมได้
+                </div>
+              </li>
+
+              <li class="mb-0 p-3 bg-white rounded-4 shadow-sm">
+                <div class="fw-bold">ทำงานร่วมกับ Service Desk &amp; PM</div>
+                <div class="small text-muted">
+                  ข้อมูลการแจ้งปัญหาจาก Service Desk และประวัติการบำรุงรักษาจาก PM
+                  ถูกเชื่อมกับศูนย์ซ่อม ทำให้เห็นประวัติอุปกรณ์ครบถ้วน
+                  และลดปัญหาเดิมซ้ำ ๆ ได้ดีขึ้น
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- รูป -->
+          <div class="col-lg-5 d-flex align-items-center justify-content-center">
+            <div class="sd-cap-images scroll-slide-up"
+              style="animation-delay: 0.8s; max-width: 600px; width: 100%; margin-top: 130px;">
+              <!-- เปลี่ยน path รูป -->
+              <img src="../images/page-service/repair/repair-3.png" alt="ขั้นตอนการซ่อมอุปกรณ์ในศูนย์ซ่อม"
+                class="sd-cap-img img-fluid d-block mx-auto">
             </div>
           </div>
 
-          <!-- กลุ่ม Network & Device อื่น ๆ -->
-          <div class="col-md-4">
-            <div class="repair-type-card card text-center p-4">
-              <div class="icon-circle mx-auto">
-                <i class="fa-solid fa-server text-success"></i>
-              </div>
-              <h3 class="h5 mb-2">อุปกรณ์เครือข่าย &amp; อื่น ๆ</h3>
-              <p class="mb-0">
-                อุปกรณ์ Network, Router, Switch, Access Point รวมถึงอุปกรณ์เฉพาะทาง
-                ที่ใช้ในระบบหน้าร้าน หรือใช้งานร่วมกับระบบ POS ของลูกค้า
-              </p>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ========== REPAIR PROCESS ========== -->
-    <section class="py-5 bg-light">
+    <!-- ===================== SECTION 3: CTA ===================== -->
+    <section class="py-5 bg-dark text-light" id="repair-cta">
       <div class="container">
-        <div class="row g-5 align-items-start">
-          <!-- Process steps -->
-          <div class="col-lg-6">
-            <h2 class="section-title mb-2">กระบวนการซ่อมของศูนย์ Repair Center</h2>
-            <p class="mb-4">
-              ทุกงานซ่อมจะถูกควบคุมด้วยกระบวนการมาตรฐาน เพื่อลดความผิดพลาด
-              และทำให้ลูกค้าทราบสถานะอุปกรณ์ของตนเองได้ตลอดเส้นทาง
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8 mx-auto text-center" style="width: 100%;">
+            <h2 class="h2 mb-3 scroll-slide-up" style="animation-delay: 0.2s;">
+              อย่าปล่อยให้เครื่องเสียตอนเวลาสำคัญของธุรกิจ
+            </h2>
+            <p class="mb-1 scroll-slide-up" style="animation-delay: 0.4s;">
+              ถ้าคุณมีหลายสาขา หลายอุปกรณ์ และต้องการศูนย์ซ่อมกลางที่เชื่อถือได้<br>
+              ให้ทีม Hardware Repair Center ของ Daichi ช่วยดูแลแทนคุณ
+            </p>
+            <p class="mb-4 scroll-slide-up" style="animation-delay: 0.6s;">
+              บอกเราเกี่ยวกับจำนวนสาขา ประเภทอุปกรณ์ และปริมาณเคสที่เจอบ่อย<br>
+              เราสามารถออกแบบวิธีรับซ่อมและแพ็กเกจที่เหมาะกับโมเดลธุรกิจของคุณโดยเฉพาะ
             </p>
 
-            <div class="repair-process-step">
-              <div class="repair-step-number">1</div>
-              <div>
-                <div class="repair-step-title">รับเครื่อง &amp; ลงทะเบียนอุปกรณ์</div>
-                <p class="mb-1 small">
-                  บันทึกรายละเอียด Serial Number, อาการเสีย, สาขาต้นทาง และความเร่งด่วนของงานซ่อม
-                  เพื่อใช้ติดตามในระบบภายใน
-                </p>
-              </div>
+            <div class="d-flex flex-wrap justify-content-center gap-3 scroll-slide-up" style="animation-delay: 0.8s;">
+              <a href="../contact.html" class="btn btn-primary btn-lg px-4">
+                พูดคุยกับทีมศูนย์ซ่อม
+              </a>
             </div>
-
-            <div class="repair-process-step">
-              <div class="repair-step-number">2</div>
-              <div>
-                <div class="repair-step-title">ตรวจเช็ก &amp; วินิจฉัยปัญหา</div>
-                <p class="mb-1 small">
-                  ช่างเทคนิคทำการตรวจสอบ Hardware / Software
-                  ทดสอบส่วนประกอบที่เกี่ยวข้องและระบุสาเหตุของปัญหาอย่างชัดเจน
-                </p>
-              </div>
-            </div>
-
-            <div class="repair-process-step">
-              <div class="repair-step-number">3</div>
-              <div>
-                <div class="repair-step-title">ซ่อม / เปลี่ยนอะไหล่ &amp; ทดสอบ</div>
-                <p class="mb-1 small">
-                  เปลี่ยนอะไหล่ตามที่จำเป็นด้วยชิ้นส่วนที่ผ่านการตรวจสอบคุณภาพ
-                  จากนั้นทำ Burn-in Test หรือ Stress Test ตามประเภทอุปกรณ์
-                </p>
-              </div>
-            </div>
-
-            <div class="repair-process-step">
-              <div class="repair-step-number">4</div>
-              <div>
-                <div class="repair-step-title">จัดส่งคืน &amp; รับประกันงานซ่อม</div>
-                <p class="mb-1 small">
-                  บรรจุอุปกรณ์ให้เรียบร้อย จัดส่งกลับไปยังสาขา
-                  พร้อมระบุรายละเอียดอะไหล่ที่เปลี่ยน และระยะเวลารับประกันงานซ่อม
-                </p>
-              </div>
-            </div>
-
-            <div class="repair-highlight-box mt-3">
-              <i class="fa-solid fa-shield-heart me-2 text-success"></i>
-              <strong>การรับประกันงานซ่อม:</strong>
-              โดยทั่วไปจะมีการรับประกัน 30 วัน (หรือเป็นไปตามข้อตกลงในสัญญา)
-              หากอาการเดิมกลับมาในช่วงเวลารับประกัน จะมีการตรวจเช็กและซ่อมโดยไม่คิดค่าแรงเพิ่มเติม
-            </div>
-          </div>
-
-          <!-- Image / visual side -->
-          <div class="col-lg-6">
-            <div class="repair-img-wrapper mb-3">
-              <img
-                src="https://www.p5-management.com/img/Repair_Center_P5.jpg"
-                alt="Technician repairing IT devices in Repair Center"
-              />
-            </div>
-            <p class="small text-muted mb-0">
-              ศูนย์ซ่อมถูกออกแบบให้รองรับการทำงานแบบต่อเนื่อง
-              ทั้งในช่วงเวลาที่มีงานซ่อมจำนวนมากจากหลายสาขา
-              พร้อมทีมช่างที่ผ่านการอบรมและมีประสบการณ์ในการดูแลระบบ POS และอุปกรณ์ไอทีโดยเฉพาะ
-            </p>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer (inserted by footer.js) -->
+
   <div id="footer"></div>
 
   <!-- Bootstrap JS -->
@@ -329,5 +268,31 @@
   <!-- footer + navbar -->
   <script src="../js/footer.js"></script>
   <script src="../js/navbar.js"></script>
+
+  <!-- JS: สไลด์เข้าจากทุกทิศตอนเลื่อนหน้า -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // เลือกทุก element ที่ใช้คลาสพวกนี้
+      const targets = document.querySelectorAll(
+        '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
+      );
+
+      if (!targets.length) return;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible'); // ใส่คลาสให้เล่นอนิเมชัน
+            obs.unobserve(entry.target);              // เจอแล้ว เล่นครั้งเดียวพอ
+          }
+        });
+      }, {
+        threshold: 0.2   // โผล่เข้ามาประมาณ 20% แล้วค่อยเล่น
+      });
+
+      targets.forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
+
 </html>

@@ -86,3 +86,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll("[data-group]").forEach((el) => observer.observe(el));
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll(
+    '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');   // ตรงนี้สำคัญ
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  els.forEach(el => observer.observe(el));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. ค้นหา Elements ทั้งหมดที่มี class 'product-hover-image'
+    const productImages = document.querySelectorAll('.product-hover-image');
+
+    // 2. วนลูปเพื่อจัดการแต่ละรูปภาพ
+    productImages.forEach(imgElement => {
+        // ดึง URL ของภาพจาก data attributes
+        const originalSrc = imgElement.getAttribute('data-original-src');
+        const hoverSrc = imgElement.getAttribute('data-hover-src');
+
+        // ตรวจสอบว่ามีข้อมูลครบถ้วนหรือไม่
+        if (!originalSrc || !hoverSrc) return;
+
+        // (Optional) โหลดภาพ hover ล่วงหน้า
+        const preloadImg = new Image();
+        preloadImg.src = hoverSrc;
+
+        // 3. กำหนด Event Listener สำหรับเมาส์ชี้เข้า (mouseover)
+        imgElement.addEventListener('mouseover', () => {
+            imgElement.src = hoverSrc;
+        });
+
+        // 4. กำหนด Event Listener สำหรับเมาส์ชี้ออก (mouseout)
+        imgElement.addEventListener('mouseout', () => {
+            imgElement.src = originalSrc;
+        });
+    });
+});
+
+
+
