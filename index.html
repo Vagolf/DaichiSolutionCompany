@@ -18,12 +18,12 @@
 <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 
 <body>
-    <!-- navbar will be injected here -->
+    <!-- navbar-->
     <div id="navbar"></div>
 
     <header id="hero" class="hero-section">
 
-        <!-- Carousel ทำหน้าที่เป็น background -->
+        <!-- Carousel background -->
         <div id="heroCarousel" class="carousel slide carousel-fade hero-bg-carousel" data-bs-ride="carousel"
             data-bs-interval="7000">
 
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <!-- ปุ่มลูกศร -->
+            <!-- Previous and Next -->
             <button class="carousel-control-prev hero-control" type="button" data-bs-target="#heroCarousel"
                 data-bs-slide="prev">
                 <span class="visually-hidden">Previous</span>
@@ -50,11 +50,11 @@
             </button>
         </div>
 
-        <!-- กลุ่มข้อความ Hero ให้ตรงกับแต่ละสไลด์ -->
+        <!-- Hero text group matching each slide -->
         <div class="hero-copy-wrapper">
             <div class="container">
 
-                <!-- สไลด์ 0 -->
+                <!-- Slide 0 -->
                 <div class="hero-content hero-animate" data-slide="0">
                     <h1 class="display-3 fw-bold mb-4 scroll-slide-left" style="animation-delay: 0.1s;">
                         โซลูชัน POS หน้าร้าน<br> ที่แบรนด์ชั้นนำไว้วางใจ
@@ -64,16 +64,13 @@
                         แบบครบวงจรสำหรับธุรกิจร้านอาหารและค้าปลีก ช่วยให้การขายหน้าร้านลื่นไหล
                         เชื่อมต่อข้อมูลสาขากับส่วนกลางอย่างแม่นยำ ปลอดภัย และขยายสาขาได้อย่างมั่นใจ
                     </p>
-                    <p class="small text-white-50 mb-3 scroll-slide-left" style="animation-delay: 0.5s;">
-                        รองรับทั้งร้านเดี่ยวและหลายสาขา | เชื่อมต่อสต๊อกและรายงานยอดขายแบบเรียลไทม์
-                    </p>
                     <a href="contact.html" class="btn btn-primary btn-lg px-5 scroll-slide-left"
                         style="animation-delay: 0.7s;">
                         สอบถามรายละเอียดเพิ่มเติม
                     </a>
                 </div>
 
-                <!-- สไลด์ 1 -->
+                <!-- Slide 1 -->
                 <div class="hero-content hero-animate" data-slide="1">
                     <h1 class="display-3 fw-bold mb-4 scroll-slide-up " style="animation-delay: 0.1s;">
                         ทีมติดตั้งมืออาชีพ ครอบคลุมทั่วประเทศ
@@ -83,16 +80,13 @@
                         และเทรนนิ่งพนักงาน เราดูแลครบทุกขั้นตอนตามมาตรฐานเดียวกันทุกสาขา
                         เพื่อให้คุณเปิดขายวันแรกได้อย่างมั่นใจ
                     </p>
-                    <p class="small text-white-50 mb-3 scroll-slide-up" style="animation-delay: 0.5s;">
-                        รองรับการเปิดสาขาใหม่ การรีโนเวตร้าน และการย้ายตำแหน่งอุปกรณ์ POS เดิม
-                    </p>
                     <a href="contact.html" class="btn btn-primary btn-lg px-5 scroll-slide-up"
                         style="animation-delay: 0.7s;">
                         สอบถามรายละเอียดเพิ่มเติม
                     </a>
                 </div>
 
-                <!-- สไลด์ 2 -->
+                <!-- Slide 2 -->
                 <div class="hero-content hero-animate" data-slide="2">
                     <h1 class="display-3 fw-bold mb-4 scroll-slide-right" style="animation-delay: 0.1s;">
                         ซัพพอร์ต 7 วัน พร้อมดูแลระบบของคุณ
@@ -102,10 +96,6 @@
                         ดูแลทั้งการรับแจ้งปัญหา แก้ไขผ่านรีโมต ลงพื้นที่ซ่อม และทำ Preventive Maintenance ตามรอบ
                         ลด Downtime ของสาขา และช่วยให้ระบบทำงานได้ต่อเนื่องตลอดเวลา
                     </p>
-                    <p class="small text-white-50 mb-3 scroll-slide-right" style="animation-delay: 0.5s;">
-                        Single Point of Contact ด้านไอที | อัปเดตสถานะเคสและงานซ่อมได้อย่างโปร่งใส
-                    </p>
-
                     <a href="contact.html" class="btn btn-primary btn-lg px-5 scroll-slide-right"
                         style="animation-delay: 0.7s;">
                         สอบถามรายละเอียดเพิ่มเติม
@@ -115,7 +105,7 @@
             </div>
         </div>
 
-        <!-- ตัวชี้บอกสไลด์ -->
+        <!-- Slide indicators -->
         <div class="carousel-indicators hero-indicators">
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" aria-label="Slide 1"
                 class="active" aria-current="true"></button>
@@ -127,12 +117,12 @@
     <div class="display-area">
         <section id="why-trust-us" class="py-5">
             <div class="container">
-                <!-- หัวข้อใหญ่ + เกริ่น -->
+                <!-- Main title + Introduction -->
                 <div class="row mb-5">
                     <div class="col-lg-10 mx-auto text-center">
-                        <h2 class="section-title mb-3 scroll-slide-up">ทำไมถึงต้องไว้ใจในบริการของเรา</h2>
-                        <div class="home-products-underline-2 scroll-slide-up"></div>   
-                        <p class="lead mb-0 scroll-slide-up">
+                        <h5 class="section-title mb-3 scroll-slide-up">ทำไมถึงต้องไว้ใจในบริการของเรา</h5>
+                        <div class="home-products-underline-2 scroll-slide-up"></div>
+                        <p class="lead mb-0 scroll-slide-up" style="font-size: 16px;">
                             ธุรกิจของคุณไม่ใช่แค่หน้าร้านที่ต้องขายของให้ได้
                             แต่คือระบบทั้งชุดที่ต้องทำงานให้เสถียรทุกวัน
                             Daichi Solution เชี่ยวชาญด้านระบบ POS สำหรับร้านอาหารและค้าปลีก
@@ -142,7 +132,7 @@
                     </div>
                 </div>
 
-                <!-- บล็อกย่อย 1: รูปซ้าย / ข้อความขวา -->
+                <!-- Sub-block 1: Image left / Text right -->
                 <div class="row align-items-center g-4 mb-5 why-item">
                     <div class="col-md-6">
                         <div class="why-item-img">
@@ -150,21 +140,17 @@
                                 alt="การติดตั้งระบบ POS หน้าร้าน">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <h3 class="h4 mb-2 scroll-slide-right">การติดตั้งระบบ POS ที่ออกแบบมาสำหรับธุรกิจคุณ</h3>
-                        <p class="mb-2 scroll-slide-right">
+                    <div class="col-md-6 scroll-slide-right">
+                        <h3 class="h5 mb-2">การติดตั้งระบบ POS ที่ออกแบบมาสำหรับธุรกิจคุณ</h3>
+                        <p class="mb-2" style="font-size: 15px;">
                             เราไม่ได้แค่เอาเครื่อง POS ไปตั้งแล้วจบ แต่เริ่มจากการทำความเข้าใจรูปแบบร้านของคุณก่อน
                             สำรวจหน้างานจริง ออกแบบตำแหน่งเครื่องและอุปกรณ์เสริมให้เหมาะกับการทำงานของพนักงาน
                             พร้อมทดสอบการทำงานครบทุกจุดก่อนเปิดใช้งานจริง
                         </p>
-                        <p class="mb-0 small text-muted scroll-slide-right">
-                            เป้าหมายของเรา คือทำให้การรับออร์เดอร์ การคิดเงิน และการออกใบเสร็จ
-                            ลื่นไหลไม่สะดุดแม้ในช่วงเวลาที่ลูกค้าแน่นที่สุด
-                        </p>
                     </div>
                 </div>
 
-                <!-- บล็อกย่อย 2: รูปขวา / ข้อความซ้าย -->
+                <!-- Sub-block 2: Image right / Text left -->
                 <div class="row align-items-center g-4 mb-5 why-item flex-md-row-reverse">
                     <div class="col-md-6 scroll-slide-right">
                         <div class="why-item-img">
@@ -173,20 +159,16 @@
                         </div>
                     </div>
                     <div class="col-md-6 scroll-slide-left">
-                        <h3 class="h4 mb-2">ความปลอดภัยของระบบ และมาตรฐานในการติดตั้ง</h3>
-                        <p class="mb-2">
+                        <h3 class="h5 mb-2">ความปลอดภัยของระบบ และมาตรฐานในการติดตั้ง</h3>
+                        <p class="mb-2" style="font-size: 15px;">
                             Daichi Solution ใส่ใจทั้งความปลอดภัยของข้อมูล และความเรียบร้อยของงานติดตั้งหน้างานจริง
                             เราเดินสายและจัดวางอุปกรณ์อย่างเป็นระเบียบ ลดความเสี่ยงเรื่องสายไฟและอุปกรณ์สึกหรอ
                             แยกระบบเครือข่ายให้เหมาะสมกับการใช้งานของ POS และการเชื่อมต่อเข้าระบบส่วนกลาง
                         </p>
-                        <p class="mb-0 small text-muted">
-                            ทุกจุดเชื่อมต่อจะถูกตรวจสอบและทดสอบความเสถียรก่อนส่งมอบ
-                            เพื่อให้คุณใช้งานระบบได้อย่างมั่นใจในทุกสาขา
-                        </p>
                     </div>
                 </div>
 
-                <!-- บล็อกย่อย 3: รูปซ้าย / ข้อความขวา -->
+                <!-- Sub-block 3: Image left / Text right -->
                 <div class="row align-items-center g-4 mb-3 why-item">
                     <div class="col-md-6">
                         <div class="why-item-img scroll-slide-left">
@@ -195,16 +177,12 @@
                         </div>
                     </div>
                     <div class="col-md-6 scroll-slide-right">
-                        <h3 class="h4 mb-2">บริการหลังการขายรวดเร็ว และรองรับหลายสาขา</h3>
-                        <p class="mb-2">
+                        <h3 class="h5 mb-2">บริการหลังการขายรวดเร็ว และรองรับหลายสาขา</h3>
+                        <p class="mb-2" style="font-size: 15px;">
                             เมื่อระบบหน้าร้านหยุดไม่ได้ เราจึงมีทั้งทีม Help Desk สำหรับรับแจ้งและแก้ไขปัญหาผ่านรีโมต
                             ทีมภาคสนามสำหรับลงพื้นที่ตรวจเช็กอุปกรณ์ และสัญญาบำรุงรักษา (MA) พร้อมแผน Preventive
                             Maintenance
                             เพื่อดูแลระบบของคุณอย่างต่อเนื่อง
-                        </p>
-                        <p class="mb-0 small text-muted">
-                            ไม่ว่าคุณจะมีเพียงหนึ่งสาขา หรือกำลังขยายหลายสาขา เราพร้อมช่วยลด Downtime
-                            และดูแลให้ระบบของคุณทำงานได้เต็มประสิทธิภาพ
                         </p>
                     </div>
                 </div>
@@ -212,10 +190,10 @@
         </section>
 
         <head>
-            <!-- สินค้าของเรา: Slider -->
+            <!-- Product: Slider -->
             <section class="home-products-slider container my-5">
                 <div class="text-center mb-4">
-                    <h2 class="home-products-title scroll-slide-down">สินค้าของเรา</h2>
+                    <h4 class="home-products-title scroll-slide-down">สินค้าของเรา</h4>
                     <div class="home-products-underline scroll-slide-left"></div>
                 </div>
 
@@ -229,12 +207,13 @@
          "groupCells": 4
        }'>
 
-                    <!-- ========= สินค้า 1 ========= -->
+                    <!-- ========= Product 1 ========= -->
                     <div class="carousel-cell">
                         <article class="home-product-card scroll-slide-down">
                             <div class="home-product-image-wrap">
                                 <a href="products.html?category=printer">
-                                    <img class="product-hover-image" src="images/page-product/Product/Printer/printer-1.webp" alt=""
+                                    <img class="product-hover-image"
+                                        src="images/page-product/Product/Printer/printer-1.webp" alt=""
                                         data-original-src="images/page-product/Product/Printer/printer-1.webp"
                                         data-hover-src="images/Page_1/POS_Hover.png">
                                 </a>
@@ -245,19 +224,19 @@
                                     <a href="products.html?category=printer">LaserJet Pro MFP M127fn</a>
                                 </h3>
                                 <div class="home-product-price-row">
-                                    <!-- จะมีราคา/ปุ่ม หรือเว้นว่างก็ได้ -->
                                 </div>
                             </div>
                         </article>
                     </div>
 
 
-                    <!-- ========= สินค้า 2 ========= -->
+                    <!-- ========= Product 2 ========= -->
                     <div class="carousel-cell">
                         <article class="home-product-card scroll-slide-down">
                             <div class="home-product-image-wrap">
                                 <a href="products.html?category=tm-printer">
-                                    <img src="images/page-product/Product/TM-Printer/srp-350plusiii-1.png" alt="tm-printer">
+                                    <img src="images/page-product/Product/TM-Printer/srp-350plusiii-1.png"
+                                        alt="tm-printer">
                                 </a>
                             </div>
                             <div class="home-product-body">
@@ -271,7 +250,7 @@
                         </article>
                     </div>
 
-                    <!-- ========= สินค้า 3 ========= -->
+                    <!-- ========= Product 3 ========= -->
                     <div class="carousel-cell">
                         <article class="home-product-card scroll-slide-down">
                             <div class="home-product-image-wrap">
@@ -290,18 +269,18 @@
                         </article>
                     </div>
 
-                    <!-- ========= สินค้า 4 ========= -->
+                    <!-- ========= Product 4 ========= -->
                     <div class="carousel-cell">
                         <article class="home-product-card scroll-slide-down">
                             <div class="home-product-image-wrap">
-                                <a href="#">
-                                    <img src="images/Page_1/Screen.avif" alt="Finger Scan Digital Persona">
+                                <a href="products.html?category=desktop-pos">
+                                    <img src="images/page-product/Product/POS/POS-1.webp" alt="FAMETECH POS-1000B-P">
                                 </a>
                             </div>
                             <div class="home-product-body">
-                                <p class="home-product-category">CLEARANCE SALE</p>
+                                <p class="home-product-category">desktop-pos</p>
                                 <h3 class="home-product-name">
-                                    <a href="#">Finger Scan Digital Persona</a>
+                                    <a href="products.html?category=desktop-pos">FAMETECH POS-1000B-P</a>
                                 </h3>
                                 <div class="home-product-price-row">
                                 </div>
@@ -309,18 +288,19 @@
                         </article>
                     </div>
 
-                    <!-- ========= สินค้า 5 ========= -->
+                    <!-- ========= Product 5 ========= -->
                     <div class="carousel-cell">
                         <article class="home-product-card scroll-slide-down">
                             <div class="home-product-image-wrap">
-                                <a href="#">
-                                    <img src="images/Page_1/switch_hub.jpg" alt="Printer HP Laser 107A">
+                                <a href="products.html?category=scanner">
+                                    <img src="images/page-product/Product/scanner/fingerscan-1.jpg"
+                                        alt="Printer HP Laser 107A">
                                 </a>
                             </div>
                             <div class="home-product-body">
-                                <p class="home-product-category">CLEARANCE SALE</p>
+                                <p class="home-product-category">SCANNER</p>
                                 <h3 class="home-product-name">
-                                    <a href="#">Printer HP Laser 107A</a>
+                                    <a href="products.html?category=scanner">BIO-DP-4500</a>
                                 </h3>
                                 <div class="home-product-price-row">
                                 </div>
@@ -328,7 +308,7 @@
                         </article>
                     </div>
 
-                    <!-- ========= สินค้า 6 ========= -->
+                    <!-- ========= Product 6 ========= -->
                     <div class="carousel-cell">
                         <article class="home-product-card scroll-slide-down">
                             <div class="home-product-image-wrap">
@@ -347,7 +327,7 @@
                         </article>
                     </div>
 
-                    <!-- ========= สินค้า 7 ========= -->
+                    <!-- ========= Product 7 ========= -->
                     <div class="carousel-cell">
                         <article class="home-product-card scroll-slide-down">
                             <div class="home-product-image-wrap">
@@ -366,7 +346,7 @@
                         </article>
                     </div>
 
-                    <!-- ========= สินค้า 8 ========= -->
+                    <!-- ========= Product 8 ========= -->
                     <div class="carousel-cell">
                         <article class="home-product-card scroll-slide-down">
                             <div class="home-product-image-wrap">
@@ -394,11 +374,10 @@
             </section>
 
 
-
             <!-- Detailed Services Section -->
             <div class="py-5">
-                <h2 class="text-center home-products-title scroll-slide-left">ชุดบริการหลักของ Daichi</h2>
-            <div class="home-products-underline-3 scroll-slide-up mb-5"></div>
+                <h4 class="text-center home-products-title scroll-slide-left">ชุดบริการหลักของ Daichi</h4>
+                <div class="home-products-underline-3 scroll-slide-up mb-5"></div>
                 <div class="container services-wrapper px-4 px-lg-5">
                     <div class="row gx-4 gy-4">
 
@@ -410,8 +389,8 @@
                                 <div class="service-text p-5">
                                     <img class="mb-4 service-icon" src="images/Page_1/icons/service_desk.png"
                                         alt="Service Desk Icon">
-                                    <h3 class="mb-1">Service Desk</h3>
-                                    <p class="mb-4 text-p">
+                                    <h4 class="mb-0">Service Desk</h4>
+                                    <p class="mb-4 text-p px-3">
                                         ศูนย์รับแจ้งปัญหาและคำขอบริการด้านไอทีในจุดเดียว ทั้งเครื่อง POS
                                         ระบบเครือข่าย
                                         และซอฟต์แวร์สำคัญ ดูแลตั้งแต่รับเรื่อง ติดตาม ไปจนถึงปิดงานอย่างเป็นระบบ
@@ -432,11 +411,10 @@
                                 <div class="service-text p-5">
                                     <img class="mb-4 service-icon" src="images/Page_1/icons/pm.png"
                                         alt="Preventive Maintenance Icon">
-                                    <h3 class="mb-3">Preventive Maintenance (PM)</h3>
-                                    <p class="mb-4 text-p">
-                                        บริการบำรุงรักษาเชิงป้องกันสำหรับระบบไอทีและอุปกรณ์ POS วางแผนตรวจเช็ก
-                                        เปลี่ยนอะไหล่
-                                        และดูแลตามรอบที่กำหนด เพื่อลดโอกาสเสียกะทันหัน และยืดอายุการใช้งานอุปกรณ์ของคุณ
+                                    <h4 class="mb-0">Preventive Maintenance (PM)</h4>
+                                    <p class="mb-4 text-p px-3">
+                                        บริการบำรุงรักษา ป้องกัน ระบบ และอุปกรณ์ POS วางแผนตรวจเช็ก
+                                        เปลี่ยนอะไหล่ และดูแลตามรอบที่กำหนด เพื่อยืดอายุการใช้งานอุปกรณ์ของคุณ
                                     </p>
                                     <a class="btn btn-readmore" href="services/pm.html">
                                         <i class="fa fa-plus"></i>
@@ -454,8 +432,8 @@
                                 <div class="service-text p-5">
                                     <img class="mb-4 service-icon" src="images/Page_1/icons/repair.png"
                                         alt="Repair Center Icon">
-                                    <h3 class="mb-3">Repair Center</h3>
-                                    <p class="mb-4 text-p">
+                                    <h4 class="mb-0">Repair Center</h4>
+                                    <p class="mb-4 text-p px-3">
                                         ศูนย์ซ่อมอุปกรณ์ไอทีที่เสียหรือมีปัญหา
                                         ตรวจเช็ก ซ่อม เปลี่ยนอะไหล่ และทดสอบก่อนส่งคืน
                                         พร้อมรับประกันงานซ่อมตามเงื่อนไขที่กำหนด
@@ -475,8 +453,8 @@
                                 <div class="service-text p-5">
                                     <img class="mb-4 service-icon" src="images/Page_1/icons/network.png"
                                         alt="Network Icon">
-                                    <h3 class="mb-3">Network</h3>
-                                    <p class="mb-4 text-p">
+                                    <h4 class="mb-0">Network</h4>
+                                    <p class="mb-4 text-p px-3">
                                         ออกแบบและติดตั้งระบบเครือข่าย LAN / Wi-Fi และกล้องวงจรปิด
                                         รวมถึง VPN และอุปกรณ์เครือข่ายอื่น ๆ
                                         เพื่อให้ระบบภายในองค์กรเชื่อมต่อกันได้อย่างเสถียรและปลอดภัย
@@ -495,8 +473,8 @@
                                 <img class="bg-img" src="images/Page_1/service/ma.webp" alt="MA Background">
                                 <div class="service-text p-5">
                                     <img class="mb-4 service-icon" src="images/Page_1/icons/ma.png" alt="MA Icon">
-                                    <h3 class="mb-3">MA</h3>
-                                    <p class="mb-4 text-p">
+                                    <h4 class="mb-0">MA</h4>
+                                    <p class="mb-4 text-p px-3">
                                         สัญญาบริการดูแลและบำรุงรักษาระบบไอทีแบบรายเดือน/รายปี
                                         มีทีมงานคอยช่วยแก้ปัญหา ตรวจเช็ก และดูแลตาม SLA
                                         เหมาะสำหรับองค์กรที่ต้องการให้ระบบพร้อมใช้งานอยู่เสมอ
@@ -517,8 +495,8 @@
                                 <div class="service-text p-5">
                                     <img class="mb-4 service-icon" src="images/Page_1/icons/installation.png"
                                         alt="Installation Icon">
-                                    <h3 class="mb-3">Installation</h3>
-                                    <p class="mb-4 text-p">
+                                    <h4 class="mb-0">Installation</h4>
+                                    <p class="mb-4 text-p px-3">
                                         ติดตั้งระบบ Point of Sale และอุปกรณ์ไอทีที่หน้าร้านและสาขา
                                         ตั้งค่าระบบให้พร้อมใช้งานจริง และสอนการใช้งานให้กับพนักงาน
                                         เพื่อให้เริ่มทำงานได้เต็มประสิทธิภาพตั้งแต่วันแรก
@@ -538,36 +516,41 @@
     <!--Show pictures of services with descriptions and read more links -->
     <!-- Logo Block (Simple) -->
     <section class="logo-block py-4 mb-5" style="background-color: #0080ff00;">
-  <div class="container">
-    <h2 class="home-products-title scroll-slide-left">ลูกค้าที่ไว้ใจ</h2>
-    <div class="home-products-underline scroll-slide-up mb-5"></div>
+        <div class="container">
+            <h4 class="home-products-title scroll-slide-left">ลูกค้าที่ไว้ใจ</h4>
+            <div class="home-products-underline scroll-slide-up mb-5"></div>
 
-    <div class="logo-grid mx-auto">
-      <img class="logo-img scroll-slide-up" style="animation-delay: 1s;" src="images/logo/tops-logo.png" alt="Tops">
-      <img class="logo-img scroll-slide-down" style="animation-delay: 1.2s;" src="images/logo/Burger-King-logo.png" alt="Burger King">
-      <img class="logo-img scroll-slide-up" style="animation-delay: 1.4s;" src="images/logo/Pizza-logo.png" alt="Pizza Company">
-
-      <img class="logo-img scroll-slide-down" style="animation-delay: 1.6s;" src="images/logo/KFC-logo.svg" alt="KFC">
-      <img class="logo-img scroll-slide-up" style="animation-delay: 1.8s;" src="images/logo/Sizzler-logo.svg" alt="Sizzler">
-      <img class="logo-img scroll-slide-down" style="animation-delay: 2s;" src="images/logo/Swensens-Logo.png" alt="Swensens">
-    </div>
-  </div>
-</section>
+            <div class="logo-grid mx-auto">
+                <img class="logo-img scroll-slide-up" style="animation-delay: 1s;" src="images/logo/tops-logo.png"
+                    alt="Tops">
+                <img class="logo-img scroll-slide-down" style="animation-delay: 1.2s;"
+                    src="images/logo/Burger-King-logo.png" alt="Burger King">
+                <img class="logo-img scroll-slide-up" style="animation-delay: 1.4s;" src="images/logo/Pizza-logo.png"
+                    alt="Pizza Company">
+                <img class="logo-img scroll-slide-down" style="animation-delay: 1.6s;" src="images/logo/KFC-logo.svg"
+                    alt="KFC">
+                <img class="logo-img scroll-slide-up" style="animation-delay: 1.8s;" src="images/logo/Sizzler-logo.svg"
+                    alt="Sizzler">
+                <img class="logo-img scroll-slide-down" style="animation-delay: 2s;" src="images/logo/Swensens-Logo.png"
+                    alt="Swensens">
+            </div>
+        </div>
+    </section>
 
 
     </main>
 
-    <!-- Footer section with contact information and links -->
+    <!-- Footer -->
     <div id="footer"></div>
 
-    <!-- Load scripts -->
+    <!-- Navbar and Footer -->
     <script src="js/navbar.js"></script>
     <script src="js/footer.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Flickity JS -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <!-- JS รีสตาร์ทอนิเมชัน hero-content ตอน Carousel เลื่อนสไลด์ -->
+    <!-- JS: Restart hero-content animation when Carousel slide changes -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const heroCarouselEl = document.getElementById('heroCarousel');
@@ -581,10 +564,10 @@
                 heroContents.forEach((el, idx) => {
                     el.classList.toggle('is-active', idx === activeIndex);
 
-                    // จัดการอนิเมชัน
+                    // Manage animation
                     el.classList.remove('hero-animate-play');
                     if (idx === activeIndex) {
-                        void el.offsetWidth;            // รีเฟรช layout
+                        void el.offsetWidth;
                         el.classList.add('hero-animate-play');
                     }
                 });
@@ -601,10 +584,10 @@
                 });
             }
 
-            // แสดงสไลด์แรกตอนโหลด
+            // Show first slide on load
             updateHero(0);
 
-            // ใช้ event 'slid' (เลื่อนเสร็จแล้ว) จะเนียนกว่า
+            // Use 'slid' event (after slide transition) for smoother effect
             heroCarouselEl.addEventListener('slid.bs.carousel', function (event) {
                 const toIndex = event.to ?? 0;
                 updateHero(toIndex);
@@ -612,34 +595,29 @@
         });
     </script>
 
-    <!-- JS: สไลด์เข้าจากทุกทิศตอนเลื่อนหน้า -->
+    <!-- JS: Slide in from all directions on scroll -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // เลือกทุก element ที่ใช้คลาสพวกนี้
             const targets = document.querySelectorAll(
                 '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
             );
-
             if (!targets.length) return;
-
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible'); // ใส่คลาสให้เล่นอนิเมชัน
-                        obs.unobserve(entry.target);              // เจอแล้ว เล่นครั้งเดียวพอ
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
                     }
                 });
             }, {
-                threshold: 0.2   // โผล่เข้ามาประมาณ 20% แล้วค่อยเล่น
+                threshold: 0.2
             });
-
             targets.forEach(el => observer.observe(el));
         });
     </script>
 
-
     <script>
-        // ==== JS: clone โลโก้ให้ครบ 2 ชุด เพื่อเลื่อนแบบต่อเนื่อง (ถ้ามี .scroller อยู่จริง) ====
+        // ==== JS: clone logos to have 2 sets for continuous scrolling (if .scroller exists) ====
         const scroller = document.querySelector(".scroller");
         if (scroller) {
             const inner = scroller.querySelector(".scroller__inner");
@@ -652,7 +630,6 @@
             });
         }
     </script>
-
 </body>
 
 </html>

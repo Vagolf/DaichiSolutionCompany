@@ -1,3 +1,6 @@
+/* =========================
+ * Global Styles
+ * ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap');
 
 :root {
@@ -5,12 +8,9 @@
     --secondary-color: #0d2c40;
     --text-dark: #333333;
     --background-light: #f8f9fa;
-
-    /* Main site font */
     --font-family: "Kanit", sans-serif;
 }
 
-/* Base body text styling */
 body {
     font-family: 'Kanit', sans-serif;
     line-height: 1.7;
@@ -28,23 +28,18 @@ body {
 body {
     font-family: 'Kanit', sans-serif;
     min-height: 100vh;
-    /* สูงอย่างน้อยเท่าจอ */
     display: flex;
     flex-direction: column;
 }
 
 main {
     flex: 1 0 auto;
-    /* ให้ main กินพื้นที่ดัน footer ลงล่าง */
 }
 
-/* กันไม่ให้ footer หด */
 #footer {
     flex-shrink: 0;
 }
 
-
-/* Heading styles: make all headings bold by default */
 h1,
 h2,
 h3,
@@ -54,70 +49,54 @@ h6 {
     font-weight: 700;
 }
 
-/* Generic section title style used across pages */
+/* =========================
+ * Section Titles
+ * ========================= */
 .section-title {
     color: black;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-/* Force primary text color on elements using .text-primary */
 .text-primary {
     color: var(--primary-color) !important;
 }
 
 /* =========================
- * 2. Buttons
+ * Buttons
  * ========================= */
-
-/* Primary button style */
 .btn-primary {
     background-color: #396eff;
     border-color: #396eff;
     font-weight: 300;
-
-    /* padding: 10px 30px; */
     border-radius: 10px;
-    /* Fully rounded pill-style button */
     width: auto;
     height: 35px;
-
     display: inline-flex;
     align-items: center;
-    /* จัดเนื้อหาให้กลางแนวตั้ง */
     justify-content: center;
-    /* จัดให้กลางแนวนอน */
     line-height: 1;
-    /* กันตัวอักษรลอยขึ้นหรือลงเกินไป */
 }
 
-/* Hover state for primary button */
 .btn-primary:hover {
     background-color: #0044ff00;
-    /* Slightly darker green on hover */
     border-color: #396eff;
 }
 
 /* =========================
- * 3. Navigation Bar
+ * Navigation Bar
  * ========================= */
-
-/* Remove default bottom border from navbar */
 .navbar {
     border-bottom: none;
 }
 
-/* Nav links: default state */
 .nav-link {
     font-weight: 500;
     margin-right: 0px;
     color: #bebebe !important;
-    /* Light grey for inactive links */
     transition: color 0.3s;
-
 }
 
-/* Nav links: active / hover state */
 .nav-link.active,
 .nav-link:hover {
     color: #ffffff !important;
@@ -126,10 +105,10 @@ h6 {
     text-underline-offset: 6px;
 }
 
-.navbar .nav-link,
-.header-area .nav-link{
-  padding: 0.2rem 0.5rem !important;
+.navbar .nav-link {
+    padding: 0.2rem 0.5rem !important;
 }
+
 /* กัน sticky-top ของ bootstrap ชน */
 #navbar.sticky-top {
     position: static !important;
@@ -182,16 +161,12 @@ h6 {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 18px;
 }
 
 /* optional: ถ้าเมนูคุณมี margin -10px อยู่ ให้ลดผลกระทบ */
 .main-nav .nav li {
     margin: 0 !important;
 }
-
-
-
 
 /* =========================
  * 3.1 Dropdown Menu in Navbar
@@ -222,10 +197,6 @@ h6 {
     padding: 0;
     display: flex;
     align-items: center;
-}
-
-.header-area .main-nav .nav li {
-    margin-left: 35px;
 }
 
 /* ใช้ร่วมกับ .nav-link เดิมของคุณ */
@@ -401,14 +372,14 @@ h6 {
     margin: 0px auto 10px;
 }
 
-/* ========================= Product Modal Description ========================= */
-/* ใช้กับ modal ป๊อปอัพตอนกดดูรายละเอียดสินค้า */
-.product-modal-desc .rowline {
+/* ========================= Product Model Description ========================= */
+/* ใช้กับ model ป๊อปอัพตอนกดดูรายละเอียดสินค้า */
+.product-model-desc .rowline {
     margin: 0 0 8px;
     line-height: 1.65;
 }
 
-.product-modal-desc .rowline:last-child {
+.product-model-desc .rowline:last-child {
     margin-bottom: 0;
 }
 
@@ -810,7 +781,6 @@ h6 {
 
 /* Service card container */
 
-
 .service-item {
     position: relative;
     border: 1px solid #e9ecef;
@@ -883,8 +853,54 @@ h6 {
 }
 
 .text-p {
-    font-size: 15px;
+    font-size: 14px;
 }
+
+/* บีบพื้นที่ให้อ่านง่าย + มี margin ซ้ายขวาเพิ่ม */
+.rc-narrow{
+  max-width: 960px;        /* ปรับได้: 880 / 960 / 1024 */
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+/* จอใหญ่มาก ๆ ยังให้ไม่กว้างเกินไป */
+@media (min-width: 1400px){
+  .rc-narrow{ max-width: 980px; }
+}
+
+/*======  ======*/
+/* ===== Wix-style side image (BG fill + fixed feel) ===== */
+.install-media-wrap{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.install-media-fixed{
+  width: min(490px, 100%);
+  height: var(--media-h, 680px);
+  border-radius: 18px;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /* เหมือน Wix / hero: รูปเหมือนไม่ขยับ */
+  background-attachment: fixed;
+
+  border: 2px solid rgba(0,0,0,.12);
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+/* มือถือหลายเครื่อง (โดยเฉพาะ iOS) fixed ไม่เสถียร → fallback */
+@media (max-width: 991.98px){
+  .install-media-fixed{
+    height: 360px;
+    background-attachment: scroll;
+  }
+}
+
 
 /* ================= 3-STEP "Read More" Button ================= */
 
@@ -1277,10 +1293,10 @@ footer a:hover {
 }
 
 .logo-grid {
-    max-width: 1200px;
+    max-width: 780px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    row-gap: 40px;
     align-items: center;
     justify-items: center;
 }
@@ -1836,10 +1852,21 @@ html {
     padding: 16px;
     padding-bottom: 0;
     overflow: hidden;
+
+    /* ทำให้ช่องรูปสูงเท่ากันทุกใบ */
+    height: 200px;
+    /* ปรับได้ เช่น 180 / 220 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-image {
+    /* บังคับให้รูป fit ตามกรอบเดียวกัน */
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* เห็นรูปครบ ไม่ครอป */
     border-radius: 10px;
     display: block;
     transition: transform 0.25s ease;
@@ -1848,6 +1875,7 @@ html {
 .product-card:hover .product-image {
     transform: translateY(-4px) scale(1.02);
 }
+
 
 .product-body {
     padding: 14px 16px 16px;
@@ -1945,7 +1973,7 @@ html {
     /* คลิกไม่ได้ */
 }
 
-/* Modal */
+/* Model */
 
 #overlay {
     position: fixed;
@@ -1963,7 +1991,7 @@ html {
     pointer-events: auto;
 }
 
-#modal {
+#model {
     position: fixed;
     inset: 0;
     display: flex;
@@ -1979,13 +2007,13 @@ html {
 }
 
 
-#modal.open {
+#model.open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0) scale(1);
 }
 
-.product-modal-content {
+.product-model-content {
     max-width: 720px;
     width: 100%;
     background: #ffffff;
@@ -1995,36 +2023,50 @@ html {
     position: relative;
 }
 
-.product-modal-close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    border: none;
-    background: transparent;
-    font-size: 1.6rem;
-    line-height: 1;
-    cursor: pointer;
-    color: #9ca3af;
+.product-model-close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: rgba(15, 23, 42, 0);
+  color: #0f172a;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+
+  transition: background .15s ease, transform .15s ease, color .15s ease;
 }
 
-.product-modal-close:hover {
-    color: #4b5563;
+.product-model-close:hover{
+  background: rgba(15, 23, 42, 0.122);
+  transform: scale(1.04);
 }
 
-.product-modal-img {
+
+.product-model-img {
     max-height: 260px;
     width: 100%;
     object-fit: contain;
     border-radius: 14px;
 }
 
-.product-modal-title {
+.product-model-title {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 6px;
 }
 
-.product-modal-desc {
+.product-model-desc {
     font-size: 0.95rem;
     color: var(--muted);
     margin-bottom: 10px;
@@ -2034,7 +2076,6 @@ html {
     padding-top: 20px;
     padding-bottom: 80px;
 }
-
 
 /* โซนรายละเอียด */
 
@@ -2059,41 +2100,42 @@ html {
 }
 
 .product-btn-details:hover {
-    background-color: #005380;;
+    background-color: #005380;
+    ;
     color: #ffffff;
 }
 
-.product-modal .details {
+.product-model .details {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.product-modal .details h2 {
+.product-model .details h2 {
     font-size: 1.4rem;
     margin: 0;
 }
 
-.product-modal .details p {
+.product-model .details p {
     margin: 0;
     color: #4b5563;
     font-size: 0.95rem;
 }
 
-.product-modal .details .price {
+.product-model .details .price {
     font-size: 1.3rem;
     font-weight: 600;
     color: #0f766e;
 }
 
-.product-modal .dlg-actions {
+.product-model .dlg-actions {
     margin-top: auto;
     display: flex;
     gap: 10px;
 }
 
 /* ปุ่มปิด */
-.product-modal .close-btn {
+.product-model .close-btn {
     position: absolute;
     top: 10px;
     right: 12px;
@@ -2106,12 +2148,12 @@ html {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .product-modal .dialog {
+    .product-model .dialog {
         grid-template-columns: minmax(0, 1fr);
         max-width: 95%;
     }
 
-    .product-modal img#dlg-img {
+    .product-model img#dlg-img {
         max-height: 240px;
     }
 }
@@ -2173,10 +2215,6 @@ html {
     color: #0f172a;
 }
 
-/* กล่อง use case */
-.usecase-box {
-    border-left: 4px solid #22c55e;
-}
 
 /* Product Management Page Styles pm */
 /* HERO PM */
@@ -2336,7 +2374,7 @@ html {
 .display-area {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 16px;
+    padding: 40px 70px;
 }
 
 p.page-desc {
@@ -2351,9 +2389,9 @@ p.page-desc {
     width: 100%;
     max-width: 1000px;
     /* ความกว้างสูงสุดของกล่องแผนที่ */
-    height: 520px;
+    height: 500px;
     /* ความสูงของกล่องแผนที่ */
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
@@ -2474,12 +2512,12 @@ p.page-desc {
     align-items: center;
 }
 
-.sd-cap-img {
-    max-width: 480px;
-    width: 100%;
-    height: auto;
-    display: block;
+.sd-cap-img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
 
 /* =========================
  * Map Page Styles
@@ -2496,7 +2534,7 @@ p.page-desc {
 .map-card {
     background: #ffffff;
     border-radius: 1.25rem;
-    padding: 1.5rem 1.75rem 1.75rem;
+    padding: 1.5rem 5rem 1.75rem;
     max-width: 1000px;
     width: 100%;
 }
@@ -2513,6 +2551,52 @@ p.page-desc {
     font-size: 1rem;
     font-weight: 600;
     margin: 0;
+}
+.map-background{
+  position: relative;
+  height: 30vh;
+  background-image: url("images/map/background-map.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* กันเบลอล้นออกนอกกรอบ */
+}
+
+/* ชั้นเบลอ + overlay มืด */
+.map-background::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: inherit;          /* ใช้ภาพเดียวกับด้านหลัง */
+  filter: blur(2px);            /* ปรับความเบลอ 4-10px */
+  transform: scale(1.08);       /* กันขอบเบลอเห็นขอบ */
+  z-index:0;
+  opacity: .95;
+}
+.map-background::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0, 0, 0, 0.345);  /* overlay ช่วยให้ตัวอักษรชัด */
+  z-index:1;
+}
+
+/* ให้ข้อความอยู่เหนือทุกอย่าง */
+.map-background > *{
+  position: relative;
+  z-index: 2;
+}
+
+/* ทำให้หัวข้อบนภาพชัดขึ้น */
+.map-background .map-card-header{
+  margin-bottom: 0;         /* กันดันลง (ถ้าต้องการ) */
+  padding: 50px 18px;       /* เว้นขอบให้ดูเป็นแถบ */
+}
+
+.map-background .map-card-title{
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;    
+  margin: 0;
 }
 
 /* ====== viewport ของแผนที่ ====== */
@@ -2534,7 +2618,7 @@ p.page-desc {
 .map-inner {
     position: relative;
     display: block;
-    /* ✅ เปลี่ยนจาก inline-block */
+    /* เปลี่ยนจาก inline-block */
     width: 100%;
 }
 
@@ -2546,9 +2630,9 @@ p.page-desc {
 .map-image {
     display: block;
     width: 100%;
-    /* ✅ เพิ่ม */
+    /* เพิ่ม */
     max-width: none;
-    /* ✅ ไม่ให้โดน max-width จำกัดแบบแปลกๆ */
+    /* ไม่ให้โดน max-width จำกัดแบบแปลกๆ */
     height: auto;
 }
 
@@ -2561,7 +2645,7 @@ p.page-desc {
     border: 2px solid rgb(255, 0, 0);
     /* ขอบโปร่งลง */
     background-color: rgba(255, 255, 255, 0.75);
-    /* ✅ ตัวจุดโปร่งนิดหน่อย */
+    /* ตัวจุดโปร่งนิดหน่อย */
     /* เงาโปร่งลง */
     transform: translate(-50%, -50%);
     display: flex;
@@ -2605,11 +2689,11 @@ p.page-desc {
     line-height: 1.2;
 
     white-space: nowrap;
-    /* ✅ บังคับให้เป็น “แนวนอนบรรทัดเดียว” */
+    /* บังคับให้เป็น “แนวนอนบรรทัดเดียว” */
     word-break: normal;
-    /* ✅ ยกเลิก break-word ที่ทำให้ตัวอักษรเรียงแนวตั้ง */
+    /* ยกเลิก break-word ที่ทำให้ตัวอักษรเรียงแนวตั้ง */
     width: max-content;
-    /* ✅ กว้างตามข้อความ */
+    /* กว้างตามข้อความ */
     max-width: 280px;
     /* กันยาวเกิน */
     overflow: hidden;
@@ -2690,3 +2774,222 @@ p.page-desc {
     }
 }
 
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+@media (max-width: 992px) {
+    #products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    #products {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========== Navbar in mobile ========== */
+/* ===== Desktop ===== */
+.site-header .menu-trigger{
+  display: none;              /* ซ่อนปุ่ม hamburger บนจอใหญ่ */
+}
+
+/* เมนู desktop เรียงขวา */
+.site-header .main-nav .nav{
+  display: flex;
+  align-items: center;
+}
+
+/* ===== Mobile: ทำให้เมนูเข้า hamburger ===== */
+@media (max-width: 991.98px){
+  .site-header .menu-trigger{
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .site-header .main-nav{
+    position: relative; /* ให้ dropdown อ้างอิงกับ nav */
+  }
+
+  /* ซ่อนรายการเมนูก่อน */
+  .site-header .main-nav .nav{
+    position: absolute;
+    top: calc(100% + 10px);
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 12px;
+    list-style: none;
+
+    background: rgba(13, 44, 64, 0.98);
+    box-shadow: 0 16px 40px rgba(0,0,0,.18);
+    max-width: 2000px;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  /* เปิดเมนูเมื่อกด hamburger */
+  .site-header .main-nav .nav.active{
+    display: flex;
+  }
+
+  /* ลิงก์ในเมนูมือถือ */
+  .site-header .main-nav .nav .nav-link{
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+}
+
+
+/* =========================
+ * Career Hero Styles
+ * ========================= */
+
+.career-hero{
+  position: relative;
+  min-height: 30vh;      /* ปรับเป็น 40vh ได้ */
+  overflow: hidden;
+}
+
+.career-hero-bg{
+  position: absolute;
+  inset: 0;
+  background: url("images/career/bg-career.jpg") center/cover no-repeat;
+  filter: blur(2px);
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+.career-hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 1;
+}
+
+/* กล่องข้อความ: ชิดซ้าย + กลางแนวตั้ง */
+.career-hero-content{
+  position: relative;
+  z-index: 2;
+
+  min-height: 30vh;           /* ให้สูงเท่า hero เพื่อจัดกลางแนวตั้ง */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* กลางแนวตั้ง */
+  align-items: flex-start;     /* ชิดซ้าย */
+
+  padding: 60px 18px;
+  text-align: left;
+}
+
+.career-title{
+  color: #fff;
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0 0 10px;
+}
+
+.career-sub{
+  color: rgba(255,255,255,.92);
+  margin: 0;
+  max-width: 900px;  /* กันบรรทัดยาวเกิน */
+  line-height: 1.7;
+}
+
+/* ===== Careers Grid ===== */
+.career-grid .career-card{
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.career-grid .career-poster{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* สี่เหลี่ยมจัตุรัส */
+  background: #f3f4f6;       /* เทาอ่อน */
+  overflow: hidden;
+  display: block; /* หรือไม่ใส่ก็ได้ */
+  border-radius: 5px;
+}
+
+.career-grid .career-poster .poster-logo{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 46px;
+  height: auto;
+  opacity: .9;
+}
+
+/* เนื้อหาด้านล่างรูป */
+.career-grid .career-body{
+  padding: 14px 0 0;
+   min-height: 140px; /* ปรับเลขได้ เพื่อให้สูงเท่ากันเวลาข้อความยาวไม่เท่ากัน */
+}
+
+.career-grid .career-role{
+  font-weight: 800;
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+.career-grid .career-desc{
+  margin: 0 0 12px;
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.career-grid .career-actions .btn{
+  border-radius: 10px;
+}
+
+/* ให้ img เท่ากับกรอบนี้ 100% */
+.career-grid .career-poster img,
+.career-grid .career-poster .poster-img{
+  position: absolute;
+  inset: 0;          /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* เต็มกรอบ ไม่บิด */
+  display: block;
+  transform: translateZ(0);
+}
+
+/* กันกรณีเป็น <a> แล้วมีขีดเส้นใต้/สีลิงก์ */
+.career-grid a.career-poster{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ให้ hover ลื่นขึ้น */
+.career-grid .career-poster{
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+}   
+
+/* hover เฉพาะตอนชี้ที่โปสเตอร์ */
+.career-grid .career-poster:hover{
+  transform: translate3d(0,-4px,0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.375);
+  cursor: pointer;
+}
+
+.career-grid-wrap{
+  max-width: 1000px;   /* ปรับได้ เช่น 1100/1000 */
+  margin: 0 auto;
+}

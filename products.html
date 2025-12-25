@@ -11,21 +11,14 @@
 
   <!-- Main site style -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- ฟอนต์ไทย (ถ้าไป import ใน style.css แล้ว ตรงนี้เอาออกได้) -->
-  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;600;700&display=swap"
-    rel="stylesheet" />
 </head>
 
 <body class="products-page">
-  <!-- navbar will be injected here -->
+  <!-- navbar -->
   <div id="navbar" class="sticky-top"></div>
-  <!-- Hero banner บนหน้า products -->
 
-  <!-- HERO TOP (รูปยาวด้านบน) -->
+  <!-- HERO TOP -->
   <section class="product-hero-banner">
     <div class="product-hero-inner scroll-slide-up">
       <h1 class="product-hero-title">สินค้าของเรา</h1>
@@ -37,14 +30,11 @@
     </div>
   </section>
 
-
   <!-- Main content of the page -->
   <main>
     <div class="container py-5">
-
       <div class="shop-layout">
-
-        <!-- ========== SIDEBAR ========== -->
+        <!-- ========== Sidebar ========== -->
         <aside class="sidebar">
           <h2 class="sidebar-title">เรียกดู</h2>
           <div class="divider"></div>
@@ -63,9 +53,9 @@
               </a>
             </li>
             <li>
-              <a href="#" data-category="mobile-pos">
-                <span>Mobile POS</span>
-                <span class="category-pill-count" data-category-count="mobile-pos">0</span>
+              <a href="#" data-category="boh">
+                <span>Back of house</span>
+                <span class="category-pill-count" data-category-count="boh">0</span>
               </a>
             </li>
             <li>
@@ -85,12 +75,25 @@
                 <span>UPS</span>
                 <span class="category-pill-count" data-category-count="ups">0</span>
               </a>
+            </li>
+            <li>
+              <a href="#" data-category="scanner">
+                <span>Scanner</span>
+                <span class="category-pill-count" data-category-count="scanner">0</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-category="other">
+                <span>Other Products</span>
+                <span class="category-pill-count" data-category-count="other">0</span>
+              </a>
+            </li>
           </ul>
-          </li>
+
           </ul>
         </aside>
 
-        <!-- ========== PRODUCTS ========== -->
+        <!-- ========== Products ========== -->
         <section class="products-area">
           <div class="products-header">
             <div>
@@ -99,7 +102,7 @@
             </div>
           </div>
 
-          <!-- การ์ดสินค้า -->
+          <!-- Product Cards -->
           <div id="products">
 
             <!-- Product printer all -->
@@ -117,9 +120,7 @@
               <div class="product-body">
                 <p class="product-category card-sub">PRINTER</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/Printer/printer-2.jpg" target="_blank">
-                    LaserJet Pro MFP M127fn
-                  </a>
+                  LaserJet Pro MFP M127fn
                 </h3>
 
               </div>
@@ -140,9 +141,7 @@
               <div class="product-body">
                 <p class="product-category card-sub">PRINTER</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/Printer/printer-2.jpg" target="_blank">
-                    LaserJet Pro MFP M130fw
-                  </a>
+                  LaserJet Pro MFP M130fw
                 </h3>
 
               </div>
@@ -165,9 +164,7 @@
               <div class="product-body">
                 <p class="product-category card-sub">PRINTER</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/Printer/printer-3.webp" target="_blank">
-                    LaserJet Pro MFP M26A
-                  </a>
+                  LaserJet Pro MFP M26A
                 </h3>
 
               </div>
@@ -192,9 +189,7 @@
               <div class="product-body">
                 <p class="product-category card-sub">UPS</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/UPS/ups-1.png" target="_blank">
-                    Cleanline D Series 1150VA/630W
-                  </a>
+                  Cleanline D Series 1150VA/630W
                 </h3>
               </div>
             </article>
@@ -215,9 +210,7 @@
               <div class="product-body">
                 <p class="product-category card-sub">UPS</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/UPS/ups-apc-1.webp" target="_blank">
-                    APC Back-UPS RS 500
-                  </a>
+                  APC Back-UPS RS 500
                 </h3>
               </div>
             </article>
@@ -238,9 +231,7 @@
               <div class="product-body">
                 <p class="product-category card-sub">TM Printer</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/UPS/ups-cl-1.jpeg" target="_blank">
-                    Cleanline CL-800ICT 800VA/480W
-                  </a>
+                  Cleanline CL-800ICT 800VA/480W
                 </h3>
               </div>
             </article>
@@ -265,9 +256,7 @@
               <div class="product-body">
                 <p class="product-category card-sub">TM Printer</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/TM-Printer/srp-350plusiii-1.png" target="_blank">
-                    BIXOLON SRP-350plusIII
-                  </a>
+                  BIXOLON SRP-350plusIII
                 </h3>
               </div>
             </article>
@@ -289,9 +278,7 @@
               <div class="product-body">
                 <p class="product-category card-sub">TM Printer</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/TM-Printer/TM-T88V-1.png" target="_blank">
-                    Epson TM-T88V
-                  </a>
+                  Epson TM-T88V
                 </h3>
               </div>
             </article>
@@ -300,7 +287,8 @@
             <!-- POS -->
             <!-- POS 1 -->
             <article class="product-card card" data-category="desktop-pos"
-              src="images/page-product/Product/POS/POS-1.webp" data-title="TYSSO / FAMETECH POS-1000B-P " data-desc="
+              src="images/page-product/Product/POS/POS-1.webp" data-title="TYSSO / FAMETECH POS-1000B-P "
+              data-desc="
                 &#10;ชื่อสินค้า: เครื่อง POS แบบ All-in-One จอสัมผัส 15 นิ้ว (Fanless / Full-Flat) 
                 &#10;ชื่อรุ่น: TYSSO / FAMETECH POS-1000B-P 
                 &#10;ฟังก์ชัน: จอ 15 นิ้ว 1024×768, เลือกทัชได้ (PCAP/Resistive), CPU Intel J1900, รองรับ RAM สูงสุด 8GB, มีพอร์ต USB หลายช่อง + LAN (Gigabit) + COM สำหรับต่ออุปกรณ์เสริม POS 
@@ -313,16 +301,15 @@
               <div class="product-body">
                 <p class="product-category card-sub">Desktop POS</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/POS/POS-1.webp" target="_blank">
-                    TYSSO / FAMETECH POS-1000B-P 
-                  </a>
+                  TYSSO / FAMETECH POS-1000B-P
                 </h3>
               </div>
             </article>
 
             <!-- POS 2 -->
             <article class="product-card card" data-category="desktop-pos"
-              src="images/page-product/Product/POS/POS-2.webp" data-title="TYSSO / FAMETECH AP-3515" data-desc="
+              src="images/page-product/Product/POS/POS-2.webp" data-title="TYSSO / FAMETECH AP-3515"
+              data-desc="
                 &#10;ชื่อสินค้า: เครื่อง POS แบบ All-in-One หน้าจอสัมผัส 15 นิ้ว (พร้อมเครื่องพิมพ์ใบเสร็จในตัว) 
                 &#10;ชื่อรุ่น: TYSSO / FAMETECH AP-3515 
                 &#10;ฟังก์ชัน: จอทัชสกรีน + เครื่องพิมพ์ใบเสร็จความร้อนในตัวความเร็ว 250 mm/s ฐานโลหะประหยัดพื้นที่ และมีพอร์ตเชื่อมต่อหลากหลาย (ต่ออุปกรณ์เสริมได้) 
@@ -335,16 +322,144 @@
               <div class="product-body">
                 <p class="product-category card-sub">Desktop POS</p>
                 <h3 class="product-name card-title">
-                  <a href="images/page-product/Product/POS/POS-2.webp" target="_blank">
-                    TYSSO / FAMETECH AP-3515
-                  </a>
+                  TYSSO / FAMETECH AP-3515
                 </h3>
               </div>
             </article>
 
+            <!-- End POS -->
+
+            <!-- Scanner -->
+            <!-- fingger scanner 1 -->
+            <article class="product-card card" data-category="scanner"
+              src="images/page-product/Product/scanner/fingerscan-1.jpg" data-title="BIO-DP-4500"
+              data-desc="
+                &#10;ชื่อสินค้า: เครื่องอ่านลายนิ้วมือ USB (Optical Fingerprint Reader)
+                &#10;ชื่อรุ่น: DigitalPersona U.are.U 4500 (BIO-DP-4500 / URU 4500)
+                &#10;ฟังก์ชัน: สแกนลายนิ้วมือเพื่อยืนยันตัวตนผ่าน USB 2.0 พร้อม เข้ารหัสข้อมูลลายนิ้วมือ และไฟ LED แสดงสถานะการสแกน
+                &#10;เหมาะกับ: ระบบลงเวลา/ควบคุมสิทธิ์เข้าใช้งาน/ล็อกอินเครื่องหรือโปรแกรม สำหรับออฟฟิศ หน้าร้าน และงานที่ต้องการความปลอดภัยเพิ่มขึ้น">
+              <div class="product-image-wrapper">
+                <img class="product-image" src="images/page-product/Product/scanner/fingerscan-1.jpg"
+                  alt="เครื่องอ่านลายนิ้วมือ USB (Optical Fingerprint Reader)" />
+              </div>
+
+              <div class="product-body">
+                <p class="product-category card-sub">Fingerprint Scanner</p>
+                <h3 class="product-name card-title">
+                  BIO-DP-4500
+                </h3>
+              </div>
+            </article>
+
+            <!-- Barcode Scanner 1 -->
+            <article class="product-card card" data-category="scanner"
+              src="images/page-product/Product/scanner/barcodescanner-1.jpg" data-title="YJ HF600-1-2USB"
+              data-desc="
+                &#10;ชื่อสินค้า: เครื่องสแกนบาร์โค้ดแบบตั้งโต๊ะ (Presentation Area-Imaging Scanner) 
+                &#10;ชื่อรุ่น: Honeywell Youjie HF600 — รหัส YJ HF600-1-2USB 
+                &#10;ฟังก์ชั่น: สแกนบาร์โค้ด 1D/2D ได้รวดเร็วแบบแฮนด์ฟรี และมีโหมดช่วยสแกนบาร์โค้ดบนมือถือ (กดปุ่มสลับโหมด) เชื่อมต่อผ่าน USB 
+                &#10;เหมาะกับ: จุดชำระเงิน/ร้านค้า/โลจิสติกส์/งานสำนักงาน ที่ต้องการสแกน QR หรือคูปองจากหน้าจอมือถือแบบรวดเร็วและต่อใช้งานง่าย">
+              <div class="product-image-wrapper">
+                <img class="product-image" src="images/page-product/Product/scanner/barcodescanner-1.jpg"
+                  alt="เครื่องอ่านลายนิ้วมือ USB (Optical Fingerprint Reader)" />
+              </div>
+
+              <div class="product-body">
+                <p class="product-category card-sub">Barcode Scanner</p>
+                <h3 class="product-name card-title">
+                  YJ HF600-1-2USB
+                </h3>
+              </div>
+            </article>
+
+            <!-- Barcode Scanner 2 -->
+            <article class="product-card card" data-category="scanner"
+              src="images/page-product/Product/scanner/barcodescanner-2.jpg" data-title="Honeywell Orbit 7190g"
+              data-desc="
+                &#10;ชื่อสินค้า: เครื่องสแกนบาร์โค้ดแบบตั้งโต๊ะ (Hybrid Presentation Scanner) 
+                &#10;ชื่อรุ่น: Honeywell Orbit 7190g 
+                &#10;ฟังก์ชั่น: สแกนได้ทั้ง บาร์โค้ดสินค้า 1D และ บาร์โค้ด/คูปองดิจิทัล 2D จากหน้าจอมือถือ (เลเซอร์ + อิมเมจเจอร์ในตัว) 
+                &#10;เหมาะกับ: เคาน์เตอร์ POS ร้านค้าปลีก/ร้านสะดวกซื้อ/ร้านอาหาร ที่ต้องการสแกนเร็วแบบแฮนด์ฟรี และรับคูปอง/QR จากมือถือได้">
+              <div class="product-image-wrapper">
+                <img class="product-image" src="images/page-product/Product/scanner/barcodescanner-2.jpg"
+                  alt="เครื่องอ่านลายนิ้วมือ USB (Optical Fingerprint Reader)" />
+              </div>
+
+              <div class="product-body">
+                <p class="product-category card-sub">Barcode Scanner</p>
+                <h3 class="product-name card-title">
+                  Honeywell Orbit 7190g
+                </h3>
+              </div>
+            </article>
+
+            <!-- Barcode Scanner 3 -->
+            <article class="product-card card" data-category="scanner"
+              src="images/page-product/Product/scanner/barcodescanner-3.webp" data-title="Zebra DS2208"
+              data-desc="
+                &#10;ชื่อสินค้า: เครื่องสแกนบาร์โค้ด 2D (Area Imager) 
+                &#10;ชื่อรุ่น: Zebra DS2208 (ตระกูล DS2200 Series) 
+                &#10;ฟังก์ชั่น: สแกนได้ทั้ง 1D/2D (รวม QR Code) แบบเล็งแล้วกดยิง ใช้งานง่าย รองรับสแกนจากหน้าจอมือถือ 
+                &#10;เหมาะกับ: เคาน์เตอร์ POS, ร้านค้าปลีก, ร้านอาหาร, งานคลัง/สโตร์ ที่ต้องการสแกนเร็วและติดตั้งใช้งานได้ทันที">
+              <div class="product-image-wrapper">
+                <img class="product-image" src="images/page-product/Product/scanner/barcodescanner-3.webp"
+                  alt="เครื่องอ่านลายนิ้วมือ USB (Optical Fingerprint Reader)" />
+              </div>
+
+              <div class="product-body">
+                <p class="product-category card-sub">Barcode Scanner</p>
+                <h3 class="product-name card-title">
+                  Zebra DS2208
+                </h3>
+              </div>
+            </article>
+            <!-- End Scanner -->
+
+            <!-- other product -->
+            <!-- Bump Bar 1 -->
+            <article class="product-card card" data-category="other"
+              src="images/page-product/Product/Other/BumpBar-1.png" data-title="1635-8007-0000"
+              data-desc="
+                &#10;ชื่อสินค้า: NCR Bump Bar (แป้นกดควบคุมงานครัว/KDS) 
+                &#10;ชื่อรุ่น: 1635-8007-0000 (1635MCC8) 16-Key 
+                &#10;ฟังก์ชั่น: ใช้กด “Bump” เพื่อยืนยัน/ลบออเดอร์ที่ทำเสร็จออกจากคิวบนจอครัว เป็นอุปกรณ์ในระบบ NCR Kitchen Production System 
+                &#10;เหมาะกับ: ร้านอาหาร (QSR/TS), ครัวร้านสะดวกซื้อ, จุดขายอาหารในสถานบันเทิง/สนามกีฬา ที่ใช้ระบบ Kitchen Display (KDS)">
+              <div class="product-image-wrapper">
+                <img class="product-image" src="images/page-product/Product/Other/BumpBar-1.png"
+                  alt="NCR Bump Bar (แป้นกดควบคุมงานครัว/KDS)" />
+              </div>
+
+              <div class="product-body">
+                <p class="product-category card-sub">Bump Bar</p>
+                <h3 class="product-name card-title">
+                  1635-8007-0000
+                </h3>
+              </div>
+            </article>
+
+            <!-- Senor 1 -->
+            <article class="product-card card" data-category="other" src="images/page-product/Product/Other/senor-1.jpg"
+              data-title="V-GCD4242"
+              data-desc="
+                &#10;ชื่อสินค้า: ลิ้นชักเก็บเงิน (Cash Drawer) แบบเหล็ก แข็งแรง
+                &#10;ชื่อรุ่น: SENOR Cash Drawer V-GCD4242 (เช่นรหัส V-GCD4242BB00) 
+                &#10;ฟังก์ชั่น: เปิดลิ้นชักด้วยสัญญาณจากเครื่องพิมพ์/ระบบ POS, มีช่องสอดสลิปด้านหน้า, ถาดเงินถอดได้ (ช่องธนบัตร/เหรียญ) และกุญแจล็อก 3 โหมด (Solenoid/Lock/Manual) 
+                &#10;เหมาะกับ: ร้านค้าปลีก/ร้านอาหาร/ซูเปอร์มาร์เก็ต/จุดแคชเชียร์ ที่ต้องการเก็บเงินสดเป็นระเบียบและปลอดภัย">
+              <div class="product-image-wrapper">
+                <img class="product-image" src="images/page-product/Product/Other/senor-1.jpg"
+                  alt="เครื่องอ่านลายนิ้วมือ USB (Optical Fingerprint Reader)" />
+              </div>
+
+              <div class="product-body">
+                <p class="product-category card-sub">Senor</p>
+                <h3 class="product-name card-title">
+                  V-GCD4242
+                </h3>
+              </div>
+            </article>
           </div>
 
-          <!-- Pagination (ยัง mock ไว้ก่อน) -->
+          <!-- Pagination -->
           <nav class="products-pagination" aria-label="Product Pagination">
             <a href="#" class="page-number current">1</a>
             <a href="#" class="page-number">2</a>
@@ -356,52 +471,49 @@
     </div>
   </main>
 
-  <!-- ========= MODAL (ดูรายละเอียดสินค้า) ========= -->
+  <!-- ========= Modal (View Product Details) ========= -->
   <div id="overlay"></div>
-  <div id="modal" aria-hidden="true">
-    <div class="product-modal-content">
-      <button id="close" class="product-modal-close" aria-label="Close">&times;</button>
-      <div class="row g-4 align-items-start">
-        <div class="col-md-5">
-          <img id="dlg-img" class="product-modal-img" src="" alt="" />
+  <div id="model" aria-hidden="true">
+    <div class="product-model-content">
+      <button id="close" class="product-model-close" aria-label="Close">&times;</button>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-5 d-flex align-items-center justify-content-center">
+          <img id="dlg-img" class="product-model-img img-fluid" src="" alt="" />
         </div>
+
         <div class="col-md-7">
-          <h3 id="dlg-title" class="product-modal-title">Product Name</h3>
-          <div id="dlg-desc" class="product-modal-desc"></div>
+          <h3 id="dlg-title" class="product-model-title">Product Name</h3>
+          <div id="dlg-desc" class="product-model-desc"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- footer will be injected here -->
+  <!-- footer -->
   <div id="footer"></div>
 
-  <!-- Load scripts -->
+  <!-- Navbar and Footer and Products -->
   <script src="js/navbar.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/products.js"></script>
 
-  <!-- JS: สไลด์เข้าจากทุกทิศตอนเลื่อนหน้า -->
+  <!-- JS: Slide in from all directions on scroll -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // เลือกทุก element ที่ใช้คลาสพวกนี้
       const targets = document.querySelectorAll(
         '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
       );
-
       if (!targets.length) return;
-
       const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible'); // ใส่คลาสให้เล่นอนิเมชัน
-            obs.unobserve(entry.target);              // เจอแล้ว เล่นครั้งเดียวพอ
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
           }
         });
       }, {
-        threshold: 0.2   // โผล่เข้ามาประมาณ 20% แล้วค่อยเล่น
+        threshold: 0.2
       });
-
       targets.forEach(el => observer.observe(el));
     });
   </script>

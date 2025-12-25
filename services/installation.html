@@ -1,303 +1,278 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Installation Services | Daichi Solution</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Services | Daichi Solution</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- main style -->
-  <link href="../style.css" rel="stylesheet">
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-</style>
 </head>
+
 <body>
-  <div id="navbar" class="sticky-top"></div>
+    <div id="navbar" class="sticky-top"></div>
 
-  <main>
+    <main>
 
-    <!-- ===================== SECTION 1: Intro + รูปซ้าย (สไตล์เดียวกับ Service Desk) ===================== -->
-    <section id="install-intro" class="py-5 bg-white">
-      <div class="container">
+        <!-- ===================== Section 1: Intro + Picture ===================== -->
+        <section id="install-intro" class="py-5 bg-white">
+            <div class="container rc-narrow">
 
-        <!-- หัวข้อใหญ่ -->
-        <div class="row scroll-slide-right">
-          <div class="col-12">
-            <h2 class="mb-2">เราติดตั้งระบบซอฟต์แวร์และฮาร์ดแวร์ให้คุณอย่างไร?</h2>
-            <p class="text-muted mb-4">
-              ตั้งแต่การวางแผน เตรียมอุปกรณ์ ติดตั้งหน้างาน จนถึงทดสอบและส่งมอบแบบพร้อมใช้งานจริง
-              โดยโฟกัสที่การลด Downtime ของสาขา และให้ทุกเครื่องทำงานได้ตามมาตรฐานเดียวกัน
-            </p>
-          </div>
-        </div>
+                <!-- หัวข้อใหญ่ -->
+                <div class="row scroll-slide-right">
+                    <div class="col-12">
+                        <h3 class="mb-4">เราติดตั้งระบบซอฟต์แวร์และฮาร์ดแวร์ให้คุณอย่างไร?</h3>
+                    </div>
+                </div>
 
-        <!-- รูป + เนื้อหารวมทั้งหมด -->
-        <div class="row">
-          <div class="col-12">
+                <!-- Picture and Details -->
+                <div class="row">
+                    <div class="col-12">
 
-            <!-- ✅ รูปลอยซ้ายบนจอใหญ่ (แก้ path ให้ตรงกับไฟล์จริงของคุณ) -->
-            <img
-              src="../images/page-service/installation/installation-1.png"
-              alt="ทีมติดตั้งระบบ POS และอุปกรณ์ไอที"
-              class="scroll-slide-down img-fluid rounded-4 shadow-sm mb-3 mb-lg-2 float-lg-start me-lg-4"
-              style="max-width: 300px; animation-delay: 0.2s;">
+                        <!-- Picture floating top-left on large screens -->
+                        <img src="../images/page-service/installation/installation-1.png"
+                            alt="ทีมติดตั้งระบบ POS และอุปกรณ์ไอที"
+                            class="scroll-slide-down img-fluid rounded-4 shadow-sm mb-3 mb-lg-2 float-lg-start me-lg-4"
+                            style="max-width: 230px; animation-delay: 0.2s;">
 
-            <div class="scroll-slide-up" style="animation-delay: 0.2s;">
-              <p class="sd-paragraph">
-                เราไม่ได้แค่ “ติดตั้งให้ใช้ได้” แต่ช่วยวางแผนการติดตั้งให้เหมาะกับรูปแบบธุรกิจของคุณ
-                ไม่ว่าจะเป็นการเปลี่ยนเครื่อง POS ทั้งเชน การอัปเกรดระบบปฏิบัติการ
-                หรือติดตั้งอุปกรณ์ใหม่ในสาขาเพิ่มเติม
-              </p>
+                        <div class="scroll-slide-up" style="animation-delay: 0.2s; font-size: 14px;">
+                            <p class="sd-paragraph">
+                                เราไม่ได้แค่ “ติดตั้งให้ใช้ได้” แต่ช่วยวางแผนการติดตั้งให้เหมาะกับรูปแบบธุรกิจของคุณ
+                                ไม่ว่าจะเป็นการเปลี่ยนเครื่อง POS ทั้งเชน การอัปเกรดระบบปฏิบัติการ
+                                หรือติดตั้งอุปกรณ์ใหม่ในสาขาเพิ่มเติม
+                            </p>
 
-              <p class="sd-paragraph">
-                แนวคิดคือให้ทุกเครื่องได้รับการติดตั้งตามมาตรฐานเดียวกัน
-                มีซอฟต์แวร์และการตั้งค่าที่ถูกต้อง ปลอดภัย และพร้อมเชื่อมต่อกับระบบเดิมที่มีอยู่
-                เพื่อลดโอกาสปัญหาในวันแรกที่เริ่มใช้งานจริง
-              </p>
+                            <p class="sd-paragraph">
+                                แนวคิดคือให้ทุกเครื่องได้รับการติดตั้งตามมาตรฐานเดียวกัน
+                                มีซอฟต์แวร์และการตั้งค่าที่ถูกต้อง ปลอดภัย และพร้อมเชื่อมต่อกับระบบเดิมที่มีอยู่
+                                เพื่อลดโอกาสปัญหาในวันแรกที่เริ่มใช้งานจริง
+                            </p>
 
-              <p class="sd-paragraph">
-                เราวางแผนทำงานโดยดูทั้งมุมมองของทีม IT และมุมมองของหน้าร้าน
-                เลือกช่วงเวลาเข้าหน้างานที่กระทบการขายน้อยที่สุด
-                และเตรียมแผนสำรองหากเกิดเหตุไม่คาดคิดระหว่างติดตั้ง
-              </p>
+                            <p class="sd-paragraph">
+                                เราวางแผนทำงานโดยดูทั้งมุมมองของทีม IT และมุมมองของหน้าร้าน
+                                เลือกช่วงเวลาเข้าหน้างานที่กระทบการขายน้อยที่สุด
+                                และเตรียมแผนสำรองหากเกิดเหตุไม่คาดคิดระหว่างติดตั้ง
+                            </p>
 
-              <p class="mb-0">
-                ผลลัพธ์คือ “Rollout ครั้งใหญ่” ที่รบกวนหน้าร้านให้น้อยที่สุด
-                และมีทีมงานคอยดูแลตั้งแต่เริ่มจนจบงาน
-                พร้อมเอกสารและข้อมูลที่ทีมของคุณสามารถใช้ต่อได้ในอนาคต
-              </p>
+                            <p class="mb-0">
+                                ผลลัพธ์คือ “Rollout ครั้งใหญ่” ที่รบกวนหน้าร้านให้น้อยที่สุด
+                                และมีทีมงานคอยดูแลตั้งแต่เริ่มจนจบงาน
+                                พร้อมเอกสารและข้อมูลที่ทีมของคุณสามารถใช้ต่อได้ในอนาคต
+                            </p>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-            <!-- เคลียร์ float -->
-            <div class="clearfix"></div>
-          </div>
-        </div>
+        <!-- ===================== Section 2: Steps + Benefits ===================== -->
+        <section class="py-5 bg-light" id="install-capabilities">
+            <div class="container rc-narrow">
 
-      </div>
-    </section>
-
-    <!-- ===================== SECTION 2: ขั้นตอน + ข้อดี (เลย์เอาต์แบบสลับซ้าย–ขวา) ===================== -->
-    <section class="py-5 bg-light" id="install-capabilities">
-      <div class="container">
-
-        <!-- หัวข้อใหญ่ตรงกลาง -->
-        <div class="text-center mb-4 scroll-slide-up">
-          <h2 class="h2 fw-bold mb-2">
-            ขั้นตอนการติดตั้ง และสิ่งที่คุณจะได้รับจากทีม Installation ของเรา
-          </h2>
-          <p class="text-muted mb-0">
-            เราออกแบบทั้งกระบวนการทำงานและทีมภาคสนาม ให้รองรับการติดตั้งจำนวนมาก
-            โดยยังคงมาตรฐานเดียวกันทุกสาขา
-          </p>
-        </div>
-
-        <!-- ========= แถวที่ 1 : ข้อความ ซ้าย | รูป ขวา (สลับจาก Service Desk) ========= -->
-        <div class="row g-4 align-items-start mb-5">
-
-          <!-- ข้อความ -->
-          <div class="col-lg-7">
-            <h3 class="h5 fw-bold mb-3 text-start">ภาพรวมขั้นตอนการติดตั้งระบบ</h3>
-
-            <ol class="list-unstyled mb-0 text-start scroll-slide-up" style="animation-delay: 0.2s;">
-
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">1) เก็บข้อมูล &amp; ออกแบบแผนการติดตั้ง (Planning)</div>
-                <div class="small text-muted">
-                  เก็บข้อมูลจำนวนเครื่อง ประเภทอุปกรณ์ (POS, PC, Notebook, Printer, Scanner ฯลฯ)
-                  ระบบที่ต้องการติดตั้ง และช่วงเวลาที่เหมาะสมในการทำงาน เช่น หลังปิดร้าน หรือวันหยุดบางวัน
-                  จากนั้นจัดทำแผนงานว่าแต่ละสาขาจะติดตั้งวันไหน ใช้เวลาประมาณเท่าไหร่
-                  และต้องเตรียมทีมเทคนิคกี่ชุด
+                <!-- Main heading centered -->
+                <div class="text-center mb-4 scroll-slide-up">
+                    <h3 class="fw-bold mb-2">
+                        ขั้นตอนการติดตั้ง และสิ่งที่คุณจะได้รับจากทีม Installation ของเรา
+                    </h3>
                 </div>
-              </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">2) เตรียมอุปกรณ์ &amp; Image กลาง (Preparation &amp; Staging)</div>
-                <div class="small text-muted">
-                  เตรียมชุดซอฟต์แวร์มาตรฐาน (Standard Image) เช่น Windows, Driver, POS Application,
-                  Utility และการตั้งค่าพื้นฐานที่ต้องใช้ร่วมกันทุกสาขา
-                  ทดสอบบนเครื่องตัวอย่างให้แน่ใจว่าเชื่อมต่อกับฐานข้อมูล, Network,
-                  เครื่องพิมพ์ และอุปกรณ์ต่อพ่วงต่าง ๆ ได้ครบ ก่อนนำไปติดตั้งจริง
+                <!-- ========= Row 1: Text Left | Picture Right ========= -->
+                <div class="row g-5 align-items-start mb-5">
+
+                    <div class="col-lg-7">
+                        <h5 class="fw-bold mb-3 text-start">ภาพรวมขั้นตอนการติดตั้งระบบ</h5>
+
+                        <ol class="list-unstyled mb-0 text-start scroll-slide-up" style="animation-delay: 0.2s;">
+
+                            <li class="mb-3 p-2 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">1) เก็บข้อมูล &amp; ออกแบบแผนการติดตั้ง (Planning)</div>
+                                <div class="small text-muted">
+                                    รวบรวมจำนวนเครื่อง ประเภทอุปกรณ์ และช่วงเวลาที่ติดตั้งได้เหมาะสม
+                                    จากนั้นวางแผนว่าติดตั้งแต่ละสาขาวันไหน ใช้เวลากี่ชั่วโมง และต้องใช้ทีมกี่ชุด
+                                </div>
+                            </li>
+
+                            <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">2) เตรียมอุปกรณ์ &amp; Image กลาง (Preparation &amp; Staging)
+                                </div>
+                                <div class="small text-muted">
+                                    เตรียม Standard Image เช่น Windows, Driver และโปรแกรม POS ที่ใช้ร่วมกันทุกสาขา
+                                    ทดสอบบนเครื่องตัวอย่างให้เชื่อมต่อฐานข้อมูลและอุปกรณ์ต่อพ่วงได้ครบก่อนลงหน้างาน
+                                </div>
+                            </li>
+
+                            <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">3) ติดตั้งหน้างาน &amp; ย้ายข้อมูล (On-site Installation)</div>
+                                <div class="small text-muted">
+                                    ทีมภาคสนามเข้าหน้างาน สำรองข้อมูลที่จำเป็น ติดตั้งหรือเปลี่ยนเครื่องใหม่
+                                    ตั้งค่าเชื่อมต่อ Network, Printer, Scanner และย้ายข้อมูลให้ถูกต้องและปลอดภัย
+                                </div>
+                            </li>
+
+                            <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">4) ทดสอบการใช้งานจริงร่วมกับผู้ใช้งาน (Testing &amp; Handover)
+                                </div>
+                                <div class="small text-muted">
+                                    ทดสอบการใช้งานจริง เช่น ยิงบาร์โค้ด พิมพ์ใบเสร็จ และลองทำตาม Flow จริงของหน้าร้าน
+                                    พร้อมสอนการใช้งานเบื้องต้นและส่งมอบเอกสารสรุปการติดตั้งให้ผู้รับผิดชอบ
+                                </div>
+                            </li>
+
+                            <li class="mb-0 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">5) ซัพพอร์ตหลังการติดตั้ง &amp; ปรับจูนเพิ่มเติม (Post-install
+                                    Support)</div>
+                                <div class="small text-muted">
+                                    มีระยะซัพพอร์ตหลังติดตั้ง หากพบปัญหาจะรีโมตหรือส่งทีมลงหน้างานให้
+                                    และเก็บปัญหาที่พบซ้ำเป็น Knowledge Base เพื่อลดโอกาสเกิดซ้ำในสาขาอื่น
+                                </div>
+                            </li>
+
+
+                        </ol>
+                    </div>
+
+                    <!-- Picture -->
+                    <div class="col-lg-5 ps-lg-4">
+                        <div class="text-center scroll-slide-up" style="animation-delay: 0.8s; margin-top: 140px;">
+                            <img src="../images/page-service/installation/installation-2.png"
+                                alt="ขั้นตอนการติดตั้งระบบให้พร้อมใช้งานจริง" class="sd-cap-img w-100">
+                        </div>
+                    </div>
                 </div>
-              </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">3) ติดตั้งหน้างาน &amp; ย้ายข้อมูล (On-site Installation)</div>
-                <div class="small text-muted">
-                  ทีมภาคสนามเข้าหน้างานตามแผนที่กำหนด ทำการสำรองข้อมูลที่จำเป็น
-                  ติดตั้งระบบใหม่ หรือติดตั้งเครื่องใหม่แทนของเดิม
-                  ตั้งค่าผูกกับ Network, Printer, Scanner และอุปกรณ์เสริม
-                  พร้อมย้ายข้อมูลที่จำเป็นอย่างถูกต้องและปลอดภัย
+                <!-- ========= Line 2 : Picture Left | Text Right ========= -->
+                <div class="row g-4 align-items-start">
+
+                    <!-- Picture -->
+                    <div class="col-lg-5 ps-lg-4 scroll-slide-up" style="animation-delay: 0.8s; margin-top: 180px;">
+                        <div class="text-center" style="max-width: 480px; width: 100%; height: auto;">
+                            <img src="../images/page-service/installation/installation-3.png"
+                                alt="ข้อดีของการใช้ทีมติดตั้ง Daichi" class="sd-cap-img w-100">
+                        </div>
+                    </div>
+
+                    <!-- Benefits for Customers -->
+                    <div class="col-lg-7">
+                        <h5 class="fw-bold mb-3 text-start">ข้อดีของการให้ทีมเราช่วยติดตั้งระบบแทนคุณ</h5>
+
+                        <ul class="list-unstyled mb-0 text-start scroll-slide-right" style="animation-delay: 0.2s;">
+
+                            <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">ทีมผู้เชี่ยวชาญด้าน POS &amp; IT Deployment</div>
+                                <div class="small text-muted">
+                                    ทีมงานคุ้นเคยกับการติดตั้งระบบหน้าร้านและสำนักงาน
+                                    วิเคราะห์และตั้งค่าระบบได้ตรงกับการใช้งานจริง
+                                </div>
+                            </li>
+
+                            <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">ติดตั้งรวดเร็ว แต่ยังรักษามาตรฐาน</div>
+                                <div class="small text-muted">
+                                    ใช้ Image กลางและ Checklist ชัดเจน ช่วยให้ติดตั้งหลายเครื่องได้เร็ว
+                                    และคงมาตรฐานเดียวกัน ลดงานแก้ไขซ้ำ
+                                </div>
+                            </li>
+
+                            <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">ซอฟต์แวร์ถูกลิขสิทธิ์ &amp; ตั้งค่าความปลอดภัยถูกต้อง</div>
+                                <div class="small text-muted">
+                                    ติดตั้งเฉพาะซอฟต์แวร์ถูกลิขสิทธิ์ พร้อมตั้งค่า Antivirus และ Policy
+                                    ให้เหมาะกับมาตรฐานความปลอดภัยขององค์กร
+                                </div>
+                            </li>
+
+                            <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">ลด Downtime ของสาขาให้น้อยที่สุด</div>
+                                <div class="small text-muted">
+                                    วางแผนติดตั้งในช่วงที่กระทบงานน้อย และเตรียมแผนสำรองหากมีปัญหาหน้างาน
+                                    เพื่อให้การขายไม่สะดุด
+                                </div>
+                            </li>
+
+                            <li class="mb-0 p-3 bg-white rounded-4 shadow-sm">
+                                <div class="fw-normal">ช่วยแบ่งเบาภาระทีม IT ภายใน</div>
+                                <div class="small text-muted">
+                                    ปล่อยให้ทีม IT ภายในโฟกัสโปรเจกต์หลัก
+                                    ส่วนงานติดตั้งจำนวนมากให้ทีม Deployment ของเราดูแลแทน
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </li>
 
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">4) ทดสอบการใช้งานจริงร่วมกับผู้ใช้งาน (Testing &amp; Handover)</div>
-                <div class="small text-muted">
-                  ทดสอบการใช้งานจริง เช่น เปิด–ปิดโปรแกรม POS, ยิงบาร์โค้ด, พิมพ์ใบเสร็จ,
-                  เชื่อมต่อฐานข้อมูล และลองทำงานตาม Flow จริงของหน้าร้าน
-                  พร้อมสาธิตขั้นตอนสำคัญให้พนักงานหน้าร้านหรือทีม IT ภายใน
-                  และส่งมอบเอกสารสรุปการติดตั้ง
-                </div>
-              </li>
-
-              <li class="mb-0 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">5) ซัพพอร์ตหลังการติดตั้ง &amp; ปรับจูนเพิ่มเติม (Post-install Support)</div>
-                <div class="small text-muted">
-                  หลังติดตั้งเสร็จยังมีระยะรับประกันการติดตั้ง
-                  หากมีปัญหาในช่วงแรก สามารถรีโมตเข้าไปช่วยแก้ไขหรือนัดทีมลงหน้างานได้
-                  ปัญหาที่พบซ้ำ ๆ จะถูกเก็บเป็น Knowledge Base เพื่อลดโอกาสเกิดปัญหาเดิมในสาขาอื่น
-                </div>
-              </li>
-
-            </ol>
-          </div>
-
-          <!-- รูป -->
-          <div class="col-lg-5">
-            <div class="sd-cap-images text-center scroll-slide-up" style="animation-delay: 0.8s; margin-top: 120px;">
-              <img
-                src="../images/page-service/installation/installation-2.png"
-                alt="ขั้นตอนการติดตั้งระบบให้พร้อมใช้งานจริง"
-                class="sd-cap-img">
             </div>
-          </div>
-        </div>
+        </section>
 
-        <!-- ========= แถวที่ 2 : รูป ซ้าย | ข้อความ ขวา (สลับฝั่ง) ========= -->
-        <div class="row g-4 align-items-start">
+        <!-- ===================== Section 3: CTA ===================== -->
+        <section class="py-5 bg-dark text-light" id="install-cta">
+            <div class="container rc-narrow">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7 mx-auto text-center" style="width: 100%;">
+                        <h3 class="mb-3 scroll-slide-up" style="animation-delay: 0.2s;">
+                            กำลังวางแผนเปลี่ยนเครื่องหรืออัปเกรดระบบครั้งใหญ่?
+                        </h3>
+                        <p class="mb-1 scroll-slide-up" style="animation-delay: 0.4s; font-size: 14px;">
+                            ไม่ว่าจะเป็นการเปลี่ยน POS, อัปเกรด Windows, ติดตั้งเครื่องใหม่ในสาขา<br>
+                            หรือ Rollout ระบบซอฟต์แวร์ใหม่ทั่วทั้งองค์กร
+                            ทีม Installation ของเราพร้อมช่วยวางแผนและลงมือให้คุณ
+                        </p>
+                        <p class="mb-3 scroll-slide-up" style="animation-delay: 0.6s; font-size: 14px;">
+                            เล่าให้เราฟังเกี่ยวกับจำนวนสาขา ประเภทอุปกรณ์ และไทม์ไลน์ที่ต้องการ<br>
+                            เราจะช่วยแปลงให้เป็นแผนติดตั้งที่ชัดเจนและนำไปใช้ได้จริง
+                        </p>
 
-          <!-- รูป -->
-          <div class="col-lg-5 scroll-slide-up" style="animation-delay: 0.8s; margin-top: 100px;">
-            <div class="text-center" style="max-width: 480px; width: 100%; height: auto; display: block;">
-              <img
-                src="../images/page-service/installation/installation-3.png"
-                alt="ข้อดีของการใช้ทีมติดตั้ง Daichi"
-                class="sd-cap-img">
+                        <div class="d-flex flex-wrap justify-content-center gap-3 scroll-slide-up"
+                            style="animation-delay: 0.8s;">
+                            <a href="../contact.html" class="btn btn-primary btn-lg px-4">
+                                ขอคำปรึกษา
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- ข้อดีที่ลูกค้าได้รับ -->
-          <div class="col-lg-7">
-            <h3 class="h5 fw-bold mb-3 text-start">ข้อดีของการให้ทีมเราช่วยติดตั้งระบบแทนคุณ</h3>
-
-            <ul class="list-unstyled mb-0 text-start scroll-slide-right" style="animation-delay: 0.2s;">
-
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ทีมผู้เชี่ยวชาญด้าน POS &amp; IT Deployment</div>
-                <div class="small text-muted">
-                  ทีมงานที่คุ้นเคยกับการติดตั้งระบบหน้าร้านและระบบสำนักงาน
-                  ทำให้วิเคราะห์ปัญหาและตั้งค่าต่าง ๆ ได้ตรงกับการใช้งานจริง
-                </div>
-              </li>
-
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ติดตั้งรวดเร็ว แต่ยังรักษามาตรฐาน</div>
-                <div class="small text-muted">
-                  การใช้ Image กลางและ Checklist ชัดเจน ช่วยให้การติดตั้งจำนวนมากทำได้เร็ว
-                  แต่ยังได้มาตรฐานเดียวกันทุกเครื่อง ลดงานแก้ไขซ้ำในภายหลัง
-                </div>
-              </li>
-
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ซอฟต์แวร์ถูกลิขสิทธิ์ &amp; ตั้งค่าความปลอดภัยถูกต้อง</div>
-                <div class="small text-muted">
-                  ติดตั้งเฉพาะซอฟต์แวร์ที่มีลิขสิทธิ์ พร้อมตั้งค่าความปลอดภัยพื้นฐาน
-                  เช่น Antivirus, Policy การใช้งาน และการอัปเดตที่เหมาะสมกับองค์กรของคุณ
-                </div>
-              </li>
-
-              <li class="mb-3 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ลด Downtime ของสาขาให้น้อยที่สุด</div>
-                <div class="small text-muted">
-                  วางแผนติดตั้งในช่วงเวลาที่กระทบงานน้อย เช่น หลังปิดร้านหรือช่วงลูกค้าน้อย
-                  และเตรียมแผนสำรองหากเกิดปัญหาหน้างาน เพื่อให้การขายไม่สะดุด
-                </div>
-              </li>
-
-              <li class="mb-0 p-3 bg-white rounded-4 shadow-sm">
-                <div class="fw-bold">ช่วยแบ่งเบาภาระทีม IT ภายใน</div>
-                <div class="small text-muted">
-                  ปล่อยให้ทีมของคุณโฟกัสงานโปรเจกต์หลัก
-                  ส่วนงานติดตั้งจำนวนมากให้ทีม Deployment ของเราช่วยจัดการให้
-                </div>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===================== SECTION 3: CTA ===================== -->
-    <section class="py-5 bg-dark text-light" id="install-cta">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-7 mx-auto text-center" style="width: 100%;">
-            <h2 class="h2 mb-3 scroll-slide-up" style="animation-delay: 0.2s;">
-              กำลังวางแผนเปลี่ยนเครื่องหรืออัปเกรดระบบครั้งใหญ่?
-            </h2>
-            <p class="mb-1 scroll-slide-up" style="animation-delay: 0.4s;">
-              ไม่ว่าจะเป็นการเปลี่ยน POS, อัปเกรด Windows, ติดตั้งเครื่องใหม่ในสาขา<br>
-              หรือ Rollout ระบบซอฟต์แวร์ใหม่ทั่วทั้งองค์กร 
-              ทีม Installation ของเราพร้อมช่วยวางแผนและลงมือให้คุณ
-            </p>
-            <p class="mb-3 scroll-slide-up" style="animation-delay: 0.6s;">
-              เล่าให้เราฟังเกี่ยวกับจำนวนสาขา ประเภทอุปกรณ์ และไทม์ไลน์ที่ต้องการ<br>
-              เราจะช่วยแปลงให้เป็นแผนติดตั้งที่ชัดเจนและนำไปใช้ได้จริง
-            </p>
-
-            <div class="d-flex flex-wrap justify-content-center gap-3 scroll-slide-up" style="animation-delay: 0.8s;">
-              <a href="../contact.html" class="btn btn-primary btn-lg px-4">
-                ขอคำปรึกษา
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
+    </main>
 
 
-  <div id="footer"></div>
+    <div id="footer"></div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- footer + navbar -->
-  <script src="../js/footer.js"></script>
-  <script src="../js/navbar.js"></script>
+    <!-- footer + navbar -->
+    <script src="../js/footer.js"></script>
+    <script src="../js/navbar.js"></script>
 
-    <!-- JS: สไลด์เข้าจากทุกทิศตอนเลื่อนหน้า -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // เลือกทุก element ที่ใช้คลาสพวกนี้
-      const targets = document.querySelectorAll(
-        '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
-      );
-
-      if (!targets.length) return;
-
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible'); // ใส่คลาสให้เล่นอนิเมชัน
-            obs.unobserve(entry.target);              // เจอแล้ว เล่นครั้งเดียวพอ
-          }
+    <!-- JS: Slide in from all directions on scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const targets = document.querySelectorAll(
+                '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
+            );
+            if (!targets.length) return;
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+            targets.forEach(el => observer.observe(el));
         });
-      }, {
-        threshold: 0.2   // โผล่เข้ามาประมาณ 20% แล้วค่อยเล่น
-      });
-
-      targets.forEach(el => observer.observe(el));
-    });
-  </script>
+    </script>
 </body>
+
 </html>

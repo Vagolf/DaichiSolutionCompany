@@ -187,9 +187,9 @@ function applyCategoryFromURL() {
     });
   }
 
-  // ========= 6) Modal (ดูรายละเอียดสินค้า) =========
-  (function setupModal() {
-    const modal = document.getElementById("modal");
+  // ========= 6) Model (ดูรายละเอียดสินค้า) =========
+  (function setupModel() {
+    const model = document.getElementById("model");
     const overlay = document.getElementById("overlay");
     const closeBtn = document.getElementById("close");
     const img = document.getElementById("dlg-img");
@@ -227,7 +227,7 @@ function applyCategoryFromURL() {
         .join("");
     }
 
-    if (!modal || !overlay || !closeBtn) return;
+    if (!model || !overlay || !closeBtn) return;
 
     function openCard(card) {
       const src = card.dataset.img || card.querySelector("img")?.src || "";
@@ -243,31 +243,31 @@ function applyCategoryFromURL() {
       title.textContent = t;
       desc.innerHTML = formatDesc(d);
 
-      modal.classList.add("open");
+      model.classList.add("open");
       overlay.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
+      model.setAttribute("aria-hidden", "false");
       closeBtn.focus();
     }
 
-    function closeModal() {
-      modal.classList.remove("open");
+    function closeModel() {
+      model.classList.remove("open");
       overlay.classList.remove("open");
-      modal.setAttribute("aria-hidden", "true");
+      model.setAttribute("aria-hidden", "true");
     }
 
-    // click card -> open modal (ยกเว้นปุ่มที่มี data-skip-modal="true")
+    // click card -> open model (ยกเว้นปุ่มที่มี data-skip-model="true")
     productsEl.addEventListener("click", function (e) {
       const card = e.target.closest(".card");
       if (!card) return;
 
-      if (e.target.closest('[data-skip-modal="true"]')) {
+      if (e.target.closest('[data-skip-model="true"]')) {
         return; // ให้ลิงก์ทำงานเอง เช่น ไปเว็บนอก
       }
 
       openCard(card);
     });
 
-    // กด Enter / Space บนการ์ด -> เปิด modal
+    // กด Enter / Space บนการ์ด -> เปิด model
     productsEl.addEventListener("keydown", function (e) {
       if ((e.key === "Enter" || e.key === " ") && e.target.closest(".card")) {
         e.preventDefault();
@@ -275,10 +275,10 @@ function applyCategoryFromURL() {
       }
     });
 
-    overlay.addEventListener("click", closeModal);
-    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModel);
+    closeBtn.addEventListener("click", closeModel);
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape") closeModel();
     });
 
     if (contactBtn) {
@@ -291,6 +291,6 @@ function applyCategoryFromURL() {
 
   updateCategoryCounts();
 renderProducts();
-applyCategoryFromURL(); // ✅ เพิ่มบรรทัดนี้
+applyCategoryFromURL(); // เพิ่มบรรทัดนี้
 
 });

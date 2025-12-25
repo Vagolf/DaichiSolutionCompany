@@ -1,5 +1,9 @@
 // navbar.js
-const ROOT = window.location.pathname.includes("/services/") ? ".." : ".";
+const ROOT =
+  (window.location.pathname.includes("/services/") ||
+   window.location.pathname.includes("/career/"))
+    ? ".."
+    : ".";
 
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.getElementById("navbar");
@@ -13,14 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
           <nav class="main-nav">
             <!-- Logo -->
             <a href="${ROOT}/index.html" class="logo">
-              <img src="${ROOT}/images/logo/Daichi-logo.png"
+              <img src="${ROOT}/images/logo/Daichi-logo-4.png"
                    alt="Daichisolution Logo" style="height: 60px; width: auto;" />
             </a>
 
             <!-- Menu -->
             <ul class="nav" style="font-size: 15px;">
               <li class="scroll-to-section">
-                <a href="${ROOT}/index.html" class="nav-link active">หน้าหลัก</a>
+                <a href="${ROOT}/index.html" class="nav-link">หน้าหลัก</a>
               </li>
               <li class="scroll-to-section">
                 <a href="${ROOT}/map.html" class="nav-link">ศูนย์บริการ</a>
@@ -29,14 +33,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${ROOT}/products.html" class="nav-link">สินค้า</a>
               </li>
               <li class="scroll-to-section">
+                <a href="${ROOT}/career.html" class="nav-link">สมัครงาน</a>
+              </li>
+              <li class="scroll-to-section">
                 <a href="${ROOT}/contact.html" class="nav-link">ติดต่อเรา</a>
               </li>
             </ul>
 
             <!-- Mobile Menu Trigger -->
-            <a class="menu-trigger" aria-label="Toggle menu">
-              <i href="javascript:void(0)" class="fa-solid fa-bars"></i>
+            <a class="menu-trigger" href="#" aria-label="Toggle menu">
+              <i class="fa-solid fa-bars"></i>
             </a>
+
           </nav>
         </div>
       </div>
@@ -56,25 +64,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ========== ใส่ active ให้ลิงก์ของหน้าปัจจุบัน ==========
-  const links = navbar.querySelectorAll(".nav a.nav-link[href]");
-  const currentPath = window.location.pathname.replace(/\\/g, "/");
+// ========== ใส่ active ให้ลิงก์ของหน้าปัจจุบัน ==========
+const links = navbar.querySelectorAll(".nav a.nav-link[href]");
+const currentPath = window.location.pathname.replace(/\\/g, "/");
 
+// ล้าง active ทุกอันก่อน
+links.forEach((l) => l.classList.remove("active"));
+
+// ฟังก์ชันช่วย normalize path (กัน /index.html)
+const normalize = (p) =>
+  p.replace(/\/index\.html$/i, "/").replace(/\/$/, "") || "/";
+
+const current = normalize(currentPath);
+
+let matched = false;
+
+// 1) match แบบตรง ๆ ก่อน
+links.forEach((link) => {
+  const href = link.getAttribute("href");
+  if (!href || href.startsWith("http") || href.startsWith("#")) return;
+
+  const linkPath = normalize(new URL(href, window.location.href).pathname);
+
+  if (linkPath === current) {
+    link.classList.add("active");
+    matched = true;
+  }
+});
+
+// 2) ถ้าเป็นหน้าย่อย careers ให้ active ที่ "สมัครงาน"
+if (!matched && current.startsWith("/career/")) {
   links.forEach((link) => {
-    let href = link.getAttribute("href");
-    if (!href || href.startsWith("http")) return;
-
-    // ตัด #anchor ทิ้ง
-    href = href.split("#")[0];
-
-    const absolute = new URL(href, window.location.origin + currentPath)
-      .pathname;
-
-    if (absolute === currentPath) {
-      links.forEach((l) => l.classList.remove("active"));
-      link.classList.add("active");
-    }
+    const href = link.getAttribute("href");
+    if (!href) return;
+    const linkPath = new URL(href, window.location.href).pathname;
+    if (linkPath.endsWith("/career.html")) link.classList.add("active");
   });
+}
+
+// (option) ถ้าเป็นหน้าย่อย services ให้ active ที่ "ศูนย์บริการ"
+if (!matched && current.startsWith("/services/")) {
+  links.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+    const linkPath = new URL(href, window.location.href).pathname;
+    if (linkPath.endsWith("/map.html")) link.classList.add("active");
+  });
+}
+
 
   // ========== เปลี่ยนสี navbar ตอนเลื่อน ==========
   const header = navbar.querySelector("#siteHeader");

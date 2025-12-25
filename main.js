@@ -1,10 +1,5 @@
-/**
- * Custom JavaScript for P5 Management Website
- * File: script.js
- */
-
 document.addEventListener("DOMContentLoaded", function () {
-  // ====== CONTACT FORM (ของเดิมนาย) ======
+  // ====== CONTACT FORM ======
   // JavaScript for handling form validation and submission
   // Validates name, email, and message fields
   const contactForm = document.getElementById("contactForm");
@@ -50,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email).toLowerCase());
   }
 
-  // ====== SMOOTH SCROLL (ของเดิมนาย) ======
+  // ====== SMOOTH SCROLL ======
   // Smooth scrolling for internal links
   // Applies smooth scroll behavior to anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -64,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ====== INTERSECTION OBSERVER (ของเดิมนาย) ======
+  // ====== INTERSECTION OBSERVER ======
   // IntersectionObserver for lazy loading or animations
   // Observes elements with data-group attribute
   const observer = new IntersectionObserver(
@@ -95,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');   // ตรงนี้สำคัญ
+        entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       }
     });
@@ -107,28 +102,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. ค้นหา Elements ทั้งหมดที่มี class 'product-hover-image'
+    // Find all elements with the class 'product-hover-image'
     const productImages = document.querySelectorAll('.product-hover-image');
 
-    // 2. วนลูปเพื่อจัดการแต่ละรูปภาพ
+    // Loop through each image element
     productImages.forEach(imgElement => {
-        // ดึง URL ของภาพจาก data attributes
+        // Get the image URLs from data attributes
         const originalSrc = imgElement.getAttribute('data-original-src');
         const hoverSrc = imgElement.getAttribute('data-hover-src');
 
-        // ตรวจสอบว่ามีข้อมูลครบถ้วนหรือไม่
+        // Check if both URLs are present
         if (!originalSrc || !hoverSrc) return;
 
-        // (Optional) โหลดภาพ hover ล่วงหน้า
+        // (Optional) Preload hover image
         const preloadImg = new Image();
         preloadImg.src = hoverSrc;
 
-        // 3. กำหนด Event Listener สำหรับเมาส์ชี้เข้า (mouseover)
+        // Add Event Listener for mouseover
         imgElement.addEventListener('mouseover', () => {
             imgElement.src = hoverSrc;
         });
 
-        // 4. กำหนด Event Listener สำหรับเมาส์ชี้ออก (mouseout)
+        // Add Event Listener for mouseout
         imgElement.addEventListener('mouseout', () => {
             imgElement.src = originalSrc;
         });
