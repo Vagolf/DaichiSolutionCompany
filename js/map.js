@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const infoCard = document.getElementById('mapInfo');
     const points = mapViewport.querySelectorAll('.map-point');
 
-    // ข้อมูลแต่ละจุด (33 กลุ่ม)
+    // Data 33 
     const locations = {
         g01_bangkok: {
             title: 'กรุงเทพฯ',
@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    // ====== Utils: ดึงรายชื่อจังหวัดจาก desc (<li>...</li>) ======
+    // ====== Utils: ดึงรายชื่อจังหวัดจาก ======
     function extractProvinces(descHtml) {
         const tmp = document.createElement('div');
         tmp.innerHTML = descHtml || '';
@@ -405,18 +405,18 @@ document.addEventListener('DOMContentLoaded', function () {
     function norm(s) {
         return String(s || '')
             .toLowerCase()
-            .replace(/[^\p{L}\p{N}]+/gu, ''); // ตัดช่องว่าง/สัญลักษณ์
+            .replace(/[^\p{L}\p{N}]+/gu, '');
     }
 
     function tooltipText(provs) {
-        const max = 8; // กัน tooltip ยาวเกินไป
+        const max = 8; 
         if (provs.length <= max) return provs.join(', ');
         return provs.slice(0, max).join(', ') + ` … (+${provs.length - max})`;
     }
 
     // index: จังหวัด -> (หลาย)กลุ่ม
-    const provinceToGroups = new Map(); // normName -> Set(keys)
-    const provinceDisplay = new Set();  // เก็บไว้ทำ datalist
+    const provinceToGroups = new Map(); 
+    const provinceDisplay = new Set();
 
     function addIndex(name, key) {
         const k = norm(name);
@@ -444,11 +444,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!data) return;
 
         // 1. ดึงชื่อจังหวัดหลักออกจาก title (เช่น "กลุ่ม กรุงเทพฯ" => "กรุงเทพฯ")
-        //    *** บรรทัดนี้ทำให้ Tooltip สั้นและเป็นแนวนอน ***
         const mainTitle = (data.title || '').replace('กลุ่ม ', '').trim();
 
         // 2. กำหนด data-tip ด้วยชื่อจังหวัดหลักเท่านั้น
-        point.setAttribute('data-tip', mainTitle); // <--- โค้ดนี้ใส่ข้อความ 'กรุงเทพฯ' เข้าไป
+        point.setAttribute('data-tip', mainTitle);
     });
 
     let scale = 1;
@@ -495,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Zoom ด้วย scroll wheel (ซูมเข้าตำแหน่งเมาส์)
     mapViewport.addEventListener('wheel', (e) => {
-        e.preventDefault(); // กัน scroll หน้าเว็บตอนเลื่อนบนแผนที่
+        e.preventDefault();
 
         const prevScale = scale;
 
@@ -512,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const cx = rect.width / 2;
         const cy = rect.height / 2;
 
-        const ratio = newScale / prevScale; // s1/s0
+        const ratio = newScale / prevScale; 
 
         // ปรับ translate ให้จุดใต้เมาส์อยู่ตำแหน่งเดิมหลังซูม
         translateX = (mx - cx) * (1 - ratio) + translateX * ratio;
@@ -562,8 +561,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // mouse
     mapViewport.addEventListener('mousedown', (e) => {
-        if (isPointTarget(e)) return;     // ถ้าคลิกที่จุด ไม่เริ่ม pan
-        if (scale === 1) return;          // ซูม 100% ไม่ต้อง pan
+        if (isPointTarget(e)) return;   
+        if (scale === 1) return;          
         e.preventDefault();
         startPan(e.clientX, e.clientY);
     });
@@ -578,7 +577,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // touch
     mapViewport.addEventListener('touchstart', (e) => {
-        if (isPointTarget(e)) return;     // แตะจุด ไม่เริ่ม pan
+        if (isPointTarget(e)) return;     
         if (scale === 1) return;
         if (e.touches.length !== 1) return;
         const t = e.touches[0];
@@ -602,7 +601,7 @@ document.addEventListener('DOMContentLoaded', function () {
         points.forEach(p => p.classList.remove('active'));
         pointEl.classList.add('active');
 
-        // รองรับ desc เป็น HTML (<ul><li>..)
+        // รองรับ desc เป็น HTML
         infoCard.innerHTML = `
     <strong>${data.title}</strong>
     <p class="mb-2 text-muted">${data.subtitle || ''}</p>
@@ -612,7 +611,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (scroll) infoCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // click บนจุด (เหมือนเดิม แต่เรียก selectPoint)
+    // click บนจุด
     points.forEach(point => {
         point.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -642,10 +641,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         inputEl && inputEl.addEventListener('keydown', (e) => {
             if (e.key !== 'Enter') return;
-            e.preventDefault(); // กัน behavior เดิมของ Enter
+            e.preventDefault();
             const q = inputEl.value.trim();
             if (!q) return;
-            doSearch(q); // เรียกค้นหาเหมือนกดปุ่ม
+            doSearch(q);
         });
 
 
@@ -693,10 +692,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (exact && exact.size) {
                 const keys = [...exact];
                 if (keys.length === 1) {
-                    selectByKey(keys[0]); // เลือกจุดทันที
+                    selectByKey(keys[0]);
                     return;
                 }
-                renderMultiGroupChoices(keys); // แสดงปุ่มให้เลือก
+                renderMultiGroupChoices(keys);
                 return;
             }
 

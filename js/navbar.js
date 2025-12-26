@@ -1,7 +1,7 @@
 // navbar.js
 const ROOT =
-  (window.location.pathname.includes("/services/") ||
-   window.location.pathname.includes("/career/"))
+  window.location.pathname.includes("/services/") ||
+  window.location.pathname.includes("/career/")
     ? ".."
     : ".";
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!navbar) return;
 
   navbar.innerHTML = `
-  <header header id="siteHeader" class="site-header" style="box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);">
+  <header id="siteHeader" class="site-header" style="box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);">
     <div class="container">
       <div class="row">
         <div class="col-12"  style="border-color: #ffffff;">
@@ -64,54 +64,59 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-// ========== ใส่ active ให้ลิงก์ของหน้าปัจจุบัน ==========
-const links = navbar.querySelectorAll(".nav a.nav-link[href]");
-const currentPath = window.location.pathname.replace(/\\/g, "/");
+  // ========== ใส่ active ให้ลิงก์ของหน้าปัจจุบัน ==========
+  const links = navbar.querySelectorAll(".nav a.nav-link[href]");
+  const currentPath = window.location.pathname.replace(/\\/g, "/");
 
-// ล้าง active ทุกอันก่อน
-links.forEach((l) => l.classList.remove("active"));
+  // ล้าง active ทุกอันก่อน
+  links.forEach((l) => l.classList.remove("active"));
 
-// ฟังก์ชันช่วย normalize path (กัน /index.html)
-const normalize = (p) =>
-  p.replace(/\/index\.html$/i, "/").replace(/\/$/, "") || "/";
+  // ฟังก์ชันช่วย normalize path (กัน /index.html)
+  const normalize = (p) =>
+    p.replace(/\/index\.html$/i, "/").replace(/\/$/, "") || "/";
 
-const current = normalize(currentPath);
+  const current = normalize(currentPath);
 
-let matched = false;
+  let matched = false;
 
-// 1) match แบบตรง ๆ ก่อน
-links.forEach((link) => {
-  const href = link.getAttribute("href");
-  if (!href || href.startsWith("http") || href.startsWith("#")) return;
+  // 1) match แบบตรง ๆ ก่อน
+  links.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("http") || href.startsWith("#")) return;
 
-  const linkPath = normalize(new URL(href, window.location.href).pathname);
+    const linkPath = normalize(new URL(href, window.location.href).pathname);
 
-  if (linkPath === current) {
-    link.classList.add("active");
-    matched = true;
+    if (linkPath === current) {
+      link.classList.add("active");
+      matched = true;
+    }
+  });
+
+  // 2) ถ้าเป็นหน้าย่อย careers ให้ active ที่ "สมัครงาน"
+  if (!matched && current.startsWith("/career/")) {
+    links.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+      const linkPath = new URL(href, window.location.href).pathname;
+      if (linkPath.endsWith("/career.html")) {
+        link.classList.add("active");
+        matched = true;
+      }
+    });
   }
-});
 
-// 2) ถ้าเป็นหน้าย่อย careers ให้ active ที่ "สมัครงาน"
-if (!matched && current.startsWith("/career/")) {
-  links.forEach((link) => {
-    const href = link.getAttribute("href");
-    if (!href) return;
-    const linkPath = new URL(href, window.location.href).pathname;
-    if (linkPath.endsWith("/career.html")) link.classList.add("active");
-  });
-}
-
-// (option) ถ้าเป็นหน้าย่อย services ให้ active ที่ "ศูนย์บริการ"
-if (!matched && current.startsWith("/services/")) {
-  links.forEach((link) => {
-    const href = link.getAttribute("href");
-    if (!href) return;
-    const linkPath = new URL(href, window.location.href).pathname;
-    if (linkPath.endsWith("/map.html")) link.classList.add("active");
-  });
-}
-
+  // 3) ถ้าเป็นหน้าย่อย services ให้ active ที่ "ศูนย์บริการ"
+  if (!matched && current.startsWith("/services/")) {
+    links.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+      const linkPath = new URL(href, window.location.href).pathname;
+      if (linkPath.endsWith("/index.html")) {
+        link.classList.add("active");
+        matched = true;
+      }
+    });
+  }
 
   // ========== เปลี่ยนสี navbar ตอนเลื่อน ==========
   const header = navbar.querySelector("#siteHeader");
@@ -207,4 +212,12 @@ if (!matched && current.startsWith("/services/")) {
       update();
     });
   }
+});
+
+// ปิดเมนูเมื่อกดลิงก์ (มือถือ)
+links.forEach((a) => {
+  a.addEventListener("click", () => {
+    menuTrigger?.classList.remove("active");
+    nav?.classList.remove("active");
+  });
 });

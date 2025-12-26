@@ -2373,8 +2373,7 @@ html {
 /* ================= Station ================= */
 .display-area {
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 70px;
+    margin: 0 auto; 
 }
 
 p.page-desc {
@@ -2553,12 +2552,12 @@ p.page-desc {
     margin: 0;
 }
 .map-background{
-  position: relative;
-  height: 30vh;
-  background-image: url("images/map/background-map.jpg");
-  background-size: cover;
-  background-position: center;
-  overflow: hidden; /* กันเบลอล้นออกนอกกรอบ */
+  position: absolute;
+  inset: 0;
+  background: url("images/map/background-map.jpg") center/cover no-repeat;
+  filter: blur(2px);
+  transform: scale(1.08);
+  z-index: 0;
 }
 
 /* ชั้นเบลอ + overlay มืด */
@@ -2589,7 +2588,7 @@ p.page-desc {
 /* ทำให้หัวข้อบนภาพชัดขึ้น */
 .map-background .map-card-header{
   margin-bottom: 0;         /* กันดันลง (ถ้าต้องการ) */
-  padding: 50px 18px;       /* เว้นขอบให้ดูเป็นแถบ */
+  padding: 5% 20%;       /* เว้นขอบให้ดูเป็นแถบ */
 }
 
 .map-background .map-card-title{
@@ -2688,7 +2687,7 @@ p.page-desc {
     font-size: 12px;
     line-height: 1.2;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
     /* บังคับให้เป็น “แนวนอนบรรทัดเดียว” */
     word-break: normal;
     /* ยกเลิก break-word ที่ทำให้ตัวอักษรเรียงแนวตั้ง */
