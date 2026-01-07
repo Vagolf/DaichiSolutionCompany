@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const mapViewport = document.getElementById('branchMap');
     if (!mapViewport) return;
@@ -575,23 +574,97 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('mouseup', endPan);
     mapViewport.addEventListener('mouseleave', endPan);
 
-    // touch
+    // ===== Pinch Zoom (mobile) + Pan (1 finger) =====
+    let isPinching = false;
+    let pinchStartDist = 0;
+    let pinchStartScale = 1;
+
+    function touchDist(t1, t2) {
+      const dx = t1.clientX - t2.clientX;
+      const dy = t1.clientY - t2.clientY;
+      return Math.hypot(dx, dy);
+    }
+
     mapViewport.addEventListener('touchstart', (e) => {
-        if (isPointTarget(e)) return;     
+      if (isPointTarget(e)) return;
+
+      // 2 นิ้ว = pinch เริ่ม
+      if (e.touches.length === 2) {
+        isPinching = true;
+        isPanning = false; // กันไม่ให้ pan ไปชน pinch
+        const t1 = e.touches[0];
+        const t2 = e.touches[1];
+        pinchStartDist = touchDist(t1, t2);
+        pinchStartScale = scale;
+        return;
+      }
+
+      // 1 นิ้ว = pan (เฉพาะตอนซูมแล้ว)
+      if (e.touches.length === 1) {
         if (scale === 1) return;
-        if (e.touches.length !== 1) return;
         const t = e.touches[0];
         startPan(t.clientX, t.clientY);
-    }, { passive: true });
+      }
+    }, { passive: false });
 
     mapViewport.addEventListener('touchmove', (e) => {
-        if (!isPanning || e.touches.length !== 1) return;
+      // pinch (2 นิ้ว)
+      if (isPinching && e.touches.length === 2) {
+        e.preventDefault(); // สำคัญ: กัน pinch-zoom ของทั้งหน้า
+
+        const prevScale = scale;
+
+        const t1 = e.touches[0];
+        const t2 = e.touches[1];
+        const dist = touchDist(t1, t2);
+        const factor = dist / (pinchStartDist || dist);
+
+        let newScale = pinchStartScale * factor;
+        newScale = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, newScale));
+        if (newScale === prevScale) return;
+
+        // zoom เข้าตาม "กึ่งกลางนิ้ว" (เหมือน wheel ที่ซูมเข้าจุดเมาส์)
+        const rect = mapViewport.getBoundingClientRect();
+        const mx = ((t1.clientX + t2.clientX) / 2) - rect.left;
+        const my = ((t1.clientY + t2.clientY) / 2) - rect.top;
+
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+
+        const ratio = newScale / prevScale;
+
+        translateX = (mx - cx) * (1 - ratio) + translateX * ratio;
+        translateY = (my - cy) * (1 - ratio) + translateY * ratio;
+
+        scale = newScale;
+        applyTransform();
+        return;
+      }
+
+      // pan (1 นิ้ว) ตอนซูมแล้ว
+      if (isPanning && e.touches.length === 1) {
+        e.preventDefault(); // กันหน้าเลื่อน/เด้งตอนลากแผนที่
         const t = e.touches[0];
         movePan(t.clientX, t.clientY);
-    }, { passive: true });
+      }
+    }, { passive: false });
 
-    mapViewport.addEventListener('touchend', endPan);
-    mapViewport.addEventListener('touchcancel', endPan);
+    mapViewport.addEventListener('touchend', (e) => {
+      // ถ้าเหลือนิ้วน้อยกว่า 2 = pinch จบ
+      if (e.touches.length < 2) {
+        isPinching = false;
+      }
+      // ถ้าไม่เหลือนิ้วแล้ว = จบ pan
+      if (e.touches.length === 0) {
+        endPan();
+      }
+    });
+
+    mapViewport.addEventListener('touchcancel', () => {
+      isPinching = false;
+      endPan();
+    });
+
 
     function selectPoint(pointEl, { scroll = true } = {}) {
         const key = pointEl.dataset.branch;
