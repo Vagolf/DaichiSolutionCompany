@@ -11,6 +11,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- main style -->
     <link rel="stylesheet" href="style.css">
@@ -29,216 +30,27 @@
                 <h1 class="career-title scroll-slide-left">แผนที่ศูนย์บริการ Daichi Solution</h1>
             </div>
         </div>
-
-        <div class="map-page-wrapper">
-            <div class="map-card">
-
-
-                <!-- Find Province -->
-                <div class="row g-2 align-items-end mb-3 scroll-slide-right">
-                    <div class="col-12 col-md">
-                        <label for="provinceSearch" class="form-label small text-muted mb-1">ค้นหาจังหวัด</label>
-                        <input id="provinceSearch" class="form-control" list="provinceList"
-                            placeholder="พิมพ์ชื่อจังหวัด เช่น เชียงใหม่" autocomplete="off" />
-                        <datalist id="provinceList"></datalist>
-                    </div>
-
-                    <div class="col-12 col-md-auto">
-                        <button id="provinceSearchBtn" type="button" class="btn btn-outline-secondary w-100">
-                            ค้นหา
-                        </button>
-                    </div>
-
-                    <div class="col-12">
-                        <div id="provinceSearchHint" class="small text-muted"></div>
-                    </div>
+        <section class="service-center-section py-5">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2 class="sc-heading">SERVICE CENTER</h2>
+                    <div class="sc-underline mx-auto"></div>
                 </div>
 
-
-                <p class="ms-auto mb-2 scroll-slide-up"><em>Zoom in and out with scroll mouse</em></p>
-
-                <!-- Map -->
-                <div class="w-100 shadow mb-5 scroll-slide-up">
-                    <div class="map-viewport mx-auto" id="branchMap">
-                        <div class="map-inner">
-                            <!-- Change the path to your actual map file -->
-                            <img src="images/map/map.png" alt="Daichi Solution Map" class="map-image">
-
-                            <!-- ===================== จุดให้บริการ 33 กลุ่ม ===================== -->
-
-                            <!-- กรุงเทพฯ -->
-                            <button type="button" class="map-point" data-branch="g01_bangkok"
-                                style="top:45.2%; left:41%;" aria-label="กรุงเทพฯ"></button>
-
-                            <!-- นครปฐม -->
-                            <button type="button" class="map-point" data-branch="g02_nakhon_pathom"
-                                style="top:44.8%; left:36.5%;" aria-label="นครปฐม"></button>
-
-                            <!-- ประจวบคีรีขันธ์ -->
-                            <button type="button" class="map-point" data-branch="g03_prachuap_khiri_khan"
-                                style="top:56.5%; left:32.5%;" aria-label="ประจวบคีรีขันธ์"></button>
-
-                            <!-- พระนครศรีอยุธยา -->
-                            <button type="button" class="map-point" data-branch="g04_ayutthaya"
-                                style="top:41.5%; left:41%;" aria-label="พระนครศรีอยุธยา"></button>
-
-                            <!-- ชลบุรี -->
-                            <button type="button" class="map-point" data-branch="g05_chon_buri"
-                                style="top:49.5%; left:45.5%;" aria-label="ชลบุรี"></button>
-
-                            <!-- จันทบุรี -->
-                            <button type="button" class="map-point" data-branch="g06_chanthaburi"
-                                style="top:52%; left:56.5%;" aria-label="จันทบุรี"></button>
-
-                            <!-- ปราจีนบุรี -->
-                            <button type="button" class="map-point" data-branch="g07_prachin_buri"
-                                style="top:44.2%; left:51.5%;" aria-label="ปราจีนบุรี"></button>
-
-                            <!-- ขอนแก่น -->
-                            <button type="button" class="map-point" data-branch="g08_khon_kaen"
-                                style="top:27.8%; left:61.3%;" aria-label="ขอนแก่น"></button>
-
-                            <!-- อุดรธานี -->
-                            <button type="button" class="map-point" data-branch="g09_udon_thani"
-                                style="top:35.2%; left:29.5%;" aria-label="อุดรธานี"></button>
-
-                            <!-- เลย -->
-                            <button type="button" class="map-point" data-branch="g10_loei" style="top:22%; left:50%;"
-                                aria-label="เลย"></button>
-
-                            <!-- หนองคาย -->
-                            <button type="button" class="map-point" data-branch="g11_nong_khai"
-                                style="top:18.6%; left:62.5%;" aria-label="หนองคาย"></button>
-
-                            <!-- นครพนม -->
-                            <button type="button" class="map-point" data-branch="g12_nakhon_phanom"
-                                style="top:21%; left:81.5%;" aria-label="นครพนม"></button>
-
-                            <!-- นครราชสีมา -->
-                            <button type="button" class="map-point" data-branch="g13_nakhon_ratchasima"
-                                style="top:38.5%; left:54.5%;" aria-label="นครราชสีมา"></button>
-
-                            <!-- อุบลราชธานี -->
-                            <button type="button" class="map-point" data-branch="g14_ubon_ratchathani"
-                                style="top:37.3%; left:87%;" aria-label="อุบลราชธานี"></button>
-
-                            <!-- สกลนคร -->
-                            <button type="button" class="map-point" data-branch="g15_sakon_nakhon"
-                                style="top:22.5%; left:73.5%;" aria-label="สกลนคร"></button>
-
-                            <!-- ศรีสะเกษ -->
-                            <button type="button" class="map-point" data-branch="g16_srisaket"
-                                style="top:39.8%; left:79.5%;" aria-label="ศรีสะเกษ"></button>
-
-                            <!-- ยโสธร -->
-                            <button type="button" class="map-point" data-branch="g17_yasothon"
-                                style="top:31.3%; left:78.5%;" aria-label="ยโสธร"></button>
-
-                            <!-- เชียงใหม่ -->
-                            <button type="button" class="map-point" data-branch="g18_chiang_mai"
-                                style="top:12.5%; left:21%;" aria-label="เชียงใหม่"></button>
-
-                            <!-- เชียงราย -->
-                            <button type="button" class="map-point" data-branch="g19_chiang_rai"
-                                style="top:6%; left:33.5%;" aria-label="เชียงราย"></button>
-
-                            <!-- ลำปาง -->
-                            <button type="button" class="map-point" data-branch="g20_lampang"
-                                style="top:15.3%; left:30.5%;" aria-label="ลำปาง"></button>
-
-                            <!-- น่าน -->
-                            <button type="button" class="map-point" data-branch="g21_nan" style="top:12.7%; left:43.2%;"
-                                aria-label="น่าน"></button>
-
-                            <!-- นครสวรรค์ -->
-                            <button type="button" class="map-point" data-branch="g22_nakhon_sawan"
-                                style="top:32.8%; left:36%;" aria-label="นครสวรรค์"></button>
-
-                            <!-- ตาก -->
-                            <button type="button" class="map-point" data-branch="g23_tak" style="top:24.5%; left:24.2%;"
-                                aria-label="ตาก"></button>
-
-                            <!-- เพชรบูรณ์ -->
-                            <button type="button" class="map-point" data-branch="g24_phetchabun"
-                                style="top:28%; left:47%;" aria-label="เพชรบูรณ์"></button>
-
-                            <!-- สุโขทัย -->
-                            <button type="button" class="map-point" data-branch="g25_sukhothai"
-                                style="top:23.3%; left:32.5%;" aria-label="สุโขทัย"></button>
-
-                            <!-- สงขลา -->
-                            <button type="button" class="map-point" data-branch="g26_songkhla"
-                                style="top:92%; left:40.5%;" aria-label="สงขลา"></button>
-
-                            <!-- ชุมพร -->
-                            <button type="button" class="map-point" data-branch="g27_chumphon"
-                                style="top:68.8%; left:25.3%;" aria-label="ชุมพร"></button>
-
-                            <!-- เกาะสมุย -->
-                            <button type="button" class="map-point" data-branch="g28_koh_samui"
-                                style="top:78.4%; left:25.9%;" aria-label="เกาะสมุย"></button>
-
-                            <!-- กระบี่ -->
-                            <button type="button" class="map-point" data-branch="g29_krabi"
-                                style="top:84.5%; left:26.5%;" aria-label="กระบี่"></button>
-
-                            <!-- นครศรีธรรมราช -->
-                            <button type="button" class="map-point" data-branch="g30_nakhon_si_thammarat"
-                                style="top:82.7%; left:34%;" aria-label="นครศรีธรรมราช"></button>
-
-                            <!-- พัทลุง -->
-                            <button type="button" class="map-point" data-branch="g31_phatthalung"
-                                style="top:88%; left:35.6%;" aria-label="พัทลุง"></button>
-
-                            <!-- ภูเก็ต -->
-                            <button type="button" class="map-point" data-branch="g32_phuket"
-                                style="top:85.5%; left:18.3%;" aria-label="ภูเก็ต"></button>
-
-                            <!-- นราธิวาส -->
-                            <button type="button" class="map-point" data-branch="g33_narathiwat"
-                                style="top:97%; left:53.5%;" aria-label="นราธิวาส"></button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- การ์ดข้อมูลใต้แผนที่ -->
-                <div id="mapInfo" class="map-info-card mb-5 scroll-slide-up">
-                    <strong>แตะที่จุดบนแผนที่</strong>
-                    <p class="mb-0 text-muted">
-                        เลือกดูรายละเอียดของสำนักงานใหญ่ ศูนย์ซ่อม และคลังอะไหล่ได้จากจุดบนแผนที่
-                    </p>
-                </div>
+                <!-- grid cards -->
+                <div id="serviceCenterGrid" class="row g-3"></div>
             </div>
+        </section>
+
+        </div>
         </div>
     </main>
     <div id="footer"></div>
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/map.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/navbar.js"></script>
-
-    <!-- JS: Slide in from all directions on scroll -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const targets = document.querySelectorAll(
-                '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
-            );
-            if (!targets.length) return;
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.2
-            });
-            targets.forEach(el => observer.observe(el));
-        });
-    </script>
+    <script src="js/service-center.js"></script>
 
     <!-- JS: Slide in from all directions on scroll -->
     <script>
