@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Warranty Check</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- (ถ้าไม่ได้ใช้ Swiper/Flickity ในหน้านี้ เอาออกได้) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+
+<body>
+  <div id="navbar" class="sticky-top"></div>
+
+  <main class="warranty-wrap">
+    <div class="h3 fw-bold mb-4 text-center">ตรวจสอบประกันสินค้า</div>
+    <div class="w-tabs">
+      <button id="tabSingle" class="w-tab is-active" type="button" aria-selected="true">สินค้า 1 ชิ้น</button>
+      <div class="w-or">หรือ</div>
+      <!-- ✅ เอา disabled ออก -->
+      <button id="tabMulti" class="w-tab" type="button" aria-selected="false">สินค้าหลายชิ้น</button>
+    </div>
+
+    <!-- ✅ Single panel (ของเดิม) -->
+    <section id="panelSingle" class="w-panel">
+      <form id="checkForm" class="w-form" novalidate>
+        <div class="mb-3">
+          <label class="form-label w-label d-flex align-items-center gap-2">
+            <span>Serial number</span>
+          </label>
+
+          <input type="text" class="form-control w-input" id="serial" name="serial" placeholder="Example: HU265BM18V"
+            autocomplete="off" required />
+
+          <div class="w-hint mt-2">
+            ยินยอมให้เราใช้ข้อมูลของคุณเพื่อการตรวจสอบสถานะรับประกันสินค้า
+
+          </div>
+        </div>
+
+        <div id="alertBox" class="mt-3"></div>
+
+        <div class="text-center mt-4">
+          <button id="submitBtn" class="btn w-submit" type="submit">ยืนยัน</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ✅ Multi panel (เพิ่มใหม่) -->
+    <section id="panelMulti" class="w-panel d-none">
+      <form id="multiForm" class="w-form" novalidate>
+        <div class="mb-3">
+          <label class="form-label w-label d-flex align-items-center gap-2">
+            <span>Serial number</span>
+          </label>
+
+          <textarea class="form-control w-input" id="serials" name="serials" rows="6" placeholder="HU265BM18V
+ABC-1234
+XYZ999"></textarea>
+
+          <div class="w-hint mt-2">
+            ใส่ได้สูงสุด 50 รายการ (คั่นด้วยขึ้นบรรทัดใหม่/เว้นวรรค/คอมม่า)
+          </div>
+        </div>
+
+        <div id="multiAlert" class="mt-3"></div>
+
+        <div class="text-center mt-4">
+          <button id="multiBtn" class="btn w-submit" type="submit">ตรวจสอบทั้งหมด</button>
+        </div>
+      </form>
+
+      <div id="multiResults" class="mt-4"></div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Navbar and Footer -->
+  <script src="../js/navbar.js"></script>
+  <script src="../js/footer.js"></script>
+
+  <script>
+    // API
+    const API_CHECK = "api/warranty_check.php";
+    const API_CHECK_MULTI = "api/warranty_check_multi.php";
+
+    // =========================
+    // 0) State helpers (ต้องอยู่นอก submit)
+    // =========================
+    const NAV_KEY = "warranty_nav_state_v1";
+
+    function saveNavState(state) {
+      try { sessionStorage.setItem(NAV_KEY, JSON.stringify(state)); } catch { }
+    }
+    function readNavState() {
+      try { return JSON.parse(sessionStorage.getItem(NAV_KEY) || "null"); } catch { return null; }
+    }
+
+    // =========================
+    // 1) Tabs
+    // =========================
+    const tabSingle = document.getElementById("tabSingle");
+    const tabMulti = document.getElementById("tabMulti");
+    const panelSingle = document.getElementById("panelSingle");
+    const panelMulti = document.getElementById("panelMulti");
+
+    // ✅ เพิ่ม opts.preserve กัน setTab ล้างผลลัพธ์ตอน restore
+    function setTab(which, opts = {}) {
+      const isSingle = which === "single";
+
+      tabSingle.classList.toggle("is-active", isSingle);
+      tabMulti.classList.toggle("is-active", !isSingle);
+
+      tabSingle.setAttribute("aria-selected", isSingle ? "true" : "false");
+      tabMulti.setAttribute("aria-selected", !isSingle ? "true" : "false");
+
+      panelSingle.classList.toggle("d-none", !isSingle);
+      panelMulti.classList.toggle("d-none", isSingle);
+
+      // เคลียร์ผลลัพธ์เฉพาะตอน user กดสลับแท็บ (ไม่ใช่ตอน restore)
+      if (!opts.preserve) {
+        if (!isSingle) {
+          document.getElementById("multiAlert").innerHTML = "";
+          document.getElementById("multiResults").innerHTML = "";
+        } else {
+          document.getElementById("alertBox").innerHTML = "";
+        }
+      }
+    }
+
+    tabSingle.addEventListener("click", () => setTab("single"));
+    tabMulti.addEventListener("click", () => setTab("multi"));
+
+    // =========================
+    // 2) Single
+    // =========================
+    const form = document.getElementById("checkForm");
+    const serialEl = document.getElementById("serial");
+    const alertBox = document.getElementById("alertBox");
+    const submitBtn = document.getElementById("submitBtn");
+
+    function showAlert(type, msg) {
+      alertBox.innerHTML = `<div class="alert alert-${type} w-alert" role="alert">${msg}</div>`;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      alertBox.innerHTML = "";
+
+      const serial = serialEl.value.trim();
+
+      if (!serial) {
+        showAlert("warning", "กรุณากรอก Serial number");
+        serialEl.focus();
+        return;
+      }
+
+      if (!/^[a-zA-Z0-9\-]{4,40}$/.test(serial)) {
+        showAlert("warning", "รูปแบบ Serial ไม่ถูกต้อง (ใช้ตัวอักษร/ตัวเลข/ขีด - เท่านั้น)");
+        serialEl.focus();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Checking...";
+
+      try {
+        const fd = new FormData();
+        fd.append("serial", serial);
+
+        const res = await fetch(API_CHECK, { method: "POST", body: fd });
+        const data = await res.json();
+
+        if (!data.ok) {
+          showAlert("danger", data.message || "เกิดข้อผิดพลาด");
+          return;
+        }
+        if (!data.found) {
+          showAlert("danger", data.message || "ไม่พบ Serial นี้ในระบบ");
+          return;
+        }
+
+        const url = new URL("warranty-details.html", window.location.href);
+        url.searchParams.set("serial", serial);
+
+        // ✅ จำหน้าต้นทาง + ค่าที่ค้นหาไว้ (single)
+        sessionStorage.setItem("warranty_return_href", window.location.href);
+        saveNavState({ tab: "single", singleSerial: serial, scrollY: window.scrollY });
+
+        window.location.href = url.toString();
+
+      } catch (err) {
+        console.error(err);
+        showAlert("danger", "เชื่อมต่อระบบไม่ได้ กรุณาลองใหม่");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit";
+      }
+    });
+
+    // =========================
+    // 3) Multi
+    // =========================
+    const multiForm = document.getElementById("multiForm");
+    const serialsEl = document.getElementById("serials");
+    const multiAlert = document.getElementById("multiAlert");
+    const multiBtn = document.getElementById("multiBtn");
+    const multiResults = document.getElementById("multiResults");
+
+    function showMultiAlert(type, msg) {
+      multiAlert.innerHTML = `<div class="alert alert-${type} w-alert" role="alert">${msg}</div>`;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
+    function badge(inWarranty) {
+      return inWarranty
+        ? `<span class="badge w-badge w-badge-active">In warranty</span>`
+        : `<span class="badge w-badge w-badge-expired">Out of warranty</span>`;
+    }
+
+    // ✅ ฟังก์ชัน renderMultiResults มีจริง เพื่อใช้ตอน restore ด้วย
+    function renderMultiResults(items) {
+      let html = `
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th>Serial</th>
+              <th>Status</th>
+              <th>Product</th>
+              <th>Model</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+    `;
+
+      for (const it of items) {
+        const s = escapeHtml(it.serial || "");
+
+        if (!it.found) {
+          html += `
+          <tr>
+            <td><code>${s}</code></td>
+            <td><span class="badge text-bg-danger">Not found</span></td>
+            <td colspan="2">-</td>
+            <td>-</td>
+          </tr>
+        `;
+          continue;
+        }
+
+        const d = it.data || {};
+        const detailUrl = new URL("warranty-details.html", window.location.href);
+        detailUrl.searchParams.set("serial", it.serial);
+
+        html += `
+        <tr>
+          <td><code>${s}</code></td>
+          <td>${badge(!!d.in_warranty)}</td>
+          <td>${escapeHtml(d.product_name || "-")}</td>
+          <td>${escapeHtml((d.model || "").trim() || "-")}</td>
+          <td>
+            <a class="btn btn-sm btn-outline-primary"
+              href="${detailUrl.toString()}"
+              data-serial="${escapeHtml(it.serial)}">ดูรายละเอียด</a>
+          </td>
+        </tr>
+      `;
+      }
+
+      html += `</tbody></table></div>`;
+      multiResults.innerHTML = html;
+    }
+
+    // ✅ ดักคลิก “ดูรายละเอียด” เพื่อเซฟ state ล่าสุดก่อนออกหน้า
+    multiResults.addEventListener("click", (e) => {
+      const a = e.target.closest('a[data-serial]');
+      if (!a) return;
+
+      sessionStorage.setItem("warranty_return_href", window.location.href);
+
+      const current = readNavState() || {};
+      saveNavState({
+        ...current,
+        tab: "multi",
+        multiSerialsRaw: serialsEl.value.trim(),
+        scrollY: window.scrollY
+      });
+      // ไม่ preventDefault เพื่อให้ลิงก์ไป details ได้ตามปกติ
+    });
+
+    multiForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      multiAlert.innerHTML = "";
+      multiResults.innerHTML = "";
+
+      const raw = serialsEl.value.trim();
+      if (!raw) {
+        showMultiAlert("warning", "กรุณาใส่ Serial อย่างน้อย 1 รายการ");
+        serialsEl.focus();
+        return;
+      }
+
+      multiBtn.disabled = true;
+      multiBtn.innerText = "Checking...";
+
+      try {
+        const fd = new FormData();
+        fd.append("serials", raw);
+
+        const res = await fetch(API_CHECK_MULTI, { method: "POST", body: fd });
+        const data = await res.json();
+
+        if (!data.ok) {
+          showMultiAlert("danger", data.message || "เกิดข้อผิดพลาด");
+          return;
+        }
+
+        if (data.invalid && data.invalid.length) {
+          showMultiAlert("warning", `มี Serial รูปแบบไม่ถูกต้อง: ${data.invalid.map(escapeHtml).join(", ")}`);
+        }
+
+        const items = data.items || [];
+        if (!items.length) {
+          showMultiAlert("danger", "ไม่พบรายการที่ตรวจสอบได้");
+          return;
+        }
+
+        // ✅ แสดงตาราง
+        renderMultiResults(items);
+
+        // ✅ เซฟ state (จำ textarea + ผลลัพธ์ + ตำแหน่ง)
+        saveNavState({
+          tab: "multi",
+          multiSerialsRaw: raw,
+          multiItems: items,
+          multiInvalid: data.invalid || [],
+          scrollY: window.scrollY
+        });
+
+      } catch (err) {
+        console.error(err);
+        showMultiAlert("danger", "เชื่อมต่อระบบไม่ได้ กรุณาลองใหม่");
+      } finally {
+        multiBtn.disabled = false;
+        multiBtn.innerText = "ตรวจสอบทั้งหมด";
+      }
+    });
+
+    // =========================
+    // 4) Restore state ตอนกลับมาหน้าเดิม
+    // =========================
+    window.addEventListener("DOMContentLoaded", () => {
+      const st = readNavState();
+      if (!st) return;
+
+      if (st.tab === "single") {
+        setTab("single", { preserve: true });
+        if (st.singleSerial && serialEl) serialEl.value = st.singleSerial;
+      }
+
+      if (st.tab === "multi") {
+        setTab("multi", { preserve: true });
+        if (st.multiSerialsRaw && serialsEl) serialsEl.value = st.multiSerialsRaw;
+
+        if (Array.isArray(st.multiItems) && st.multiItems.length) {
+          renderMultiResults(st.multiItems);
+        }
+
+        if (Array.isArray(st.multiInvalid) && st.multiInvalid.length) {
+          showMultiAlert("warning", `มี Serial รูปแบบไม่ถูกต้อง: ${st.multiInvalid.map(escapeHtml).join(", ")}`);
+        }
+      }
+
+      if (typeof st.scrollY === "number") {
+        setTimeout(() => window.scrollTo(0, st.scrollY), 0);
+      }
+    });
+  </script>
+
+</body>
+
+</html>

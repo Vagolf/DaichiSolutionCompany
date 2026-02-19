@@ -1,6 +1,7 @@
 // navbar.js
 const ROOT =
   window.location.pathname.includes("/services/") ||
+  window.location.pathname.includes("/warranty/") ||
   window.location.pathname.includes("/career/")
     ? ".."
     : ".";

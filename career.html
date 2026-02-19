@@ -73,103 +73,8 @@
     <!-- ===================== Positions ===================== -->
     <section id="positions" class="py-4 career-grid" style="background:#fff;">
       <div class="container career-grid-wrap px-5">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold mb-2 scroll-slide-up">ตำแหน่งที่เปิดรับ</h2>
-          <div class="scroll-slide-up"
-            style="width: 300px; height: 1px; background: #0F172A; border-radius: 999px; margin: 18px auto 0;"></div>
+        <div class="row career-grid g-4" id="careerGrid"></div>
         </div>
-
-
-        <div class="row career-grid g-4">
-
-          <!-- ===== Minor (Repair Service) ===== -->
-          <div class="col-lg-4 col-md-6">
-            <div class="career-card">
-              <a class="career-poster" href="career/minor-career.html">
-                <img src="images/career/minor-repair-career.png" alt="Minor (Repair Service)">
-              </a>
-
-              <div class="career-body">
-                <h3 class="career-role">Minor (Repair Service)</h3>
-                <p class="career-desc">
-                  ออกหน้างานซ่อมและบริการอุปกรณ์ POS ตามใบงานของลูกค้า ต้องมีมอเตอร์ไซค์ส่วนตัว และขับขี่ได้
-                </p>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== IT Service Desk ===== -->
-          <div class="col-lg-4 col-md-6">
-            <div class="career-card">
-              <a class="career-poster" href="career/service-desk-career.html">
-                <img src="images/career/service-desk-career.png" alt="IT Service Desk Career">
-              </a>
-
-              <div class="career-body">
-                <h3 class="career-role">IT Service Desk</h3>
-                <p class="career-desc">
-                  รับแจ้งปัญหาระบบ POS/IT จากสาขา ผ่านโทร/แชต/ระบบ Ticket
-                  แก้ไขเบื้องต้น และส่งต่อทีมเทคนิคให้จนจบเคส
-                </p>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== Tops – POS Install ===== -->
-          <div class="col-lg-4 col-md-6">
-            <div class="career-card">
-              <a class="career-poster" href="career/tops-career.html">
-                <img src="images/career/tops-pos-career.png" alt="Tops - POS Install">
-              </a>
-
-              <div class="career-body">
-                <h3 class="career-role">Tops - POS Install</h3>
-                <p class="career-desc">
-                  ติดตั้ง เก็บ และดูแล POS/อุปกรณ์ที่เกี่ยวข้องตามสาขา พร้อมตรวจนับและแพ็กส่งตามขั้นตอน
-                  ถ้าขับรถยนต์ได้จะพิจารณาเป็นพิเศษ
-                </p>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== Admin Support ===== -->
-          <div class="col-lg-4 col-md-6">
-            <div class="career-card">
-              <a class="career-poster" href="career/admin-career.html">
-                <img src="images/career/admin-support-career.png" alt="Admin Support">
-              </a>
-
-              <div class="career-body">
-                <h3 class="career-role">Admin Support</h3>
-                <p class="career-desc">
-                  ตอบคำถามลูกค้า รับเรื่อง ส่งต่องาน และติดตามสถานะ
-                  พร้อมดูแลเอกสารและสรุปงานให้ทีมและลูกค้าอย่างเป็นระบบ
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== Stock & Spare Parts ===== -->
-          <div class="col-lg-4 col-md-">
-            <div class="career-card">
-              <a class="career-poster" href="career/stock-career.html">
-                <img src="images/career/stock-spare-career.png" alt="Stock & Spare Parts">
-              </a>
-
-              <div class="career-body">
-                <h3 class="career-role">Stock & Spare Parts</h3>
-                <p class="career-desc">
-                  ดูแลสต็อกสินค้าและอะไหล่ จัดเตรียมและเบิกอะไหล่ให้ทีมซ่อม
-                  รวมถึงจัดส่งอุปกรณ์ไปซ่อมและรับกลับเข้าระบบ
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
 
@@ -303,27 +208,34 @@
   <!-- navbar/footer -->
   <script src="js/footer.js"></script>
   <script src="js/navbar.js"></script>
+  <script src="js/career-list.js"></script>
+  <script src="js/admin-hotkey.js"></script>
+
+
 
   <!-- JS: Slide in from all directions on scroll -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const targets = document.querySelectorAll(
-        '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
-      );
-      if (!targets.length) return;
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.2
+  function initScrollSlide(){
+    const targets = document.querySelectorAll(
+      '.scroll-slide-left, .scroll-slide-right, .scroll-slide-up, .scroll-slide-down'
+    );
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
       });
-      targets.forEach(el => observer.observe(el));
-    });
-  </script>
+    }, { threshold: 0.2 });
+
+    targets.forEach(el => observer.observe(el));
+  }
+
+  document.addEventListener('DOMContentLoaded', initScrollSlide);
+</script>
+
 </body>
 
 </html>

@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <ul class="list-unstyled footer-contact mb-3">
                     <li>
                         <i class="fa-solid fa-location-dot me-2"></i>
-                        135/2-3 ซ. ลาดพร้าว 94 แขวงพลับพลา <br>
-                        เขตวังทองหลาง กรุงเทพฯ 10310 ประเทศไทย
+                        เลขที่ 135/2-3 ซ.ลาดพร้าว 94 (ปัญจมิตร) <br> 
+                        ถ.อินทราภรณ์ พลับพลา  วังทองหลาง กรุงเทพฯ 10310
                     </li>
                     <li class="mt-2">
                         <i class="fa-solid fa-phone me-2"></i>

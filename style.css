@@ -259,7 +259,7 @@ h6 {
 /* ===== HERO SECTION ===== */
 .hero-section {
     position: relative;
-    height: vh;
+    height: 100vh;
     min-height: 600px;
     color: #ffffff;
     overflow: hidden;
@@ -1353,6 +1353,16 @@ footer a:hover {
     justify-items: center;
 }
 
+/* .logo-grid-al {
+    max-width: 780px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+    column-gap: 40px;
+    align-items: center;
+    justify-items: center;
+} */
+
 .logo-img {
     width: 100%;
     max-width: 220px;
@@ -1374,6 +1384,10 @@ footer a:hover {
     .logo-grid {
         grid-template-columns: 1fr;
     }
+
+    /* .logo-grid-al {
+        grid-template-columns: 1fr;
+    } */
 
     .logo-img {
         max-width: 260px;
@@ -2509,57 +2523,6 @@ html {
     align-items: center;
 }
 
-/* ===== Mobile: ทำให้เมนูเข้า hamburger ===== */
-@media (max-width: 991.98px) {
-    .site-header .menu-trigger {
-        display: inline-flex;
-        width: 44px;
-        height: 44px;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-
-    .site-header .main-nav {
-        position: fixed;
-    }
-
-    /* ซ่อนรายการเมนูก่อน */
-    .site-header .main-nav .nav {
-        position: absolute;
-        top: calc(100% + 10px);
-
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-
-        padding: 12px;
-        list-style: none;
-
-        background: rgba(13, 44, 64, 0.98);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, .18);
-        left: auto;
-        right: 0;
-        width: min(92vw, 320px);
-        max-width: none;
-        /* ตัด max-width: 2000px ออก */
-        z-index: 9999;
-    }
-
-    /* เปิดเมนูเมื่อกด hamburger */
-    .site-header .main-nav .nav.active {
-        display: flex;
-    }
-
-    /* ลิงก์ในเมนูมือถือ */
-    .site-header .main-nav .nav .nav-link {
-        display: block;
-        padding: 10px 12px;
-        border-radius: 12px;
-    }
-}
-
-
 /* =========================
  * Career Hero Styles
  * ========================= */
@@ -2723,45 +2686,54 @@ html {
    FIX: Mobile menu for .site-header (กันล้นจอ/กันช่องว่างขวา)
    ========================= */
 @media (max-width: 991px) {
-  /* ซ่อนเมนูแนวนอนบนมือถือ (แก้ต้นเหตุล้นจอ) */
-  .site-header .main-nav .nav {
-    display: none;                 /* ✅ ปิดก่อน */
-    position: fixed;
-    left: 0;
-    right: 0;
-    width: 100vw;                  /* ✅ ล็อกไม่ให้เกินจอ */
-    max-width: 100vw;
-    top: var(--nav-space, 72px);   /* ✅ ให้เมนูเริ่มใต้ navbar */
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 12px 0;
-    background: rgba(15, 23, 42, 0.98);
-    z-index: 2100;
-  }
 
-  /* เปิดเมนูเมื่อกด hamburger */
-  .site-header .main-nav .nav.active {
-    display: flex;
-  }
+    /* ซ่อนเมนูแนวนอนบนมือถือ (แก้ต้นเหตุล้นจอ) */
+    .site-header .main-nav .nav {
+        display: none;
+        /* ปิดก่อน */
 
-  .site-header .main-nav .nav li {
-    width: 100%;
-    text-align: center;
-    padding: 6px 0;
-  }
+        /* ✅ ให้แผงเมนูอยู่กลางจอ */
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
 
-  /* ปุ่ม hamburger ให้แสดง */
-  .site-header .menu-trigger {
-    display: block;
-    font-size: 1.5rem;
-  }
+        width: 100vw;
+        max-width: 100vw;
+        top: var(--nav-space, 72px);
+
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        margin: 0;
+        padding: 12px 0;
+        background: rgba(15, 23, 42, 0.98);
+        z-index: 2100;
+    }
+
+
+    /* เปิดเมนูเมื่อกด hamburger */
+    .site-header .main-nav .nav.active {
+        display: flex;
+    }
+
+    .site-header .main-nav .nav li {
+        width: 100%;
+        text-align: center;
+        padding: 6px 0;
+    }
+
+    /* ปุ่ม hamburger ให้แสดง */
+    .site-header .menu-trigger {
+        display: block;
+        font-size: 1.5rem;
+    }
 }
 
 /* กัน overflow จาก header/fixed element แบบชัวร์ ๆ */
 .site-header,
 .site-header * {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 /* ========================= MAP ========================= */
@@ -2769,7 +2741,7 @@ html {
 .map-background {
     position: absolute;
     inset: 0;
-    background: url("images/map/background-map.jpg") center/cover no-repeat;
+    background: url("images/Map/background-map.jpg") center/cover no-repeat;
     filter: blur(2px);
     transform: scale(1.08);
     z-index: 0;
@@ -2819,101 +2791,486 @@ html {
     color: #fff;
     margin: 0;
 }
+
 /* ===== Service Center Cards ===== */
 /* ===== Service Center Cards (match template) ===== */
-.service-center-section { background:#fff; }
+.service-center-section {
+    background: #fff;
+}
 
 /* (1) ส่วนที่คลุมการ์ด: จำกัดความกว้างให้เหมือนต้นแบบ */
-.service-center-section .container{
-  max-width: 1200px;   /* ปรับได้ 1100-1280 ตามที่ชอบ */
+.service-center-section .container {
+    max-width: 1200px;
+    /* ปรับได้ 1100-1280 ตามที่ชอบ */
 }
 
 /* ช่วยจัดการ์ดให้อยู่กลาง */
-#serviceCenterGrid{ justify-content:center; }
-#serviceCenterGrid > div{ display:flex; }   /* ให้ sc-card สูงเต็มคอลัมน์แบบสวย */
+#serviceCenterGrid {
+    justify-content: center;
+}
+
+#serviceCenterGrid>div {
+    display: flex;
+}
+
+/* ให้ sc-card สูงเต็มคอลัมน์แบบสวย */
 
 /* หัวข้อให้ใหญ่เหมือนต้นแบบ */
-.sc-heading{
-  font-weight: 900;
-  letter-spacing: .08em;
-  color: #1c9a78;
-  margin: 0;
-  font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+.sc-heading {
+    font-weight: bold;
+    letter-spacing: .08em;
+    color: #000000;
+    margin: 0;
 }
-.sc-underline{
-  width: 110px;
-  height: 4px;
-  background: rgba(0,0,0,.35);
-  border-radius: 999px;
-  margin-top: 12px;
+
+.sc-underline {
+    width: 110px;
+    height: 4px;
+    background: rgba(0, 0, 0, .35);
+    border-radius: 999px;
+    margin-top: 12px;
 }
 
 /* (2) ขนาดการ์ด (ตัวการ์ด) */
-.sc-card{
-  background:#fff;
-  border-radius: 18px;
-  padding: 24px 20px 20px;    /* ลด padding ให้ใกล้ต้นแบบ */
-  box-shadow: 0 10px 16px rgba(2, 6, 23, 0.12);
-  text-align:center;
+.sc-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 24px 20px 20px;
+    /* ลด padding ให้ใกล้ต้นแบบ */
+    box-shadow: 0 10px 16px rgba(2, 6, 23, 0.12);
+    text-align: center;
 
-  width:100%;
-  max-width: 380px;           /* <<< ความกว้างการ์ดให้เหมือนต้นแบบ */
-  min-height: 360px;          /* <<< ความสูงใกล้ต้นแบบ (อย่าใช้ 500) */
+    width: 100%;
+    max-width: 380px;
+    /* <<< ความกว้างการ์ดให้เหมือนต้นแบบ */
+    min-height: 360px;
+    /* <<< ความสูงใกล้ต้นแบบ (อย่าใช้ 500) */
 }
 
 /* ไอคอน */
-.sc-icon{
-  width:70px; height: 70px;
-  margin: 0 auto 10px;
-  display:grid; place-items:center;
+.sc-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px;
+    display: grid;
+    place-items: center;
 }
-.sc-icon i{ font-size: 36px; color:#111827; }
+
+.sc-icon i {
+    font-size: 36px;
+    color: #111827;
+}
 
 /* (3) ฟอนต์แต่ละส่วน */
-.sc-title{
-  font-weight: 900;
-  font-size: 1.20rem;        
-  margin: 8px 0 10px;
+.sc-title {
+    font-weight: 900;
+    font-size: 1.20rem;
+    margin: 8px 0 10px;
 }
 
-.sc-address{
-  color:#4b5563;
-  font-size: 1.1rem;            
-  line-height: 1.6;
-  min-height: 72px;     
+.sc-address {
+    color: #4b5563;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    min-height: 72px;
 }
 
-.sc-cover{
-  font-weight: 800;
-  font-size: 1.1rem;        
-  color:#111827;
-  margin: 6px 0 8px;
+.sc-cover {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #111827;
+    margin: 6px 0 8px;
 }
 
 /* แทนของเดิมทั้งหมดใน .sc-provinces */
-.sc-provinces{
-  margin: 0;
-  text-align: left;
-  color: #374151;
-  font-size: 1rem;
-  line-height: 1.55;
+.sc-provinces {
+    margin: 0;
+    text-align: left;
+    color: #374151;
+    font-size: 1rem;
+    line-height: 1.55;
 
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 6px 28px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 28px;
 
-  list-style-position: inside; /* ให้เลขอยู่ในบรรทัดเดียวกัน */
-  padding-left: 0;            /* ไม่ต้องดันซ้ายเพิ่ม */
+    list-style-position: inside;
+    /* ให้เลขอยู่ในบรรทัดเดียวกัน */
+    padding-left: 0;
+    /* ไม่ต้องดันซ้ายเพิ่ม */
 }
 
-.sc-provinces li{
-  margin: 0;                  /* กันช่องว่างแปลกๆ */
+.sc-provinces li {
+    margin: 0;
+    /* กันช่องว่างแปลกๆ */
 }
 
-@media (max-width: 991.98px){
-  .sc-card{ max-width: 420px; min-height: auto; }
-  .sc-provinces{ grid-template-columns: 1fr; }
-}
+@media (max-width: 991.98px) {
+    .sc-card {
+        max-width: 420px;
+        min-height: auto;
+    }
 
+    .sc-provinces {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* ========================= MAP END ========================= */
+
+/* ========================= Warranty (serial number) ========================= */
+/* ===== Warranty Check UI (HP-like) ===== */
+.warranty-wrap {
+    width: 100%;
+    max-width: 660px;
+    margin: 24px auto 60px;
+    padding: 0 16px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+
+.w-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+    margin-bottom: 28px;
+    gap: 10px;
+}
+
+.w-tab {
+    border: 0;
+    background: transparent;
+    font-weight: 700;
+    padding: 10px 0;
+    color: #111827;
+    position: relative;
+}
+
+.w-tab.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -11px;
+    height: 3px;
+    background: #0070d2;
+    border-radius: 999px;
+}
+
+.w-or {
+    color: #6b7280;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+
+.w-panel {
+    padding-top: 4px;
+}
+
+.w-label {
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.w-input {
+    border-radius: 10px !important;
+    padding: 12px 14px !important;
+}
+
+.w-qmark {
+    display: inline-grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.w-link {
+    color: #0070d2;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.w-link:hover {
+    text-decoration: underline;
+}
+
+.w-hint {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.w-submit {
+    background: #d1d5db !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #111827 !important;
+    font-weight: 800 !important;
+    padding: 12px 22px !important;
+    border-radius: 10px !important;
+    min-width: 260px;
+    margin-top: -50px;
+}
+
+.w-submit:hover {
+    background: #cbd5e1 !important;
+}
+
+.w-alert {
+    border-radius: 12px;
+}
+
+/* ===== Details Page ===== */
+.w-details-head {
+    margin-bottom: 18px;
+}
+
+.w-back {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #0070d2;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.w-back:hover {
+    text-decoration: underline;
+}
+
+.w-title {
+    font-size: 28px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.w-sub {
+    color: #6b7280;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.w-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px;
+    background: #fff;
+}
+
+.w-card-title {
+    font-weight: 900;
+    font-size: 16px;
+    color: #111827;
+}
+
+.w-field {
+    border: 1px solid #eef2f7;
+    border-radius: 14px;
+    padding: 12px 14px;
+    background: #fafafa;
+    height: 100%;
+}
+
+.w-field-label {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+
+.w-field-value {
+    margin-top: 4px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+    word-break: break-word;
+}
+
+.w-badge {
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-weight: 900;
+}
+
+.w-badge-active {
+    background: rgba(16, 185, 129, .12);
+    color: #047857;
+}
+
+.w-badge-expired {
+    background: rgba(239, 68, 68, .12);
+    color: #b91c1c;
+}
+
+
+/* ===== Floating Warranty Button (FAB) ===== */
+.fab-warranty {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 14px;
+    border-radius: 999px;
+
+    background: #00537a;
+    color: #fff;
+    text-decoration: none;
+
+    box-shadow: 0 14px 28px rgba(2, 6, 23, 0.22);
+    font-weight: 800;
+
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.fab-warranty i {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .18);
+    font-size: 18px;
+}
+
+.fab-warranty:hover {
+    background: #0097dd;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
+    color: #000000;
+}
+
+/* มือถือให้เหลือวงกลมอย่างเดียว */
+@media (max-width: 576px) {
+    .fab-warranty {
+        padding: 10px;
+        gap: 0;
+    }
+
+    .fab-warranty span {
+        display: none;
+    }
+
+    .fab-warranty i {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}
+
+/* ===== Warranty Check: ล็อกความสูงไม่ให้กระโดดตอนสลับแท็บ ===== */
+.warranty-wrap .w-panel {
+    min-height: 520px;
+    /* ปรับได้: ถ้ายังเต้นเพิ่มเป็น 540/560 */
+}
+
+.warranty-wrap .w-form {
+    min-height: 460px;
+    /* ทำให้ปุ่มอยู่ตำแหน่งเดิม */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -150px;
+}
+
+.warranty-wrap .w-form .text-center {
+    margin-top: auto;
+    /* ดันปุ่มไปล่างสุดตลอด */
+}
+
+/* ล็อก textarea ไม่ให้สูง/ต่ำตาม rows และไม่ให้ลากขยาย */
+.warranty-wrap #serials {
+    height: 180px;
+    /* ปรับได้ตามที่ต้องการ */
+    resize: none;
+    /* กันผู้ใช้ลากให้สูงขึ้น */
+}
+
+.warranty-wrap #multiResults {
+    max-height: 260px;
+    /* ปรับได้ */
+    overflow: auto;
+}
+
+/* ========================= Warranty End ========================= */
+
+/* ===== FORCE: Mobile menu centered (put at very bottom) ===== */
+@media (max-width: 991.98px){
+  .site-header .main-nav .nav{
+    position: fixed !important;
+    top: calc(var(--nav-space, 80px) + 10px) !important;
+
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+
+    width: min(92vw, 360px) !important;
+    max-width: 92vw !important;
+
+    display: none !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+
+    margin: 0 !important;
+    padding: 14px 0 !important;
+
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.98);
+    box-shadow: 0 16px 40px rgba(0,0,0,.25);
+    z-index: 99999 !important;
+  }
+
+  .site-header .main-nav .nav.active{
+    display: flex !important;
+  }
+
+  .site-header .main-nav .nav li{
+    width: 100%;
+    padding: 6px 0;
+  }
+
+  .site-header .menu-trigger{
+    display: inline-flex !important;
+  }
+}
+
+
+/* =========================
+   FIX: Logo too close to edge
+   (put this at the VERY BOTTOM of your CSS)
+   ========================= */
+
+/* ทำให้ header มีระยะซ้าย-ขวาสม่ำเสมอทุกจอ */
+.site-header .container {
+  /* ให้ความกว้างบาลานซ์เหมือน section อื่น ๆ */
+  max-width: 1200px;
+
+  /* เพิ่ม padding ซ้าย-ขวาแบบ responsive */
+  padding-left: clamp(16px, 2.2vw, 32px) !important;
+  padding-right: clamp(16px, 2.2vw, 32px) !important;
+}
+
+/* เพิ่มช่องไฟให้โลโก้ “ไม่ติดขอบเกินไป” */
+.site-header .main-nav .logo {
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  padding-right: 8px;
+}
+
+/* มือถือ: ลดโลโก้ลงนิดหนึ่งเพื่อไม่ให้แน่น */
+@media (max-width: 576px) {
+  .site-header .main-nav .logo img {
+    height: 70px !important; /* เดิม 90px ใหญ่ไปบนมือถือบางรุ่น */
+  }
+}
